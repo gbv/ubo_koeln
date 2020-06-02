@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="ORIGIN">
+    <label xml:lang="de" text="Technische Universität Ilmenau"/>
+    <label xml:lang="x-place" text="TU Ilmenau | Ilmenau | Ehrenbergstraße 29, 98693 Ilmenau"/>
+    <categories>
+        <category ID="8000">
+            <label xml:lang="de" text="Fakultät für Elektrotechnik und Informationstechnik" />
+        </category>
+        <category ID="8100">
+            <label xml:lang="de" text="Fakultät für Informatik und Automatisierung" />
+        </category>
+        <category ID="8200">
+            <label xml:lang="de" text="Fakultät für Maschinenbau" />
+        </category>
+        <category ID="8300">
+            <label xml:lang="de" text="Fakultät für Mathematik und Naturwissenschaften" />
+        </category>
+        <category ID="8400">
+            <label xml:lang="de" text="Fakultät für Wirtschaftswissenschaften (bis 2013)" />
+        </category>
+        <category ID="8450">
+            <label xml:lang="de" text="Fakultät für Wirtschaftswissenschaften und Medien (ab 2014)" />
+        </category>
+        <category ID="8500">
+            <label xml:lang="de" text="Universitätsbibliothek" />
+        </category>
+        <category ID="8600">
+            <label xml:lang="de" text="Verwaltung" />
+        </category>
+        <category ID="8700">
+            <label xml:lang="de" text="DMG-Lib" />
+        </category>
+        <category ID="8800">
+            <label xml:lang="de" text="PATON" />
+        </category>
+        <category ID="8810">
+            <label xml:lang="de" text="Zentrum für Mikro- und Nanotechnologien (ZMN)" />
+        </category>
+        <category ID="8820">
+            <label xml:lang="de" text="Sonstige" />
+        </category>
+    </categories>
+</mycoreclass>

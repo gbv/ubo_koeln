@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webpage lastModified="$Date$" id="contact">
+  <title xml:lang="de">Datenschutzerklärung - Hochschulbibliografie</title>
+  <title xml:lang="en">Privacy - University Bibliography</title>
+
+  <article class="card" xml:lang="de">
+    <div class="card-body">
+      <h3>Datenschutzerklärung</h3>
+      <p>
+        ...
+      </p>
+    </div>
+  </article>
+
+  <article class="card" xml:lang="en">
+      <div class="card-body">
+        <h3>Privacy</h3>
+        <p>
+          ...
+        </p>
+      </div>
+  </article>
+
+</webpage>

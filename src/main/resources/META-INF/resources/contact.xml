@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webpage lastModified="$Date$" id="contact">
+  <title xml:lang="de">Kontakt - Hochschulbibliografie</title>
+  <title xml:lang="en">Contact - University Bibliography</title>
+
+  <article class="card" xml:lang="de">
+    <div class="card-body">
+      <h3>Kontakt</h3>
+      <p>
+        Haben Sie Fragen zur Hochschulbibliografie oder benötigen Hilfe oder Beratung, melden Sie sich bei uns:
+      </p>
+      <p>
+        ...
+      </p>
+    </div>
+  </article>
+
+  <article class="card" xml:lang="en">
+      <div class="card-body">
+        <h3>Contact</h3>
+        <p>
+        If you have questions to the university bibliography, or need advice or consultation, please contact us:
+        </p>
+        <p>
+          ...
+        </p>
+      </div>
+  </article>
+
+</webpage>
