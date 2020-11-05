@@ -1,13 +1,15 @@
-$body-bg: white;
+$body-bg:  #E8E8E8;
 
 $bg-color-breadcrumb: #174488;
 
-$color-light-blue: #2a2a94;
-$color-dark-blue:  #2a2a94;
+$color-light-blue: #6C6C6C;
+$color-dark-blue:  #6C6C6C;
 
 $badge-font-weight: normal;
 
 /* add new/overwrite custom colors */
 $theme-colors: (
-  alternative: #2a2a94
+  alternative: #6C6C6C;
 );
+
+$link-color: #B43092 ;
