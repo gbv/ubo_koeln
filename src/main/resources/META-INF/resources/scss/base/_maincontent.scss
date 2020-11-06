@@ -50,8 +50,8 @@ $form-color: #251e52;
 }
 
 .minus {
-    background-color: #dc3545 !important;
-    border-color: #dc3545 !important;
+    background-color: #B43092 !important;
+    border-color: #B43092 !important;
 }
 
 .minus:not(:last-child) {
@@ -60,8 +60,8 @@ $form-color: #251e52;
 }
 
 .minus:hover {
-    background-color: #6C6C6C !important;
-    border-color: #bd2130 !important;
+    background-color: #B43092 !important;
+    border-color: #6C6C6C !important;
 }
 
 .btn-primary {
@@ -79,7 +79,7 @@ $form-color: #251e52;
 }
 
 .row .col hr {
-    border-top: 0;
+  border-top: 0;
 }
 
 .bg-card-body1 {
@@ -87,16 +87,16 @@ $form-color: #251e52;
 }
 
 .btn-outline-primary {
-    color: $color-dark-blue;
-    background-color: transparent;
-    background-image: none;
-    border-color: $color-dark-blue;
+  color: $color-dark-blue;
+  background-color: transparent;
+  background-image: none;
+  border-color: $color-dark-blue;
 }
 
 .btn-outline-primary:hover {
-    color: #fff;
-    background-color: $color-dark-blue;
-    border-color: $color-dark-blue;
+  color: #fff;
+  background-color: $color-dark-blue;
+  border-color: $color-dark-blue;
 }
 
 
