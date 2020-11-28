@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webpage lastModified="$Date$" id="about">
+  <title xml:lang="de">Über die Bibliografie</title>
+  <title xml:lang="en">About Bibliography</title>
+
+  <article class="card" xml:lang="de">
+    <div class="card-body">
+      <h3>Über die Bibliografie</h3>
+      <p>
+        Text in Arbeit
+      </p>
+    </div>
+  </article>
+
+  <article class="card" xml:lang="en">
+      <div class="card-body">
+        <h3>About Bibliography</h3>
+        <p>
+        Text under construction
+        </p>
+      </div>
+  </article>
+
+</webpage>
