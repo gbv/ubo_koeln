@@ -11,6 +11,7 @@
   <xsl:output method="html" encoding="UTF-8" media-type="text/html" indent="yes" xalan:indent-amount="2" />
 
   <xsl:param name="CurrentLang" />
+  <xsl:param name="UBO.Login.Path" />
 
   <xsl:variable name="jquery.version" select="'3.3.1'" />
   <xsl:variable name="jquery-ui.version" select="'1.12.1'" />
@@ -63,7 +64,8 @@
     </head>
   </xsl:template>
 
-  <!-- all layout -->
+  <!-- html body -->
+
   <xsl:template name="layout">
     <body class="d-flex flex-column">
       <!-- <xsl:call-template name="layout.headerline" /> -->
@@ -348,7 +350,7 @@
     <div class="nav-item mr-2">
       <xsl:choose>
         <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
-          <span class="user p-0" style="cursor: default;">
+          <span class="user btn p-0" style="cursor: default;">
             [<xsl:value-of select="i18n:translate('component.user2.login.guest')" />]
           </span>
         </xsl:when>
@@ -377,19 +379,15 @@
       <xsl:choose>
         <xsl:when test="/webpage/@id='login'" />
         <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
-          <form action="{$ServletsBaseURL}MCRLoginServlet" method="get">
+          <form action="{$WebApplicationBaseURL}{$UBO.Login.Path}" method="get">
             <input type="hidden" name="url" value="{$RequestURL}" />
-            <button title="Anmelden" class="btn btn-link p-0" type="submit" name="{i18n:translate('component.user2.button.login')}" value="{i18n:translate('component.user2.button.login')}">
-              <i class="nav-login fas fa-lg fa-sign-in-alt"></i>
-            </button>
+            <input class="btn btn-link p-0" type="submit" name="{i18n:translate('component.user2.button.login')}" value="{i18n:translate('component.user2.button.login')}" />
           </form>
         </xsl:when>
         <xsl:otherwise>
           <form action="{$ServletsBaseURL}logout" method="get">
             <input type="hidden" name="url" value="{$RequestURL}" />
-            <button title="Anmelden" class="btn btn-link p-0" style="border:0;" type="submit" name="{i18n:translate('login.logOut')}" value="{i18n:translate('login.logOut')}">
-              <i class="nav-login fas fa-lg fa-sign-out-alt"></i>
-            </button>
+            <input class="btn btn-link p-0" style="border:0;" type="submit" name="{i18n:translate('login.logOut')}" value="{i18n:translate('login.logOut')}" />
           </form>
         </xsl:otherwise>
       </xsl:choose>
@@ -480,6 +478,9 @@
       </span>
       <span>
         <a href="{$WebApplicationBaseURL}imprint.xml">Impressum</a>
+      </span>
+      <span>
+        <a href="{$WebApplicationBaseURL}accessibility.xml">Barrierefreiheit</a>
       </span>
     </div>
   </xsl:template>

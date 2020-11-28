@@ -25,7 +25,7 @@
       <label xml:lang="de">Publikationslisten</label>
       <label xml:lang="en">Publication list</label>
     </item>
-    <item ref="statistics.xml" id="dozbib.stats">
+    <item ref="statistics.xml" id="dozbib.stats"  role="admin">
       <label xml:lang="de">Statistiken</label>
       <label xml:lang="en">Statistics</label>
     </item>
@@ -96,8 +96,8 @@
       <label xml:lang="en">Imprint</label>
     </item>
     <item ref="accessibility.xml">
-      <label xml:lang="de">BARRIEREFREIHEIT</label>
-      <label xml:lang="en">ACCESSIBILITY</label>
+      <label xml:lang="de">Barrierefreiheit</label>
+      <label xml:lang="en">Accessibility</label>
     </item>
   </item>
 
