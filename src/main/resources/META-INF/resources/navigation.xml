@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<navigation root="true">
+
+  <item id="home" />
+  <item id="login" />
+  <item id="dozbib" />
+
+  <item menu="main">
+    <item ref="about.xml" id="about">
+      <label xml:lang="de">Über die Bibliografie</label>
+      <label xml:lang="en">About bibliography</label>
+    </item>
+    <item ref="newPublication.xed" id="dozbib.new.publication">
+      <label xml:lang="de">Publikation melden</label>
+      <label xml:lang="en">Registering a publication</label>
+      <item id="dozbib.edit.publication" />
+    </item>
+    <item id="dozbib.search-simple" ref="search.xed">
+      <label xml:lang="de">Suche in der Bibliografie</label>
+      <label xml:lang="en">Search in bibliography</label>
+      <item id="dozbib.search" />
+    </item>
+    <item ref="list-wizard.xed" id="dozbib.list-wizard">
+      <label xml:lang="de">Publikationslisten</label>
+      <label xml:lang="en">Publication list</label>
+    </item>
+    <item ref="statistics.xml" id="dozbib.stats">
+      <label xml:lang="de">Statistiken</label>
+      <label xml:lang="en">Statistics</label>
+    </item>
+    <item ref="contact.xml" id="contact">
+      <label xml:lang="de">Kontakt</label>
+      <label xml:lang="en">Contact</label>
+    </item>
+    <item ref="import-list.xed" role="admin">
+      <label xml:lang="de">Importieren</label>
+      <label xml:lang="en">Import</label>
+      <item id="dozbib.import.list" ref="import-list.xed" role="admin">
+        <label xml:lang="de">Literaturliste importieren</label>
+        <label xml:lang="en">Import publication list</label>
+      </item>
+      <item id="dozbib.import.evaluna" ref="import-from-evaluna.xed" role="admin">
+        <label xml:lang="de">aus EVALuna Biblio</label>
+        <label xml:lang="en">from EVALuna Biblio</label>
+      </item>
+    </item>
+    <item id="dozbib.search-expert" ref="search-expert.xed" role="admin">
+      <label xml:lang="de">Expertensuche</label>
+      <label xml:lang="en">Expert search</label>
+    </item>
+  </item>
+
+  <item menu="user">
+    <item id="user.password" ref="servlets/MCRUserServlet?action=changeMyPassword">
+      <label xml:lang="de">Passwort ändern</label>
+      <label xml:lang="en">Change password</label>
+    </item>
+    <item id="user.profile" ref="servlets/MCRUserServlet?action=show">
+      <label xml:lang="de">Mein Profil</label>
+      <label xml:lang="en">My profile</label>
+    </item>
+    <item id="user.admin" ref="servlets/MCRUserServlet" role="admin">
+      <label xml:lang="de">Nutzerverwaltung</label>
+      <label xml:lang="en">Admin Users</label>
+    </item>
+    <item id="user.new" ref="authorization/new-user.xed?action=save" role="admin">
+      <label xml:lang="de">Nutzer anlegen</label>
+      <label xml:lang="en">Create User</label>
+    </item>
+    <item id="acl.editor" ref="rsc/ACLE/start" role="admin">
+      <label xml:lang="de">ACL-Editor</label>
+      <label xml:lang="en">ACL Editor</label>
+    </item>
+    <item id="dozbib.duplicates" ref="duplicates.xml" role="admin">
+      <label xml:lang="de">Dubletten-Bericht</label>
+      <label xml:lang="en">Duplicates report</label>
+    </item>
+    <item id="classeditor" ref="modules/classeditor/classificationEditor.xml" role="admin">
+      <label xml:lang="de">Klassifikationseditor</label>
+      <label xml:lang="en">Classification editor</label>
+    </item>
+    <item id="webcli" ref="modules/webcli/launchpad.xml" role="admin">
+      <label xml:lang="de">WebCLI</label>
+      <label xml:lang="en">WebCLI</label>
+    </item>
+  </item>
+
+  <item role="meta">
+    <item ref="contact.xml">
+      <label xml:lang="de">Kontakt</label>
+      <label xml:lang="en">Contact</label>
+    </item>
+    <item ref="impressum.xml">
+      <label xml:lang="de">Impressum</label>
+      <label xml:lang="en">Imprint</label>
+    </item>
+    <item ref="accessibility.xml">
+      <label xml:lang="de">BARRIEREFREIHEIT</label>
+      <label xml:lang="en">ACCESSIBILITY</label>
+    </item>
+  </item>
+
+</navigation>

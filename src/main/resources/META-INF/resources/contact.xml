@@ -8,11 +8,11 @@
     <div class="card-body">
       <h3>Kontakt</h3>
       <p>
-        Haben Sie Fragen zur Hochschulbibliografie oder benötigen Hilfe oder Beratung, melden Sie sich bei uns:
+        Die Hochschulbibliothek wird zurzeit in einem gemeinsamen SK4-Projekt von Hochschulbibliothek und Campus IT aufgebaut und betreut.<br />
+        Bei Inhaltlichen Fragen wenden Sie sich bitte an die Hochschulbibliothek:<br />
+        <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>
       </p>
-      <p>
-        ...
-      </p>
+
     </div>
   </article>
 
@@ -20,10 +20,8 @@
       <div class="card-body">
         <h3>Contact</h3>
         <p>
-        If you have questions to the university bibliography, or need advice or consultation, please contact us:
-        </p>
-        <p>
-          ...
+        If you have questions to the bibliography, or need advice or consultation, please contact us:
+        <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>
         </p>
       </div>
   </article>

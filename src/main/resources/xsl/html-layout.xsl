@@ -79,7 +79,7 @@
 
   <xsl:template name="layout.headline">
     <div id="headlineWrapper">
-      <div class="container w-50">
+      <div class="container">
         <div class="row">
           <div class="col">
             <h3 id="seitentitel">
@@ -312,11 +312,6 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <i class="fas fa-home pr-1"></i>
-                  <a href="https://www.th-koeln.de/hochschulbibliothek/hochschulbibliothek_3862.php">
-                    <xsl:value-of select="i18n:translate('navigation.THKoeln')" />
-                  </a>
-                </li>
-                <li class="breadcrumb-item">
                   <a href="{$WebApplicationBaseURL}">
                     <xsl:value-of select="i18n:translate('navigation.HomeKoeln')" />
                   </a>
