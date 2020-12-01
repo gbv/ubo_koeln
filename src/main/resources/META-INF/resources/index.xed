@@ -6,7 +6,7 @@
  
  <article class="card mb-3" xml:lang="de">
    <div class="card-body">
-     <h3>Über die Digitale Hochschulbibliografie der TH Köln</h3>
+     <h2>Über die Digitale Hochschulbibliografie der TH Köln</h2>
       <p>
         Die Digitale Hochschulbibliografie ist die Onlineplattform zur Erfassung und Darstellung der Publikationsleistungen aller
         Beschäftigten der TH Köln. Es werden Publikationen erfasst, die dauerhaft gedruckt oder digital dauerhaft öffentlich
@@ -15,16 +15,8 @@
       <p>
         Die Bibliografie befindet sich derzeit im Aufbau.
       </p>
-      <h3>Sie sind Angehörige*r der TH Köln?</h3>
-      <p>
-        Alle Beschäftigten der TH Köln sowie Gastforscher*innen und Promovierende können Ihre Publikationen über die Digitale
-        Hochschulbibliografie der TH Köln melden, sofern sie gemäß den
-        <a href="https://www.th-koeln.de/mam/downloads/deutsch/forschung/leitlinien_zur_angabe_der_affiliation_bei_publikationen.pdf">Leitlinien</a>
-        die TH Köln als ihre Affiliation definiert haben. In Einzelfällen betrifft dies ebenfalls Honorarprofessor*innen,
-        Stipendiat*innen und Lehrbeauftragte.
-      </p>
-      <p>Link zur DHSB-Leitlinie [in Erarbeitung]</p>
-      <h3>Helfen Sie uns bei der Vervollständigung!</h3>
+
+      <h2>Helfen Sie uns bei der Vervollständigung!</h2>
       <p>
         <a href="newPublication.xed">Hier können Sie Ihre Publikation an die Hochschulbibliografie melden.</a>
       </p>
@@ -32,15 +24,9 @@
  </article>
   <article class="card mb-3" xml:lang="en">
     <div class="card-body">
-      <h3>About the digital University Bibliography of TH Köln</h3>
+      <h2>About the digital University Bibliography of TH Köln</h2>
       <p>
         is under construction
-      </p>
-      <h3>
-        As a member of TH Köln</h3>
-      <p>
-        Help us to complete the bibliography!<br/>
-        <a href="newPublication.xed">Here you can register your own publication</a>
       </p>
     </div>
   </article>
@@ -126,5 +112,5 @@
       </div>
     </article>
   </aside>
-    
+
 </webpage>

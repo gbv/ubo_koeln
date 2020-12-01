@@ -6,8 +6,6 @@
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Erklärung zur Barrierefreiheit</h3>
-        
         <p>
           Die <strong>TH Köln</strong> (THK) ist bemüht,
           die <strong>Digitale Hochschulbibliografie</strong>
@@ -24,7 +22,7 @@
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Stand der Vereinbarkeit mit den Anforderungen</h3>
+      <h2>Stand der Vereinbarkeit mit den Anforderungen</h2>
       
       <p>
         Die Hochschulbibliografie ist mit der EU-Richtlinie 2016/2102,
@@ -46,7 +44,7 @@
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Kontakt und Feedback</h3>
+      <h2>Kontakt und Feedback</h2>
       
       <p>
         Sie können uns gern Mängel in Bezug auf die barrierefreie Gestaltung unserer Website mitteilen.
@@ -70,7 +68,7 @@
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Ombudsstelle für barrierefreie Informationstechnik des Landes Nordrhein-Westfalen </h3>
+      <h2>Ombudsstelle für barrierefreie Informationstechnik des Landes Nordrhein-Westfalen </h2>
       
       <p>
         Sollten Sie auf Mitteilungen oder Anfragen zur barrierefreien Informationstechnik

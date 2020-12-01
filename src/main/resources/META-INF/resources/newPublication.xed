@@ -9,14 +9,11 @@
       <xed:form role="form" xmlns:xed="http://www.mycore.de/xeditor">
         <xed:bind xpath="/mods:mods">
           <fieldset>
-
-            <legend><xed:output i18n="ubo.newPublicationWizard" /></legend>
-
             <xed:if test="$xed-validation-failed">
               <div class="validation-failures">
-                <h3>
+                <h2>
                   <xed:output i18n="form.validation.failed" />
-                </h3>
+                </h2>
                 <ul>
                   <xed:display-validation-messages />
                 </ul>
@@ -31,7 +28,7 @@
 
             <xed:bind xpath="mods:identifier">
               <div class="form-group form-inline">
-		<div class="mycore-form-label">
+                <div class="mycore-form-label">
                   <xed:bind xpath="@type">
                     <select class="form-control w-100">
                       <option value="doi">DOI</option>
@@ -47,9 +44,9 @@
                         <option value="hbz">HBZ HT-Nummer</option>
                         <option value="issn">ISSN</option>
                       </xed:if>
-                      </select>:
+                      </select>
                   </xed:bind>
-		</div>
+                </div>
                 <input id="identifier" class="{$xed-validation-marker} mycore-form-input"/>
               </div>
             </xed:bind>
@@ -72,7 +69,7 @@
             <xed:bind xpath="mods:titleInfo/mods:title">
               <div class="form-group form-inline">
                 <label for="title" class="mycore-form-label">
-                  <xed:output i18n="ubo.title" />:
+                  <xed:output i18n="ubo.title" />
                 </label>
                 <input id="title" class="{$xed-validation-marker} mycore-form-input" placeholder="{i18n:ubo.newPublicationWizard.title.placeholder}" />
               </div>
@@ -82,7 +79,7 @@
               <xed:bind xpath="mods:namePart[@type='family']">
                 <div class="form-group form-inline">
                   <label for="author" class="mycore-form-label">
-                    <xed:output i18n="ubo.role.author" />:
+                    <xed:output i18n="ubo.role.author" />
                   </label>
                   <input id="author" class="{$xed-validation-marker} mycore-form-input" placeholder="{i18n:ubo.newPublicationWizard.author.placeholder}" />
                 </div>

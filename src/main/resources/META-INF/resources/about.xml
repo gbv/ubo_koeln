@@ -6,7 +6,31 @@
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Über die Bibliografie</h3>
+      <h2>Sie sind Angehörige*r der TH Köln?</h2>
+      <p>
+        Alle Beschäftigten der TH Köln sowie Gastforscher*innen und Promovierende können Ihre Publikationen über die Digitale
+        Hochschulbibliografie der TH Köln melden, sofern sie gemäß den
+        <a href="https://www.th-koeln.de/mam/downloads/deutsch/forschung/leitlinien_zur_angabe_der_affiliation_bei_publikationen.pdf">Leitlinien</a>
+        die TH Köln als ihre Affiliation definiert haben. In Einzelfällen betrifft dies ebenfalls Honorarprofessor*innen,
+        Stipendiat*innen und Lehrbeauftragte.
+      </p>
+      <p>Link zur DHSB-Leitlinie [in Erarbeitung]</p>
+    </div>
+  </article>
+
+  <article class="card" xml:lang="en">
+    <div class="card-body">
+      <h2>As a member of TH Köln</h2>
+      <p>
+        Help us to complete the bibliography!<br/>
+        <a href="newPublication.xed">Here you can register your own publication</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="card" xml:lang="de">
+    <div class="card-body">
+      <h2>Leitlinien</h2>
       <p>
         Text in Arbeit
       </p>
@@ -15,11 +39,29 @@
 
   <article class="card" xml:lang="en">
       <div class="card-body">
-        <h3>About Bibliography</h3>
+        <h2>Guidelines</h2>
         <p>
         Text under construction
         </p>
       </div>
+  </article>
+
+  <article class="card" xml:lang="de">
+    <div class="card-body">
+      <h2>FAQ</h2>
+      <p>
+        Text in Arbeit
+      </p>
+    </div>
+  </article>
+  
+  <article class="card" xml:lang="en">
+    <div class="card-body">
+      <h2>FAQ</h2>
+      <p>
+        Text under construction
+      </p>
+    </div>
   </article>
 
 </webpage>

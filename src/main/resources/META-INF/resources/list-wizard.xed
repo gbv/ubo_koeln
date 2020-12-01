@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <webpage lastModified="$Date: 2016-05-20 08:54:29 +0200 (Fr, 20 Mai 2016) $" id="dozbib.list-wizard">
- <title xml:lang="de">Persönliche Publikationsliste erstellen</title>
- <title xml:lang="en">Build your personal publication list</title>
+ <title xml:lang="de">Publikationslisten</title>
+ <title xml:lang="en">Publication list</title>
 
   <article xml:lang="de" class="card mb-1">
     <div class="card-body">
-      <h3>Persönliche Publikationsliste erstellen</h3>
       <p>
         Um persönliche Publikationslisten direkt aus der Universitätsbibliographie erstellen und in verschiedenen Formaten auszugeben, nutzen
         Sie das folgende Formular. Voraussetzung ist, dass die Publikationen mit Ihrer Personen-ID verknüpft sind. Falls Publikationen fehlen,
@@ -18,7 +17,6 @@
 
   <article xml:lang="en" class="card mb-1">
     <div class="card-body">
-      <h3>Create personal publication list</h3>
       <p>
         Alternatively, you can use the following form to create your personal publication list directly from university bibliography data to
         link it or output it in various formats. This requires that the publications are linked with your own HIS LSF person ID.
@@ -29,62 +27,16 @@
     </div>
   </article>
 
-  <article xml:lang="de" class="card mb-1">
-    <div class="card-body">
-      <h3>Persönliche Publikationsliste auf TH-Webseiten einbinden</h3>
-      <p>
-        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
-        aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
-        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
-        Link zur Anleitung [wird noch erstellt]
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="en" class="card mb-1">
-    <div class="card-body">
-      <h3>Create personal publication list on TH webpages</h3>
-      <p>
-        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
-        aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
-        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
-        Link zur Anleitung [wird noch erstellt]
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="de" class="card mb-1">
-    <div class="card-body">
-      <h3>Publikationslisten für einzelne Einrichtungen auf den TH-Webseiten einbinden</h3>
-      <p>
-        BereichsadministratorInnen der Imperia-Webseiten können Publikationslisten für Institute, Fakultäten und sonstige Forschungseinrichtungen
-        zusammenstellen und in Imperia einbinden. Das Modul wird BereichsadministratorInnen in Imperia angezeigt. Die Funktion befindet sich noch
-        in der Entwicklung. Eine Fertigstellung ist für Februar 2021 geplant. Link zur Anleitung [wird noch erstellt]
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="en" class="card mb-1">
-    <div class="card-body">
-      <h3>Create publication list for institutions</h3>
-      <p>
-        BereichsadministratorInnen der Imperia-Webseiten können Publikationslisten für Institute, Fakultäten und sonstige Forschungseinrichtungen
-        zusammenstellen und in Imperia einbinden. Das Modul wird BereichsadministratorInnen in Imperia angezeigt. Die Funktion befindet sich noch
-        in der Entwicklung. Eine Fertigstellung ist für Februar 2021 geplant. Link zur Anleitung [wird noch erstellt]
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
+  <article class="card mb-1">
     <div class="card-body">
       <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
         <xed:bind xpath="/list-wizard">
 
           <xed:if test="$xed-validation-failed">
             <div class="validation-failures">
-              <h3>
+              <h2>
                 <xed:output i18n="form.validation.failed" />
-              </h3>
+              </h2>
               <ul>
                 <xed:display-validation-messages />
               </ul>
@@ -99,7 +51,7 @@
               <div class="form-group form-inline">
                 <label for="{xed:generate-id()}" class="mycore-form-label">
                   <xed:if test="preceding::mods:name"><xed:output i18n="search.or" /></xed:if>
-                  <xed:output i18n="ubo.role.author" /> / <xed:output i18n="ubo.role.editor" />:
+                  <xed:output i18n="facets.facet.person" />
                 </label>
                 <xed:bind xpath="mods:displayForm">
                   <input id="name" type="text" class="mycore-form-input author-search"/>
@@ -114,11 +66,7 @@
             <xed:repeat xpath="tag">
               <div class="form-group form-inline">
                 <label for="{xed:generate-id()}" class="mycore-form-label">
-                  <xed:choose>
-                    <xed:when test="preceding::tag"><xed:output i18n="search.or" /></xed:when>
-                    <xed:otherwise><xed:output i18n="search.and" /></xed:otherwise>
-                  </xed:choose>
-                  <xed:output i18n="listWizard.tag" />:
+                  <xed:output i18n="listWizard.tag" />
                 </label>
                 <input id="{xed:generate-id()}" type="text" class="mycore-form-input"/>
                 <xed:controls>append remove</xed:controls>
@@ -128,7 +76,6 @@
             <xed:bind xpath="min-year">
               <div class="form-group form-inline">
                 <label for="year" class="mycore-form-label">
-                  <xed:output i18n="search.and" />
                   <xed:output i18n="search.dozbib.year.publication" />
                   <span class="ml-1">&gt;=</span>
                 </label>
@@ -137,8 +84,8 @@
               </div>
             </xed:bind>
 
-            <div class="form-group form-inline">
-              <label class="mycore-form-label align-self-start">
+            <div class="form-group form-inline thk-sort">
+              <label class="mycore-form-label mb-3">
                 <xed:output i18n="search.sort" />
               </label>
               <div class="col pl-0">
@@ -155,7 +102,7 @@
                       </select>
                     </xed:bind>
                     <xed:bind xpath="@order">
-                      <select class="form-control mr-sm-3">
+                      <select class="form-control mr-sm-3 mb-1">
                         <option value="descending"><xed:output i18n="search.sort.desc" /></option>
                         <option value="ascending" ><xed:output i18n="search.sort.asc" /></option>
                       </select>
@@ -169,7 +116,7 @@
             <xed:bind xpath="format">
               <div class="form-group form-inline">
                 <label for="format" class="mycore-form-label">
-                  <xed:output i18n="listWizard.format" />:
+                  <xed:output i18n="listWizard.format" />
                 </label>
                 <select id="format" class="mycore-form-input">
                   <option value="pdf">PDF</option>
@@ -185,7 +132,7 @@
 
             <div class="form-group form-inline">
               <label class="mycore-form-label">
-	      </label>
+              </label>
               <div class="cancel-submit">
                 <button class="btn btn-sm btn-primary" type="submit" xed:target="layout">
                   <xed:output i18n="listWizard.submit" />
@@ -198,6 +145,50 @@
 
         </xed:bind>
       </xed:form>
+    </div>
+  </article>
+
+  <article xml:lang="de" class="card mb-1">
+    <div class="card-body">
+      <h2>Persönliche Publikationsliste auf TH-Webseiten einbinden</h2>
+      <p>
+        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
+        aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
+        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
+      </p>
+    </div>
+  </article>
+
+  <article xml:lang="en" class="card mb-1">
+    <div class="card-body">
+      <h2>Create personal publication list on TH webpages</h2>
+      <p>
+        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
+        aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
+        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein.
+      </p>
+    </div>
+  </article>
+
+  <article xml:lang="de" class="card mb-1">
+    <div class="card-body">
+      <h2>Publikationslisten für einzelne Einrichtungen auf den TH-Webseiten einbinden</h2>
+      <p>
+        BereichsadministratorInnen der Imperia-Webseiten können Publikationslisten für Institute, Fakultäten und sonstige Forschungseinrichtungen
+        zusammenstellen und in Imperia einbinden. Das Modul wird BereichsadministratorInnen in Imperia angezeigt. Die Funktion befindet sich noch
+        in der Entwicklung. Eine Fertigstellung ist für Februar 2021 geplant.
+      </p>
+    </div>
+  </article>
+
+  <article xml:lang="en" class="card mb-1">
+    <div class="card-body">
+      <h2>Create publication list for institutions</h2>
+      <p>
+        BereichsadministratorInnen der Imperia-Webseiten können Publikationslisten für Institute, Fakultäten und sonstige Forschungseinrichtungen
+        zusammenstellen und in Imperia einbinden. Das Modul wird BereichsadministratorInnen in Imperia angezeigt. Die Funktion befindet sich noch
+        in der Entwicklung. Eine Fertigstellung ist für Februar 2021 geplant.
+      </p>
     </div>
   </article>
 

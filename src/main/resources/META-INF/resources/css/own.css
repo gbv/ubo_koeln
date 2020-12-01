@@ -1,0 +1,100 @@
+/* all content has the same indent */
+.card-header,
+.card-footer {
+  padding: 10px 15px;
+}
+.hit .card-footer span {
+  color: #ccc;
+}
+.card-body h3 {
+  color: #444;
+  font-weight:bold;
+}
+.card-body .list-group {
+  margin-top: 1rem;
+  margin-bottom:1rem;
+}
+.card-body .mycore-list-item {
+  padding-left: 0;
+}
+.card-body .mycore-facet-count {
+  width: 40px;
+  display: inline-block;
+  text-align: right;
+}
+
+/* badges  ********************************************************************/
+.badge {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #999;
+}
+.badge-inverse {
+  color: #ea5a00;
+  background-color: transparent !important;
+}
+.nameIdentifier {
+  border-radius: 0;
+}
+
+/* buttons ********************************************************************/
+.btn {
+  font-size: 0.9em;
+  padding: 8px 15px;
+  border-radius: 0;
+  border: none;
+}
+.btn-secondary {
+  background-color: #b43092;
+}
+.btn-secondary:hover {
+  background-color: #851b6a;
+}
+/* buttons on result list */
+.results .btn {
+  font-size: 75%;
+  padding: 0.25em 0.5em;
+  background-color: #aaa;
+}
+.results .btn:hover {
+  background-color:  #b43092;
+}
+.btn-outline {
+  color: #b43092;
+  background-color: transparent;
+  border: 1px solid #b43092;
+}
+.thk-sort .plus, .thk-sort .minus {
+  margin-bottom: 0.25rem;
+}
+/* export buttons */
+#inhalt > .btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+#inhalt > .btn-group {
+  display: flex;
+}
+#inhalt > .btn-group > .btn {
+  flex: none;
+  color: white;
+  border: 1px solid #ccc;
+  background-color: #aaa;
+}
+#inhalt > .btn-group > .btn:hover {
+  background-color:  #b43092;
+}
+.resultsNavigation .text-right .pageLink {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+}
+#inhalt > div.resultsNavigation:nth-child(5) .text-right .pageLink {
+  top: 0;
+  bottom: auto;
+}
+
+.mycore-form-label {
+    text-align: right;
+}

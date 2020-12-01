@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <webpage lastModified="$Date$" id="contact">
-  <title xml:lang="de">Kontakt - Hochschulbibliografie</title>
-  <title xml:lang="en">Contact - University Bibliography</title>
+  <title xml:lang="de">Kontakt</title>
+  <title xml:lang="en">Contact</title>
 
   <article class="card" xml:lang="de">
     <div class="card-body">
-      <h3>Kontakt</h3>
       <p>
         Die Hochschulbibliothek wird zurzeit in einem gemeinsamen SK4-Projekt von Hochschulbibliothek und Campus IT aufgebaut und betreut.<br />
         Bei Inhaltlichen Fragen wenden Sie sich bitte an die Hochschulbibliothek:<br />
@@ -18,7 +17,6 @@
 
   <article class="card" xml:lang="en">
       <div class="card-body">
-        <h3>Contact</h3>
         <p>
         If you have questions to the bibliography, or need advice or consultation, please contact us:
         <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>

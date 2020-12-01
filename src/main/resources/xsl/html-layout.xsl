@@ -56,6 +56,7 @@
       <link rel="stylesheet" href="https://webfonts.gbv.de/css?family=Roboto+Condensed:300,400" type="text/css" />
       <link rel="stylesheet" href="https://webfonts.gbv.de/css?family=Amiri:300,400" type="text/css" />
       <link rel="shortcut icon" href="{$WebApplicationBaseURL}images/favicon.ico" />
+      <link href="{$WebApplicationBaseURL}css/own.css" rel="stylesheet" />
 
       <script type="text/javascript">var webApplicationBaseURL = '<xsl:value-of select="$WebApplicationBaseURL" />';</script>
       <script type="text/javascript">var currentLang = '<xsl:value-of select="$CurrentLang" />';</script>
@@ -84,9 +85,9 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h3 id="seitentitel">
+            <h1>
               <xsl:value-of select="head/title" disable-output-escaping="yes" />
-            </h3>
+            </h1>
           </div>
         </div>
       </div>
@@ -441,9 +442,9 @@
   <xsl:template name="layout.pageTitle">
     <div class="card my-3">
       <div class="card-body py-2">
-        <h3 id="seitentitel">
+        <h1>
           <xsl:value-of select="head/title" disable-output-escaping="yes" />
-        </h3>
+        </h1>
       </div>
     </div>
   </xsl:template>
@@ -470,18 +471,10 @@
   <xsl:template name="layout.imprintline">
     <!-- TODO: use navigation.xml to generate this AND use correct language! -->
     <div class="imprintlinewrapper">
-      <span>
         <a href="{$WebApplicationBaseURL}contact.xml">Kontakt</a>
-      </span>
-      <span>
         <a href="{$WebApplicationBaseURL}privacy.xml">Datenschutz</a>
-      </span>
-      <span>
         <a href="{$WebApplicationBaseURL}imprint.xml">Impressum</a>
-      </span>
-      <span>
         <a href="{$WebApplicationBaseURL}accessibility.xml">Barrierefreiheit</a>
-      </span>
     </div>
   </xsl:template>
 

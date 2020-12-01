@@ -20,11 +20,12 @@ footer .info {
     font-family: Arial,sans-serif;
 }
 
-.imprintlinewrapper a {
+.imprintlinewrapper {
+  margin-left: 2rem;
+  a {
     color: white;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    margin-right: 32px;
+    margin-right: 2rem;
+  }
 }
 
 @include media-breakpoint-up(sm) {

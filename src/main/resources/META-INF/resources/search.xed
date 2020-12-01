@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <webpage lastModified="$Date: 2016-05-20 08:54:29 +0200 (Fr, 20 Mai 2016) $" id="dozbib.search-simple">
- <title xml:lang="de">Suche in der Hochschulbibliografie</title>
+ <title xml:lang="de">Suche in der Bibliografie</title>
  <title xml:lang="en">Search in bibliography</title>
  
  <script type="text/javascript" src="/js/editor.validation.failed.tooltip.js"></script>
@@ -14,10 +14,6 @@
       <xed:cancel url="index.xed" />
         
       <fieldset>
-        <legend>
-          <xed:output i18n="search.dozbib" />
-        </legend>
-        
         <xed:include uri="webapp:import-search.xed" ref="validation" />
   
         <div class="mb-2">
@@ -55,7 +51,7 @@
                       <option value="conference"><xed:output i18n="ubo.conference" /></option>
                       <option value="topic"     ><xed:output i18n="ubo.subject.topic" /></option>
                       <option value="note"      ><xed:output i18n="edit.comment" /></option>
-                      <option value="abstract"  >Abstract:</option>
+                      <option value="abstract"  ><xed:output i18n="ubo.abstract" /></option>
                       <option value="all"       ><xed:output i18n="search.dozbib.fields" /></option>
                     </select>
                   </xed:bind>
@@ -83,11 +79,11 @@
                 <label class="mycore-form-label">
                   <xed:bind xpath="@field">
                     <select class="form-control w-100">
-                      <option value="nid_lsf"          ><xed:output i18n="search.dozbib.pid" /></option>
-                      <option value="nid_orcid"        >ORCID:</option>
-                      <option value="nid_researcherid" >ResearcherID:</option>
-                      <option value="nid_scopus"       >Scopus ID:</option>
-                      <option value="nid_gnd"          >GND:</option>
+                      <option value="nid_koeln"        ><xed:output i18n="editor.identity.picker.lead_id" /></option>
+                      <option value="nid_orcid"        >ORCID</option>
+                      <option value="nid_researcherid" >ResearcherID</option>
+                      <option value="nid_scopus"       >Scopus ID</option>
+                      <option value="nid_gnd"          >GND</option>
                     </select>
                   </xed:bind>
                 </label>
@@ -103,15 +99,15 @@
                 <label class="mycore-form-label">
                   <xed:bind xpath="@field" default="{$id_type}">
                     <select class="form-control w-100">
-                      <option value="id_doi"        >DOI:</option>
-                      <option value="id_urn"        >URN:</option>
-                      <option value="id_issn"       >ISSN:</option>
-                      <option value="id_isbn"       >ISBN:</option>
-                      <option value="id"            >UBO ID:</option>
-                      <option value="id_pubmed"     >PubMed ID:</option>
-                      <option value="id_scopus"     >Scopus ID:</option>
-                      <option value="shelfmark"     >Signatur:</option>
-                      <option value="tag"           >Tag:</option>
+                      <option value="id_doi"        >DOI</option>
+                      <option value="id_urn"        >URN</option>
+                      <option value="id_issn"       >ISSN</option>
+                      <option value="id_isbn"       >ISBN</option>
+                      <option value="id"            >UBO ID</option>
+                      <option value="id_pubmed"     >PubMed ID</option>
+                      <option value="id_scopus"     >Scopus ID</option>
+                      <option value="shelfmark"     >Signatur</option>
+                      <option value="tag"           >Tag</option>
                     </select>
                   </xed:bind>
                 </label>
@@ -137,7 +133,7 @@
             <xed:bind xpath="condition[@field='origin'][@operator='=']/value">
              <div class="form-group form-inline">
                 <label for="{xed:generate-id()}" class="mycore-form-label">
-                  <xed:output i18n="ubo.department" />:
+                  <xed:output i18n="ubo.department" />
                 </label>
                 <select id="{xed:generate-id()}" class="autocomplete mycore-form-input">
                   <option value=""><xed:output i18n="search.select" /></option>
@@ -223,7 +219,7 @@
 
           </xed:bind>
 
-          <xed:include uri="webapp:import-search.xed" ref="sortby" />
+          <div class="thk-sort"><xed:include uri="webapp:import-search.xed" ref="sortby" /></div>
           <xed:include uri="webapp:import-search.xed" ref="numPerPage" />
 
           <div class="form-group form-inline">
