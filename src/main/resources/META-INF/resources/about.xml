@@ -14,7 +14,6 @@
         die TH Köln als ihre Affiliation definiert haben. In Einzelfällen betrifft dies ebenfalls Honorarprofessor*innen,
         Stipendiat*innen und Lehrbeauftragte.
       </p>
-      <p>Link zur DHSB-Leitlinie [in Erarbeitung]</p>
     </div>
   </article>
 
@@ -50,7 +49,17 @@
     <div class="card-body">
       <h2>FAQ</h2>
       <p>
-        Text in Arbeit
+        F: Ich habe mich eingeloggt, doch ich kann nicht alle Funktionen der Anwendung nutzen. Woran liegt es?<br />
+        A: Einige Funktionen (wie z.B. Einsicht in bestimmte Statistiken) sind nur durch die Berechtigungen der Administrator-Rolle möglich. Die Zuweisung der Rolle/ zusätzlichen Berechtigungen kann nach einer Prüfung erfolgen. Als Grundlage für die Prüfung dienen die rechtlichen Aspekte und die Zuständigkeiten der Mitarbeiter*in.
+      </p>
+      <p>
+        F: Wie kann ich die Publikationslisten aus der Bibliografie im öffentlichen Webauftritt automatisch anzeigen lassen?<br />
+        A: Imperia Bereichsadministrator*innen steht in der nahen Zukunft ein Modul zum automatischen Export der Publikationslisten nach bestimmten Facetten zur Verfügung.
+      </p>
+      <p>
+        F: Ich habe als Pilotnutzer*in Verbesserungsvorschläge für die Bibliografie. Wo kann ich sie melden?<br />
+        A: Gerne können Sie uns Ihre Vorschläge über <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a> zukommen lassen.
+        
       </p>
     </div>
   </article>

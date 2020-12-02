@@ -199,7 +199,7 @@
               <div class="form-group form-inline">
                 <xed:bind xpath="@value">
                   <label for="{xed:generate-id()}" class="mycore-form-label">
-                    Open Access
+                    <xed:output i18n="facets.facet.oa" />
                   </label>
                   <select id="{xed:generate-id()}" class="mycore-form-input-double">
                     <option value=""><xed:output i18n="search.select" /></option>

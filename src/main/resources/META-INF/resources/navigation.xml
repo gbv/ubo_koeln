@@ -52,10 +52,6 @@
   </item>
 
   <item menu="user">
-    <item id="user.password" ref="servlets/MCRUserServlet?action=changeMyPassword">
-      <label xml:lang="de">Passwort ändern</label>
-      <label xml:lang="en">Change password</label>
-    </item>
     <item id="user.profile" ref="servlets/MCRUserServlet?action=show">
       <label xml:lang="de">Mein Profil</label>
       <label xml:lang="en">My profile</label>
