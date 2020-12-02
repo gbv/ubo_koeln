@@ -11,7 +11,7 @@
       <label xml:lang="de">Über die Bibliografie</label>
       <label xml:lang="en">About bibliography</label>
     </item>
-    <item ref="newPublication.xed" id="dozbib.new.publication">
+    <item ref="newPublication.xed" id="dozbib.new.publication" role="admin" alwaysVisible="true">
       <label xml:lang="de">Publikation melden</label>
       <label xml:lang="en">Registering a publication</label>
       <item id="dozbib.edit.publication" />
@@ -25,7 +25,7 @@
       <label xml:lang="de">Publikationslisten</label>
       <label xml:lang="en">Publication list</label>
     </item>
-    <item ref="statistics.xml" id="dozbib.stats"  role="admin">
+    <item ref="statistics.xml" id="dozbib.stats"  role="not(guest)">
       <label xml:lang="de">Statistiken</label>
       <label xml:lang="en">Statistics</label>
     </item>
