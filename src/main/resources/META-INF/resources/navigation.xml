@@ -11,7 +11,7 @@
       <label xml:lang="de">Über die Bibliografie</label>
       <label xml:lang="en">About bibliography</label>
     </item>
-    <item ref="newPublication.xed" id="dozbib.new.publication" role="admin" alwaysVisible="true">
+    <item ref="newPublication.xed" id="dozbib.new.publication" role="not(guest)" alwaysVisible="true">
       <label xml:lang="de">Publikation melden</label>
       <label xml:lang="en">Registering a publication</label>
       <item id="dozbib.edit.publication" />
