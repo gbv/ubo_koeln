@@ -97,9 +97,8 @@
               </legend>
 
               <xed:include uri="webapp:import-editor.xed" ref="status" />
-              <xed:include uri="webapp:import-editor.xed" ref="subject" />
               <xed:include uri="webapp:import-editor.xed" ref="origin" />
-              <xed:include uri="webapp:import-editor.xed" ref="tags" />    
+              <xed:include uri="webapp:import-editor.xed" ref="tags" />
             </fieldset>
             
             <fieldset>
@@ -130,15 +129,11 @@
             </xed:if>
 
             <fieldset>
-              <xed:include uri="webapp:import-editor.xed" ref="languages" />    
+              <xed:include uri="webapp:import-editor.xed" ref="languages" />
               <xed:include uri="webapp:import-editor.xed" ref="topics" />  
               <xed:if test="not($genre_intern='abstract')">   
-                <xed:include uri="webapp:import-editor.xed" ref="abstract" />    
+                <xed:include uri="webapp:import-editor.xed" ref="abstract" />
               </xed:if> 
-            </fieldset>
-            <fieldset>
-              <legend>Projektinformationen:</legend>
-              <xed:include uri="webapp:import-editor.xed" ref="projectInformation"/>
             </fieldset>
         </xed:bind>
 
