@@ -7,7 +7,7 @@
  <script type="text/javascript" src="/external/jquery-tools-1.2.7/jquery.tools.min.js"></script>
  <script type="text/javascript" src="/js/editor.validation.failed.tooltip.js"></script>
   
- <article class="card">
+ <article class="card mb-3">
    <div class="card-body">
      <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form"> 
        <fieldset>
@@ -97,7 +97,7 @@
    </div>
   </article>
   
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <p>
 	Die folgenden Suchfelder sind verfügbar:
@@ -149,7 +149,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <p>
 	The following search fields are available:

@@ -32,7 +32,7 @@
     </div>
   </article>
   
-  <article  class="card" id="form">
+  <article  class="card mb-3" id="form">
     <div class="card-body">
       <xed:form xmlns:xed="http://www.mycore.de/xeditor"
                 xmlns:cerif="https://www.openaire.eu/cerif-profile/1.1/"

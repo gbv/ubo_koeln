@@ -49,13 +49,13 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>In Publikationen verwendete Autoren-Identifikatoren:</h2>
       <xinclude uri="xslStyle:statistics:solr:q=objectKind:name&amp;rows=0&amp;facet.pivot=name_id_type,name_id_type" />
     </div>
   </article>
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <h2>Author identifier schemes used in publications:</h2>
       <xinclude uri="xslStyle:statistics:solr:q=objectKind:name&amp;rows=0&amp;facet.pivot=name_id_type,name_id_type" />

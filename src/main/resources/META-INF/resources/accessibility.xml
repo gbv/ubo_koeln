@@ -4,7 +4,7 @@
   <title xml:lang="de">Erklärung zur Barrierefreiheit</title>
   <title xml:lang="en">Accessibility declaration</title>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
         <p>
           Die <strong>TH Köln</strong> (THK) ist bemüht,
@@ -20,7 +20,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Stand der Vereinbarkeit mit den Anforderungen</h2>
       
@@ -42,7 +42,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Kontakt und Feedback</h2>
       
@@ -66,7 +66,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Ombudsstelle für barrierefreie Informationstechnik des Landes Nordrhein-Westfalen </h2>
       

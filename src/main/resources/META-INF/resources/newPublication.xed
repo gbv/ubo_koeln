@@ -153,7 +153,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Leitlinie zur Eintragung von Publikationen</h2>
       <p>
@@ -162,7 +162,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <h2>Leitlinie zur Eintragung von Publikationen</h2>
       <p>

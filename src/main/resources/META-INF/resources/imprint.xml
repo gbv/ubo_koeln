@@ -8,27 +8,15 @@
   <aside id="sidebar">
     <article class="card mb-3">
       <div class="card-body">
-        <h2>Adresse der TH Köln</h2>
+        <h3>Gesetzliche Vertretung</h3>
         <p>
-          ...
-        </p>
-        <p>
-          ...
+        Die TH Köln wird gesetzlich vertreten durch Prof. Dr. ..., diese wird vertreten durch ...
         </p>
       </div>
     </article>
     <article class="card mb-3">
       <div class="card-body">
-        <p>Gesetzliche Vertretung</p>
-        <h2>...</h2>
-        <p>
-        ...
-        </p>
-      </div>
-    </article>
-    <article class="card mb-3">
-      <div class="card-body">
-        <h2>Redaktion Hochschulbibliografie</h2>
+        <h3>Redaktion Hochschulbibliografie</h3>
         <p>
           Die Hochschulbibliografie wird von der Universitätsbibliothek der TH Köln betrieben.
         <br />
@@ -38,7 +26,7 @@
     </article>
     <article class="card mb-3">
       <div class="card-body">
-        <h2>Meldungen über missbräuchliche Nutzungen,</h2>
+        <h3>Meldungen über missbräuchliche Nutzungen,</h3>
         <p>
         die von Stationen aus dem IP-Namensbereich ... ausgehen, senden Sie bitte an die Email-Adresse:
         <br />
@@ -48,72 +36,50 @@
     </article>
   </aside>
   
-  <article class="card">
+  <article class="card mb-3">
     <div class="card-body">
-      <h2>Impressum</h2>
+      <h2>Anbieter</h2>
       <p>
-      ...
+        TH Köln<br />
+        Claudiusstr. 1<br />
+        50678 Köln<br />
+        <br />
+        Postanschrift<br />
+        Gustav-Heinemann-Ufer 54<br />
+        50968 Köln<br />
+        <br />
+        T: + 49 221-8275-0<br />
+        F: + 49 221-8275-3131<br />
+        E: poststelle@th-koeln.de<br />
+        <br />
+        Die TH Köln (Technische Hochschule Köln) ist eine Körperschaft des Öffentlichen Rechts.<br />
+        Sie wird durch den Präsidenten Prof. Dr. Stefan Herzig gesetzlich vertreten.
       </p>
+      <h2>Zuständige Aufsichtsbehörde</h2>
       <p>
-      ...
+        Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen<br />
+        Völklinger Str. 49<br />
+        40221 Düsseldorf<br />
+        T: +49 211-896-04<br />
+        F: +49 211-896-4555<br />
+        http://www.wissenschaft.nrw.de/
       </p>
-      <h2>Seitennutzung</h2>
+      <h2>Umsatzsteueridentifikationsnummer</h2>
       <p>
-      Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich.
-      Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies,
-      soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+        Umsatzsteuer-Identifikationsnummer gem. § 27a Umsatzsteuergesetz:<br />
+        DE 122653679
       </p>
+      
+      <h2>Technischer Betrieb</h2>
       <p>
-      Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann.
-      Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-      </p>
-      <h2>Urheberrecht</h2>
-      <p>
-      Der Inhalt dieser Domäne und ihrer Subdomänen sind - sofern nicht ausdrücklich angegeben - urheberrechtlich geschützt.
-      Die Vervielfältigung, Verbreitung oder anderweitige Verwertung ist nur im Rahmen der urheberrechtlichen Schrankenregelungen oder mit Genehmigung der Urheberin gestattet.
-      </p>
-      <h2>Haftung für Inhalte</h2>
-      <p>
-      Die Inhalte der Seiten der TH Köln wurden mit größter Sorgfalt erstellt.
-      Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen.
-      </p>
-      <p>
-      Als Diensteanbieter ist die UDE gemäß § 7 Abs. 1 Telemediengesetz (TMG) für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-      Nach §§ 8-10 TMG ist die Universität als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen,
-      die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
-      Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
-      Bei dem Bekanntwerden von entsprechenden Rechtsverletzungen werden die Inhalte umgehend entfernt.
-      </p>
-      <h2>Haftung für Links</h2>
-      <p>
-      Diese Webseite enthält Verknüpfungen zu Webseiten Dritter („externe Links“). Diese Webseiten unterliegen der Haftung der jeweiligen Betreiber,
-      so dass die TH Köln für diese fremden Inhalte keine Gewähr übernimmt. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
-      Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
-      Rechtsverletzung nicht zumutbar, so dass sich die TH Köln hiermit ausdrücklich von allen Inhalten der gelinkten/verknüpften Seiten,
-      die nach der Linksetzung verändert wurden, distanziert. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung
-      solcher Art dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung
-      verweist.
-      </p>
-      <h2>Zugriffsdaten</h2>
-      <p>
-      Die TH Köln erhebt Daten über jeden Zugriff auf ihr Internetangebot (so genannte Serverlogfiles). Zu den Zugriffsdaten gehören:
-      Der Name der aufgerufenen Webseite oder Datei, das Datum und die Uhrzeit des Abrufs, die übertragene Datenmenge, eine Meldung über einen erfolgreichen Aufruf,
-      der Browsertyp nebst Version, das Betriebssystem des Nutzers, die Referrer URL (die zuvor besuchte Seite) sowie die IP-Adresse. Die Universität verwendet die Protokolldaten
-      nur für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung des Angebotes.
-      </p>
-      <h2>Einbindung von Diensten und Inhalten Dritter</h2>
-      <p>
-      Es kann vorkommen, dass innerhalb des Webangebotes der TH Köln Inhalte Dritter eingebunden sind, beispielsweise YouTube-Videos,
-      Material von Google-Maps, RSS-Feeds oder Grafiken anderer Websites. Dies setzt in der Regel voraus, dass die Anbieter dieser Inhalte die IP-Adresse der Nutzer wahrnehmen,
-      da ohne die IP-Adresse keine Inhalte an den Browser des jeweiligen Nutzers gesendet werden können. Die IP-Adresse ist damit für die Darstellung dieser Inhalte erforderlich.
-      Die Universität hat keinen Einfluss darauf, ob und wie Dritt-Anbieter IP-Adressen speichern.
-      </p>
-      <h2>Informationen zur Online-Streitbeilegung</h2>
-      <p>
-      Die EU-Kommission stellt gemäß Art. 14 Abs. 1 ODR-VO (EU-Verordnung Nr. 524/2013) eine Internetplattform zur Online-Beilegung von Streitigkeiten (sog. „OS-Plattform“) bereit.
-      Die OS-Plattform dient als Anlaufstelle zur außergerichtlichen Beilegung von Streitigkeiten, welche vertragliche Verpflichtungen, die aus Online-Kaufverträgen erwachsen, betreffen.
-      Der Kunde kann die OS-Plattform unter folgendem Link erreichen:
-      <a href="http://ec.europa.eu/consumers/odr/"> http://ec.europa.eu/consumers/odr/</a>
+        Verbundzentrale des GBV (VZG)<br />
+        Platz der Göttinger Sieben 1<br />
+        D-37073 Göttingen<br />
+        <br />
+        Digitale Bibliothek, Reposis<br />
+        Telefon: 0551 39 5398<br />
+        E-Mail: dms-list@lists.gbv.de<br />
+        https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service
       </p>
     </div>
   </article>

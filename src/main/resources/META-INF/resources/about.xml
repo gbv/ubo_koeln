@@ -4,7 +4,7 @@
   <title xml:lang="de">Über die Bibliografie</title>
   <title xml:lang="en">About Bibliography</title>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Sie sind Angehörige*r der TH Köln?</h2>
       <p>
@@ -17,7 +17,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <h2>As a member of TH Köln</h2>
       <p>
@@ -27,7 +27,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>Leitlinien</h2>
       <p>
@@ -36,7 +36,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
       <div class="card-body">
         <h2>Guidelines</h2>
         <p>
@@ -45,7 +45,7 @@
       </div>
   </article>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <h2>FAQ</h2>
       <p>
@@ -64,7 +64,7 @@
     </div>
   </article>
   
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <h2>FAQ</h2>
       <p>

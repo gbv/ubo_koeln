@@ -248,7 +248,7 @@
    </div>
   </article>
 
-  <article xml:lang="de" class="card">
+  <article xml:lang="de" class="card mb-3">
       <div class="card-body">
         <p>
           Sie können außerdem <a href="list-wizard.xed">eine persönliche Publikationsliste erstellen und verlinken.</a>
@@ -256,7 +256,7 @@
       </div>
   </article>
 
-  <article xml:lang="en" class="card">
+  <article xml:lang="en" class="card mb-3">
       <div class="card-body">
         <p>
           Furthermore you can <a href="list-wizard.xed">create and link your personal publication list.</a>

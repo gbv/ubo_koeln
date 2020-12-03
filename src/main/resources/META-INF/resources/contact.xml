@@ -4,7 +4,7 @@
   <title xml:lang="de">Kontakt</title>
   <title xml:lang="en">Contact</title>
 
-  <article class="card" xml:lang="de">
+  <article class="card mb-3" xml:lang="de">
     <div class="card-body">
       <p>
         Die Digitale Hochschulbibliografie befindet sich in der Pilotphase. In dieser Zeit stehen Ihnen folgende Support- und Servicekontakte zur Verfügung:
@@ -19,7 +19,7 @@
     </div>
   </article>
 
-  <article class="card" xml:lang="en">
+  <article class="card mb-3" xml:lang="en">
       <div class="card-body">
         <p>
         If you have questions to the bibliography, or need advice or consultation, please contact us:
