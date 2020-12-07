@@ -176,10 +176,10 @@
       <div class="card-body">
         <div id="chartGenre" style="width:100%; height:350px" />
 
-        <!-- blau*, rot,     grün*,     lila,    blau*,      orange,    blau*,     rot,   grün*        -->
+        <!-- blau, rot,     grün,     lila,    blau*,      orange,    blau*,     rot,   grün*        -->
         <script type="text/javascript">
          $(document).ready(function() {
-          Highcharts.getOptions().plotOptions.pie.colors = ['#4572A7','#C60C0F','#89A54E','#B62584','#3D96AE','#EA5B0C','#92A8CD','#AA6365','#B5CA92'];
+         Highcharts.getOptions().plotOptions.pie.colors = ['#4620D6','#30b452','#20D64D','#B62584','#3D96AE','#EA5B0C','#92A8CD','#AA6365','#B5CA92'];
            new Highcharts.Chart({
              chart: {
                 renderTo: 'chartGenre',
