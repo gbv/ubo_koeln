@@ -8,17 +8,9 @@
   <aside id="sidebar">
     <article class="card mb-3">
       <div class="card-body">
-        <h3>Gesetzliche Vertretung</h3>
+        <h3>Redaktion: Digitale Hochschulbibliografie</h3>
         <p>
-        Die TH Köln wird gesetzlich vertreten durch Prof. Dr. ..., diese wird vertreten durch ...
-        </p>
-      </div>
-    </article>
-    <article class="card mb-3">
-      <div class="card-body">
-        <h3>Redaktion Hochschulbibliografie</h3>
-        <p>
-          Die Hochschulbibliografie wird von der Universitätsbibliothek der TH Köln betrieben.
+          Die Bibliografie wird von der Hochschulbibliothek der TH Köln betrieben.
         <br />
           <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>
         </p>
