@@ -4,9 +4,9 @@
     <label xml:lang="de" text="Genre" description="Publikationstypen der Hochschulbibliografie" />
     <categories>
         <category ID="article">
-            <label xml:lang="de" text="Artikel/Aufsatz" />
-            <label xml:lang="x-hosts" text="journal blog" />
-            <label xml:lang="en" text="article/chapter" />
+            <label xml:lang="de" text="Artikel / Aufsatz" />
+            <label xml:lang="x-hosts" text="journal blog newspaper" />
+            <label xml:lang="en" text="article / chapter" />
             <category ID="abstract">
                 <label xml:lang="en" text="abstract" />
                 <label xml:lang="de" text="Abstract" />
@@ -20,20 +20,20 @@
                 <label xml:lang="x-hosts" text="collection proceedings festschrift lexicon" />
             </category>
             <category ID="preface">
-                <label xml:lang="x-hosts" text="collection proceedings festschrift journal" />
+                <label xml:lang="x-hosts" text="collection proceedings festschrift journal lexicon" />
                 <label xml:lang="de" text="Vorwort / Nachwort" />
                 <label xml:lang="en" text="Preface (foreword) / Postface" />
-            </category>
-            <category ID="speech">
-                <label xml:lang="x-hosts" text="standalone" />
-                <label xml:lang="en" text="Lecture / Speech" />
-                <label xml:lang="de" text="Vortrag" />
             </category>
             <category ID="review">
                 <label xml:lang="de" text="Rezension" />
                 <label xml:lang="x-marcgt" text="review" />
                 <label xml:lang="en" text="Review" />
                 <label xml:lang="x-hosts" text="journal" />
+            </category>
+            <category ID="conference_essay">
+                <label xml:lang="de" text="Aufsatz (Konferenz)" />
+                <label xml:lang="en" text="Essay (Confenerce)" />
+                <label xml:lang="x-hosts" text="standalone" />
             </category>
             <category ID="contribution">
                 <label xml:lang="de" text="Beitrag" />
@@ -42,7 +42,7 @@
             </category>
         </category>
         <category ID="thesis">
-            <label xml:lang="de" text="Qualifikationsschrift" />
+            <label xml:lang="de" text="Qualifikationsarbeit" />
             <label xml:lang="en" text="thesis" />
             <category ID="dissertation">
                 <label xml:lang="x-hosts" text="standalone" />
@@ -91,6 +91,11 @@
             <label xml:lang="de" text="Zeitschrift" />
             <label xml:lang="en" text="journal" />
         </category>
+        <category ID="newspaper">
+            <label xml:lang="x-hosts" text="standalone" />
+            <label xml:lang="de" text="Zeitung" />
+            <label xml:lang="en" text="newspaper" />
+        </category>
         <category ID="blog">
             <label xml:lang="x-hosts" text="standalone" />
             <label xml:lang="de" text="Blog" />
@@ -121,9 +126,9 @@
             <label xml:lang="en" text="Patent" />
             <label xml:lang="x-hosts" text="standalone" />
         </category>
-        <category ID="broadcasting">
-            <label xml:lang="de" text="Audiovisuelle Medien" />
-            <label xml:lang="en" text="Broadcasting" />
+        <category ID="lecture">
+            <label xml:lang="en" text="lecture" />
+            <label xml:lang="de" text="Lehrmaterial" />
             <label xml:lang="x-hosts" text="standalone" />
         </category>
     </categories>
