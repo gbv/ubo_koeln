@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="oa">
+
+  <label xml:lang="en" text="Access Rights" description="Access Rights - Werte nach KDSF" />
+  <label xml:lang="de" text="Access Rights" description="Access Rights - KDF" />
+
+  <categories>
+    <category ID="oa">
+      <label xml:lang="de" text="open access" />
+      <label xml:lang="en" text="open access" />
+      <label xml:lang="x-color" text="#C8FE2E" />
+    </category>
+    <category ID="ea">
+      <label xml:lang="de" text="embargoed access" />
+      <label xml:lang="en" text="embargoed access" />
+      <label xml:lang="x-color" text="#C8FE2E" />
+    </category>
+    <category ID="ra">
+      <label xml:lang="de" text="restricted access" />
+      <label xml:lang="en" text="restricted access" />
+      <label xml:lang="x-color" text="#C8FE2E" />
+    </category>
+    <category ID="moa">
+      <label xml:lang="de" text="metadata only access" />
+      <label xml:lang="en" text="metadata only access" />
+      <label xml:lang="x-color" text="#C8FE2E" />
+    </category>
+  </categories>
+
+</mycoreclass>

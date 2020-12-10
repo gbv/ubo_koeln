@@ -6,9 +6,9 @@
  
  <script type="text/javascript" src="/js/editor.validation.failed.tooltip.js"></script>
 
- <article class="card mb-1">
-   <div class="card-body">
-    <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
+ <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
+   <article class="card mb-1">
+     <div class="card-body">
 
       <xed:cancel url="servlets/XEditor?_xed_submit_return_cancel=&amp;_xed_session={$_xed_subselect_session}" />
       <xed:cancel url="index.xed" />
@@ -20,11 +20,11 @@
           <xed:multi-lang>
             <xed:lang xml:lang="de">
               Alle Bedingungen werden UND-verknüpft. Durch Klicken auf <i class="fas fa-plus"></i>
-              können Sie ein <strong>Suchfeld wiederholen</strong>!
+              können Sie ein <strong>Suchfeld wiederholen</strong>.
             </xed:lang>
             <xed:lang xml:lang="en">
               All search terms are connected with AND. By click on <i class="fas fa-plus"></i>
-              you can <strong>repeat a search field</strong>!
+              you can <strong>repeat a search field</strong>.
             </xed:lang>
           </xed:multi-lang>
         </div>
@@ -50,7 +50,6 @@
                       <option value="series"    ><xed:output i18n="search.dozbib.series" /></option>
                       <option value="conference"><xed:output i18n="ubo.conference" /></option>
                       <option value="topic"     ><xed:output i18n="ubo.subject.topic" /></option>
-                      <option value="note"      ><xed:output i18n="edit.comment" /></option>
                       <option value="abstract"  ><xed:output i18n="ubo.abstract" /></option>
                       <option value="all"       ><xed:output i18n="search.dozbib.fields" /></option>
                     </select>
@@ -106,8 +105,6 @@
                       <option value="id"            >UBO ID</option>
                       <option value="id_pubmed"     >PubMed ID</option>
                       <option value="id_scopus"     >Scopus ID</option>
-                      <option value="shelfmark"     >Signatur</option>
-                      <option value="tag"           >Tag</option>
                     </select>
                   </xed:bind>
                 </label>
@@ -118,18 +115,6 @@
               </div>
             </xed:repeat>
 
-            <xed:bind xpath="condition4[@field='subject'][@operator='=']/@value">
-              <div class="form-group form-inline">
-                <label for="{xed:generate-id()}" class="mycore-form-label">
-                  <xed:output i18n="search.dozbib.subject" />
-                </label>
-                <select id="{xed:generate-id()}" class="mycore-form-input">
-                  <option value=""><xed:output i18n="search.select" /></option>
-                  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:fachreferate" />
-                </select>
-              </div>
-            </xed:bind>
-  
             <xed:bind xpath="condition[@field='origin'][@operator='=']/value">
              <div class="form-group form-inline">
                 <label for="{xed:generate-id()}" class="mycore-form-label">
@@ -244,24 +229,28 @@
       <xed:cleanup-rule xpath="//*[@field][@value]" relevant-if="string-length(@value) &gt; 0" />
       <xed:cleanup-rule xpath="//*[@field][value]" relevant-if="value[string-length(text()) &gt; 0]" />
       
-    </xed:form>
-   </div>
+
+    </div>
   </article>
 
-  <article xml:lang="de" class="card mb-3">
+  <xed:if test="not(xed:call-java('unidue.ubo.AccessControl','currentUserIsGuest'))">
+    <article xml:lang="de" class="card mb-3">
       <div class="card-body">
         <p>
           Sie können außerdem <a href="list-wizard.xed">eine persönliche Publikationsliste erstellen und verlinken.</a>
         </p>
       </div>
-  </article>
+    </article>
 
-  <article xml:lang="en" class="card mb-3">
+    <article xml:lang="en" class="card mb-3">
       <div class="card-body">
         <p>
           Furthermore you can <a href="list-wizard.xed">create and link your personal publication list.</a>
         </p>
       </div>
-  </article>
-  
+    </article>
+  </xed:if>
+
+ </xed:form>
+
 </webpage>
