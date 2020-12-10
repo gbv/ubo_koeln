@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+  <appenders>
+    <RollingFile name="RollingFile" fileName="/root/logs/mycore-app.log"
+      filePattern="/root/logs/$${date:yyyy-MM}/mycore-app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout>
+        <Pattern>%highlight{%d{ISO8601} %-5p %X{loginId} %c{1}: %m%n%ex}</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="250 MB"/>
+      </Policies>
+    </RollingFile>
+  </appenders>
+  <loggers>
+    <root level="info">
+      <appender-ref ref="RollingFile" />
+    </root>
+    <logger name="org.hibernate" level="error" />
+    <logger name="org.mycore.frontend.editor.validation" level="info" />
+    <logger name="org.mycore.services.fieldquery.MCRSearcher" level="info" />
+    <logger name="org.mycore.common.content.transformer.MCRXSLTransformer" level="warn" />
+  </loggers>
+</configuration>
