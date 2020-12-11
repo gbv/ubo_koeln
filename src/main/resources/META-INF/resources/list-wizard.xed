@@ -7,10 +7,10 @@
   <article xml:lang="de" class="card mb-1">
     <div class="card-body">
       <p>
-        Um persönliche Publikationslisten direkt aus der Universitätsbibliographie erstellen und in verschiedenen Formaten auszugeben, nutzen
+        Um persönliche Publikationslisten direkt aus der Hochschulbibliografie erstellen und in verschiedenen Formaten auszugeben, nutzen
         Sie das folgende Formular. Voraussetzung ist, dass die Publikationen mit Ihrer Personen-ID verknüpft sind. Falls Publikationen fehlen,
         <a href="newPublication.xed">melden Sie diese hier.</a> Falls Einträge korrigiert werden müssen, <a href="contact.xml">sprechen Sie
-        uns an.</a> Sie können auch Publikationen über vergebene "Tags" auswählen.
+        uns an.</a>
       </p>
     </div>
   </article>
@@ -18,11 +18,10 @@
   <article xml:lang="en" class="card mb-1">
     <div class="card-body">
       <p>
-        Alternatively, you can use the following form to create your personal publication list directly from university bibliography data to
+        Alternatively, you can use the following form to create your personal publication list directly from bibliography data to
         link it or output it in various formats. This requires that the publications are linked with your own HIS LSF person ID.
         In case publications are missing, <a href="newPublication.xed">you can enter them here.</a>
         in case entries have to be corrected, <a href="contact.xml">contact us.</a>
-        You can also choose publications by "tags".
       </p>
     </div>
   </article>
@@ -60,16 +59,6 @@
                 <xed:bind xpath="mods:nameIdentifier[@type='connection']">
                   <input id="connection" type="text" style="display: none;" />
                 </xed:bind>
-              </div>
-            </xed:repeat>
-
-            <xed:repeat xpath="tag">
-              <div class="form-group form-inline">
-                <label for="{xed:generate-id()}" class="mycore-form-label">
-                  <xed:output i18n="listWizard.tag" />
-                </label>
-                <input id="{xed:generate-id()}" type="text" class="mycore-form-input"/>
-                <xed:controls>append remove</xed:controls>
               </div>
             </xed:repeat>
 
@@ -152,9 +141,9 @@
     <div class="card-body">
       <h2>Persönliche Publikationsliste auf TH-Webseiten einbinden</h2>
       <p>
-        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
+        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH-Personenseiten anzeigen lassen. Die Listen
         aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
-        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
+        TH Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
       </p>
     </div>
   </article>
@@ -163,9 +152,9 @@
     <div class="card-body">
       <h2>Create personal publication list on TH webpages</h2>
       <p>
-        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH Personenseiten anzeigen lassen. Die Listen
+        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH-Personenseiten anzeigen lassen. Die Listen
         aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
-        Technischen Hochschule Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein.
+        TH Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein.
       </p>
     </div>
   </article>

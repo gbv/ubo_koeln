@@ -102,7 +102,7 @@
                       <option value="id_urn"        >URN</option>
                       <option value="id_issn"       >ISSN</option>
                       <option value="id_isbn"       >ISBN</option>
-                      <option value="id"            >UBO ID</option>
+                      <option value="id"            >Dokument-ID</option>
                       <option value="id_pubmed"     >PubMed ID</option>
                       <option value="id_scopus"     >Scopus ID</option>
                     </select>

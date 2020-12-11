@@ -36,8 +36,8 @@
                 <label xml:lang="x-hosts" text="standalone" />
             </category>
             <category ID="contribution">
-                <label xml:lang="de" text="Beitrag" />
-                <label xml:lang="en" text="Contribution" />
+                <label xml:lang="de" text="Beitrag (Bericht)" />
+                <label xml:lang="en" text="Contribution (Report)" />
                 <label xml:lang="x-hosts" text="report" />
             </category>
         </category>
@@ -103,7 +103,7 @@
         </category>
         <category ID="report">
             <label xml:lang="x-hosts" text="standalone" />
-            <label xml:lang="de" text="Bericht" />
+            <label xml:lang="de" text="Beitrag" />
             <label xml:lang="en" text="Report" />
         </category>
         <category ID="series">
@@ -117,7 +117,7 @@
             <label xml:lang="x-hosts" text="blog standalone" />
         </category>
         <category ID="interview">
-            <label xml:lang="x-hosts" text="journal blog broadcasting standalone" />
+            <label xml:lang="x-hosts" text="journal blog standalone" />
             <label xml:lang="en" text="Interview" />
             <label xml:lang="de" text="Interview" />
         </category>
