@@ -98,3 +98,14 @@
 .mycore-form-label {
     text-align: right;
 }
+
+#watermark_testenvironment {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  opacity: 0.5;
+  z-index: 200;
+  color: #ec6e29;
+  font-size: 32px;
+  font-weight: bold;
+}
