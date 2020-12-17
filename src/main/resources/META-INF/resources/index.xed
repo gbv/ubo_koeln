@@ -41,7 +41,7 @@
             <xed:bind xpath="@numPerPage" default="10" />
             <xed:bind xpath="conditions[@format='xml']/boolean[@operator='and']">
               <xed:bind xpath="condition[@field='all'][@operator='contains']/@value">
-                <label for="input" class="mycore-form-label">
+                <label for="input" class="mycore-form-label" style="padding-right: 0;">
                   <xed:output i18n="thk.search.simple" />
                 </label>
                 <input id="input" type="text" class="mycore-form-input form-control" />
