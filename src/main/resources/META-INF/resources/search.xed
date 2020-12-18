@@ -71,7 +71,7 @@
               </div>
             </xed:bind>
 
-            <xed:include uri="webapp:import-search.xed" ref="name" />
+            <xed:include uri="webapp:import-koeln.xed" ref="name" />
             
             <xed:repeat xpath="condition3[@operator='=']">
               <div class="form-group form-inline">
