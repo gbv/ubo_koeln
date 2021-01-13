@@ -3,7 +3,7 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor">
 
   <xed:template id="genre.book">
-    <xed:include uri="webapp:import-editor.xed" ref="book.contributors" />
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
     <xed:include uri="webapp:import-editor.xed" ref="title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-editor.xed" ref="year" />
@@ -18,15 +18,14 @@
 
   <xed:template id="genre.dissertation">
     <xed:include uri="webapp:import-editor.xed" ref="title" />
-    <xed:include uri="webapp:import-editor.xed" ref="book.contributors" />    
-    <xed:include uri="webapp:import-editor.xed" ref="place" />    
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-editor.xed" ref="year" />
-    <xed:include uri="webapp:import-editor.xed" ref="publisher" />    
+    <xed:include uri="webapp:import-editor.xed" ref="publisher" />
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
-    <xed:include uri="webapp:import-editor.xed" ref="series" />    
-    <xed:include uri="webapp:import-editor.xed" ref="size" />    
-    <xed:include uri="webapp:import-editor.xed" ref="comment" />    
-    <xed:include uri="webapp:import-editor.xed" ref="isbn" />    
+    <xed:include uri="webapp:import-editor.xed" ref="series" />
+    <xed:include uri="webapp:import-editor.xed" ref="size" />
+    <xed:include uri="webapp:import-editor.xed" ref="isbn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
@@ -73,7 +72,7 @@
       <xed:include uri="webapp:import-editor.xed" ref="year" />
     </xed:if>
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
-    <xed:include uri="webapp:import-editor.xed" ref="url" />    
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
 
   <xed:template id="genre.entry">
@@ -126,7 +125,6 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="size" />
-    <xed:include uri="webapp:import-editor.xed" ref="comment" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
@@ -142,7 +140,6 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="size" />
-    <xed:include uri="webapp:import-editor.xed" ref="comment" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
@@ -157,7 +154,6 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="size" />
-    <xed:include uri="webapp:import-editor.xed" ref="comment" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
@@ -173,7 +169,6 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="size" />
-    <xed:include uri="webapp:import-editor.xed" ref="comment" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
@@ -227,7 +222,7 @@
   
   <xed:template id="host.blog">
     <xed:include uri="webapp:import-editor.xed" ref="host.title" />
-    <xed:include uri="webapp:import-editor.xed" ref="editor" />    
+    <xed:include uri="webapp:import-editor.xed" ref="editor" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />

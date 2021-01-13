@@ -37,23 +37,23 @@
       <xed:form xmlns:xed="http://www.mycore.de/xeditor"
                 xmlns:cerif="https://www.openaire.eu/cerif-profile/1.1/"
                 method="post" role="form">
-	
-	<xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" />
-	<xed:source uri="xslStyle:mods2mycoreobject,mods-preprocessor:session:{$key}" />
-	
-	<xed:cancel url="servlets/DozBibEntryServlet?id={$id}" />
-	<xed:cancel url="newPublication.xed" />
-	
-	<xed:post-processor xsl="mods-postprocessor.xsl" />    
-	
-	<xed:bind xpath="/mycoreobject">
-	  <xed:include uri="webapp:import-editor.xed" ref="common.metafields" />
-	  
-	  <input type="hidden" name="mode" value="save" />
-	  
-	  <xed:include uri="webapp:import-editor.xed" ref="validation" />
 
-	  <xed:bind xpath="metadata/def.modsContainer[@class='MCRMetaXML']/modsContainer/mods:mods">
+        <xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" />
+        <xed:source uri="xslStyle:mods2mycoreobject,mods-preprocessor:session:{$key}" />
+
+        <xed:cancel url="servlets/DozBibEntryServlet?id={$id}" />
+        <xed:cancel url="newPublication.xed" />
+
+        <xed:post-processor xsl="mods-postprocessor.xsl" />
+
+        <xed:bind xpath="/mycoreobject">
+          <xed:include uri="webapp:import-editor.xed" ref="common.metafields" />
+
+          <input type="hidden" name="mode" value="save" />
+
+          <xed:include uri="webapp:import-editor.xed" ref="validation" />
+
+          <xed:bind xpath="metadata/def.modsContainer[@class='MCRMetaXML']/modsContainer/mods:mods">
 
             <xed:load-resource name="genres" uri="classification:metadata:-1:children:ubogenre" />
 
@@ -61,10 +61,10 @@
             <!-- If parameter genre is missing, use existing genre: you do not need the parameter to edit existing as-is -->
             <xed:choose>
               <xed:when test="string-length($genre) &gt; 0">
-		<xed:bind xpath="mods:genre[@type='intern']" set="{$genre}" name="genre_intern" />
+                <xed:bind xpath="mods:genre[@type='intern']" set="{$genre}" name="genre_intern" />
               </xed:when>
               <xed:otherwise>
-		<xed:bind xpath="mods:genre[@type='intern']" name="genre_intern" />
+                <xed:bind xpath="mods:genre[@type='intern']" name="genre_intern" />
               </xed:otherwise>
             </xed:choose>
 
@@ -73,47 +73,46 @@
             <!-- If parameter host is missing, use existing host: you do not need the parameter to edit existing as-is -->
             <xed:choose>
               <xed:when test="$host = 'standalone'">
-		<xed:param name="host_intern" default="standalone" />
+                <xed:param name="host_intern" default="standalone" />
               </xed:when>
               <xed:when test="string-length($host) &gt; 0">
-		<xed:bind xpath="mods:relatedItem[@type='host']/mods:genre[@type='intern']" set="{$host}" name="host_intern" />
+                <xed:bind xpath="mods:relatedItem[@type='host']/mods:genre[@type='intern']" set="{$host}" name="host_intern" />
               </xed:when>
               <xed:when test="mods:relatedItem[@type='host']">
-		<xed:bind xpath="mods:relatedItem[@type='host']/mods:genre[@type='intern']" name="host_intern" />
+                <xed:bind xpath="mods:relatedItem[@type='host']/mods:genre[@type='intern']" name="host_intern" />
               </xed:when>        
               <xed:otherwise>
-		<xed:param name="host_intern" default="standalone" />
+                <xed:param name="host_intern" default="standalone" />
               </xed:otherwise>
             </xed:choose>
 
             <fieldset>
-
               <legend>
-		<xed:include uri="webapp:import-editor.xed" ref="legend.ID" />
-		<xed:output value="$genres//category[@ID=$genre_intern]/label[lang($CurrentLang)]/@text" />
-		<xed:if test="not($host_intern='standalone')">
-		  <xed:output value="concat(' in ',$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text)" />
-		</xed:if>
+                <xed:include uri="webapp:import-editor.xed" ref="legend.ID" />
+                <xed:output value="$genres//category[@ID=$genre_intern]/label[lang($CurrentLang)]/@text" />
+                <xed:if test="not($host_intern='standalone')">
+                  <xed:output value="concat(' in ',$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text)" />
+                </xed:if>
               </legend>
 
               <xed:include uri="webapp:import-editor.xed" ref="status" />
               <xed:include uri="webapp:import-editor.xed" ref="origin" />
             </fieldset>
-            
+
             <fieldset>
               <legend>
-		<xed:output value="concat($genres//category[@ID=$genre_intern]/label[lang($CurrentLang)]/@text,':')" />
+                <xed:output value="concat($genres//category[@ID=$genre_intern]/label[lang($CurrentLang)]/@text,':')" />
               </legend>
               <xed:include uri="webapp:import-genres.xed" ref="genre.{$genre_intern}" />
             </fieldset>
 
             <xed:if test="not($host_intern='standalone')">
               <fieldset>
-		<legend>
-		  <xed:output value="concat('erschienen in ',$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text,':')" />
-		</legend>
-		<xed:bind xpath="mods:relatedItem[@type='host']">
-		  <xed:choose>
+                <legend>
+                  <xed:output value="concat('erschienen in ',$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text,':')" />
+                </legend>
+                <xed:bind xpath="mods:relatedItem[@type='host']">
+                  <xed:choose>
                     <xed:when test="@xlink:href">
                       <xed:include uri="webapp:import-editor.xed" ref="linked.relatedItem" />
                       <xed:include uri="webapp:import-genres.xed" ref="host.{$host_intern}.linked" />
@@ -121,9 +120,9 @@
                     <xed:otherwise>
                       <xed:include uri="webapp:import-genres.xed" ref="host.{$host_intern}" />
                     </xed:otherwise>
-		  </xed:choose>
-		</xed:bind>
-		<xed:validate xpath="//mods:relatedItem[@type='host']/mods:titleInfo/mods:title" required="true" i18n="ubo.title.validation.host" display="global" />
+                  </xed:choose>
+                </xed:bind>
+                <xed:validate xpath="//mods:relatedItem[@type='host']/mods:titleInfo/mods:title" required="true" i18n="ubo.title.validation.host" display="global" />
               </fieldset>
             </xed:if>
 
@@ -139,9 +138,9 @@
 
           <xed:include uri="webapp:import-editor.xed" ref="cleanup" />
           <xed:include uri="webapp:import-editor.xed" ref="cancel.submit" />
-      
+
         </xed:bind>
-    
+
       </xed:form>
     </div>
    </article>
