@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="category">
+
+  <label xml:lang="en" text="Category" description="todo" />
+  <label xml:lang="de" text="Kategory" description="todo" />
+
+  <categories>
+    <category ID="research">
+      <label xml:lang="de" text="Forschung" />
+      <label xml:lang="en" text="Research" />
+    </category>
+    <category ID="teaching">
+      <label xml:lang="de" text="Lehre" />
+      <label xml:lang="en" text="Teaching" />
+    </category>
+    <category ID="transfer">
+      <label xml:lang="de" text="Transfer" />
+      <label xml:lang="en" text="Transfer" />
+    </category>
+    <category ID="further_education">
+      <label xml:lang="de" text="Weiterbildung" />
+      <label xml:lang="en" text="Further Education" />
+    </category>
+  </categories>
+</mycoreclass>

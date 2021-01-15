@@ -4,7 +4,7 @@
 
   <xed:template id="genre.book">
     <xed:include uri="webapp:import-editor.xed" ref="author" />
-    <xed:include uri="webapp:import-editor.xed" ref="title" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-editor.xed" ref="year" />
     <xed:include uri="webapp:import-editor.xed" ref="publisher" />

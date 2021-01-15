@@ -22,4 +22,101 @@
     </xed:repeat>
   </xed:template>
 
+  <xed:template id="koeln.partOf">
+    <xed:bind xpath="mods:classification[@classID='partOf']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partOf" />:</label>
+        <select id="{xed:generate-id()}" class="mycore-form-input">
+          <option value=""><xed:output i18n="search.select" /></option>
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partOf" />
+        </select>
+      </div>
+    </xed:bind>
+    <xed:validate xpath="//mods:classification[@classID='partOf']" required="true" i18n="koeln.condition.partOf" display="global" />
+  </xed:template>
+
+  <xed:template id="koeln.category">
+    <xed:bind xpath="mods:classification[@classID='category']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.category" />:</label>
+        <select id="{xed:generate-id()}" class="mycore-form-input">
+          <option value=""><xed:output i18n="search.select" /></option>
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:category" />
+        </select>
+      </div>
+    </xed:bind>
+    <xed:validate xpath="//mods:classification[@classID='category']" required="true" i18n="koeln.condition.category" display="global" />
+  </xed:template>
+
+  <xed:template id="koeln.partner">
+    <xed:bind xpath="mods:classification[@classID='partner']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partner" />:</label>
+        <select id="{xed:generate-id()}" class="mycore-form-input">
+          <option value=""><xed:output i18n="search.select" /></option>
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partner" />
+        </select>
+      </div>
+    </xed:bind>
+    <xed:validate xpath="//mods:classification[@classID='partner']" required="true" i18n="koeln.condition.partner" display="global" />
+  </xed:template>
+
+  <xed:template id="koeln.peerreviewed">
+    <xed:bind xpath="mods:classification[@classID='peerreviewed']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label"><xed:output i18n="koeln.editor.label.peerreviewed" />:</label>
+        <select id="{xed:generate-id()}" class="mycore-form-input">
+          <option value=""><xed:output i18n="search.select" /></option>
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peerreviewed" />
+        </select>
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="koeln.comment.intern">
+    <xed:bind xpath="mods:note[@type='intern']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:output i18n="koeln.comment.intern" />:
+        </label>
+        <input id="{xed:generate-id()}" type="text" class="mycore-form-input" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="koeln.typeOfResource">
+    <xed:bind xpath="mods:note[@type='intern']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:output i18n="koeln.typeOfResource" />:
+        </label>
+        <select id="{xed:generate-id()}" class="mycore-form-input">
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:typeOfResource" />
+        </select>
+      </div>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="koeln.title">
+    <xed:bind xpath="mods:titleInfo">
+      <xed:bind xpath="mods:title">
+        <div class="form-inline form-group">
+          <label for="{xed:generate-id()}" class="mycore-form-label">
+            *<xed:output i18n="ubo.title" />:
+          </label>
+          <textarea id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" />
+        </div>
+      </xed:bind>
+      <xed:repeat xpath="mods:subTitle" max="6">
+        <div class="form-inline form-group">
+          <label for="{xed:generate-id()}" class="mycore-form-label">
+            <xed:output i18n="ubo.title.subTitle" />:
+          </label>
+          <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text"/>
+          <xed:controls />
+        </div>
+      </xed:repeat>
+    </xed:bind>
+  </xed:template>
+
 </xed:templates>

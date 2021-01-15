@@ -103,7 +103,7 @@
         </category>
         <category ID="report">
             <label xml:lang="x-hosts" text="standalone" />
-            <label xml:lang="de" text="Beitrag" />
+            <label xml:lang="de" text="Bericht" />
             <label xml:lang="en" text="Report" />
         </category>
         <category ID="series">

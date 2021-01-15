@@ -6,7 +6,7 @@
  
  <script type="text/javascript" src="/js/editor.validation.failed.tooltip.js"></script>
 
- <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
+ <xed:form xmlns:xed="http://www.mycore.de/xeditor" xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions" method="post" role="form">
    <article class="card mb-1">
      <div class="card-body">
 
@@ -233,7 +233,7 @@
     </div>
   </article>
 
-  <xed:if test="not(xed:call-java('unidue.ubo.AccessControl','currentUserIsGuest'))">
+  <xed:if test="not(mcrxsl:isCurrentUserGuestUser())">
     <article xml:lang="de" class="card mb-3">
       <div class="card-body">
         <p>

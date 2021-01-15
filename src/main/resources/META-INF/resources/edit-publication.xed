@@ -96,7 +96,15 @@
               </legend>
 
               <xed:include uri="webapp:import-editor.xed" ref="status" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.partOf" />
               <xed:include uri="webapp:import-editor.xed" ref="origin" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.category" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.partner" />
+              <xed:if test="$genre = 'article' or $genre = 'chapter'">
+                <xed:include uri="webapp:import-koeln.xed" ref="koeln.peerreviewed" />
+              </xed:if>
+              <xed:include uri="webapp:import-editor.xed" ref="oa" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.comment.intern" />
             </fieldset>
 
             <fieldset>
