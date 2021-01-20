@@ -37,7 +37,7 @@
                       <option value="ieee">IEEE Article No.</option>
                       <option value="arxiv">arXiv.org ID</option>
                       <option value="isbn">ISBN</option>
-                      <xed:if test="xed:call-java('unidue.ubo.AccessControl','currentUserIsAdmin')">
+                      <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
                         <option value="evaluna">EVALuna Biblio ID</option>
                         <option value="zdb">ZDB ID</option>
                         <option value="ppn">GBV/SWB PPN</option>
