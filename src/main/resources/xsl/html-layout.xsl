@@ -12,6 +12,7 @@
 
   <xsl:param name="CurrentLang" />
   <xsl:param name="UBO.Login.Path" />
+  <xsl:param name="UBO.TestInstance" />
 
   <xsl:variable name="jquery.version" select="'3.3.1'" />
   <xsl:variable name="jquery-ui.version" select="'1.12.1'" />
@@ -77,6 +78,9 @@
       <!-- <xsl:call-template name="layout.topcontainer" /> -->
       <xsl:call-template name="layout.body" />
       <xsl:call-template name="layout.footer" />
+      <xsl:if test="contains($UBO.TestInstance, 'true')">
+        <div id="watermark_testenvironment">Testumgebung</div>
+      </xsl:if>
     </body>
   </xsl:template>
 
