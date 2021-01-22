@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -87,7 +88,8 @@ public class KoelnPIDSearch extends MCRServlet implements IdentityPickerService 
 
         addParameter(url, familyName, "mods:namePart[@type='family']");
         addParameter(url, firstName, "mods:namePart[@type='given']");
-        addParameter(url, req.getParameter("pid"), "mods:nameIdentifier[@type='" + LEAD_ID + "']");
+        addParameter(url, Optional.ofNullable(req.getParameter("pid")).orElse(" "),
+                "mods:nameIdentifier[@type='" + LEAD_ID + "']");
         res.sendRedirect(url.toString());
     }
 
