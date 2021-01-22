@@ -1,0 +1,9 @@
+update classification from uri resource:setup/classifications/category.xml
+update classification from uri resource:setup/classifications/faechersystematik.xml
+update classification from uri resource:setup/classifications/oa.xml
+update classification from uri resource:setup/classifications/ORIGIN.xml
+update classification from uri resource:setup/classifications/partner.xml
+update classification from uri resource:setup/classifications/partOf.xml
+update classification from uri resource:setup/classifications/peerreviewed.xml
+update classification from uri resource:setup/classifications/typeOfResource.xml
+update classification from uri resource:setup/classifications/ubogenre.xml
