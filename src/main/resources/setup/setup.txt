@@ -7,3 +7,4 @@ update classification from uri resource:setup/classifications/partOf.xml
 update classification from uri resource:setup/classifications/peerreviewed.xml
 update classification from uri resource:setup/classifications/typeOfResource.xml
 update classification from uri resource:setup/classifications/ubogenre.xml
+update classification from uri resource:setup/classifications/nameIdentifier.xml
