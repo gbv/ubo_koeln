@@ -38,6 +38,9 @@
             chart: {
               renderTo: 'chartYear',
               defaultSeriesType: 'column',
+              backgroundColor: '#FFFFFF',
+              borderWidth: 0,
+              shadow: false,
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
@@ -83,7 +86,8 @@
                       [Date.UTC(<xsl:value-of select="@name"/>, 0, 1), <xsl:value-of select="text()"/>]
                       <xsl:if test="position() != last()">, </xsl:if>
                     </xsl:for-each>
-                  ]
+                  ],
+                  color: '#78a6db'
               }]
             });
           });
@@ -104,6 +108,9 @@
               chart: {
                 renderTo: 'chartSubject',
                 type: 'bar',
+                backgroundColor: '#FFFFFF',
+                borderWidth: 0,
+                shadow: false,
                 events: {
                   click: function(e) {
                     $('#chartDialog').dialog({
@@ -153,6 +160,7 @@
                     <xsl:if test="position() != last()">, </xsl:if>
                   </xsl:for-each>
                 ],
+                color: '#78a6db',
                 dataLabels: {
                   enabled: true,
                   align: 'right',
@@ -175,18 +183,19 @@
     <section class="card mb-3">
       <div class="card-body">
         <div id="chartGenre" style="width:100%; height:350px" />
-
-        <!-- blau, rot,     grün,     lila,    blau*,      orange,    blau*,     rot,   grün*        -->
         <script type="text/javascript">
          $(document).ready(function() {
-         Highcharts.getOptions().plotOptions.pie.colors = ['#4620D6','#30b452','#20D64D','#B62584','#3D96AE','#EA5B0C','#92A8CD','#AA6365','#B5CA92'];
+         Highcharts.getOptions().plotOptions.pie.colors = ['#551ec3','#899ff9','#78dadb','#91d7f2','#ab6c8c','#f69a00','#e320a','#d32d00','#c60a0a'];
            new Highcharts.Chart({
              chart: {
                 renderTo: 'chartGenre',
+                type: 'pie',
+                backgroundColor: '#FFFFFF',
+                borderWidth: 0,
+                shadow: false,
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false,
-                defaultSeriesType: 'pie',
                 events: {
                   click: function(e) {
                     $('#chartDialog').dialog({
@@ -256,7 +265,7 @@
       <script type="text/javascript">
        $(document).ready(function() {
          Highcharts.getOptions().plotOptions.pie.colors = [
-           <xsl:if test="$numOther &gt; 0">'#5858FA',</xsl:if>
+         <xsl:if test="$numOther &gt; 0">'#78a6db',</xsl:if>
            <xsl:for-each select="int[not(@name='oa') or ($numOAdirect &gt; 0)]">
              <xsl:sort data-type="number" order="descending" />
              <xsl:text>'</xsl:text>
@@ -268,10 +277,13 @@
          new Highcharts.Chart({
            chart: {
               renderTo: 'chartOA',
+              type: 'pie',
+              backgroundColor: '#FFFFFF',
+              borderWidth: 0,
+              shadow: false,
               plotBackgroundColor: null,
               plotBorderWidth: null,
               plotShadow: false,
-              defaultSeriesType: 'pie',
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
@@ -354,6 +366,9 @@
             chart: {
               renderTo: 'chartPerson',
               type: 'bar',
+              backgroundColor: '#FFFFFF',
+              borderWidth: 0,
+              shadow: false,
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
@@ -448,6 +463,9 @@
             chart: {
               renderTo: 'chartLSF',
               type: 'bar',
+              backgroundColor: '#FFFFFF',
+              borderWidth: 0,
+              shadow: false,
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
