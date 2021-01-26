@@ -8,3 +8,10 @@ update classification from uri resource:setup/classifications/peerreviewed.xml
 update classification from uri resource:setup/classifications/typeOfResource.xml
 update classification from uri resource:setup/classifications/ubogenre.xml
 update classification from uri resource:setup/classifications/nameIdentifier.xml
+
+update permission create-mods for id POOLPRIVILEGE with rulefile src/main/setup/acl/acl-rule-always-allowed.xml described by always allowed
+update permission create-users for id POOLPRIVILEGE with rulefile src/main/setup/acl/acl-rule-administrators-only.xml described by administrators only
+update permission administrate-users for id POOLPRIVILEGE with rulefile src/main/setup/acl/acl-rule-administrators-only.xml described by administrators only
+update permission read for id default with rulefile src/main/setup/acl/acl-rule-always-allowed.xml described by always allowed
+update permission writedb for id default with rulefile src/main/setup/acl/acl-rule-administrators-only.xml described by administrators only
+update permission read for id restapi:/ with rulefile src/main/setup/acl/acl-rule-always-allowed.xml described by always allowed
