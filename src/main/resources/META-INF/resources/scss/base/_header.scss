@@ -53,11 +53,12 @@ li.nav-item.active {
 #wordmark {
   background: url("../../../images/logo_th_koeln.svg") no-repeat;
   height: 70px;
+  width: 130px;
   margin-left: 1rem;
 }
 
 i.fas.fa-lg.fa-bars {
-    color: $color-dark-blue;
+  color: $color-dark-blue;
 }
 
 .navbar-toggler {
