@@ -20,7 +20,7 @@
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='oa'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
-      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_koeln'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_dhsbid'][int]" />
       <xsl:apply-templates select="lst[@name='facet_pivot']/arr[@name='name_id_type,name_id_type']" />
     </xsl:for-each>
   </xsl:template>
@@ -87,7 +87,7 @@
                       <xsl:if test="position() != last()">, </xsl:if>
                     </xsl:for-each>
                   ],
-                  color: '#78a6db'
+                  color: '#d283be'
               }]
             });
           });
@@ -160,7 +160,7 @@
                     <xsl:if test="position() != last()">, </xsl:if>
                   </xsl:for-each>
                 ],
-                color: '#78a6db',
+                color: '#d283be',
                 dataLabels: {
                   enabled: true,
                   align: 'right',
@@ -185,7 +185,7 @@
         <div id="chartGenre" style="width:100%; height:350px" />
         <script type="text/javascript">
          $(document).ready(function() {
-         Highcharts.getOptions().plotOptions.pie.colors = ['#551ec3','#899ff9','#78dadb','#91d7f2','#ab6c8c','#f69a00','#e320a','#d32d00','#c60a0a'];
+         Highcharts.getOptions().plotOptions.pie.colors = ['#b43092','#ea5a00','#c81e0f','#212125'];
            new Highcharts.Chart({
              chart: {
                 renderTo: 'chartGenre',
@@ -265,7 +265,7 @@
       <script type="text/javascript">
        $(document).ready(function() {
          Highcharts.getOptions().plotOptions.pie.colors = [
-         <xsl:if test="$numOther &gt; 0">'#78a6db',</xsl:if>
+         <xsl:if test="$numOther &gt; 0">'#d283be',</xsl:if>
            <xsl:for-each select="int[not(@name='oa') or ($numOAdirect &gt; 0)]">
              <xsl:sort data-type="number" order="descending" />
              <xsl:text>'</xsl:text>
@@ -418,6 +418,7 @@
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
               ],
+              color: '#d283be',
               dataLabels: {
                 enabled: true,
                 align: 'right',
@@ -432,7 +433,7 @@
     </section>
   </xsl:template>
 
-  <xsl:template match="lst[@name='facet_fields']/lst[@name='nid_koeln']">
+  <xsl:template match="lst[@name='facet_fields']/lst[@name='nid_dhsbid']">
 
     <!-- The facet is a list of top THK IDs matching the restricted query, e.g. status=confirmed, year > 2012 -->
     <!-- To find the corresponding names, build a pivot facet with THK ID and name variants, use most frequent name  -->
@@ -451,7 +452,7 @@
 
     <xsl:variable name="q" select="encoder:encode(/response/lst[@name='responseHeader']/lst[@name='params']/str[@name='q'],'UTF-8')" />
 
-    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('facets.facet.nid_koeln'))" />
+    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('facets.facet.nid_dhsbid'))" />
 
     <section class="card">
       <div class="card-body">
@@ -517,6 +518,7 @@
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
               ],
+              color: '#d283be',
               dataLabels: {
                 enabled: true,
                 align: 'right',
