@@ -3,24 +3,25 @@
     <label xml:lang="en" text="Namenskennungen" />
     <label xml:lang="de" text="Name Identifier" />
     <categories>
-        <category ID="koeln">
-            <label xml:lang="de" text="DHSB-ID" />
+        <category ID="gnd">
+            <label xml:lang="en" text="GND" />
+            <label xml:lang="de" text="GND" />
+        </category>
+        <category ID="orcid">
+            <label xml:lang="en" text="ORCID" />
+            <label xml:lang="de" text="ORCID" />
         </category>
         <category ID="scopus">
             <label xml:lang="de" text="SCOPUS" />
             <label xml:lang="en" text="SCOPUS" />
         </category>
-        <category ID="gnd">
-            <label xml:lang="en" text="GND" />
-            <label xml:lang="de" text="GND" />
-        </category>
         <category ID="researcherid">
             <label xml:lang="de" text="ResearcherID" />
             <label xml:lang="en" text="ResearcherID" />
         </category>
-        <category ID="orcid">
-            <label xml:lang="en" text="ORCID" />
-            <label xml:lang="de" text="ORCID" />
+        <category ID="dhsbid">
+            <label xml:lang="de" text="DHSB-ID" />
+            <label xml:lang="en" text="DHSB ID" />
         </category>
         <category ID="connection">
             <label xml:lang="en" text="Internal MyCoRe Connection" />

@@ -321,30 +321,35 @@
     </div>
     <xed:controls />
     <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
-      <!-- TODO: decide how this shall be handled... -->
-      <!-- <xed:repeat xpath="mods:nameIdentifier[not(@type='lsf') and not(@type='connection')]"> -->
       <xed:repeat xpath="mods:nameIdentifier[not(@type=$MCR.user2.matching.lead_id)]">
-      <div class="form-group form-inline col-12 px-0 mb-2 mt-2">
-        <label class="mycore-form-label">
-        </label>
-            <xed:bind xpath="@type">
-              <select class="form-control col-sm-2">
-                <option value=""><xed:output i18n="search.select" /></option>
-                <xed:include uri="xslStyle:items2options:classification:editor:-1:children:nameIdentifier" />
-              </select>
-            </xed:bind>
-            <input type="text" class="{$xed-validation-marker} form-control col-sm-4" />
-            <xed:controls>insert remove</xed:controls>
-      </div>
+        <div class="form-group form-inline col-12 px-0 mb-2 mt-2">
+          <label class="mycore-form-label">
+          </label>
+          <xed:bind xpath="@type">
+            <select class="form-control col-sm-2" id="personId">
+              <option value=""><xed:output i18n="search.select" /></option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:nameIdentifier" />
+            </select>
+          </xed:bind>
+          <input type="text" class="{$xed-validation-marker} form-control col-sm-4" />
+          <xed:controls>insert remove</xed:controls>
+          <script type="text/javascript">
+            $(document).ready(function() {
+              // remove dhsbid and connection is as option from person id selection.xml
+              $("select#personId option[value='dhsbid']").remove();
+              $("select#personId option[value='connection']").remove();
+            });
+          </script>
+        </div>
       </xed:repeat>
-      <div class="form-group form-inline col-12 px-0">
-        <label class="mycore-form-label">
-        </label>
-        <xed:repeat xpath="mods:affiliation">
-          <textarea class="mycore-form-input" placeholder="Institutionelle Zugehörigkeit" />
-        </xed:repeat>
-      </div>
     </xed:if>
+    <div class="form-group form-inline col-12 px-0">
+      <label class="mycore-form-label">
+      </label>
+      <xed:repeat xpath="mods:affiliation">
+        <textarea class="mycore-form-input" placeholder="Institutionelle Zugehörigkeit" />
+      </xed:repeat>
+    </div>
   </xed:template>
 
   <xed:template id="book.contributors">
