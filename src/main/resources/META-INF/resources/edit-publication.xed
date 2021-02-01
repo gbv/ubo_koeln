@@ -97,13 +97,17 @@
 
               <xed:include uri="webapp:import-editor.xed" ref="status" />
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.partOf" />
-              <xed:include uri="webapp:import-editor.xed" ref="origin" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.origin" />
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.category" />
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.partner" />
-              <xed:if test="$genre = 'article' or $genre = 'chapter'">
+              <xed:if test="$genre_intern = 'article' or $genre_intern = 'chapter'">
                 <xed:include uri="webapp:import-koeln.xed" ref="koeln.peerreviewed" />
               </xed:if>
               <xed:include uri="webapp:import-editor.xed" ref="oa" />
+              <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
+                <xed:include uri="webapp:import-koeln.xed"  ref="koeln.accessRights" />
+                <xed:include uri="webapp:import-koeln.xed"  ref="koeln.typeOfResource" />
+              </xed:if>
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.comment.intern" />
             </fieldset>
 
