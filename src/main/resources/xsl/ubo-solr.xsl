@@ -246,31 +246,31 @@
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'accessrights')]" mode="solrField">
-    <field name="accessrights">
+    <field name="koeln_accessrights">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'peerreviewed')]" mode="solrField">
-    <field name="peerreviewed">
+    <field name="koeln_peerreviewed">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'partner')]" mode="solrField">
-    <field name="partner">
+    <field name="koeln_partner">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'category')]" mode="solrField">
-    <field name="category">
+    <field name="koeln_category">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'partOf')]" mode="solrField">
-    <field name="partOf">
+    <field name="koeln_partOf">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>

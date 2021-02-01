@@ -1,0 +1,71 @@
+[
+    {
+        "add-field-type": {
+            "name": "ubo_id",
+            "class": "solr.TextField",
+            "analyzer": {
+                "tokenizer": {
+                    "class": "solr.KeywordTokenizerFactory"
+                },
+                "filters": [
+                    {
+                        "class": "solr.PatternReplaceFilterFactory",
+                        "pattern": "-",
+                        "replace": "all",
+                        "replacement": ""
+                    },
+                    {
+                        "class": "solr.LowerCaseFilterFactory"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "add-field": {
+            "name": "koeln_accessrights",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
+            "name": "koeln_peerreviewed",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
+            "name": "koeln_partner",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
+            "name": "koeln_category",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
+            "name": "koeln_partOf",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    }
+
+]
+
