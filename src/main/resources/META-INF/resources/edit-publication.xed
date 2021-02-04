@@ -103,9 +103,11 @@
               <xed:if test="$genre_intern = 'article' or $genre_intern = 'chapter'">
                 <xed:include uri="webapp:import-koeln.xed" ref="koeln.peerreviewed" />
               </xed:if>
-              <xed:include uri="webapp:import-editor.xed" ref="oa" />
               <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
                 <xed:include uri="webapp:import-koeln.xed"  ref="koeln.accessRights" />
+              </xed:if>
+              <xed:include uri="webapp:import-editor.xed" ref="oa" />
+              <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
                 <xed:include uri="webapp:import-koeln.xed"  ref="koeln.typeOfResource" />
               </xed:if>
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.comment.intern" />

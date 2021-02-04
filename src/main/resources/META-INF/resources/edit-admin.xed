@@ -59,7 +59,7 @@
               <xed:include uri="webapp:import-editor.xed" ref="title.complex" />
               <xed:include uri="webapp:import-editor.xed" ref="conference" />
               <xed:include uri="webapp:import-editor.xed" ref="place" />
-              <xed:include uri="webapp:import-editor.xed" ref="year" />
+              <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
               <xed:include uri="webapp:import-editor.xed" ref="publisher" />
               <xed:include uri="webapp:import-editor.xed" ref="edition" />
               <xed:include uri="webapp:import-editor.xed" ref="series" />
@@ -80,6 +80,7 @@
                   <xed:include uri="webapp:import-editor.xed" ref="pages" />
                 </xed:when>
                 <xed:otherwise>
+                  <xed:include uri="webapp:import-editor.xed" ref="linked.relatedItem" />
                   <xed:include uri="webapp:import-editor.xed" ref="host" />
                   <xed:include uri="webapp:import-editor.xed" ref="oa" />
                   <xed:include uri="webapp:import-editor.xed" ref="person.role" />
@@ -88,7 +89,7 @@
                   <xed:include uri="webapp:import-editor.xed" ref="volume" />
                   <xed:include uri="webapp:import-editor.xed" ref="issue" />
                   <xed:include uri="webapp:import-editor.xed" ref="place" />
-                  <xed:include uri="webapp:import-editor.xed" ref="year" />
+                  <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
                   <xed:include uri="webapp:import-editor.xed" ref="publisher" />
                   <xed:include uri="webapp:import-editor.xed" ref="edition" />
                   <xed:include uri="webapp:import-editor.xed" ref="series" />
