@@ -37,6 +37,14 @@
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
+
+  <xed:template id="genre.contribution">
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
   
   <xed:template id="genre.abstract">
     <xed:include uri="webapp:import-editor.xed" ref="author" />
@@ -75,6 +83,14 @@
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
 
+  <xed:template id="genre.patent">
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-editor.xed" ref="title" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
+
   <xed:template id="genre.entry">
     <xed:include uri="webapp:import-editor.xed" ref="author" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
@@ -96,17 +112,13 @@
   <xed:template id="genre.poster">
     <xed:include uri="webapp:import-editor.xed" ref="author" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
-    <xed:if test="$host_intern='standalone'">
-      <xed:include uri="webapp:import-editor.xed" ref="conference" />
-      <xed:include uri="webapp:import-editor.xed" ref="place" />
-      <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
-    </xed:if>
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
 
   <xed:template id="genre.interview">
-    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-editor.xed" ref="interviewer" />
     <xed:include uri="webapp:import-editor.xed" ref="interviewee" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:if test="$host_intern='standalone'">
@@ -125,6 +137,44 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+    <xed:include uri="webapp:import-editor.xed" ref="size" />
+  </xed:template>
+
+  <xed:template id="genre.conference_essay">
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:include uri="webapp:import-editor.xed" ref="conference" />
+    <xed:include uri="webapp:import-editor.xed" ref="place" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <!-- TODO: Institution, Veranstalter -->
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
+
+  <xed:template id="genre.lecture">
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:include uri="webapp:import-editor.xed" ref="place" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <xed:include uri="webapp:import-editor.xed" ref="series" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+    <xed:include uri="webapp:import-editor.xed" ref="size" />
+  </xed:template>
+
+  <xed:template id="genre.report">
+    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:if test="$host_intern='standalone'">
+      <xed:include uri="webapp:import-editor.xed" ref="place" />
+      <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+      <xed:include uri="webapp:import-editor.xed" ref="publisher" />
+      <xed:include uri="webapp:import-editor.xed" ref="edition" />
+      <xed:include uri="webapp:import-editor.xed" ref="series" />
+    </xed:if>
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
     <xed:include uri="webapp:import-editor.xed" ref="size" />
@@ -186,6 +236,15 @@
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
+    <xed:include uri="webapp:import-editor.xed" ref="shelfmark" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
+
+  <xed:template id="genre.newspaper">
+    <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
@@ -207,6 +266,14 @@
   </xed:template>
 
   <xed:template id="host.journal">
+    <xed:include uri="webapp:import-editor.xed" ref="host.title" />
+    <xed:include uri="webapp:import-editor.xed" ref="volume" />
+    <xed:include uri="webapp:import-editor.xed" ref="issue" />
+    <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="issn" />
+  </xed:template>
+
+  <xed:template id="host.newspaper">
     <xed:include uri="webapp:import-editor.xed" ref="host.title" />
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
@@ -292,5 +359,18 @@
   <xed:template id="host.lexicon.linked">
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
   </xed:template>  
-  
+
+  <xed:template id="host.report">
+    <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
+    <xed:include uri="webapp:import-editor.xed" ref="place" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <xed:include uri="webapp:import-editor.xed" ref="publisher" />
+    <xed:include uri="webapp:import-editor.xed" ref="edition" />
+    <xed:include uri="webapp:import-editor.xed" ref="series" />
+    <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
+
 </xed:template>

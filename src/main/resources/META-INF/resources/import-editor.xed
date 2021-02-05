@@ -225,8 +225,8 @@
     <xed:bind xpath="mods:titleInfo/mods:title">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">
-          <xed:output i18n="ubo.title" />
-          <xed:output value="$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text" />:
+          <xed:output value=" i18n:translate(concat('ubo.title.', $host_intern)) " />
+          :
         </label>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" />
       </div>
@@ -271,6 +271,18 @@
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">
           *<xed:output i18n="ubo.role.interviewee" />:
+        </label>
+        <xed:include uri="webapp:import-editor.xed" ref="person" />  
+      </div>
+    </xed:repeat>
+  </xed:template>
+  
+  <xed:template id="interviewer">
+    <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='ivr']" max="99">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <!--  *<xed:output i18n="ubo.role.interviewer" />: -->
+          * Interviewer*in:
         </label>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
       </div>
