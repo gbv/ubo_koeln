@@ -363,7 +363,6 @@
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
-    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="publisher" />
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
