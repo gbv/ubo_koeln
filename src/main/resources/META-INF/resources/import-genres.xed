@@ -165,8 +165,7 @@
   </xed:template>
 
   <xed:template id="genre.report">
-    <xed:include uri="webapp:import-editor.xed" ref="author" />
-    <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.person.autedt" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:if test="$host_intern='standalone'">
       <xed:include uri="webapp:import-editor.xed" ref="place" />

@@ -100,7 +100,8 @@
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.origin" />
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.category" />
               <xed:include uri="webapp:import-koeln.xed"  ref="koeln.partner" />
-              <xed:if test="$genre_intern = 'article' or $genre_intern = 'chapter'">
+              <xed:if test="($genre_intern = 'article' or $genre_intern = 'chapter') and
+                            not($host_intern = 'blog' or $host_intern = 'newspaper')">
                 <xed:include uri="webapp:import-koeln.xed" ref="koeln.peerreviewed" />
               </xed:if>
               <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">

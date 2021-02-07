@@ -8,7 +8,7 @@
         <label class="mycore-form-label">
           <xed:bind xpath="@field">
             <select class="form-control w-100">
-              <option value="person">Person:</option>
+              <option value="person">Person</option>
               <option value="person_aut"><xed:output i18n="search.dozbib.author" /></option>
               <option value="person_edt"><xed:output i18n="search.dozbib.publisher" /></option>
             </select>
@@ -158,6 +158,23 @@
       </div>
       <xed:validate matches="\d{4}(\-\d{2}(\-\d{2})?)?" type="datetime" format="yyyy;yyyy-MM;yyyy-MM-dd" i18n="ubo.date.issued.validation" display="global" />
     </xed:bind>
+  </xed:template>
+
+  <xed:template id="koeln.person.autedt">
+    <xed:repeat xpath="mods:name[@type='personal']">
+      <div class="form-group form-inline">
+        <xed:bind xpath="mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']" initially="aut">
+          <label class="mycore-form-label d-flex align-items-center">
+            <span class="mr-1">*</span>
+            <select class="form-control">
+              <option value="aut"><xed:output i18n="ubo.role.author" /></option>
+              <option value="edt"><xed:output i18n="ubo.role.editor" /></option>
+            </select>
+          </label>
+        </xed:bind>
+        <xed:include uri="webapp:import-editor.xed" ref="person" />  
+      </div>
+    </xed:repeat>
   </xed:template>
 
 </xed:templates>
