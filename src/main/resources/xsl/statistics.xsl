@@ -440,15 +440,15 @@
     <xsl:variable name="uri">
        <xsl:text>solr:q=objectKind:name+AND+(</xsl:text>
        <xsl:for-each select="int">
-         <xsl:text>name_id_koeln:</xsl:text>
+         <xsl:text>name_id_dhsbid:</xsl:text>
          <xsl:value-of select="@name" />
          <xsl:if test="position() != last()">+OR+</xsl:if>
        </xsl:for-each>
-       <xsl:text>)&amp;rows=0&amp;facet.pivot=name_id_koeln,name&amp;facet.limit=</xsl:text>
+       <xsl:text>)&amp;rows=0&amp;facet.pivot=name_id_dhsbid,name&amp;facet.limit=</xsl:text>
        <xsl:value-of select="count(int)" />
     </xsl:variable>
     <xsl:variable name="response" select="document($uri)/response" />
-    <xsl:variable name="koeln2name" select="$response/lst[@name='facet_counts']/lst[@name='facet_pivot']/arr[@name='name_id_koeln,name']" />
+    <xsl:variable name="koeln2name" select="$response/lst[@name='facet_counts']/lst[@name='facet_pivot']/arr[@name='name_id_dhsbid,name']" />
 
     <xsl:variable name="q" select="encoder:encode(/response/lst[@name='responseHeader']/lst[@name='params']/str[@name='q'],'UTF-8')" />
 
