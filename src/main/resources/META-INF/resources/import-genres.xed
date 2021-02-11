@@ -121,9 +121,7 @@
     <xed:include uri="webapp:import-editor.xed" ref="interviewer" />
     <xed:include uri="webapp:import-editor.xed" ref="interviewee" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
-    <xed:if test="$host_intern='standalone'">
-      <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
-    </xed:if>
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
