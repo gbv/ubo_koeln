@@ -12,25 +12,116 @@
         zusätzlich gilt:
       </p>
 
-      <h2>Zugriffsdaten</h2>
+      <h2>I. Allgemeines zur Datenverarbeitung</h2>
+      
       <p>
-        Über jeden Zugriff auf die Hochschulbibliografie werden Zugriffsdaten in so genannten Serverlogfiles erhoben. Zu den Zugriffsdaten gehören:
-        Der Name der aufgerufenen Webseite oder Datei, das Datum und die Uhrzeit des Abrufs, die übertragene Datenmenge, eine Meldung über einen erfolgreichen Aufruf,
-        der Browsertyp nebst Version, das Betriebssystem des Nutzers, die Referrer URL (die zuvor besuchte Seite) sowie die IP-Adresse. Diese Protokolldaten werden
-        nur für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung des Angebotes verwendet. Dazu werden die Daten anonymisiert und nach
-        der Auswertung innerhalb kurzer Zeit wieder gelöscht.
+        Zweck der Hochschulbibliografie ist die Bereitstellung einer weitgehend vollständigen Publikationsliste
+        aller Angehörigen der TH Köln.
+        Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies
+        zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist.
+        Dies geschieht zur Wahrnehmung der uns übertragenen Aufgabe der Unterstützung von Lehre und Forschung 
+        gemäß Art. 6 Abs. 1 lit. e DSGVO.
+        Soweit wir für Verarbeitungsvorgänge personenbezogener Daten eine Einwilligung einholen, 
+        dient Art. 6 Abs. 1 lit. a DSGVO als Rechtsgrundlage.
+        Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen 
+        Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.
       </p>
       
-      <p>Noch zu erarbeiten: Text über Cookie-Nutzung und SAML2-Daten.</p>
+      <h2>II. Verbindungsdaten und Logfiles</h2>
+      
+      <p>
+        Bei jedem Aufruf der Webseiten dieses Repositoriums überträgt Ihr Web-Browser automatisch Daten des aufrufenden Rechners. 
+        Dies ist eine Grundfunktion des World Wide Web und nicht durch uns beeinflussbar. 
+        Dabei werden folgende Daten übertragen und in Log-Dateien gespeichert:
+      </p>
+      <ul>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>Adressen der aufgerufenen Webseiten</li>
+        <li>IP-Adresse des Nutzers, daraus ableitbar die Herkunft des Webseitenaufrufs (Land, Stadt oder Organisation, Internet Service Provider)</li>
+        <li>Informationen zum verwendeten Betriebssystem und Browsertyp</li>
+        <li>Adressen der Webseiten, von denen aus Sie auf unsere Webseiten gelangt sind</li>
+      </ul>
+      <p>
+        Die vorübergehende Verarbeitung dieser Verbindungsdaten ist zur Bereitstellung der Plattform technisch zwingend erforderlich.
+        Die Speicherung in Log-Dateien erfolgt zur Optimierung und Sicherstellung der Funktionsfähigkeit und Sicherheit der Plattform.
+        Die Daten in den Log-Dateien werden regelmäßig in anonymisierter Form zu statistischen Zwecken weiterverarbeitet.
+        Personenbezogene Zugriffsdaten werden nach 7 Tagen gelöscht.   
+      </p>
+      
+      <h2>III. Session Cookies</h2>
+      
+      <p>
+        Die Hochschulbibliografie verwendet so genannte Session Cookies. 
+        Session-Cookies sind kleine Informationseinheiten, die ein Webserver 
+        im Arbeitsspeicher des Computers des Besuchers speichert. 
+        In einem Session-Cookie wird eine zufällig erzeugte
+        eindeutige Identifikationsnummer abgelegt, eine sogenannte Session-ID. 
+        Außerdem enthält ein Cookie die Angabe über seine Herkunft und die Speicherfrist. 
+        Diese Cookies können keine anderen Daten speichern. 
+        Die von uns eingesetzten Session-Cookies sind für die Funktion unserer Webseite 
+        notwendig, damit Ihr Browser auch nach einem Seitenwechsel wiedererkannt wird.
+        Sie werden automatisch gelöscht, wenn Sie Ihren Webbrowser schließen.
+        Session Cookies werden nicht zur Erstellung von Nutzerprofilen verwendet.
+      </p>
+      
+      <h2>IV. Anmelde-Daten</h2>
+      
+      <p>
+        Eine Anmeldung (Login) mit persönlichen Daten ist nur zur Bearbeitung der Bibliografie
+        durch Hochschulangehörige erforderlich, nicht für die Suche nach oder den lesenden Zugriff
+        auf Publikationen.
+        Zur Veröffentlichung melden sich Hochschulangehörige mit ihrer Uni-Kennung an.
+        Die Autorisierung erfolgt gegen einen LDAP-Server des Zentrums für
+        Informations- und Mediendienste (ZIM) der Universität. 
+        Unsere Bibliografie verarbeitet und speichert folgende Nutzerdaten:
+      </p>  
+      <ul>
+        <li>Name</li>
+        <li>Benutzerkennung (nur zur Authentifizierung, wird nicht gespeichert)</li>
+        <li>DHSB-ID</li>
+        <li>Uhrzeit und Datum des letzten Logins</li>
+        <li>Benutzerrollen (Autoren, Administratoren)</li>
+        <li>Verknüpfung zu den in dieser Bibliografie erfassten Publikationen, inkl. Datum und Uhrzeit der letzten Änderung</li>
+      </ul>  
+      <p>
+        Die Speicherung und Verarbeitung dieser Daten geschieht zur Wahrnehmung der uns 
+        übertragenen Aufgabe der Unterstützung von Lehre und Forschung gemäß Art. 6 Abs. 1 lit. e DSGVO 
+        und ist erforderlich
+      </p>
+      <ul>
+        <li>zum Nachweis der Berechtigung zur Nutzung der Bibliografie</li>
+        <li>zur Kommunikation mit Autor*innen</li>
+        <li>zum Nachweis der Urheberschaft an den Publikationen</li>
+      </ul>
+      
+      <h2>V. Publikationsdaten</h2>
+      
+      <p>
+        Zweck dieser Bibliografie ist die weltweite Bereitstellung einer weitgehend vollständigen Publikationsliste der
+        Angehörigen der TH Köln. Dazu speichern, verarbeiten und veröffentlichen
+        wir auch personenbezogene Daten der an Publikationen beteiligten Personen:  
+      </p>
+      <ul>
+        <li>Namen und Rollen (z. B. Autor, Herausgeber)</li>
+        <li>Eindeutige Autoren-Identifikatoren (z. B. ORCID iD, GND)</li>
+        <li>Informationen zur organisatorischen Zugehörigkeit (z. B. Hochschule, Fakultät, Institut)</li>
+      </ul>
+      <p>
+        Dies dient dem eindeutigen Nachweis und der Anerkennung der Urheberschaft, 
+        der Zitierfähigkeit und der besseren Auffindbarkeit der Publikationen.  
+        Mit Veröffentlichung der Publikation übertragen wir auch diese personenbezogenen Daten an Dritte
+        und stellen sie über Schnittstellen bereit:
+      </p>
+      <ul>
+        <li>an wissenschaftliche und allgemeine Suchmaschinen wie Google</li>
+        <li>an Dritte weltweit, über Schnittstellen wie OAI (Open Archives Initiative) und das Google Sitemap Protokoll</li>
+      </ul>
+      <p>
+        Eine Veröffentlichung und damit Weitergabe und weltweite Zugänglichmachung erfolgt nur mit 
+        Einverständnis der Autor*innen bzw. Herausgeber*innen und erst nach Unterzeichnung des
+        Veröffentlichungsvertrages.
+      </p>
     </div>
-  </article>
-
-  <article class="card mb-3" xml:lang="en">
-      <div class="card-body">
-        <p>
-          under construction ...
-        </p>
-      </div>
   </article>
 
 </webpage>
