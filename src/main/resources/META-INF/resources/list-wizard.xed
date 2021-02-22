@@ -8,7 +8,7 @@
     <div class="card-body">
       <p>
         Um persönliche Publikationslisten direkt aus der Hochschulbibliografie erstellen und in verschiedenen Formaten auszugeben, nutzen
-        Sie das folgende Formular. Voraussetzung ist, dass die Publikationen mit Ihrer Personen-ID verknüpft sind. Falls Publikationen fehlen,
+        Sie das folgende Formular. Voraussetzung ist, dass die Publikationen mit Ihrer DHSB-ID verknüpft sind. Falls Publikationen fehlen,
         <a href="newPublication.xed">melden Sie diese hier.</a> Falls Einträge korrigiert werden müssen, <a href="contact.xml">sprechen Sie
         uns an.</a>
       </p>
