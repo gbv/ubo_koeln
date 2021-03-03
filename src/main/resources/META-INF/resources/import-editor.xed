@@ -331,7 +331,7 @@
     </div>
     <xed:controls />
     <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
-      <xed:repeat xpath="mods:nameIdentifier[not(@type=$MCR.user2.matching.lead_id)]">
+      <xed:repeat xpath="mods:nameIdentifier[not(@type=$MCR.user2.matching.lead_id)][not(@type='connection')]">
         <div class="form-group form-inline col-12 px-0 mb-2 mt-2">
           <label class="mycore-form-label">
           </label>
@@ -343,13 +343,6 @@
           </xed:bind>
           <input type="text" class="{$xed-validation-marker} form-control col-sm-4" />
           <xed:controls>insert remove</xed:controls>
-          <script type="text/javascript">
-            $(document).ready(function() {
-              // remove dhsbid and connection is as option from person id selection.xml
-              $("select#personId option[value='dhsbid']").remove();
-              $("select#personId option[value='connection']").remove();
-            });
-          </script>
         </div>
       </xed:repeat>
     </xed:if>
