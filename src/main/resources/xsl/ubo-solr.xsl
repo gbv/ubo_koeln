@@ -11,6 +11,7 @@
 
   <xsl:template match="mycoreobject">
     <xsl:apply-templates select="." mode="baseFields" />
+    <xsl:call-template   name="documentID" />
     <xsl:apply-templates select="service/servflags/servflag[@type='status']" mode="solrField" />
     <xsl:apply-templates select="service/servflags/servflag[@type='importID']" mode="solrField" />
     <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods" mode="solrField" />
@@ -33,8 +34,9 @@
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:part" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:originInfo" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:relatedItem[@type='series']/mods:titleInfo" mode="solrField" />
-    <xsl:apply-templates select="descendant::mods:name[@type='conference'][not(ancestor::mods:relatedItem[@type='references'])]" mode="solrField" />    <xsl:apply-templates select="descendant::mods:dateIssued[1][translate(text(),'1234567890','YYYYYYYYYY')='YYYY']" mode="solrField" />
-    <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:originInfo/mods:dateIssued[1][translate(text(),'1234567890','YYYYYYYYYY')='YYYY']" mode="solrField.host" />
+    <xsl:apply-templates select="descendant::mods:name[@type='conference'][not(ancestor::mods:relatedItem[@type='references'])]" mode="solrField" />
+    <xsl:apply-templates select="descendant::mods:dateIssued[1]" mode="solrField" />
+    <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:originInfo/mods:dateIssued[1]" mode="solrField.host" />
     <xsl:apply-templates select="descendant::mods:identifier[@type]" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:shelfLocator" mode="solrField" />
     <xsl:apply-templates select="mods:subject" mode="solrField" />
@@ -64,6 +66,14 @@
         </xsl:for-each>
       </field>
     </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="documentID" >
+    <field name="ubo_documentID">
+      <xsl:variable name="id_with_zeros" select="substring-after(@ID,'_mods_')" />
+      <!-- output id without leading zeros -->
+      <xsl:value-of select="number($id_with_zeros) * 1" />
+    </field>
   </xsl:template>
 
   <xsl:template match="servflag[@type='status']" mode="solrField">
@@ -282,9 +292,26 @@
   </xsl:template>
 
   <xsl:template match="mods:dateIssued" mode="solrField">
-    <field name="year">
-      <xsl:value-of select="text()" />
-    </field>
+    <xsl:variable name="yearIssued">
+      <xsl:choose>
+        <xsl:when test="contains(.,'-')">
+          <xsl:value-of select="substring-before(.,'-')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:if test="translate($yearIssued,'1234567890','YYYYYYYYYY')='YYYY'">
+      <field name="year">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:if>
+    <xsl:if test="contains(.,'-')">
+      <field name="koeln_dateIssued">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:relatedItem[@type='host']/mods:originInfo/mods:dateIssued" mode="solrField.host">

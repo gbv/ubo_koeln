@@ -23,6 +23,15 @@
     },
     {
         "add-field": {
+            "name": "ubo_documentID",
+            "type": "ubo_id",
+            "multiValued": false,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
             "name": "koeln_accessrights",
             "type": "ubo_id",
             "multiValued": true,
@@ -65,7 +74,25 @@
             "indexed": true,
             "stored": true
         }
+    },
+    {
+        "add-field": {
+            "name": "koeln_dateIssued",
+            "type": "pdate",
+            "multiValued": false,
+            "indexed": true,
+            "required": false,
+            "stored": true
+        }
+    },
+    {
+        "replace-field": {
+            "name": "conference",
+            "type": "ubo_text",
+            "multiValued": false,
+            "indexed": true,
+            "stored": true
+        }
     }
-
 ]
 

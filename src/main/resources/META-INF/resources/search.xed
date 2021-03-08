@@ -102,7 +102,6 @@
                       <option value="id_urn"        >URN</option>
                       <option value="id_issn"       >ISSN</option>
                       <option value="id_isbn"       >ISBN</option>
-                      <option value="id"            >Dokument-ID</option>
                       <option value="id_pubmed"     >PubMed ID</option>
                       <option value="id_scopus"     >Scopus ID</option>
                     </select>
@@ -114,6 +113,15 @@
                 <xed:controls>insert remove</xed:controls>
               </div>
             </xed:repeat>
+
+            <xed:bind xpath="condition[@field='ubo_documentID'][@operator='=']/@value">
+              <div class="form-group form-inline">
+                <label for="document_id" class="mycore-form-label">
+                  <xed:output i18n="result.dozbib.entry" />
+                </label>
+                <input id="document_id" type="text" class="mycore-form-input" />
+              </div>
+            </xed:bind>
 
             <xed:bind xpath="condition[@field='origin'][@operator='=']/value">
              <div class="form-group form-inline">
