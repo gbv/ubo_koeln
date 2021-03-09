@@ -304,7 +304,7 @@
     </xsl:variable>
     <xsl:if test="translate($yearIssued,'1234567890','YYYYYYYYYY')='YYYY'">
       <field name="year">
-        <xsl:value-of select="text()" />
+        <xsl:value-of select="$yearIssued" />
       </field>
     </xsl:if>
     <xsl:if test="contains(.,'-')">

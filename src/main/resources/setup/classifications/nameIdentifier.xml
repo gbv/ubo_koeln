@@ -19,13 +19,5 @@
             <label xml:lang="de" text="ResearcherID" />
             <label xml:lang="en" text="ResearcherID" />
         </category>
-        <category ID="dhsbid">
-            <label xml:lang="de" text="DHSB-ID" />
-            <label xml:lang="en" text="DHSB ID" />
-        </category>
-        <category ID="connection">
-            <label xml:lang="en" text="Internal MyCoRe Connection" />
-            <label xml:lang="de" text="Internal MyCoRe Connection" />
-        </category>
     </categories>
 </mycoreclass>

@@ -86,7 +86,7 @@
         }
     },
     {
-        "replace-field": {
+        "add-field": {
             "name": "conference",
             "type": "ubo_text",
             "multiValued": false,
