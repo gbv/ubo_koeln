@@ -127,7 +127,7 @@
     {
         "add-field": {
             "name": "koeln_dateIssued",
-            "type": "pdate",
+            "type": "mods.date_range",
             "multiValued": false,
             "indexed": true,
             "required": false,
