@@ -95,10 +95,6 @@
   bottom: auto;
 }
 
-.mycore-form-label {
-    text-align: right;
-}
-
 #watermark_testenvironment {
   position: fixed;
   bottom: 10px;

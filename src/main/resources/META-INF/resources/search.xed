@@ -43,9 +43,9 @@
 
             <xed:repeat xpath="condition1[@operator='contains']">
               <div class="form-group form-inline">
-                <label class="mycore-form-label">
+                <div class="mycore-form-label">
                   <xed:bind xpath="@field">
-                    <select class="form-control w-100">
+                    <select class="form-control w-100 custom-select">
                       <option value="title"     ><xed:output i18n="search.title" /></option>
                       <option value="series"    ><xed:output i18n="search.dozbib.series" /></option>
                       <option value="conference"><xed:output i18n="ubo.conference" /></option>
@@ -54,7 +54,7 @@
                       <option value="all"       ><xed:output i18n="search.dozbib.fields" /></option>
                     </select>
                   </xed:bind>
-                </label>
+                </div>
                 <xed:bind xpath="@value">
                   <input class="mycore-form-input" type="text"/>
                 </xed:bind>
@@ -75,9 +75,9 @@
 
             <xed:repeat xpath="condition3[@operator='=']">
               <div class="form-group form-inline">
-                <label class="mycore-form-label">
+                <div class="mycore-form-label">
                   <xed:bind xpath="@field">
-                    <select class="form-control w-100">
+                    <select class="form-control w-100 custom-select">
                       <option value="nid_dhsbid"       ><xed:output i18n="editor.identity.picker.lead_id" /></option>
                       <option value="nid_orcid"        >ORCID</option>
                       <option value="nid_researcherid" >ResearcherID</option>
@@ -85,7 +85,7 @@
                       <option value="nid_gnd"          >GND</option>
                     </select>
                   </xed:bind>
-                </label>
+                </div>
                 <xed:bind xpath="@value">
                   <input type="text" class="mycore-form-input"/>
                 </xed:bind>
@@ -95,9 +95,9 @@
 
             <xed:repeat xpath="condition9[@operator='=']">
               <div class="form-group form-inline">
-                <label class="mycore-form-label">
+                <div class="mycore-form-label">
                   <xed:bind xpath="@field" default="{$id_type}">
-                    <select class="form-control w-100">
+                    <select class="form-control w-100 custom-select">
                       <option value="id_doi"        >DOI</option>
                       <option value="id_urn"        >URN</option>
                       <option value="id_issn"       >ISSN</option>
@@ -107,7 +107,7 @@
                       <option value="ubo_documentID">Dokument-ID</option>
                     </select>
                   </xed:bind>
-                </label>
+                </div>
                 <xed:bind xpath="@value">
                   <input type="text" class="mycore-form-input"/>
                 </xed:bind>
@@ -120,7 +120,7 @@
                 <label for="{xed:generate-id()}" class="mycore-form-label">
                   <xed:output i18n="ubo.department" />
                 </label>
-                <select id="{xed:generate-id()}" class="autocomplete mycore-form-input">
+                <select id="{xed:generate-id()}" class="autocomplete mycore-form-input custom-select">
                   <option value=""><xed:output i18n="search.select" /></option>
                   <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
                 </select>
@@ -173,7 +173,7 @@
                 <label for="{xed:generate-id()}" class="mycore-form-label">
                   <xed:output i18n="search.dozbib.type" />
                 </label>
-                <select id="{xed:generate-id()}" class="mycore-form-input">
+                <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
                   <option value=""><xed:output i18n="search.select" /></option>
                   <xed:include uri="xslStyle:genre-filter,items2options:classification:editor:-1:children:ubogenre" />
                 </select>
@@ -186,14 +186,14 @@
                   <label for="{xed:generate-id()}" class="mycore-form-label">
                     <xed:output i18n="facets.facet.oa" />
                   </label>
-                  <select id="{xed:generate-id()}" class="mycore-form-input-double">
+                  <select id="{xed:generate-id()}" class="mycore-form-input-double w-100 custom-select">
                     <option value=""><xed:output i18n="search.select" /></option>
                     <xed:include uri="xslStyle:items2options:classification:editor:-1:children:oa" />
                   </select>
                 </xed:bind>
                 <xed:bind xpath="@field" initially="oa">
                   <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
-                    <select class="mycore-form-input-double">
+                    <select class="mycore-form-input-double custom-select">
                       <option value="oa">mit Unterkategorien</option>
                       <option value="oa_exact">exakt zugeordnet</option>
                     </select>

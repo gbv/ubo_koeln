@@ -20,9 +20,9 @@
       <div class="card-body">
         <h3>Meldungen über missbräuchliche Nutzungen,</h3>
         <p>
-        die von Stationen aus dem IP-Namensbereich ... ausgehen, senden Sie bitte an die Email-Adresse:
-        <br />
-        ...
+          die aus dem IP-Namensbereich th-koeln.de ausgehen, senden Sie bitte an <a href="mailto:support@campus-it.th-koeln.de">support@campus-it.th-koeln.de</a>
+          (Kurzbeschreibung des Vorfalls, betroffene Systeme, Vermerk der Dringlichkeit). Gerne können Sie auch den Service Desk der Campus-IT unter
+          +49 221 8275 2323 kontaktieren.
         </p>
       </div>
     </article>
@@ -42,7 +42,7 @@
         <br />
         T: + 49 221-8275-0<br />
         F: + 49 221-8275-3131<br />
-        E: poststelle@th-koeln.de<br />
+        E: <a href="mailto:poststelle@th-koeln.de">poststelle@th-koeln.de</a><br />
         <br />
         Die TH Köln (Technische Hochschule Köln) ist eine Körperschaft des Öffentlichen Rechts.<br />
         Sie wird durch den Präsidenten Prof. Dr. Stefan Herzig gesetzlich vertreten.
@@ -54,7 +54,7 @@
         40221 Düsseldorf<br />
         T: +49 211-896-04<br />
         F: +49 211-896-4555<br />
-        http://www.wissenschaft.nrw.de/
+        <a href="http://www.wissenschaft.nrw.de/">http://www.wissenschaft.nrw.de/</a>
       </p>
       <h2>Umsatzsteueridentifikationsnummer</h2>
       <p>
@@ -70,8 +70,8 @@
         <br />
         Digitale Bibliothek, Reposis<br />
         Telefon: 0551 39 5398<br />
-        E-Mail: dms-list@lists.gbv.de<br />
-        https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service
+        E-Mail: <a href="mailto:dms-list@lists.gbv.de">dms-list@lists.gbv.de</a><br />
+        <a href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service">https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service</a>
       </p>
     </div>
   </article>

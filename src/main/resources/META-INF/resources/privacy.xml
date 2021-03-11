@@ -30,7 +30,7 @@
       <h2>II. Verbindungsdaten und Logfiles</h2>
       
       <p>
-        Bei jedem Aufruf der Webseiten dieses Repositoriums überträgt Ihr Web-Browser automatisch Daten des aufrufenden Rechners. 
+        Bei jedem Aufruf der Webseiten dieser Bibliografie überträgt Ihr Web-Browser automatisch Daten des aufrufenden Rechners. 
         Dies ist eine Grundfunktion des World Wide Web und nicht durch uns beeinflussbar. 
         Dabei werden folgende Daten übertragen und in Log-Dateien gespeichert:
       </p>
@@ -51,7 +51,7 @@
       <h2>III. Session Cookies</h2>
       
       <p>
-        Die Hochschulbibliografie verwendet so genannte Session Cookies. 
+        Die Hochschulbibliografie verwendet sogenannte Session Cookies. 
         Session-Cookies sind kleine Informationseinheiten, die ein Webserver 
         im Arbeitsspeicher des Computers des Besuchers speichert. 
         In einem Session-Cookie wird eine zufällig erzeugte
@@ -70,17 +70,15 @@
         Eine Anmeldung (Login) mit persönlichen Daten ist nur zur Bearbeitung der Bibliografie
         durch Hochschulangehörige erforderlich, nicht für die Suche nach oder den lesenden Zugriff
         auf Publikationen.
-        Zur Veröffentlichung melden sich Hochschulangehörige mit ihrer Uni-Kennung an.
-        Die Autorisierung erfolgt gegen einen LDAP-Server des Zentrums für
-        Informations- und Mediendienste (ZIM) der Universität. 
+        Zur Veröffentlichung melden sich Hochschulangehörige mit ihrer Hochschul-Kennung an.
         Unsere Bibliografie verarbeitet und speichert folgende Nutzerdaten:
       </p>  
       <ul>
         <li>Name</li>
         <li>Benutzerkennung (nur zur Authentifizierung, wird nicht gespeichert)</li>
-        <li>DHSB-ID</li>
+        <li>DHSB-ID (eine systeminterne Bibliografie-ID)</li>
         <li>Uhrzeit und Datum des letzten Logins</li>
-        <li>Benutzerrollen (Autoren, Administratoren)</li>
+        <li>Benutzerrollen (z.B. Administrator*innen, die Rollen werden in der Bibliografie zugewiesen)</li>
         <li>Verknüpfung zu den in dieser Bibliografie erfassten Publikationen, inkl. Datum und Uhrzeit der letzten Änderung</li>
       </ul>  
       <p>
@@ -107,20 +105,19 @@
         <li>Informationen zur organisatorischen Zugehörigkeit (z. B. Hochschule, Fakultät, Institut)</li>
       </ul>
       <p>
-        Dies dient dem eindeutigen Nachweis und der Anerkennung der Urheberschaft, 
-        der Zitierfähigkeit und der besseren Auffindbarkeit der Publikationen.  
-        Mit Veröffentlichung der Publikation übertragen wir auch diese personenbezogenen Daten an Dritte
+        Dies dient dem eindeutigen Nachweis und der Anerkennung der Urheberschaft.
+        Mit Übertragung der Publikationmetadaten übertragen wir auch diese personenbezogenen Daten an Dritte
         und stellen sie über Schnittstellen bereit:
       </p>
       <ul>
         <li>an wissenschaftliche und allgemeine Suchmaschinen wie Google</li>
         <li>an Dritte weltweit, über Schnittstellen wie OAI (Open Archives Initiative) und das Google Sitemap Protokoll</li>
       </ul>
-      <p>
+      <!-- p>
         Eine Veröffentlichung und damit Weitergabe und weltweite Zugänglichmachung erfolgt nur mit 
         Einverständnis der Autor*innen bzw. Herausgeber*innen und erst nach Unterzeichnung des
         Veröffentlichungsvertrages.
-      </p>
+      </p -->
     </div>
   </article>
 
