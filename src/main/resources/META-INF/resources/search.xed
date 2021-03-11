@@ -203,7 +203,7 @@
             </xed:bind>
           </xed:bind>
 
-          <div class="thk-sort"><xed:include uri="webapp:import-search.xed" ref="sortby" /></div>
+          <xed:include uri="webapp:import-search.xed" ref="sortby" />
           <xed:include uri="webapp:import-search.xed" ref="numPerPage" />
 
           <div class="form-group form-inline">

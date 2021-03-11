@@ -65,9 +65,6 @@
   background-color: transparent;
   border: 1px solid #b43092;
 }
-.thk-sort .plus, .thk-sort .minus {
-  margin-bottom: 0.25rem;
-}
 /* export buttons */
 #inhalt > .btn-group {
   display: flex;

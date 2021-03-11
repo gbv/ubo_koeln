@@ -73,7 +73,7 @@
               </div>
             </xed:bind>
 
-            <div class="form-group form-inline thk-sort">
+            <div class="form-group form-inline">
               <label class="mycore-form-label mb-3">
                 <xed:output i18n="search.sort" />
               </label>
