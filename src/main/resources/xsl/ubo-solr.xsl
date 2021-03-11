@@ -315,9 +315,21 @@
   </xsl:template>
 
   <xsl:template match="mods:relatedItem[@type='host']/mods:originInfo/mods:dateIssued" mode="solrField.host">
-    <field name="host_year">
-      <xsl:value-of select="text()" />
-    </field>
+    <xsl:variable name="yearIssued">
+      <xsl:choose>
+        <xsl:when test="contains(.,'-')">
+          <xsl:value-of select="substring-before(.,'-')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:if test="translate($yearIssued,'1234567890','YYYYYYYYYY')='YYYY'">
+      <field name="host_year">
+        <xsl:value-of select="$yearIssued" />
+      </field>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:mods/mods:identifier[@type]" mode="solrField">
