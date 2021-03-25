@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mcruser="http://www.mycore.de/components/mcruser">
+
+    <xed:modify ref="editor4admins">
+        <xed:include ref="attributes" after="roles" />
+    </xed:modify>
+
+    <xed:template id="userAccount">
+        <div class="form-group required row">
+            <label class="col-md-3 control-label" for="userName">
+                <xed:output i18n="component.user2.admin.userAccount" />
+            </label>
+            <div class="col-md-9 row">
+                <mcruser:template name="textInput" xpath="@name" id="userName" inline="true" colsize="sm" colwidth="9"
+                                  i18n.error="component.user2.admin.inputhints.username" required="true" matches="[a-zA-Z0-9\._-]*" maxlength="43" />
+                <mcruser:template name="selectInput" xpath="@realm" default="local" id="realmId" inline="true" colsize="sm" colwidth="3"
+                                  uri="xslStyle:items2options:xslStyle:realms2items:realm:all" />
+            </div>
+        </div>
+    </xed:template>
+
+    <xed:template id="attributes">
+        <xed:cleanup-rule xpath="//attribute" relevant-if="string-length(@value) &gt; 0 and string-length(@name) &gt; 0" />
+        <xed:cleanup-rule xpath="//attributes" relevant-if="count(//attribute) &gt; 0" />
+        <xed:bind xpath="attributes">
+            <xed:repeat min="0" xpath="attribute[string-length($UBO.Editable.Attributes) = 0 or contains($UBO.Editable.Attributes, @name)]">
+                <div class="form-group row">
+                    <label class="col-md-3 control-label">
+                        <xed:output i18n="component.user2.admin.user.attributes"/>
+                    </label>
+                    <div class="col-md-3">
+                        <div class="controls">
+                            <xed:bind xpath="@name">
+                                <select class="form-control form-control-inline">
+                                    <option value="">
+                                        <xed:multi-lang>
+                                            <xed:lang xml:lang="de">bitte wählen</xed:lang>
+                                            <xed:lang xml:lang="en">please select</xed:lang>
+                                        </xed:multi-lang>
+                                    </option>
+                                    <xed:include uri="xslStyle:items2options:classification:editor:-1:children:user_attributes"/>
+                                </select>
+                            </xed:bind>
+                        </div>
+                    </div>
+                    <mcruser:template name="textInput" xpath="@value" id="attrValue" disabled="false" inline="true" colsize="sm"
+                                      colwidth="3"
+                                      i18n.error="component.user2.admin.inputhints.attrVal" required="false" maxlength="255"/>
+                    <div class="col-sm-3">
+                        <xed:controls>insert remove up down</xed:controls>
+                    </div>
+                </div>
+            </xed:repeat>
+        </xed:bind>
+    </xed:template>
+
+</xed:template>
