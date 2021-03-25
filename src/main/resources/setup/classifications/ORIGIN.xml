@@ -314,7 +314,7 @@
       </category>
     </category>
     <category ID="fschw">
-      <label xml:lang="de" text="Forschungsstelle" />
+      <label xml:lang="de" text="Forschungsschwerpunkt" />
       <category ID="fschw_ABBBKKG">
         <label xml:lang="de" text="Analyse, Bewertung und Behandlung von Belastungen in Kanalisationen, Kläranlagen und Gewässern" />
       </category>
