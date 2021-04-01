@@ -98,7 +98,7 @@
   </xed:template>
 
   <xed:template id="genre.patent">
-    <xed:include uri="webapp:import-editor.xed" ref="author" />
+    <xed:include uri="webapp:import-editor.xed" ref="inventor" />
     <xed:include uri="webapp:import-editor.xed" ref="title" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
@@ -193,7 +193,7 @@
 
   <xed:template id="genre.festschrift">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
-    <!-- xed:include uri="webapp:import-editor.xed" ref="honoree" / -->
+    <xed:include uri="webapp:import-editor.xed" ref="honoree" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
@@ -281,6 +281,7 @@
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
   </xed:template>
 
@@ -289,6 +290,7 @@
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
   </xed:template>
 
@@ -296,6 +298,7 @@
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
   </xed:template>
   
   <xed:template id="host.blog">
@@ -315,11 +318,13 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
   </xed:template>
 
   <xed:template id="host.collection.linked">
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
   </xed:template>
 
   <xed:template id="host.proceedings">
@@ -332,11 +337,13 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
   </xed:template>
 
   <xed:template id="host.proceedings.linked">
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
   </xed:template>
 
   <xed:template id="host.festschrift">
@@ -347,12 +354,13 @@
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="publisher" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
-    <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
   </xed:template>
 
   <xed:template id="host.festschrift.linked">
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
   </xed:template>
 
   <xed:template id="host.lexicon">
@@ -364,11 +372,13 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="isbn" />
   </xed:template>
 
   <xed:template id="host.lexicon.linked">
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
   </xed:template>  
 
   <xed:template id="host.report">
@@ -379,6 +389,7 @@
     <xed:include uri="webapp:import-editor.xed" ref="edition" />
     <xed:include uri="webapp:import-editor.xed" ref="series" />
     <xed:include uri="webapp:import-editor.xed" ref="pages" />
+    <xed:include uri="webapp:import-editor.xed" ref="article_number" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>

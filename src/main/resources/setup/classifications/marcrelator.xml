@@ -32,6 +32,10 @@
         <label xml:lang="x-miless" text="programmer" />
         <label xml:lang="de" text="Programmierung" description="Eine Person oder Institution, die für die Erstellung und/oder Wartung von Entwürfen, Quellcode, maschinell ausführbaren Dateien und unterstützender Dokumentation eines Computerprogramms verantwortlich ist." />
       </category>
+      <category ID="inv">
+        <label xml:lang="en" text="Inventor" description="A person, family, or organization responsible for creating a new device or process. Also use for patent inventor." />
+        <label xml:lang="de" text="Erfinder*in" description="Eine Person, Familie oder Organisation, die für die Erstellung eines neuen Geräts oder Prozesses verantwortlich ist. Kann auch für Patenterfinder verwendet werden." />
+      </category>
     </category>
     <category ID="pbl">
       <label xml:lang="x-miless" text="publisher" />
