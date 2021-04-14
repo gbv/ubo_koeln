@@ -1,76 +1,5 @@
 [
     {
-        "add-field-type": {
-            "name": "ubo_id",
-            "class": "solr.TextField",
-            "analyzer": {
-                "tokenizer": {
-                    "class": "solr.KeywordTokenizerFactory"
-                },
-                "filters": [
-                    {
-                        "class": "solr.PatternReplaceFilterFactory",
-                        "pattern": "-",
-                        "replace": "all",
-                        "replacement": ""
-                    },
-                    {
-                        "class": "solr.LowerCaseFilterFactory"
-                    }
-                ]
-            }
-        }
-    },
-    {
-      "add-field-type": {
-        "name": "ubo_text",
-        "class": "solr.TextField",
-        "positionIncrementGap": "100",
-        "analyzer": {
-          "tokenizer": {
-            "class": "solr.StandardTokenizerFactory"
-          },
-          "filters": [
-            {
-              "class": "solr.GermanNormalizationFilterFactory"
-            },
-            {
-              "class": "solr.ICUNormalizer2FilterFactory",
-              "mode": "compose",
-              "name": "nfkc_cf"
-            },
-            {
-              "class": "solr.ICUFoldingFilterFactory"
-            },
-            {
-              "class": "solr.StopFilterFactory",
-              "format": "snowball",
-              "words": "lang/stopwords_de.txt",
-              "ignoreCase": "true"
-            },
-            {
-              "class": "solr.StopFilterFactory",
-              "format": "snowball",
-              "words": "lang/stopwords_en.txt",
-              "ignoreCase": "true"
-            },
-            {
-              "class": "solr.StopFilterFactory",
-              "format": "snowball",
-              "words": "lang/stopwords_fr.txt",
-              "ignoreCase": "true"
-            },
-            {
-              "class": "solr.GermanMinimalStemFilterFactory"
-            },
-            {
-              "class": "solr.EnglishMinimalStemFilterFactory"
-            }
-          ]
-        }
-      }
-    },
-    {
         "add-field": {
             "name": "ubo_documentID",
             "type": "ubo_id",
@@ -135,12 +64,29 @@
         }
     },
     {
+        "delete-copy-field": {
+            "source": "conference",
+            "dest": "all"
+        }
+    },
+    {
+        "delete-field": {
+            "name": "conference"
+        }
+    },
+    {
         "add-field": {
             "name": "conference",
             "type": "ubo_text",
             "multiValued": false,
             "indexed": true,
             "stored": true
+        }
+    },
+    {
+        "add-copy-field": {
+            "source": "conference",
+            "dest": "all"
         }
     }
 ]
