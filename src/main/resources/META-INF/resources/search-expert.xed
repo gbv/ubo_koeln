@@ -109,17 +109,17 @@
   <tr class="background2"><td>all</td><td>Text</td><td>Suche in allen Datenfeldern (mit Ausnahme von "tag", "place", "publisher", "volume", "issue", "edition", "extent", "pages" </td><td>=, contains, like, phrase</td></tr>
   <tr class="background1"><td>title</td><td>Text</td><td>Titel</td><td>=, contains, like, phrase</td></tr>
   <tr class="background2"><td>host_title</td><td>Text</td><td>Titel einer Überordnung</td><td>=, contains, like, phrase</td></tr>
-  <tr class="background1"><td>person</td><td>Name</td><td>Personenname (Autoren, Herausgeber oder andere), mit jeder Rolle kombinierbar (siehe häufigste Beispiele unten) vgl. <a href="rollen.xed">diese Liste</a> </td><td>=, contains, like</td></tr>
-  <tr class="background2"><td>person_aut</td><td>Name</td><td>Autor</td><td>=, contains, like</td></tr>
-  <tr class="background1"><td>person_edt</td><td>Name</td><td>Herausgeber, Verlag</td><td>=, contains, like</td></tr>
-  <tr class="background2"><td>person_ths</td><td>Name</td><td>Doktorvater, BetreuerIn bei Dissertationen (Akademische Betreuung)</td><td>=, contains, like</td></tr>  
+  <tr class="background1"><td>person</td><td>Name</td><td>Personenname (Autor*innen, Herausgeber*innen oder andere), mit jeder Rolle kombinierbar (siehe häufigste Beispiele unten) vgl. <a href="rollen.xed">diese Liste</a> </td><td>=, contains, like</td></tr>
+  <tr class="background2"><td>person_aut</td><td>Name</td><td>Autor*in</td><td>=, contains, like</td></tr>
+  <tr class="background1"><td>person_edt</td><td>Name</td><td>Herausgeber*in, Verlag</td><td>=, contains, like</td></tr>
+  <tr class="background2"><td>person_ths</td><td>Name</td><td>Doktorvater, Betreuer*in bei Dissertationen (Akademische Betreuung)</td><td>=, contains, like</td></tr>  
   <tr class="background1"><td>nid_lsf</td><td>ID</td><td>Personen-ID aus HIS LSF</td><td> =, contains * </td></tr>
-  <tr class="background2"><td>ae_lsf</td><td>ID</td><td>Autoren- oder Herausgeber-ID aus HIS LSF</td><td> =, contains * </td></tr>
+  <tr class="background2"><td>ae_lsf</td><td>ID</td><td>Autor*innen- oder Herausgeber*innen-ID aus THK Personenverzeichnis</td><td> =, contains * </td></tr>
   <tr class="background1"><td>nid_orcid</td><td>ID</td><td>ORCID</td><td> =, contains *</td></tr>
   <tr class="background2"><td>nid_researcherid</td><td>ID</td><td>ResearcherID</td><td> =, contains * </td></tr>
   <tr class="background1"><td>nid_scopus</td><td>ID</td><td>ID der Person in SCOPUS</td><td> =, contains * </td></tr>
   <tr class="background2"><td>nid_gnd</td><td>ID</td><td>GND</td><td> = , contains *</td></tr>
-  <tr class="background1"><td>role_lsf</td><td>ID</td><td>Kombination Rolle + Personen-ID aus HIS LSF, z. B. ths_2809 findet Doktorvater</td><td> =, contains * </td></tr>
+  <tr class="background1"><td>role_lsf</td><td>ID</td><td>Kombination Rolle + Personen-ID aus THK Personenverzeichnis, z. B. ths_2809 findet Doktorvater</td><td> =, contains * </td></tr>
   <tr class="background2"><td>year</td><td>Zahl</td><td>Jahr</td><td>=, &lt;, &gt;, &lt;=, &gt;=, contains *</td></tr>
   <tr class="background1"><td>pub_id</td><td>ID</td><td>ID der Publikation, Kombination aus pub_id + ID-Typ (z.B. pub_id_doi) findet Publikationen mit einem bestimmten ID-Typ </td><td> =, contains *</td></tr>
   <tr class="background2"><td>host_id</td><td>ID</td><td>ID der Überordnung, Kombination aus host_id + ID-Typ (z.B. host_id_doi) findet Publikationen mit einem bestimmten ID-Typ</td><td> =, contains *</td></tr>
@@ -128,7 +128,7 @@
   <tr class="background1"><td>id_doi</td><td>ID</td><td>DOI</td><td> =, contains * </td></tr>
   <tr class="background2"><td>id_urn</td><td>ID</td><td>URN</td><td> =, contains * </td></tr>
   <tr class="background1"><td>id_scopus</td><td>ID</td><td>ID der Publikation in SCOPUS</td><td> =, contains * </td></tr>
-  <tr class="background1"><td>shelfmark</td><td>ID</td><td>Signatur der Universitätsbibliothek</td><td> =, contains *</td></tr>
+  <tr class="background1"><td>shelfmark</td><td>ID</td><td>Signatur der Hochschulbibliothek</td><td> =, contains *</td></tr>
   <tr class="background2"><td>journal</td><td>Text</td><td>Titel der Zeitschrift</td><td>=, contains, like, phrase</td></tr>
   <tr class="background1"><td>series</td><td>Text</td><td>Bezeichnung der Serie</td><td>=, contains, like, phrase</td></tr>
   <tr class="background2"><td>conference</td><td>Text</td><td>Konferenz</td><td>=, contains, like, phrase</td></tr>
