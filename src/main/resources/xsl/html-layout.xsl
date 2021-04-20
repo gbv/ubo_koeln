@@ -392,7 +392,7 @@
         </xsl:when>
         <xsl:otherwise>
           <form action="{$ServletsBaseURL}logout" method="get">
-            <input type="hidden" name="url" value="{$RequestURL}" />
+            <input type="hidden" name="url" value="{$WebApplicationBaseURL}" />
             <input class="btn btn-link p-0" style="border:0;" type="submit" name="{i18n:translate('login.logOut')}" value="{i18n:translate('login.logOut')}" />
           </form>
         </xsl:otherwise>
