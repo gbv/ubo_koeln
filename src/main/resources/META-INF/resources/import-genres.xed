@@ -348,7 +348,7 @@
 
   <xed:template id="host.festschrift">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
-    <!-- xed:include uri="webapp:import-editor.xed" ref="honoree" / -->
+    <xed:include uri="webapp:import-editor.xed" ref="honoree" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
