@@ -281,7 +281,7 @@
   <xsl:template name="layout.basket.info">
     <div id="basketWrapper">
       <a href="{$ServletsBaseURL}MCRBasketServlet?action=show&amp;type=bibentries">
-            <span class="fas fa-bookmark mr-1" aria-hidden="true" />
+            <span class="fas fa-bookmark mr-2" aria-hidden="true" />
             <span class="mr-1"><xsl:value-of select="i18n:translate('basket')" />:</span>
             <span class="mr-1" id="basket-info-num">
               <xsl:value-of xmlns:basket="xalan://org.mycore.ubo.basket.BasketUtils" select="basket:size()" />
@@ -319,7 +319,7 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <i class="fas fa-home pr-1"></i>
+                  <i class="fas fa-home pr-2"></i>
                   <a href="{$WebApplicationBaseURL}">
                     <xsl:value-of select="i18n:translate('navigation.HomeKoeln')" />
                   </a>
