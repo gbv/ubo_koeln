@@ -15,11 +15,14 @@
     background-color: $color-light-blue;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.2rem;
+  &::before {
     display: inline-block;
-    padding-right: 0.5rem;
-    content: "/";
+    padding-right: 0.2rem;
+    content: "\00a0\002f";
     color: white;
+  }
 }
 
 .breadcrumb-item, .breadcrumb-item > a {
