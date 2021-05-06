@@ -101,14 +101,21 @@ $form-color: #251e52;
 }
 
 
+/* badges  ********************************************************************/
+.badge {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #999;
+}
+.badge-inverse {
+  color: #ea5a00;
+  background-color: transparent !important;
+}
+
+
+
 .nameIdentifier {
-  @extend .badge, .badge-primary;
-  a {
-    color: white;
-    text-transform: capitalize;
-  }
-  vertical-align: top;
-  margin-right: 0.25rem;
   background-color: #b43092;
   font-size: 70%;
   font-weight: bold;
