@@ -4,7 +4,7 @@
 
 
 // necessary import (parent)
-@import "bootstrap-ubo-base";
+@import "ubo";
 
 
 // koeln CSS
@@ -28,3 +28,6 @@
 
 // Footer-Specific
 @import "./base/footer";
+
+// FIXME: Workaround
+@import "./base/own";
