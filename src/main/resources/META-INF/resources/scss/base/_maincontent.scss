@@ -22,6 +22,14 @@ $form-color: #251e52;
     border-right: none !important;
 }
 
+.ubo-vue-publication-list .form-group > .mycore-form-input:not(:last-child) {
+  border-right: 1px solid #ced4da !important;
+}
+
+.ubo-vue-publication-list .form-group > .is-invalid.mycore-form-input {
+  border-right: 1px solid #dc3545 !important;
+}
+
 .mycore-form-input.form-control-sm.mr-2 {
   margin-right: 0 !important;
 }
