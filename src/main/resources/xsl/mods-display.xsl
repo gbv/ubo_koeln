@@ -409,12 +409,17 @@
     </span>
   </xsl:template>
 
-  <xsl:param name="UBO.Jena.Author.Link" />
+  <xsl:param name="UBO.Local.Author.Link" />
 
-  <xsl:template match="mods:nameIdentifier[@type='jena']">
-    <span class="nameIdentifier jena" title="Author Jena LDAP ID: {.}">
-      <a href="{$UBO.Jena.Author.Link}{.}">Jena</a>
-    </span>
+   <xsl:template match="mods:nameIdentifier[@type='local']">
+    <span class="nameIdentifier local" title="{i18n:translate('ubo.authorlink.local.title')}: {.}">
+      <xsl:choose>
+        <xsl:when test="string-length($UBO.Local.Author.Link) &gt; 0">
+          <a href="{$UBO.Local.Author.Link}{.}"><xsl:value-of select="i18n:translate('ubo.authorlink.local.text')" /></a>
+        </xsl:when>
+        <xsl:otherwise><xsl:value-of select="i18n:translate('ubo.authorlink.local.text')" /></xsl:otherwise>
+      </xsl:choose>
+   </span>
   </xsl:template>
 
   <xsl:template match="mods:nameIdentifier[@type='connection']">
@@ -713,36 +718,34 @@
 
   <!-- ========== Verweise/Überordnung ========== -->
   <xsl:template match="mods:relatedItem[(@type='host') or (@type='series')]" mode="details">
-    <div class="ubo_related_details border-top border-bottom border-dark my-1">
+    <div class="ubo_related_details">
       <xsl:apply-templates select="." mode="details_lines" />
     </div>
   </xsl:template>
 
   <!-- mit @xlink:href -->
   <xsl:template match="mods:relatedItem[not(@type='host') and not(@type='series')][@xlink:href]" mode="details">
-    <div class="ubo_related_details">
-      <div class="grid_3 label">
+    <div class="ubo_related_details row">
+      <div class="col-3 label">
+        <xsl:value-of select="i18n:translate(concat('ubo.relatedItem.',@type))" />
+      </div>
+      <div class="col-9">
         <a href="{$ServletsBaseURL}DozBibEntryServlet?id={@xlink:href}">
-          <xsl:value-of select="i18n:translate(concat('ubo.relatedItem.',@type))" />
+          <xsl:apply-templates select="document(concat('notnull:mcrobject:',@xlink:href))//mods:mods" mode="cite" />
         </a>
       </div>
-      <div class="grid_9">
-        <xsl:apply-templates select="document(concat('notnull:mcrobject:',@xlink:href))//mods:mods" mode="cite" />
-      </div>
-      <div class="clear" />
     </div>
   </xsl:template>
 
   <!-- ohne @xlink:href -->
   <xsl:template match="mods:relatedItem[not(@type='host') and not(@type='series')][not(@xlink:href)]" mode="details">
-    <div class="ubo_related_details">
-      <div class="grid_3 label">
+    <div class="ubo_related_details row">
+      <div class="col-3 label">
         <xsl:value-of select="i18n:translate(concat('ubo.relatedItem.',@type))" />
       </div>
-      <div class="grid_9">
+      <div class="col-9">
         <xsl:apply-templates select="." mode="cite" />
       </div>
-      <div class="clear" />
     </div>
   </xsl:template>
 
@@ -828,7 +831,7 @@
   </xsl:template>
 
   <xsl:template match="mods:abstract[string-length(.) &gt; 0]" mode="details">
-    <div>
+    <div class="ubo-content-block ubo-abstract">
       <h3>
         <xsl:value-of select="i18n:translate('ubo.abstract')" />
         <xsl:apply-templates select="@xml:lang" />
