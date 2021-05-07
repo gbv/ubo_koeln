@@ -44,7 +44,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-      <link href="{$WebApplicationBaseURL}rsc/sass/scss/bootstrap-ubo.css" rel="stylesheet" />
+      <link href="{$WebApplicationBaseURL}rsc/sass/scss/bootstrap-ubo.min.css" rel="stylesheet" />
       <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/jquery/{$jquery.version}/jquery.min.js"></script>
       <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/bootstrap/{$bootstrap.version}/js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/chosen-js/{$chosen.version}/chosen.jquery.min.js"></script>
