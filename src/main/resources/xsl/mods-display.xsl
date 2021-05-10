@@ -1108,6 +1108,7 @@
     <xsl:apply-templates select="mods:detail[@type='issue']" />
     <xsl:apply-templates select="mods:detail[@type='page']" />
     <xsl:apply-templates select="mods:extent[@unit='pages']" />
+    <xsl:apply-templates select="mods:detail[@type='article_number']" />
   </xsl:template>
 
   <!-- ========== Band/Jahrgang ========== -->
@@ -1200,6 +1201,16 @@
   <xsl:template match="mods:total">
     <xsl:value-of select="text()" />
     <xsl:text> Seiten</xsl:text>
+  </xsl:template>
+
+  <!-- ========== Artikelnummer ========== -->
+  <xsl:template match="mods:detail[@type='article_number']">
+    <xsl:if test="../mods:detail[not(@type='article_number')]">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
+    <xsl:value-of select="i18n:translate('ubo.articlenumber')" />
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="mods:number" />
   </xsl:template>
 
   <!-- ========== Sprache eines Eintrages ========== -->
