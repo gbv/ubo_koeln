@@ -457,11 +457,10 @@
 
   <xsl:template name="layout.footer">
     <footer>
-      <div class="ribbon"></div>
-      <div class="container info d-flex flex-column pl-0 pr-0">
-        <div class="row mt-auto">
+      <div class="container">
+        <div class="row">
           <div class="col">
-            <xsl:call-template name="layout.imprintline" />
+            <xsl:call-template name="layout.metanav" />
           </div>
           <div class="col text-right">
             <xsl:call-template name="powered_by"/>
@@ -469,17 +468,6 @@
         </div>
       </div>
     </footer>
-  </xsl:template>
-
-  <!-- Imprintline (below footer) -->
-  <xsl:template name="layout.imprintline">
-    <!-- TODO: use navigation.xml to generate this AND use correct language! -->
-    <div class="imprintlinewrapper">
-        <a href="{$WebApplicationBaseURL}contact.xml">Kontakt</a>
-        <a href="{$WebApplicationBaseURL}privacy.xml">Datenschutz</a>
-        <a href="{$WebApplicationBaseURL}imprint.xml">Impressum</a>
-        <a href="{$WebApplicationBaseURL}accessibility.xml">Barrierefreiheit</a>
-    </div>
   </xsl:template>
 
   <xsl:template name="powered_by">

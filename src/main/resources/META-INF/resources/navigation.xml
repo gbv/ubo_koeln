@@ -73,13 +73,16 @@
       <label xml:lang="en">WebCLI</label>
     </item>
   </item>
-
   <item role="meta">
     <item ref="contact.xml">
       <label xml:lang="de">Kontakt</label>
       <label xml:lang="en">Contact</label>
     </item>
-    <item ref="impressum.xml">
+    <item ref="privacy.xml">
+      <label xml:lang="de">Datenschutz</label>
+      <label xml:lang="en">Privacy</label>
+    </item>    
+    <item ref="imprint.xml">
       <label xml:lang="de">Impressum</label>
       <label xml:lang="en">Imprint</label>
     </item>
