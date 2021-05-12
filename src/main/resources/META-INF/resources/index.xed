@@ -61,9 +61,9 @@
                     <xed:output i18n="button.search" />
                   </button>
                 </div>
-              </xed:form>              
+              </xed:form>
             </div>
-          </div>          
+          </div>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
           <div class="card-body">
             <div class="mcr-icon-box">
               <div class="mcr-icon-box-content">
-                <a href="#" class="stretched-link">Publikation melden</a><br />
+                <a href="newPublication.xed" class="stretched-link">Publikation melden</a><br />
                 <small class="text-muted">Nur für TH-Wissenschaftler*innen</small>
               </div>
               <div class="mcr-icon-box-icon">
@@ -91,14 +91,14 @@
           <div class="card-body">
             <div class="mcr-icon-box">
               <div class="mcr-icon-box-content">
-                <a href="#" class="stretched-link">Publikationslisten erstellen</a>
+                <a href="list-wizard.xed" class="stretched-link">Publikationslisten erstellen</a>
               </div>
               <div class="mcr-icon-box-icon">
                 <i class="far fa-list-alt"></i>
               </div>
-            </div>            
+            </div>
           </div>
-        </div>        
+        </div>
 
       </div>
       <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:%5B2020+TO+2021%5D&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />

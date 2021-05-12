@@ -300,9 +300,13 @@
           <xsl:copy-of select="body/*[not(@id='sidebar')][not(@id='breadcrumb')]" />
         </xsl:when>
         <xsl:otherwise>
-          <h3>
-            <xsl:value-of select="i18n:translate('navigation.notAllowedToSeeThisPage')" />
-          </h3>
+          <article class="card mb-3">
+            <div class="card-body">
+              <p>
+                <xsl:value-of select="i18n:translate('navigation.notAllowedToSeeThisPage')" />
+              </p>
+            </div>
+          </article>
         </xsl:otherwise>
       </xsl:choose>
     </section>
