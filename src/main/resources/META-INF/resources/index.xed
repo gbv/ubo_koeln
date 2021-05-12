@@ -13,7 +13,7 @@
         <div class="row no-gutters">
           <div class="col-3">
             <img 
-              src="/images/logo-dhsb.png" 
+              src="images/logo-dhsb.png" 
               class="mcr-card-figure"
               alt="DHSB Logo" />
           </div>
