@@ -1,9 +1,22 @@
 
 #navigationWrapper {
-  font-family: Arial,sans-serif;
+  font-family: "myriad-pro-semi-condensed","Adobe Blank",Arial,Helvetica,sans-serif;
   background-color: white;
 }
 
-li.nav-item.active > a {
-  color: white;
+#mainnav li.nav-item.active > a {
+  color: $koeln-red;
+}
+#mainnav li.nav-item > a:hover {
+  text-decoration: none;
+  color: $koeln-red;
+}
+#mainnav li.nav-item.active {
+  background-color: transparent;
+}
+#mainnav.navbar-nav a {
+  color: black;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
 }

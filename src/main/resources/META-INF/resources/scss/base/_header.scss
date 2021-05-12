@@ -24,13 +24,13 @@ header {
   //color: white;
 }
 
-.navbar-nav a {
-    color: black;
-    font-size: 18px;
+.navbar-nav .nav-item {
+    padding: 0.5rem 0;
+    margin-right: 2rem;
 }
 
-.navbar-nav .nav-item {
-    padding: 0 .5rem;
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0;
 }
 
 a.nav-link:hover {
@@ -54,7 +54,6 @@ li.nav-item.active {
   background: url("../../../images/logo_th_koeln.svg") no-repeat;
   height: 70px;
   width: 130px;
-  margin-left: 1rem;
 }
 
 i.fas.fa-lg.fa-bars {
@@ -75,4 +74,9 @@ i.fas.fa-lg.fa-bars {
 .dropdown-menu a {
     color: #212529;
     font-size: 16px;
+}
+
+#navbarSupportedContent {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }

@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <webpage lastModified="$Date$" id="dozbib">
- <title xml:lang="de">Willkommen bei der Digitalen Hochschulbibliografie der TH Köln</title>
- <title xml:lang="en">Welcome to the digital bibliography of TH Köln</title>
- 
+  <title xml:lang="de">Willkommen bei der Digitalen Hochschulbibliografie der TH Köln</title>
+  <title xml:lang="en">Welcome to the digital bibliography of TH Köln</title>
+
+  <script src="webjars/highcharts/5.0.1/highcharts.src.js" type="text/javascript"></script>
+  <script src="webjars/highcharts/5.0.1/themes/grid.js" type="text/javascript"></script>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card mcr-grid-card">
+        <div class="row no-gutters">
+          <div class="col-3">
+            <img 
+              src="/images/logo-dhsb.png" 
+              class="mcr-card-figure"
+              alt="DHSB Logo" />
+          </div>
+          <div class="col-9">
+            <div class="card-body">
+              <h5 class="card-title">
+                Über die Digitale Hochschulbibliografie der TH Köln
+              </h5>
+              <p class="card-text">
+                Die Digitale Hochschulbibliografie ist die Onlineplattform zur 
+                Erfassung und Darstellung der Publikationsleistungen aller
+                Beschäftigten der TH Köln. Es werden Publikationen erfasst, die 
+                dauerhaft gedruckt oder digital dauerhaft öffentlich
+                verfügbar sind. 
+                <strong>Kontakt:</strong>
+                <a href="mailto:bibliografie@th-koeln.de">
+                  bibliografie@th-koeln.de
+                </a>
+              </p>
+              <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
+                <div class="form-group form-inline mb-0">
+                  <xed:bind xpath="/query">
+                    <xed:bind xpath="@mask" default="index.xed" />
+                    <xed:bind xpath="@numPerPage" default="10" />
+                    <xed:bind xpath="conditions[@format='xml']/boolean[@operator='and']">
+                      <xed:bind xpath="condition[@field='all'][@operator='contains']/@value">
+                        <label for="input" class="mr-3">
+                          <xed:output i18n="thk.search.simple" />
+                        </label>
+                        <input id="input" type="text" class="mycore-form-input form-control" />
+                      </xed:bind>
+                      <!-- Standard users must only find confirmed publications, admins find all publications -->
+                      <xed:choose>
+                        <xed:when test="not(xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin'))">
+                          <xed:bind xpath="condition[@field='status'][@operator='='][@value='confirmed']" />
+                        </xed:when>
+                        <xed:otherwise>
+                          <xed:bind xpath="condition[@field='objectType'][@operator='='][@value='mods']" />
+                        </xed:otherwise>
+                      </xed:choose>
+                    </xed:bind>
+                    <xed:bind xpath="sortBy[field[@name='year'][@order='descending']]" />
+                  </xed:bind>
+                  <button class="btn btn-sm btn-secondary" type="submit" xed:target="servlet" xed:href="MCRQLSearchServlet">
+                    <xed:output i18n="button.search" />
+                  </button>
+                </div>
+              </xed:form>              
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <div class="card-deck mcr-card-deck">
+        
+        <div class="card">
+          <div class="card-body">
+            <div class="mcr-icon-box">
+              <div class="mcr-icon-box-content">
+                <a href="#" class="stretched-link">Publikation melden</a><br />
+                <small class="text-muted">Nur für TH-Wissenschaftler*innen</small>
+              </div>
+              <div class="mcr-icon-box-icon">
+                <i class="fas fa-sign-in-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="mcr-icon-box">
+              <div class="mcr-icon-box-content">
+                <a href="#" class="stretched-link">Publikationslisten erstellen</a>
+              </div>
+              <div class="mcr-icon-box-icon">
+                <i class="far fa-list-alt"></i>
+              </div>
+            </div>            
+          </div>
+        </div>        
+
+      </div>
+      <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:%5B2020+TO+2021%5D&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
+    </div>
+    <div class="col-4">
+      <xinclude uri="xslStyle:response-sidebar-mini:solr:q=status:confirmed&amp;rows=0" />      
+      <xinclude uri="xslStyle:statistics:solr:q=status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
+      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*:*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />
+      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=status:imported+AND+importID:*&amp;rows=0&amp;facet=true&amp;facet.sort=index&amp;facet.limit=-1&amp;facet.field=importID" />
+    </div>
+  </div>
+
+
+<!--
  <article class="card mb-3" xml:lang="de">
    <div class="card-body">
      <h2>Über die Digitale Hochschulbibliografie der TH Köln</h2>
@@ -47,7 +156,7 @@
                 <input id="input" type="text" class="mycore-form-input form-control" />
               </xed:bind>
 
-              <!-- Standard users must only find confirmed publications, admins find all publications -->
+              <!- Standard users must only find confirmed publications, admins find all publications ->
               <xed:choose>
                 <xed:when test="not(xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin'))">
                   <xed:bind xpath="condition[@field='status'][@operator='='][@value='confirmed']" />
@@ -104,5 +213,5 @@
       </div>
     </article>
   </aside>
-
+-->
 </webpage>
