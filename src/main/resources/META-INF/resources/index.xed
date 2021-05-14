@@ -11,13 +11,13 @@
     <div class="col-12">
       <div class="card mcr-grid-card">
         <div class="row no-gutters">
-          <div class="col-3">
+          <div class="col-12 col-md-3 d-none d-md-flex">
             <img 
               src="images/logo-dhsb.png" 
               class="mcr-card-figure"
               alt="DHSB Logo" />
           </div>
-          <div class="col-9">
+          <div class="col-12 col-md-9">
             <div class="card-body">
               <h5 class="card-title">
                 Über die Digitale Hochschulbibliografie der TH Köln
@@ -34,7 +34,7 @@
                 </a>
               </p>
               <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
-                <div class="form-group form-inline mb-0">
+                <div class="form-group form-inline mb-0 mcr-search-form-home">
                   <xed:bind xpath="/query">
                     <xed:bind xpath="@mask" default="index.xed" />
                     <xed:bind xpath="@numPerPage" default="10" />
@@ -70,7 +70,7 @@
   </div>
 
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-md-8">
       <div class="card-deck mcr-card-deck">
         
         <div class="card">
@@ -78,12 +78,14 @@
             <div class="mcr-icon-box">
               <div class="mcr-icon-box-content">
                 <a href="newPublication.xed" class="stretched-link">Publikation melden</a><br />
-                <small class="text-muted">Nur für TH-Wissenschaftler*innen</small>
               </div>
               <div class="mcr-icon-box-icon">
                 <i class="fas fa-sign-in-alt"></i>
               </div>
             </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Nur für TH-Wissenschaftler*innen</small>
           </div>
         </div>
 
@@ -103,7 +105,7 @@
       </div>
       <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:2021&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
     </div>
-    <div class="col-4">
+    <div class="col-12 col-md-4">
       <xinclude uri="xslStyle:response-sidebar-mini:solr:q=status:confirmed&amp;rows=0" />
       <xinclude uri="xslStyle:statistics:solr:q=status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
       <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*:*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />

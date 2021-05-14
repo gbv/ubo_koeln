@@ -318,7 +318,7 @@
     <div id="breadcrumbWrapper">
       <div class="container">
         <div class="row">
-          <div class="col">
+          <div class="col-12 col-md">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -339,7 +339,7 @@
               </ol>
             </nav>
           </div>
-          <div class="col col-auto">
+          <div class="col-12 col-md-auto text-right">
             <xsl:call-template name="layout.basket.info"/>
           </div>
         </div>
