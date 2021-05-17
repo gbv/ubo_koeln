@@ -73,7 +73,8 @@
       <label xml:lang="en">WebCLI</label>
     </item>
   </item>
-  <item role="meta">
+
+  <item menu="footer">
     <item ref="contact.xml" id="dhsb.contact">
       <label xml:lang="de">Kontakt</label>
       <label xml:lang="en">Contact</label>
