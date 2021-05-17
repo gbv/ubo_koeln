@@ -120,7 +120,7 @@
 
   <!-- html body -->
   <xsl:template name="layout.body">
-    <div class="bodywrapper pt-4">
+    <div class="bodywrapper">
       <div class="container d-flex flex-column flex-grow-1">
         <div class="row">
           <div class="col-lg">

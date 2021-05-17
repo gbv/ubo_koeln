@@ -1,6 +1,5 @@
 body {
   min-height: 100vh;
-  padding-bottom: 3rem;
   font-family: "myriad-pro-semi-condensed","Adobe Blank",Arial,Helvetica,sans-serif;
   font-family: Arial,Helvetica,sans-serif;
   font-style: normal;
@@ -9,6 +8,8 @@ body {
 
 .bodywrapper {
   flex: 1 0 auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 footer {
   flex-shrink: 0;
