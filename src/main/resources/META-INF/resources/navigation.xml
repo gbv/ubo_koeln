@@ -74,19 +74,19 @@
     </item>
   </item>
   <item role="meta">
-    <item ref="contact.xml">
+    <item ref="contact.xml" id="dhsb.contact">
       <label xml:lang="de">Kontakt</label>
       <label xml:lang="en">Contact</label>
     </item>
-    <item ref="privacy.xml">
+    <item ref="privacy.xml" id="dhsb.privacy">
       <label xml:lang="de">Datenschutz</label>
       <label xml:lang="en">Privacy</label>
     </item>    
-    <item ref="imprint.xml">
+    <item ref="imprint.xml" id="dhsb.imprint">
       <label xml:lang="de">Impressum</label>
       <label xml:lang="en">Imprint</label>
     </item>
-    <item ref="accessibility.xml">
+    <item ref="accessibility.xml" id="dhsb.accessibility">
       <label xml:lang="de">Barrierefreiheit</label>
       <label xml:lang="en">Accessibility</label>
     </item>
