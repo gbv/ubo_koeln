@@ -38,7 +38,7 @@ public class KoelnService implements IdentityService {
 
             personResult.displayName = Stream.of(person.getPse_givenname(), person.getPse_surname())
                     .filter(Objects::nonNull)
-                    .collect(Collectors.joining());
+                    .collect(Collectors.joining(" "));
             personResult.firstName = person.getPse_givenname();
             personResult.lastName = person.getPse_surname();
 
