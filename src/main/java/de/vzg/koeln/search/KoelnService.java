@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -45,6 +46,8 @@ public class KoelnService implements IdentityService {
             Stream.of(person.getInstitute_de(),
                     person.getFaculty_de(),
                     person.getOther_institution_de())
+                    .filter(Objects::nonNull)
+                    .filter(Predicate.not(List::isEmpty))
                     .forEach(personResult.affiliation::addAll);
 
             personResult.information = new ArrayList<>();
