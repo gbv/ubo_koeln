@@ -154,7 +154,7 @@ public class KoelnPIDSearch extends MCRServlet implements IdentityPickerService 
         if (termPresent) {
             LOGGER.info("UBO search Koeln Rest for term " + term);
             koelnpidsearch
-                    .addContent(new KoelnRestSearcher().search(term));
+                    .addContent(new KoelnRestSearcher().searchXML(term));
         }
     }
 
