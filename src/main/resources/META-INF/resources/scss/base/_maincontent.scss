@@ -22,6 +22,11 @@ $form-color: #251e52;
     border-right: none !important;
 }
 
+.ubo-vue-form .form-group > .mycore-form-input {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+
 .ubo-vue-form .form-group > .mycore-form-input:not(:last-child) {
   border-right: 1px solid #ced4da !important;
 }
