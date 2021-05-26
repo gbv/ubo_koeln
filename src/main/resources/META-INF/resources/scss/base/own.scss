@@ -1,7 +1,9 @@
 /* all content has the same indent */
-.card-header,
+.card-header {
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+}
 .card-footer {
-  padding: 10px 15px;
+  padding: 0.75rem 1.25rem 1.25rem 1.25rem;
 }
 .hit .card-footer span {
   color: #ccc;
