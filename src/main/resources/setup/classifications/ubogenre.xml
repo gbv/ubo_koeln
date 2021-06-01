@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="ubogenre">
-    <label xml:lang="en" text="genre" description="publication types of bibliography" />
+    <label xml:lang="en" text="genre" description="Publication types of bibliography" />
     <label xml:lang="de" text="Genre" description="Publikationstypen der Hochschulbibliografie" />
     <categories>
         <category ID="article">
-            <label xml:lang="de" text="Artikel / Aufsatz" />
+            <label xml:lang="en" text="Essay / Article" />
+            <label xml:lang="de" text="Aufsatz / Artikel" />
             <label xml:lang="x-hosts" text="journal blog newspaper" />
-            <label xml:lang="en" text="article / chapter" />
             <category ID="abstract">
-                <label xml:lang="en" text="abstract" />
+                <label xml:lang="en" text="Abstract" />
                 <label xml:lang="de" text="Abstract" />
                 <label xml:lang="x-marcgt" text="abstract_or_summary" />
                 <label xml:lang="x-hosts" text="journal proceedings" />
             </category>
             <category ID="chapter">
-                <label xml:lang="en" text="book article / chapter" />
+                <label xml:lang="en" text="Book essay / Chapter" />
                 <label xml:lang="de" text="Buchaufsatz / Kapitel" />
                 <label xml:lang="x-marcgt" text="article" />
                 <label xml:lang="x-hosts" text="collection proceedings festschrift lexicon" />
@@ -22,7 +22,7 @@
             <category ID="preface">
                 <label xml:lang="x-hosts" text="collection proceedings festschrift journal lexicon" />
                 <label xml:lang="de" text="Vorwort / Nachwort" />
-                <label xml:lang="en" text="Preface (foreword) / Postface" />
+                <label xml:lang="en" text="Preface / Epilog" />
             </category>
             <category ID="review">
                 <label xml:lang="de" text="Rezension" />
@@ -32,7 +32,7 @@
             </category>
             <category ID="conference_essay">
                 <label xml:lang="de" text="Aufsatz (Konferenz)" />
-                <label xml:lang="en" text="Essay (Confenerce)" />
+                <label xml:lang="en" text="Essay (Conference)" />
                 <label xml:lang="x-hosts" text="standalone" />
             </category>
             <category ID="contribution">
@@ -43,18 +43,18 @@
         </category>
         <category ID="thesis">
             <label xml:lang="de" text="Qualifikationsarbeit" />
-            <label xml:lang="en" text="thesis" />
+            <label xml:lang="en" text="Qualification paper" />
             <category ID="dissertation">
                 <label xml:lang="x-hosts" text="standalone" />
                 <label xml:lang="x-marcgt" text="thesis" />
-                <label xml:lang="en" text="dissertation" />
+                <label xml:lang="en" text="Dissertation" />
                 <label xml:lang="de" text="Dissertation" />
                 <label xml:lang="x-legacy" text="doctoralThesis" />
             </category>
             <category ID="habilitation">
                 <label xml:lang="x-hosts" text="standalone" />
                 <label xml:lang="x-marcgt" text="thesis" />
-                <label xml:lang="en" text="habilitation" />
+                <label xml:lang="en" text="Habilitation" />
                 <label xml:lang="de" text="Habilitation" />
                 <label xml:lang="x-legacy" text="doctoralThesis" />
             </category>
@@ -66,7 +66,7 @@
             <label xml:lang="x-marcgt" text="book" />
             <category ID="proceedings">
                 <label xml:lang="x-hosts" text="standalone" />
-                <label xml:lang="en" text="Proceedings" />
+                <label xml:lang="en" text="Conference proceedings" />
                 <label xml:lang="de" text="Tagungsband" />
                 <label xml:lang="x-marcgt" text="book" />
             </category>
@@ -89,17 +89,17 @@
         <category ID="journal">
             <label xml:lang="x-hosts" text="standalone" />
             <label xml:lang="de" text="Zeitschrift" />
-            <label xml:lang="en" text="journal" />
+            <label xml:lang="en" text="Journal" />
         </category>
         <category ID="newspaper">
             <label xml:lang="x-hosts" text="standalone" />
             <label xml:lang="de" text="Zeitung" />
-            <label xml:lang="en" text="newspaper" />
+            <label xml:lang="en" text="Newspaper" />
         </category>
         <category ID="blog">
             <label xml:lang="x-hosts" text="standalone" />
             <label xml:lang="de" text="Blog" />
-            <label xml:lang="en" text="blog" />
+            <label xml:lang="en" text="Blog" />
         </category>
         <category ID="report">
             <label xml:lang="x-hosts" text="standalone" />
@@ -109,7 +109,7 @@
         <category ID="series">
             <label xml:lang="x-hosts" text="standalone" />
             <label xml:lang="de" text="Reihe / Serie" />
-            <label xml:lang="en" text="series" />
+            <label xml:lang="en" text="Series" />
         </category>
         <category ID="poster">
             <label xml:lang="en" text="Poster" />
@@ -123,11 +123,11 @@
         </category>
         <category ID="patent">
             <label xml:lang="de" text="Patentschrift" />
-            <label xml:lang="en" text="Patent" />
+            <label xml:lang="en" text="Patent specification" />
             <label xml:lang="x-hosts" text="standalone" />
         </category>
         <category ID="lecture">
-            <label xml:lang="en" text="lecture" />
+            <label xml:lang="en" text="Teaching material" />
             <label xml:lang="de" text="Lehrmaterial" />
             <label xml:lang="x-hosts" text="standalone" />
         </category>

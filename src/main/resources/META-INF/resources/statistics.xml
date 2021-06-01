@@ -22,11 +22,11 @@
 
   <article class="card mb-3" xml:lang="en">
     <div class="card-body">
-      <h2>Notice:</h2>
+      <h2>Please note:</h2>
       <p>
-        These statistics are built <strong>live</strong> for all publications listed here.
-        Alternatively, you can also display statistics for any search results, right from the result list.
-        To enlarge, click on an empty area within the chart!
+        These statistics are formed <strong>live</strong> over the entire dataset. Alternatively, you can
+        statistically display any search results, e.g. your personal publication list, from the hit list.
+        Click into an empty area of the respective chart to enlarge!
       </p>
     </div>
   </article>
