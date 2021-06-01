@@ -2,7 +2,7 @@
 
 <webpage lastModified="$Date$" id="dozbib.new.publication">
   <title xml:lang="de">Publikation melden</title>
-  <title xml:lang="en">Registering publication</title>
+  <title xml:lang="en">Registering a publication</title>
 
   <article class="card mb-1">
     <div class="card-body">
@@ -115,10 +115,10 @@
 
   <article class="card mb-1" xml:lang="en">
     <div class="card-body">
-      <h2>Lists of literature and ORCID</h2>
+      <h2>Literature lists and ORCID</h2>
       <p>
-        Sie haben Ihre Publikationen als Literaturliste im bibtex Format vorliegen oder eine ORCID-ID? Dann können
-        wir Ihre Publikationen automatisiert importieren. Bitte melden Sie sich per Mail unter
+        Your publications are already listed as a bibliography in a bibtex file or you have an ORCID-ID? Then we
+        can import your publications automatically. Please send an email to
         <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de.</a>
       </p>
     </div>
@@ -131,37 +131,19 @@
         Falls Sie Ihre Publikationen nicht selbst in die Bibliografie eintragen möchten, senden Sie Ihre Publikationen
         per E-Mail an die Hochschulbibliothek via <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de.</a>
         Die Publikationen werden dann vom Bibliothekspersonal für Sie eingetragen. Bitte haben Sie Verständnis, dass die
-        Anzeige Ihre Publikationen auf diesem Weg länger benötigen können, bis sie in der Bibliografie anzeigt zu werden.
+        Anzeige Ihrer Publikationen auf diesem Weg länger benötigen kann.
       </p>
     </div>
   </article>
 
   <article class="card mb-1" xml:lang="en">
     <div class="card-body">
-      <h2>Register publications</h2>
+      <h2>Reporting publications to the library</h2>
       <p>
-        Falls Sie Ihre Publikationen nicht selbst in die Bibliografie eintragen möchten, senden Sie Ihre Publikationen
-        per E-Mail an die Hochschulbibliothek via <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de.</a>
-        Die Publikationen werden dann vom Bibliothekspersonal für Sie eingetragen. Bitte haben Sie Verständnis, dass die
-        Anzeige Ihre Publikationen auf diesem Weg länger benötigen können, bis sie in der Bibliografie anzeigt zu werden.
-      </p>
-    </div>
-  </article>
-
-  <article class="card mb-3" xml:lang="de">
-    <div class="card-body">
-      <h2>Leitlinie zur Eintragung von Publikationen</h2>
-      <p>
-        Bitte beachten Sie die Leitlinien zur Eintragung von Publikationen. Link zur DHSB-Leitlinie [in Erarbeitung]
-      </p>
-    </div>
-  </article>
-
-  <article class="card mb-3" xml:lang="en">
-    <div class="card-body">
-      <h2>Leitlinie zur Eintragung von Publikationen</h2>
-      <p>
-        Bitte beachten Sie die Leitlinien zur Eintragung von Publikationen. Link zur DHSB-Leitlinie [in Erarbeitung]
+        If you don’t want to enter your publications into the University Bibliography by yourself, please send your publications
+        via email to the University Library: <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de.</a>
+        Your publications will then be registered by the library staff. Please bear in mind that it might take slightly longer
+        until your publications are displayed in the bibliography if you choose this option.
       </p>
     </div>
   </article>
