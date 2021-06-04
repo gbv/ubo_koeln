@@ -22,7 +22,7 @@
           </p>
         </div>
       </article>
-    
+
       <article class="card mb-3" xml:lang="en">
         <div class="card-body">
           <h2>As a member of TH Köln</h2>
@@ -33,11 +33,11 @@
         </div>
       </article>
     </div>
-    
+
     <div class="col-12 col-md-4">
       <article class="card mb-3" xml:lang="de">
         <div class="card-body">
-          <h2>Links:</h2>
+          <h5>Links:</h5>
           <p>
             Webseite TH: <a href="https://www.th-koeln.de/bibliografie">www.th-koeln.de/bibliografie</a>
           </p>
@@ -58,7 +58,9 @@
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                + Wer kann Publikationen eintragen?
+                <i class="fas fa-plus-circle"></i>
+                <i class="fas fa-minus-circle"></i>
+                Wer kann Publikationen eintragen?
               </button>
             </h2>
           </div>
@@ -78,12 +80,14 @@
             </div>
           </div>
         </div>
-        
+
         <div class="card">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                + Welche Publikationen werden in die Bibliografie eingetragen?
+                <i class="fas fa-plus-circle"></i>
+                <i class="fas fa-minus-circle"></i>
+                Welche Publikationen werden in die Bibliografie eingetragen?
               </button>
             </h2>
           </div>
@@ -101,12 +105,14 @@
             </div>
           </div>
         </div>
-        
+
         <div class="card">
           <div class="card-header" id="headingThree">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                + Wie kann man Publikationen in die Bibliografie eintragen? Wie kann ich mich einloggen?
+                <i class="fas fa-plus-circle"></i>
+                <i class="fas fa-minus-circle"></i>
+                Wie kann man Publikationen in die Bibliografie eintragen? Wie kann ich mich einloggen?
               </button>
             </h2>
           </div>
@@ -124,12 +130,14 @@
             </div>
           </div>
         </div>
-        
+
         <div class="card">
           <div class="card-header" id="headingFour">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                + Wie kann ich meine Publikationen aus der Bibliografie auf meiner Personenseite im öffentlichen Webauftritt der TH automatisch anzeigen lassen?
+                <i class="fas fa-plus-circle"></i>
+                <i class="fas fa-minus-circle"></i>
+                Wie kann ich meine Publikationen aus der Bibliografie auf meiner Personenseite im öffentlichen Webauftritt der TH automatisch anzeigen lassen?
               </button>
             </h2>
           </div>
@@ -146,11 +154,11 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </article>
-  
+
   <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <h2>FAQ</h2>
