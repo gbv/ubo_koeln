@@ -23,7 +23,7 @@
               können Sie ein <strong>Suchfeld wiederholen.</strong>
             </xed:lang>
             <xed:lang xml:lang="en">
-              All search terms are connected with AND. By click on <i class="fas fa-plus"></i>
+              All search terms are connected with AND. By clicking on <i class="fas fa-plus"></i>
               you can <strong>repeat a search field.</strong>
             </xed:lang>
           </xed:multi-lang>
