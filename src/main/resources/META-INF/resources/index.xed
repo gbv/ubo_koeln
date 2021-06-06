@@ -2,7 +2,7 @@
 
 <webpage lastModified="$Date$" id="dozbib">
   <title xml:lang="de">Willkommen bei der Digitalen Hochschulbibliografie der TH Köln</title>
-  <title xml:lang="en">Welcome to the digital bibliography of TH Köln</title>
+  <title xml:lang="en">Welcome to the Digital University Bibliography of TH Köln</title>
 
   <script src="webjars/highcharts/5.0.1/highcharts.src.js" type="text/javascript"></script>
   <script src="webjars/highcharts/5.0.1/themes/grid.js" type="text/javascript"></script>
@@ -18,7 +18,7 @@
                 class="mcr-card-figure"
                 alt="DHSB Logo" />
             </div>
-            <div class="col-12 col-md-9">
+            <article class="col-12 col-md-9" xml:lang="de">
               <h5>
                 Über die Digitale Hochschulbibliografie der TH Köln
               </h5>
@@ -26,7 +26,7 @@
                 Die Digitale Hochschulbibliografie ist die Onlineplattform zur
                 Erfassung und Darstellung der Publikationsleistungen aller
                 Beschäftigten der TH Köln. Es werden Publikationen erfasst, die
-                dauerhaft gedruckt oder digital dauerhaft öffentlich
+                gedruckt oder digital dauerhaft öffentlich
                 verfügbar sind.
                 <strong>Kontakt:</strong>
                 <a href="mailto:bibliografie@th-koeln.de">
@@ -62,7 +62,51 @@
                   </button>
                 </div>
               </xed:form>
-            </div>
+            </article>
+            
+            <article class="col-12 col-md-9" xml:lang="en">
+              <h5>
+                About the Digital University Bibliography of TH Köln
+              </h5>
+              <p>
+                The Digital University Bibliography is an online platform to record and present the publication achievements of all TH Köln
+                employees. It lists publications that are permanently  accessible and publicly available in print or digitally.
+                <strong>Contact:</strong>
+                <a href="mailto:bibliografie@th-koeln.de">
+                  bibliografie@th-koeln.de
+                </a>
+              </p>
+              <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
+                <div class="form-group form-inline mb-0 mcr-search-form-home">
+                  <xed:bind xpath="/query">
+                    <xed:bind xpath="@mask" default="index.xed" />
+                    <xed:bind xpath="@numPerPage" default="10" />
+                    <xed:bind xpath="conditions[@format='xml']/boolean[@operator='and']">
+                      <xed:bind xpath="condition[@field='all'][@operator='contains']/@value">
+                        <label for="input" class="mr-3">
+                          <xed:output i18n="thk.search.simple" />
+                        </label>
+                        <input id="input" type="text" class="mycore-form-input form-control" />
+                      </xed:bind>
+                      <!-- Standard users must only find confirmed publications, admins find all publications -->
+                      <xed:choose>
+                        <xed:when test="not(xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin'))">
+                          <xed:bind xpath="condition[@field='status'][@operator='='][@value='confirmed']" />
+                        </xed:when>
+                        <xed:otherwise>
+                          <xed:bind xpath="condition[@field='objectType'][@operator='='][@value='mods']" />
+                        </xed:otherwise>
+                      </xed:choose>
+                    </xed:bind>
+                    <xed:bind xpath="sortBy[field[@name='year'][@order='descending']]" />
+                  </xed:bind>
+                  <button class="btn btn-sm btn-secondary" type="submit" xed:target="servlet" xed:href="MCRQLSearchServlet">
+                    <xed:output i18n="button.search" />
+                  </button>
+                </div>
+              </xed:form>
+            </article>
+            
           </div>
         </div>
       </div>
@@ -73,7 +117,7 @@
     <div class="col-12 col-md-8">
       <div class="card-deck mcr-card-deck">
 
-        <div class="card">
+        <article class="card" xml:lang="de">
           <div class="card-body">
             <div class="mcr-icon-box">
               <div class="mcr-icon-box-content">
@@ -87,9 +131,25 @@
           <div class="card-footer">
             <small class="text-muted">Nur für TH-Wissenschaftler*innen</small>
           </div>
-        </div>
+        </article>
+        
+        <article class="card" xml:lang="en">
+          <div class="card-body">
+            <div class="mcr-icon-box">
+              <div class="mcr-icon-box-content">
+                <a href="newPublication.xed" class="stretched-link">Registering a publication</a><br />
+              </div>
+              <div class="mcr-icon-box-icon">
+                <i class="fas fa-sign-in-alt"></i>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">TH scientists only</small>
+          </div>
+        </article>
 
-        <div class="card">
+        <article class="card" xml:lang="de">
           <div class="card-body">
             <div class="mcr-icon-box">
               <div class="mcr-icon-box-content">
@@ -100,7 +160,20 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
+        
+        <article class="card" xml:lang="en">
+          <div class="card-body">
+            <div class="mcr-icon-box">
+              <div class="mcr-icon-box-content">
+                <a href="list-wizard.xed" class="stretched-link">Creating publication lists</a>
+              </div>
+              <div class="mcr-icon-box-icon">
+                <i class="far fa-list-alt"></i>
+              </div>
+            </div>
+          </div>
+        </article>
 
       </div>
       <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:2021&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
@@ -113,107 +186,4 @@
     </div>
   </div>
 
-
-<!--
- <article class="card mb-3" xml:lang="de">
-   <div class="card-body">
-     <h2>Über die Digitale Hochschulbibliografie der TH Köln</h2>
-      <p>
-        Die Digitale Hochschulbibliografie ist die Onlineplattform zur Erfassung und Darstellung der Publikationsleistungen aller
-        Beschäftigten der TH Köln. Es werden Publikationen erfasst, die dauerhaft gedruckt oder digital dauerhaft öffentlich
-        verfügbar sind.
-      </p>
-      <p>
-        Die Bibliografie befindet sich derzeit im Aufbau.
-      </p>
-
-      <h2>Helfen Sie uns bei der Vervollständigung!</h2>
-      <p>
-        <a href="newPublication.xed">Hier können Sie Ihre Publikation an die Hochschulbibliografie melden.</a>
-      </p>
-   </div>
- </article>
-  <article class="card mb-3" xml:lang="en">
-    <div class="card-body">
-      <h2>About the digital University Bibliography of TH Köln</h2>
-      <p>
-        is under construction
-      </p>
-    </div>
-  </article>
-
-  <article class="card mb-3">
-    <div class="card-body">
-      <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form">
-        <div class="form-group form-inline mb-0">
-
-          <xed:bind xpath="/query">
-            <xed:bind xpath="@mask" default="index.xed" />
-            <xed:bind xpath="@numPerPage" default="10" />
-            <xed:bind xpath="conditions[@format='xml']/boolean[@operator='and']">
-              <xed:bind xpath="condition[@field='all'][@operator='contains']/@value">
-                <label for="input" class="mycore-form-label" style="padding-right: 0;">
-                  <xed:output i18n="thk.search.simple" />
-                </label>
-                <input id="input" type="text" class="mycore-form-input form-control" />
-              </xed:bind>
-
-              <!- Standard users must only find confirmed publications, admins find all publications ->
-              <xed:choose>
-                <xed:when test="not(xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin'))">
-                  <xed:bind xpath="condition[@field='status'][@operator='='][@value='confirmed']" />
-                </xed:when>
-                <xed:otherwise>
-                  <xed:bind xpath="condition[@field='objectType'][@operator='='][@value='mods']" />
-                </xed:otherwise>
-              </xed:choose>
-
-            </xed:bind>
-
-            <xed:bind xpath="sortBy[field[@name='year'][@order='descending']]" />
-
-          </xed:bind>
-
-          <button class="btn btn-sm btn-secondary" type="submit" xed:target="servlet" xed:href="MCRQLSearchServlet">
-            <xed:output i18n="button.search" />
-          </button>
-
-        </div>
-      </xed:form>
-    </div>
-  </article>
-
-  <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:%5B2020+TO+2021%5D&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
-
-  <aside id="sidebar">
-    <xinclude uri="xslStyle:response-sidebar-mini:solr:q=status:confirmed&amp;rows=0" />
-    <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*:*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />
-    <xinclude uri="xslStyle:response-sidebar-admin:solr:q=status:imported+AND+importID:*&amp;rows=0&amp;facet=true&amp;facet.sort=index&amp;facet.limit=-1&amp;facet.field=importID" />
-
-    <article class="card mb-3" xml:lang="de">
-      <div class="card-body">
-        <hgroup>
-          <h3>Kontakt:</h3>
-        </hgroup>
-        <p>
-          <a href="mailto:bibliografie@th-koeln.de">
-            bibliografie@th-koeln.de
-          </a>
-        </p>
-      </div>
-    </article>
-    <article class="card mb-3" xml:lang="en">
-      <div class="card-body">
-        <hgroup>
-          <h3>Contact:</h3>
-        </hgroup>
-        <p>
-          <a href="mailto:bibliografie@th-koeln.de">
-            bibliografie@th-koeln.de
-          </a>
-        </p>
-      </div>
-    </article>
-  </aside>
--->
 </webpage>
