@@ -34,7 +34,7 @@
 
   <xinclude uri="xslStyle:statistics:solr:q=status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
   <xinclude uri="xslStyle:statistics:solr:q=status:confirmed&amp;rows=0&amp;facet.field=genre" />
-  <xinclude uri="xslStyle:statistics:solr:q=status:confirmed&amp;rows=0&amp;facet.field=subject" />
-  <xinclude uri="xslStyle:statistics:solr:q=status:confirmed&amp;rows=0&amp;facet.field=oa" />
+  <!-- xinclude uri="xslStyle:statistics:solr:q=status:confirmed&amp;rows=0&amp;facet.field=subject" / --> <!-- TODO: should be institutes, not subject -->
+  <xinclude uri="xslStyle:statistics:solr:q=status:confirmed&amp;rows=0&amp;facet.field=oa" /> <!-- TODO: should be access rights, not oa -->
 
  </webpage>

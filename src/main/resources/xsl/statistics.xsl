@@ -253,7 +253,7 @@
   <xsl:variable name="oa" select="document('classification:metadata:-1:children:oa')/mycoreclass/categories" />
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='oa']">
-    <xsl:variable name="title">Open Access?</xsl:variable>
+    <xsl:variable name="title">Publikationen / Publikationsweg</xsl:variable>
 
     <section class="card mb-3">
       <div class="card-body">
