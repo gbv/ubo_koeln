@@ -407,7 +407,7 @@
                 In the Personenseiteneditor (PSE, personal website editor) you can display your own publication lists on your personal
                 TH web page by using the module “Publikationen” (if this area is visible to you). The publication lists update automatically
                 within the given options. You can compile the display options for the list by yourself in the Digital University Bibliography
-                and integrate the search string via the module in Imperia. 
+                and integrate the search string via the module "Publikationen" in the Personenseiteneditor.
               </p>
               <p>
                 Detailed and up-to-date instructions can be found in the user manual at
@@ -423,7 +423,7 @@
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <i class="fas fa-plus-circle"></i>
                 <i class="fas fa-minus-circle"></i>
-                What means the several publication types?
+                What do separate publication types mean?
               </button>
             </h2>
           </div>
@@ -513,7 +513,7 @@
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                 <i class="fas fa-plus-circle"></i>
                 <i class="fas fa-minus-circle"></i>
-                What does the different access rights options mean?
+                What is the difference between different Access Rights options?
               </button>
             </h2>
           </div>
