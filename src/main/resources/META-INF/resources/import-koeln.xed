@@ -43,7 +43,7 @@
     <xed:bind xpath="mods:classification[@classID='partOf']">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partOf" />:</label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partOf" />
         </select>
@@ -56,7 +56,7 @@
     <xed:bind xpath="mods:classification[@classID='category']">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.category" />:</label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:category" />
         </select>
@@ -69,7 +69,7 @@
     <xed:bind xpath="mods:classification[@classID='partner']">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partner" />:</label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partner" />
         </select>
@@ -82,7 +82,7 @@
     <xed:bind xpath="mods:classification[@classID='peerreviewed']">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label"><xed:output i18n="koeln.editor.label.peerreviewed" />:</label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peerreviewed" />
         </select>
@@ -94,7 +94,7 @@
     <xed:bind xpath="mods:classification[@classID='accessrights']">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label"><xed:output i18n="koeln.editor.label.accessrights" />:</label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:accessrights" />
         </select>
@@ -108,7 +108,7 @@
         <label for="{xed:generate-id()}" class="mycore-form-label">
           <xed:output i18n="koeln.comment.intern" />:
         </label>
-        <input id="{xed:generate-id()}" type="text" class="mycore-form-input" />
+        <input id="{xed:generate-id()}" type="text" class="{$xed-validation-marker} mycore-form-input" />
       </div>
     </xed:bind>
   </xed:template>
@@ -119,7 +119,7 @@
         <label for="{xed:generate-id()}" class="mycore-form-label">
           <xed:output i18n="koeln.typeOfResource" />:
         </label>
-        <select id="{xed:generate-id()}" class="mycore-form-input">
+        <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:typeOfResource" />
         </select>
       </div>
