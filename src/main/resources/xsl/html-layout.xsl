@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xalan="http://xml.apache.org/xalan"
   xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
-  xmlns:encoder="xalan://java.net.URLEncoder" 
+  xmlns:encoder="xalan://java.net.URLEncoder"
   xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
   exclude-result-prefixes="xsl xalan i18n encoder mcrver">
 
@@ -26,7 +26,7 @@
   <xsl:include href="html-layout-backend.xsl" />
 
   <!-- ==================== HTML ==================== -->
-  
+
   <xsl:template match="/html">
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html>
 
@@ -230,11 +230,11 @@
               </ul>
             </div>
           </nav>
-          <nav class="col col-auto">
-            <div class="nav nav-pills">
+          <div class="col col-auto">
+            <nav>
               <xsl:call-template name="layout.login"/>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
@@ -267,11 +267,11 @@
               <div id="wordmark" />
             </a>
           </div>
-          <nav class="col col-auto">
-            <div class="nav nav-pills">
+          <div class="col col-auto">
+            <nav>
               <xsl:call-template name="layout.login"/>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
@@ -294,7 +294,7 @@
 
   <xsl:template name="layout.inhalt">
     <section role="main" id="inhalt">
-    
+
       <xsl:choose>
         <xsl:when test="$allowed.to.see.this.page = 'true'">
           <xsl:copy-of select="body/*[not(@id='sidebar')][not(@id='breadcrumb')]" />
@@ -355,82 +355,88 @@
 
   <!-- current user and login formular-->
   <xsl:template name="layout.login">
+    <div class="nav thk-login-menu">
+      <div class="nav-item mr-2">
+        <xsl:choose>
+          <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
+            <!-- hide guest name, no need for that
+            <span class="user btn p-0" style="cursor: default;">
+              [<xsl:value-of select="i18n:translate('component.user2.login.guest')" />]
+            </span>
+          -->
+          </xsl:when>
+          <xsl:otherwise>
+            <a aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+               role="button" id="mcrFunctionsDropdown" href="#"
+               class="user nav-link dropdown-toggle p-0" style="cursor: default;">
+              <xsl:choose>
+                <xsl:when test="contains($CurrentUser,'@')">
+                  [<xsl:value-of select="substring-before($CurrentUser,'@')" />]
+                </xsl:when>
+                <xsl:otherwise>
+                  [<xsl:value-of select="$CurrentUser" />]
+                </xsl:otherwise>
+              </xsl:choose>
+            </a>
+            <div aria-labeledby="mcrFunctionsDropdown" class="dropdown-menu">
+              <xsl:call-template name="layout.usernav" />
+            </div>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:call-template name="orcidUser" />
 
-    <div class="nav-item mr-2">
-      <xsl:choose>
-        <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
-          <span class="user btn p-0" style="cursor: default;">
-            [<xsl:value-of select="i18n:translate('component.user2.login.guest')" />]
-          </span>
-        </xsl:when>
-        <xsl:otherwise>
-          <a aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
-             role="button" id="mcrFunctionsDropdown" href="#"
-             class="user nav-link dropdown-toggle p-0" style="cursor: default;">
-            <xsl:choose>
-              <xsl:when test="contains($CurrentUser,'@')">
-                [<xsl:value-of select="substring-before($CurrentUser,'@')" />]
-              </xsl:when>
-              <xsl:otherwise>
-                [<xsl:value-of select="$CurrentUser" />]
-              </xsl:otherwise>
-            </xsl:choose>
-          </a>
-          <div aria-labeledby="mcrFunctionsDropdown" class="dropdown-menu">
-            <xsl:call-template name="layout.usernav" />
-          </div>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:call-template name="orcidUser" />
-
+      </div>
+      <div class="nav-item">
+        <xsl:choose>
+          <xsl:when test="/webpage/@id='login'" />
+          <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
+            <form action="{$WebApplicationBaseURL}{$UBO.Login.Path}" method="get">
+              <input type="hidden" name="url" value="{$RequestURL}" />
+              <input class="btn btn-link p-0" type="submit" name="{i18n:translate('component.user2.button.login')}" value="{i18n:translate('component.user2.button.login')}" />
+            </form>
+          </xsl:when>
+          <xsl:otherwise>
+            <form action="{$ServletsBaseURL}logout" method="get">
+              <input type="hidden" name="url" value="{$WebApplicationBaseURL}" />
+              <input class="btn btn-link p-0" style="border:0;" type="submit" name="{i18n:translate('login.logOut')}" value="{i18n:translate('login.logOut')}" />
+            </form>
+          </xsl:otherwise>
+        </xsl:choose>
+      </div>
     </div>
-    <div class="nav-item mr-2">
-      <xsl:choose>
-        <xsl:when test="/webpage/@id='login'" />
-        <xsl:when test="$CurrentUser = $MCR.Users.Guestuser.UserName">
-          <form action="{$WebApplicationBaseURL}{$UBO.Login.Path}" method="get">
-            <input type="hidden" name="url" value="{$RequestURL}" />
-            <input class="btn btn-link p-0" type="submit" name="{i18n:translate('component.user2.button.login')}" value="{i18n:translate('component.user2.button.login')}" />
-          </form>
-        </xsl:when>
-        <xsl:otherwise>
-          <form action="{$ServletsBaseURL}logout" method="get">
-            <input type="hidden" name="url" value="{$WebApplicationBaseURL}" />
-            <input class="btn btn-link p-0" style="border:0;" type="submit" name="{i18n:translate('login.logOut')}" value="{i18n:translate('login.logOut')}" />
-          </form>
-        </xsl:otherwise>
-      </xsl:choose>
+    <div class="nav thk-lang-switch">
+      <xsl:if test="$CurrentLang='de'">
+        <xsl:text>Deutsch |&#160;</xsl:text>
+      </xsl:if>
+      <a class="nav-link">
+        <xsl:attribute name="href">
+          <xsl:choose>
+            <xsl:when test="$CurrentLang='de'">
+              <xsl:call-template name="UrlSetParam">
+                <xsl:with-param name="url" select="$RequestURL" />
+                <xsl:with-param name="par" select="'lang'" />
+                <xsl:with-param name="value" select="'en'" />
+              </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="$CurrentLang='en'">
+              <xsl:call-template name="UrlSetParam">
+                <xsl:with-param name="url" select="$RequestURL" />
+                <xsl:with-param name="par" select="'lang'" />
+                <xsl:with-param name="value" select="'de'" />
+              </xsl:call-template>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:attribute>
+        <!-- <img src="{$WebApplicationBaseURL}images/lang_{$CurrentLang}.gif" alt="{i18n:translate('navigation.Language')}" /> -->
+        <xsl:value-of select="i18n:translate('navigation.ende')"/>
+      </a>
+      <xsl:if test="$CurrentLang='en'">
+        <xsl:text>&#160;| English</xsl:text>
+      </xsl:if>
     </div>
-    <div class="nav-item">
-      <span class="btn p-0">
-        <a>
-          <xsl:attribute name="href">
-            <xsl:choose>
-              <xsl:when test="$CurrentLang='de'">
-                <xsl:call-template name="UrlSetParam">
-                  <xsl:with-param name="url" select="$RequestURL" />
-                  <xsl:with-param name="par" select="'lang'" />
-                  <xsl:with-param name="value" select="'en'" />
-                </xsl:call-template>
-              </xsl:when>
-              <xsl:when test="$CurrentLang='en'">
-                <xsl:call-template name="UrlSetParam">
-                  <xsl:with-param name="url" select="$RequestURL" />
-                  <xsl:with-param name="par" select="'lang'" />
-                  <xsl:with-param name="value" select="'de'" />
-                </xsl:call-template>
-              </xsl:when>
-            </xsl:choose>
-          </xsl:attribute>
-          <!-- <img src="{$WebApplicationBaseURL}images/lang_{$CurrentLang}.gif" alt="{i18n:translate('navigation.Language')}" /> -->
-          <xsl:value-of select="i18n:translate('navigation.ende')"/>
-        </a>
-      </span>
-    </div>
-
   </xsl:template>
 
-  <!-- If current user has ORCID and we are his trusted party, display ORCID icon to indicate that -->  
+  <!-- If current user has ORCID and we are his trusted party, display ORCID icon to indicate that -->
   <xsl:param name="MCR.ORCID.LinkURL" />
 
   <xsl:template name="orcidUser">
@@ -438,7 +444,7 @@
     <xsl:variable name="orcidUser" select="orcidSession:getCurrentUser()" xmlns:orcidSession="xalan://org.mycore.orcid.user.MCRORCIDSession" />
     <xsl:variable name="userStatus" select="orcidUser:getStatus($orcidUser)" xmlns:orcidUser="xalan://org.mycore.orcid.user.MCRORCIDUser" />
     <xsl:variable name="trustedParty" select="userStatus:weAreTrustedParty($userStatus)" xmlns:userStatus="xalan://org.mycore.orcid.user.MCRUserStatus" />
-    
+
     <xsl:if test="$trustedParty = 'true'">
       <xsl:variable name="orcid" select="orcidUser:getORCID($orcidUser)" xmlns:orcidUser="xalan://org.mycore.orcid.user.MCRORCIDUser" />
       <a href="{$MCR.ORCID.LinkURL}{$orcid}">
@@ -456,7 +462,7 @@
       </div>
     </div>
   </xsl:template>
-  
+
   <!-- Footer -->
 
   <xsl:template name="layout.footer">
