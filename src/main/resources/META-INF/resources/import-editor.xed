@@ -27,7 +27,7 @@
     <xed:validate xpath="//mods:location/mods:shelfLocator" matches="(\d\d\s[A-Za-z]+\s\d+.*)|([A-Z]{3,4}\d+[A-Z_d\-+,()\d]*)" i18n="ubo.shelfmark.validation" display="global" />
     <xed:validate xpath="//mods:abstract/@xlink:href" matches="(f|ht)tp(s?)://[\w\d.]+\S*" i18n="ubo.link.validation" display="global" />
     <!-- year is required, except for journal and series: -->
-    <xed:validate xpath="//mods:mods" test="descendant::mods:dateIssued[string-length(.) &gt; 0] or mods:genre='journal' or mods:genre='series'" i18n="ubo.date.issued.validation" display="global" />
+    <xed:validate xpath="//mods:mods" test="descendant::mods:dateIssued[string-length(.) &gt; 0] or mods:genre='journal' or mods:genre='series' or mods:genre='blog' or mods:genre='newspaper'" i18n="ubo.date.issued.validation" display="global" />
     
     <script type="text/javascript">
       $(document).ready(function() { $('select[class*="autocomplete"]').chosen({search_contains: true}); });
@@ -227,7 +227,7 @@
     <xed:bind xpath="mods:titleInfo/mods:title">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">
-          <xed:output value=" i18n:translate(concat('ubo.title.', $host_intern)) " />:
+          *<xed:output value=" i18n:translate(concat('ubo.title.', $host_intern)) " />:
         </label>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" />
       </div>
@@ -260,7 +260,7 @@
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
         <label for="{xed:generate-id()}" class="mycore-form-label">
-          <xed:output i18n="ubo.role.editor" />:
+          *<xed:output i18n="ubo.role.editor" />:
         </label>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
       </div>
