@@ -71,7 +71,7 @@ public class KoelnRestSearcher implements PersonSearcher {
         }
     }
 
-    public Element search(String term) {
+    public PersonListResult search(String term) {
         final HttpPost httpPost = new HttpPost(getRestURI()+"personsearch");
         httpPost.setHeader("accept", ACCEPT);
         httpPost.setHeader("Content-Type", CONTENT_TYPE);
@@ -86,12 +86,11 @@ public class KoelnRestSearcher implements PersonSearcher {
                     try (final InputStream content = response.getEntity().getContent()) {
                         try (final InputStreamReader isr = new InputStreamReader(content, Charsets.UTF_8)) {
                             final Gson gson = getGson();
-                            final PersonListResult listResult = gson.fromJson(isr, PersonListResult.class);
-                            return buildResultDocument(listResult);
+                            return gson.fromJson(isr, PersonListResult.class);
                         }
                     }
                 } else {
-                    return buildResultDocument(new PersonListResult());
+                    return new PersonListResult();
                 }
             }
         } catch (IOException e) {
@@ -99,9 +98,13 @@ public class KoelnRestSearcher implements PersonSearcher {
         }
     }
 
+    public Element searchXML(String term) {
+        return buildResultDocument(search(term));
+    }
+
     @Override
     public Element search(String forename, String surename) {
-        return search(forename + " " + surename);
+        return searchXML(forename + " " + surename);
     }
 
     private Gson getGson() {
