@@ -49,46 +49,4 @@
     </div>
   </article>
 
-  <article xml:lang="de" class="card mb-1">
-    <div class="card-body">
-      <h2>Persönliche Publikationsliste auf TH-Webseiten einbinden</h2>
-      <p>
-        Sie können Ihre Publikationsliste aus der Digitalen Hochschulbibliografie auch auf Ihren TH-Personenseiten anzeigen lassen. Die Listen
-        aktualisieren sich dann automatisch, wenn Sie neue Publikationen in der Bibliografie eintragen. Im Personenseiten-Editor (PSE) der
-        TH Köln fügen Sie einen Link zu Ihrer Literaturliste in der Digitalen Hochschulbibliografie ein. 
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="en" class="card mb-1">
-    <div class="card-body">
-      <h2>Including your personal publication list on your TH web page</h2>
-      <p>
-        You can display your publication list from the Digital University Bibliography on your personal TH web page. The lists will be updated
-        automatically as soon as you add new publications to the University Bibliography. You can insert a link to your publication list by
-        using PSE, the TH-program to edit your personal TH web page.
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="de" class="card mb-1">
-    <div class="card-body">
-      <h2>Publikationslisten für einzelne Einrichtungen auf den TH-Webseiten einbinden</h2>
-      <p>
-        BereichsadministratorInnen der Imperia-Webseiten können Publikationslisten für Institute, Fakultäten und sonstige Forschungseinrichtungen
-        zusammenstellen und in Imperia einbinden. Das Modul wird BereichsadministratorInnen in Imperia angezeigt.
-      </p>
-    </div>
-  </article>
-
-  <article xml:lang="en" class="card mb-1">
-    <div class="card-body">
-      <h2>Including publication lists on TH web pages for institutions</h2>
-      <p>
-        The administrators who are responsible for the respective web pages can compile publication lists for institutions, faculties and other
-        research institutes and integrate them in Imperia. This module is available to the respective administrators in Imperia.
-      </p>
-    </div>
-  </article>
-
 </webpage>
