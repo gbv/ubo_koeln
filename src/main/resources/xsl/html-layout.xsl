@@ -281,7 +281,7 @@
 
   <xsl:template name="layout.basket.info">
     <div id="basketWrapper">
-      <a href="{$ServletsBaseURL}MCRBasketServlet?action=show&amp;type=bibentries">
+      <a href="{$ServletsBaseURL}MCRBasketServlet?action=show&amp;type=objects">
             <span class="fas fa-bookmark mr-2" aria-hidden="true" />
             <span class="mr-1"><xsl:value-of select="i18n:translate('basket')" />:</span>
             <span class="mr-1" id="basket-info-num">
