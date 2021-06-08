@@ -227,7 +227,7 @@
     <xed:bind xpath="mods:titleInfo/mods:title">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">
-          *<xed:output value=" i18n:translate(concat('ubo.title.', $host_intern)) " />:
+          * <xed:output value=" i18n:translate(concat('ubo.title.', $host_intern)) " />:
         </label>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" />
       </div>
