@@ -19,8 +19,12 @@
   <article class="card mb-3" xml:lang="en">
       <div class="card-body">
         <p>
-        If you have questions to the bibliography, or need advice or consultation, please contact us:
-        <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>
+          If you encounter any technical issues please contact the Service Desk of Campus IT
+          (<a href="mailto:support@campus-it.th-koeln.de">support@campus-it.th-koeln.de</a>).
+        </p>
+        <p>
+          If you have questions to the bibliography, or need advice or consultation, please contact us:
+          <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>.
         </p>
       </div>
   </article>
