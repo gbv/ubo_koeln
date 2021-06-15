@@ -24,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -169,7 +170,7 @@ public class KoelnRestSearcher implements PersonSearcher {
 
     private String getEncodedAuth() {
         final byte[] encoded = Base64.getEncoder().encode((getUsername() + ":" + getPassword()).getBytes(Charsets.UTF_8));
-        return new String(encoded);
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 
     private String getPassword() {
