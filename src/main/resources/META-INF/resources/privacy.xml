@@ -121,4 +121,104 @@
     </div>
   </article>
 
+  <article class="card mb-3" xml:lang="en">
+    <div class="card-body">
+      <p>
+        The <a href="https://www.th-koeln.de/hochschule/datenschutzhinweis_8279.php">data protection regulations of TH Köln</a>
+        apply, in addition:
+      </p>
+
+      <h2>I. General Information on Data Processing</h2>
+      
+      <p>
+        The purpose of the University Bibliography is to provide a largely complete publication list of all TH Köln members. In
+        principle, we only process personal data of our users to the extent that is necessary to provide a functional website
+        and our contents and services. This is done to perform the task assigned to us of supporting teaching and research
+        according to Art. 6 point (e) of paragraph 1 GDPR. As far as we obtain consent for the processing of personal data, Art. 6
+        point (a) of paragraph 1 GDPR serves as the legal basis. An exception applies in those cases where obtaining consent in
+        advance is not possible for factual reasons and the processing of the data is permitted by legal regulations.
+      </p>
+      
+      <h2>II. Connection Data and Log Files</h2>
+      
+      <p>
+        Every time you access the web pages of the bibliography, your web browser automatically transports data of the calling
+        computer. This is a basic function of the World Wide Web and cannot be influenced by us. The following data is transmitted
+        and stored in log files:
+      </p>
+      <ul>
+        <li>Date and time of access</li>
+        <li>Addresses of the accessed web pages</li>
+        <li>IP address of the user, from which the origin of the web page access can be derived (country, town or organization, Internet service provider)</li>
+        <li>Information on the operating system and browser type used</li>
+        <li>Addresses of the web pages that led to our bibliography website</li>
+      </ul>
+      <p>
+        The temporary processing of this connection data is technically mandatory for the provision of the platform. The storage
+        in log files is carried out to optimize and ensure the platform’s functionality and security. For statistical purposes,
+        the log file data is regularly processed in anonymized form. Personal access data is deleted after 7 days.
+      </p>
+      
+      <h2>III. Session Cookies</h2>
+      
+      <p>
+        The University Bibliography uses so-called session cookies. These are small information units stored by a web server
+        in the working memory of the visitor’s computer. In session cookies, a randomly generated and unique identification
+        number – a so-called session ID – is stored. A cookie also contains information on its origin and retention period.
+        These cookies cannot store any other data. The session cookies we use are essential for the function of our website,
+        so that your browser can be recognized after a web page change. They are automatically deleted when you close your web
+        browser. Session cookies are not used to create user profiles.
+      </p>
+      
+      <h2>IV. Login Data</h2>
+      
+      <p>
+        A login with personal data is only required by university members to edit the bibliography; it is not necessary for
+        the search for publications or to gain reading access. For publication, university members register with their university
+        identifier. The following user data is processed and stored by the bibliography: 
+      </p>
+      <ul>
+        <li>Name</li>
+        <li>User ID (for authentication only, not stored)</li>
+        <li>DHSB-ID (an internal bibliography ID)</li>
+        <li>Time and date of the last login</li>
+        <li>User roles (e.g. administrator, the roles are assigned within the bibliography)</li>
+        <li>Links to the publications recorded in the bibliography, incl. date and time of the last modification</li>
+      </ul>  
+      <p>
+        The storage and processing of this data is carried out only to perform the task assigned to us of supporting teaching
+        and research according to Art. 6 point (e) of paragraph 1 GDPR and is required
+      </p>
+      <ul>
+        <li>to prove authorization to use the bibliography</li>
+        <li>to communicate with the authors</li>
+        <li>to prove the authorship of the publications</li>
+      </ul>
+      
+      <h2>V. Publication data</h2>
+      <p>
+        The purpose of this bibliography is the worldwide provision of a largely complete publication list of all
+        TH Köln members. Therefore we store, process and publish personal data of persons involved in publications:
+      </p>
+      <ul>
+        <li>Names and roles (e.g. author, editor)</li>
+        <li>Unique author identifiers (e.g. ORCID iD, GND)</li>
+        <li>Information on the organizational affiliation (e.g. university, faculty, institute)</li>
+      </ul>
+      <p>
+        This serves to clearly prove and acknowledge authorship. By transferring the publication meta data we also
+        transmit these personal data to third parties and provide them via interfaces:
+      </p>
+      <ul>
+        <li>to scientific and general search engines like Google</li>
+        <li>to third parties worldwide, via interfaces like OAI (Open Archives Initiative) and the Google Sitemap protocol</li>
+      </ul>
+      <!-- p>
+        Eine Veröffentlichung und damit Weitergabe und weltweite Zugänglichmachung erfolgt nur mit 
+        Einverständnis der Autor*innen bzw. Herausgeber*innen und erst nach Unterzeichnung des
+        Veröffentlichungsvertrages.
+      </p -->
+    </div>
+  </article>
+
 </webpage>

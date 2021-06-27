@@ -89,7 +89,7 @@
     </item>    
     <item ref="imprint.xml" id="dhsb.imprint">
       <label xml:lang="de">Impressum</label>
-      <label xml:lang="en">Imprint</label>
+      <label xml:lang="en">Site Notice</label>
     </item>
     <item ref="accessibility.xml" id="dhsb.accessibility">
       <label xml:lang="de">Barrierefreiheit</label>

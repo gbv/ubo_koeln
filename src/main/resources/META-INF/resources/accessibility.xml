@@ -2,13 +2,12 @@
 
 <webpage lastModified="$Date$" id="dhsb.accessibility">
   <title xml:lang="de">Erklärung zur Barrierefreiheit</title>
-  <title xml:lang="en">Accessibility declaration</title>
+  <title xml:lang="en">Accessibility Statement</title>
 
   <article class="card mb-3" xml:lang="de">
     <div class="card-body">
         <p>
-          Die <strong>TH Köln</strong> (THK) ist bemüht,
-          die <strong>Digitale Hochschulbibliografie</strong>
+          Die <strong>TH Köln</strong> (THK) ist bemüht, die <strong>Digitale Hochschulbibliografie</strong>
           (<a href="https://bibliografie.th-koeln.de">https://bibliografie.th-koeln.de</a>)
           im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2016/2102
           des Europäischen Parlaments und der
@@ -17,6 +16,18 @@
           </a>
           barrierefrei zugänglich zu machen.
         </p>
+    </div>
+  </article>
+  <article class="card mb-3" xml:lang="en">
+    <div class="card-body">
+      <p>
+        <strong>TH Köln</strong> (THK) is committed to making the <strong>Digital University Bibliography</strong>
+        (<a href="https://bibliografie.th-koeln.de">https://bibliografie.th-koeln.de</a>)
+        accessible in compliance with the national legislations implementing Directive (EU) 2016/2102 of the European Parliament and the 
+        <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=10000000000000000724" title="Verordnung zur Schaffung barrierefreier Informationstechnik" class="external">
+          Ordinance on the Creation of Barrier-Free Information Technology in accordance with the Act on Equal Opportunities for Disabled Persons of North-Rhine Westphalia.
+        </a>
+      </p>
     </div>
   </article>
 
@@ -39,6 +50,26 @@
       </p>
     </div>
   </article>
+  <article class="card mb-3" xml:lang="en">
+    <div class="card-body">
+      <h2>Compatibility Status with the Requirements</h2>
+      
+      <p>
+        The University Bibliography is partially conform with the Directive (EU) 2016/2102,
+        the  Act on Equal Opportunities for Disabled Persons of North-Rhine Westphalia
+        (BGG NRW) and the Ordinance on the Creation of Barrier-Free Information Technology
+        (BITV NRW).
+      </p>
+      <p>
+        <strong>This website is under construction. A BITV test will soon be carried out
+        for this website and the result will be published here.</strong>
+      </p>
+      <p>
+        This statement was issued and last reviewed on June 8, 2021.
+      </p>
+    </div>
+  </article>
+
 
   <article class="card mb-3" xml:lang="de">
     <div class="card-body">
@@ -65,6 +96,35 @@
         Campusbibliothek Deutz<br />
         Betzdorfer Straße 2<br />
         50679 Köln
+      </p>
+    </div>
+  </article>
+  <article class="card mb-3" xml:lang="en">
+    <div class="card-body">
+      <h2>Contact and Feedback</h2>
+      
+      <p>
+        You are welcome to inform us about any deficiencies with regard to the barrier-free design of our website.
+        We are grateful for any hints and concrete suggestions.
+      </p>
+      <p>
+        Please include the keyword Barrierefreiheit / Accessibility in your message and let us know which content
+        you are referring to by mentioning the URL.
+      </p>
+      <p>
+        Please use our <a href="#">contact form</a>.<br/>
+        You can also send an email to <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>.<br/>
+        Our mailing address is:
+      </p>
+      
+      <p class="border-left pl-5">
+        Hochschulbibliothek<br />
+        Digitale Hochschulbibliografie<br />
+        z. Hd. Kerstin Klein<br />
+        Campusbibliothek Deutz<br />
+        Betzdorfer Straße 2<br />
+        50679 Cologne<br/>
+        Germany
       </p>
     </div>
   </article>
@@ -95,6 +155,33 @@
         Landesbeauftragten für Men­schen mit Be­hin­de­run­gen<br/>
         Fürstenwall 25<br />
         40219 Düsseldorf
+      </p>
+    </div>
+  </article>
+  <article class="card mb-3" xml:lang="en">
+    <div class="card-body">
+      <h2>Ombudsperson's Office for Accessible Information Technology in North Rhine-Westphalia</h2>
+      
+      <p>
+        In case you haven’t received a satisfactory response from us regarding messages or inquiries about the barrier-free information
+        technology of the University Bibliography, you can contact the Ombudsperson's Office for Accessible Information Technology. It
+        is assigned to the representative for the interests of people with disabilities according to § 11 of the Act on Equal Opportunities
+        for Disabled Persons of North-Rhine Westphalia.  By including all parties involved the Ombudsperson's Office attempts to determine
+        the circumstances of the lack of accessibility so that the provider can correct them.
+      </p>
+      <p>
+        If you wish to initiate an ombudsman procedure, please fill out the
+        <a href="https://www.mags.nrw/sites/default/files/asset/document/antrag_ombudsverfahren_0.pdf" title="Ombudsman procedure form">respective form</a>
+        and send it via
+        <a href="mailto:ombudsstelle-barrierefreie-it@mags.nrw.de" title="email Ombudspersons Office">email</a> to the Ombudsperson's Office.
+      </p>
+      <p class="border-left pl-5">
+        Ombudsstelle für barrierefreie In­for­ma­ti­ons­tech­nik<br/>
+        des Landes Nordrhein-Westfalen bei der<br/>
+        Landesbeauftragten für Men­schen mit Be­hin­de­run­gen<br/>
+        Fürstenwall 25<br />
+        40219 Düsseldorf<br />
+        Germany
       </p>
     </div>
   </article>
