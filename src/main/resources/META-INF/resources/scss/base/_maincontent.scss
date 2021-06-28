@@ -22,19 +22,6 @@ $form-color: #251e52;
     border-right: none !important;
 }
 
-.ubo-vue-form .form-group > .mycore-form-input {
-  max-width: 60%;
-  flex: 0 0 60%;
-}
-
-.ubo-vue-form .form-group > .mycore-form-input:not(:last-child) {
-  border-right: 1px solid #ced4da !important;
-}
-
-.ubo-vue-form .form-group > .is-invalid.mycore-form-input {
-  border-right: 1px solid #dc3545 !important;
-}
-
 .ubo-pl-deluser {
   color: $secondary !important;
 }
