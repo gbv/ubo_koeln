@@ -89,10 +89,6 @@
       <groupId>org.mycore.ubo</groupId>
       <artifactId>ubo-common</artifactId>
     </dependency>
-    <dependency>
-      <groupId>xml-apis</groupId>
-      <artifactId>xml-apis</artifactId>
-    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
