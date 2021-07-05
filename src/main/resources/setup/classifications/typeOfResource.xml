@@ -8,21 +8,17 @@
       <label xml:lang="de" text="Text" />
       <label xml:lang="en" text="Text" description="Resources that are basically textual in nature." />
     </category>
-    <category ID="audio">
-      <label xml:lang="en" text="Sound recording" description="Used when a mixture of musical and nonmusical sound recordings occurs in a resource or when a user does not want to or cannot make a distinction between musical and nonmusical." />
-      <label xml:lang="de" text="Tonaufnahme" />
-    </category>
     <category ID="still_image">
-      <label xml:lang="de" text="Bild (Standbild)" />
+      <label xml:lang="de" text="Bild" />
       <label xml:lang="en" text="Still image" description="Includes two-dimensional images and slides and transparencies." />
     </category>
-    <category ID="moving_image">
-      <label xml:lang="de" text="Bewegtes Bild" />
-      <label xml:lang="en" text="moving image" description="Includes motion pictures and videorecordings, as well as television programs, digital video, and animated computer graphics—but not slides, transparencies (&quot;still image&quot;) and moving images that are primarily computer programs (&quot;software, multimedia&quot;)." />
+    <category ID="audio">
+      <label xml:lang="en" text="Audio" description="Used when a mixture of musical and nonmusical sound recordings occurs in a resource or when a user does not want to or cannot make a distinction between musical and nonmusical." />
+      <label xml:lang="de" text="Audio" />
     </category>
-    <category ID="multimedia">
-      <label xml:lang="de" text="Multimedia" />
-      <label xml:lang="en" text="Multimedia" />
+    <category ID="moving_image">
+      <label xml:lang="de" text="Bewegte Bilder" />
+      <label xml:lang="en" text="moving image" description="Includes motion pictures and videorecordings, as well as television programs, digital video, and animated computer graphics—but not slides, transparencies (&quot;still image&quot;) and moving images that are primarily computer programs (&quot;software, multimedia&quot;)." />
     </category>
   </categories>
 </mycoreclass>
