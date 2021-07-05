@@ -18,9 +18,9 @@
     </article>
     <article class="card mb-3" xml:lang="en">
       <div class="card-body">
-        <h3>Redaktion: Digitale Hochschulbibliografie</h3>
+        <h3>Editing: Digital University Bibliography</h3>
         <p>
-          Die Bibliografie wird von der Hochschulbibliothek der TH Köln betrieben.
+          The bibliography is operated by the University Library of TH Köln.
         <br />
           <a href="mailto:bibliografie@th-koeln.de">bibliografie@th-koeln.de</a>
         </p>
@@ -39,11 +39,11 @@
     </article>
     <article class="card mb-3" xml:lang="en">
       <div class="card-body">
-        <h3>Meldungen über missbräuchliche Nutzungen,</h3>
+        <h3>Notifications of misuse</h3>
         <p>
-          die aus dem IP-Namensbereich th-koeln.de ausgehen, senden Sie bitte an <a href="mailto:support@campus-it.th-koeln.de">support@campus-it.th-koeln.de</a>
-          (Kurzbeschreibung des Vorfalls, betroffene Systeme, Vermerk der Dringlichkeit). Gerne können Sie auch den Service Desk der Campus-IT unter<br />
-          +49 221 8275 2323 kontaktieren.
+          that originate from the IP name range th-koeln.de may be sent to <a href="mailto:support@campus-it.th-koeln.de">support@campus-it.th-koeln.de</a>
+          (short description of the incident, systems affected, note of urgency). You are also welcome to contact the Campus IT Service-Desk at<br />
+          +49 221 8275 2323.
         </p>
       </div>
     </article>
