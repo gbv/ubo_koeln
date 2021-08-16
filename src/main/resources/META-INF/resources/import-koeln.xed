@@ -34,6 +34,9 @@
           <option value=""><xed:output i18n="search.select.autocomplete" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:ubo.department.help}">
+          <i class="fas fa-info"></i>
+        </a>
         <xed:controls />
       </div>
     </xed:repeat>
@@ -47,6 +50,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partOf" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.partOf}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
     <xed:validate xpath="//mods:classification[@classID='partOf']" required="true" i18n="koeln.condition.partOf" display="global" />
@@ -60,6 +66,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:category" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.category}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
     <xed:validate xpath="//mods:classification[@classID='category']" required="true" i18n="koeln.condition.category" display="global" />
@@ -73,6 +82,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partner" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.partner}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
     <xed:validate xpath="//mods:classification[@classID='partner']" required="true" i18n="koeln.condition.partner" display="global" />
@@ -86,6 +98,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peerreviewed" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.peerreviewed}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
   </xed:template>
@@ -98,6 +113,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:accessrights" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.accessrights}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
   </xed:template>
@@ -109,6 +127,9 @@
           <xed:output i18n="koeln.comment.intern" />:
         </label>
         <input id="{xed:generate-id()}" type="text" class="{$xed-validation-marker} mycore-form-input" />
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.comment.intern}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
   </xed:template>
@@ -122,6 +143,9 @@
         <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:typeOfResource" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.typeOfResource}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
   </xed:template>

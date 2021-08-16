@@ -14,7 +14,9 @@ body {
 footer {
   flex-shrink: 0;
 }
-
+dd {
+  margin-left: 2rem;
+}
 .card {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .1rem;
@@ -71,6 +73,9 @@ footer {
     font-size: 4rem;
     color: $koeln-dark-text
   }
+}
+.info-button > i {
+  color: white;
 }
 
 .chosen-container .chosen-results li.active-result {

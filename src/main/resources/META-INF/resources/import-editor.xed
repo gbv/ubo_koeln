@@ -30,7 +30,17 @@
     <xed:validate xpath="//mods:mods" test="descendant::mods:dateIssued[string-length(.) &gt; 0] or mods:genre='journal' or mods:genre='series' or mods:genre='blog' or mods:genre='newspaper'" i18n="ubo.date.issued.validation" display="global" />
     
     <script type="text/javascript">
-      $(document).ready(function() { $('select[class*="autocomplete"]').chosen({search_contains: true}); });
+      $(document).ready(function() {
+      
+        $('select[class*="autocomplete"]').chosen({search_contains: true}); 
+      
+        $(document).popover({
+          selector: "[data-toggle=popover]",
+          container: "body",
+          html: true,
+          trigger: "focus"
+        });
+      });
     </script>
   </xed:template>
   
@@ -62,6 +72,9 @@
             <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
               <xed:include uri="xslStyle:items2options:resource:status.xml" />
             </select>
+            <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:ubo.status.help}">
+              <i class="fas fa-info"></i>
+            </a>
           </div>
         </xed:when>
         <xed:otherwise>
@@ -112,6 +125,9 @@
           <option value=""><xed:output i18n="search.select.autocomplete" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:ubo.department.help}">
+          <i class="fas fa-info"></i>
+        </a>
         <xed:controls />
       </div>
     </xed:repeat>
@@ -125,6 +141,9 @@
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:oa" />
         </select>
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:ubo.oa.help}">
+          <i class="fas fa-info"></i>
+        </a>
       </div>
     </xed:bind>
   </xed:template>
