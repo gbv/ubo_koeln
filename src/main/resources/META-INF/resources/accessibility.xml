@@ -21,7 +21,7 @@
   <article class="card mb-3" xml:lang="en">
     <div class="card-body">
       <p>
-        <strong>TH Köln</strong> (THK) is committed to making the <strong>Digital University Bibliography</strong>
+        <strong>TH Köln</strong> is committed to making the <strong>Digital University Bibliography</strong>
         (<a href="https://bibliografie.th-koeln.de">https://bibliografie.th-koeln.de</a>)
         accessible in compliance with the national legislations implementing Directive (EU) 2016/2102 of the European Parliament and the 
         <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=10000000000000000724" title="Verordnung zur Schaffung barrierefreier Informationstechnik" class="external">
@@ -90,6 +90,7 @@
       </p>
       
       <p class="border-left pl-5">
+        TH Köln<br />
         Hochschulbibliothek<br />
         Digitale Hochschulbibliografie<br />
         z. Hd. Kerstin Klein<br />
@@ -118,6 +119,7 @@
       </p>
       
       <p class="border-left pl-5">
+        TH Köln<br />
         Hochschulbibliothek<br />
         Digitale Hochschulbibliografie<br />
         z. Hd. Kerstin Klein<br />
