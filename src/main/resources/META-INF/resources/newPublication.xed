@@ -39,8 +39,6 @@
                       <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
                         <option value="zdb">ZDB ID</option>
                         <option value="ppn">GBV/SWB PPN</option>
-                        <option value="hbz">HBZ HT-Nummer</option>
-                        <option value="ieee">IEEE Article No.</option>
                         <option value="issn">ISSN</option>
                       </xed:if>
                     </select>
