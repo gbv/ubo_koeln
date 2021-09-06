@@ -6,47 +6,28 @@
 
   <xsl:template match="/mcr_error">
     <h1>
-      Es ist ein Fehler aufgetreten
+      <xsl:value-of select="i18n:translate('koeln.pageError.title')" />
     </h1>
     <div class="row">
       <div class="col" lang="de">
-        <article class="card mb-3" xml:lang="de">
+        <article class="card mb-3" xml:lang="{$CurrentLang}">
           <div class="card-body">
             <xsl:choose>
               <xsl:when test="/mcr_error/@HttpError = '500'">
-                  <h2>Interner Serverfehler</h2>
-                  <p>Es ist leider ein Serverfehler aufgetreten. Wir arbeiten an dessen Beseitigung!
-                  Gern können Sie uns eine Mail an <span class="madress">dms-list [at] lists.gbv.de</span>
-                  schicken und kurz schildern wie es zu diesem Fehler kam.
-                  <br/><br/>
-                  Vielen Dank!</p>
+                <h2><xsl:value-of select="i18n:translate('koeln.pageError.title.500')" /></h2>
+                <xsl:value-of select="i18n:translate('koeln.pageError.text.404')" disable-output-escaping="yes" />
               </xsl:when>
               <xsl:when test="/mcr_error/@HttpError = '404'">
                   <h2><xsl:value-of select="." /></h2>
-                  <p>Die von Ihnen angefordete Seite konnte leider nicht gefunden werden. Eventuell
-                  haben Sie ein altes Lesezeichen oder einen veralteten Link benutzt. Bitte versuchen
-                  Sie mithilfe der <a href="{$WebApplicationBaseURL}/search.xed">Suche</a> die gewünschte Seite zu finden oder
-                  schreiben Sie eine Mail an <span class="madress">bibliografie [at] th-koeln.de. </span> und
-                  schildern kurz wie es zu diesem Fehler kam.
-                  <br/><br/>
-                  Vielen Dank!</p>
+                  <xsl:value-of select="i18n:translate('koeln.pageError.text.404')" disable-output-escaping="yes" />
               </xsl:when>
               <xsl:when test="/mcr_error/@HttpError = '403'">
-                  <h2>Zugriff verweigert</h2>
-                  <p>Sie haben keine Berechtigung diese Seite zu sehen. Melden Sie sich bitte am System an.
-                  Sollten Sie trotz Anmeldung nicht die nötigen Rechte haben um diese Seite zu sehen, wenden
-                  Sie sich ggf. an Ihren Administrator oder
-                  schreiben Sie eine Mail an <span class="madress">bibliografie [at] th-koeln.de. </span>.
-                  <br/><br/>
-                  Vielen Dank!</p>
+                  <h2><xsl:value-of select="i18n:translate('koeln.pageError.title.403')" /></h2>
+                <xsl:value-of select="i18n:translate('koeln.pageError.text.403')" disable-output-escaping="yes" />
               </xsl:when>
               <xsl:otherwise>
                   <h2><xsl:value-of select="."></xsl:value-of></h2>
-                  <p>Es ist leider ein Fehler aufgetreten. Sollte dies wiederholt der Fall sein,
-                  schreiben Sie bitte eine Mail an <span class="madress">dms-list [at] lists.gbv.de</span> und
-                  schildern kurz wie es dazu kam.
-                  <br/><br/>
-                  Vielen Dank!</p>
+                <xsl:value-of select="i18n:translate('koeln.pageError.text.otherwise')" disable-output-escaping="yes" />
               </xsl:otherwise>
             </xsl:choose>
           </div>
