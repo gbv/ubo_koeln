@@ -9,7 +9,7 @@
       <xsl:value-of select="i18n:translate('koeln.pageError.title')" />
     </h1>
     <div class="row">
-      <div class="col" lang="de">
+      <div class="col" lang="{$CurrentLang}">
         <article class="card mb-3" xml:lang="{$CurrentLang}">
           <div class="card-body">
             <xsl:choose>
