@@ -420,6 +420,25 @@
     </xed:repeat>
   </xed:template>
 
+  <xed:template id="corporate.role">
+    <xed:repeat xpath="mods:name[@type='corporate']">
+      <div class="form-group form-inline ubo-repeat-group">
+        <xed:bind xpath="mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']" initially="edt">
+          <label class="mycore-form-label d-flex align-items-center mt-0">
+            <select class="form-control custom-select">
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
+            </select>
+            <div class="ml-1">:</div>
+          </label>
+        </xed:bind>
+        <xed:bind xpath="mods:namePart">
+          <input id="{xed:generate-id()}" type="text" class="mycore-form-input" placeholder="{i18n:ubo.corporate}" />
+        </xed:bind>
+        <xed:controls />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
   <xed:template id="place">
     <xed:bind xpath="mods:originInfo/mods:place/mods:placeTerm[@type='text']">
       <div class="form-group form-inline">
