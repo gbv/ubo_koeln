@@ -11,10 +11,14 @@
         <SizeBasedTriggeringPolicy size="250 MB"/>
       </Policies>
     </RollingFile>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+    </Console>
   </appenders>
   <loggers>
     <root level="info">
       <appender-ref ref="RollingFile" />
+      <appender-ref ref="console" />
     </root>
     <logger name="org.hibernate" level="error" />
     <logger name="org.mycore.frontend.editor.validation" level="info" />
