@@ -187,7 +187,7 @@
               </button>
             </h2>
           </div>
-          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+          <div id="collapseFive" class="collapse faq-types" aria-labelledby="headingFive" data-parent="#accordionExample">
             <div class="card-body">
               <dl>
                 <dt>Buch (Monographie)</dt>

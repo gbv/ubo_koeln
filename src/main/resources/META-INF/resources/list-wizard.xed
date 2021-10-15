@@ -32,7 +32,10 @@
         <script src="{$WebApplicationBaseURL}vue/publication-list/publicationList.umd.min.js" />
         <link href="{$WebApplicationBaseURL}vue/publication-list/publicationList.css" rel="stylesheet"/>
           <div id="publicationList">
-            <pl baseurl="{$WebApplicationBaseURL}" leadid="{$MCR.user2.matching.lead_id}"></pl>
+              <pl baseurl="{$WebApplicationBaseURL}"
+                  leadid="{$MCR.user2.matching.lead_id}" roles="{$UBO.Search.PersonalList.Roles}"
+                  personids="{$UBO.Search.PersonalList.Ids}"
+              ></pl>
           </div>
         <script>
           new Vue({
