@@ -17,7 +17,7 @@
                 <label xml:lang="en" text="Book essay / Chapter" />
                 <label xml:lang="de" text="Buchaufsatz / Kapitel" />
                 <label xml:lang="x-marcgt" text="article" />
-                <label xml:lang="x-hosts" text="collection proceedings festschrift lexicon" />
+                <label xml:lang="x-hosts" text="collection festschrift lexicon" />
             </category>
             <category ID="preface">
                 <label xml:lang="x-hosts" text="collection proceedings festschrift journal lexicon" />
@@ -33,7 +33,7 @@
             <category ID="conference_essay">
                 <label xml:lang="de" text="Aufsatz (Konferenz)" />
                 <label xml:lang="en" text="Essay (Conference)" />
-                <label xml:lang="x-hosts" text="standalone" />
+                <label xml:lang="x-hosts" text="standalone proceedings" />
             </category>
             <category ID="contribution">
                 <label xml:lang="de" text="Beitrag (Bericht)" />
