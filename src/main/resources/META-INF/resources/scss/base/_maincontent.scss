@@ -137,6 +137,11 @@ $form-color: #251e52;
 .nameIdentifier:last-child {
   margin-right: 0rem;
 }
+
+.nameIdentifier a {
+  text-transform: uppercase;
+}
+
 #accordionExample {
   margin-top: 2rem;
   .card {
