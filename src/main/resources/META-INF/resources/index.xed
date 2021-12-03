@@ -176,7 +176,7 @@
         </article>
 
       </div>
-      <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:2021&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
+      <xinclude uri="xslStyle:response-newest:solr:q=status:confirmed+AND+year:2022&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
     </div>
     <div class="col-12 col-md-4">
       <xinclude uri="xslStyle:response-sidebar-mini:solr:q=status:confirmed&amp;rows=0" />
