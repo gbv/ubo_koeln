@@ -355,7 +355,7 @@
         </xed:choose>
       </span>
       <div class="ml-auto pb-1">
-        <button class="btn btn-xs btn-primary mr-1" type="submit" xed:target="subselect" xed:href="../identitypicker.html?{xed:call-java('org.mycore.ubo.matcher.MCRUserMatcherUtils', 'getAttributesAsURLString', .)}&amp;pid={mods:nameIdentifier[@type='lsf']}">
+        <button class="btn btn-xs btn-primary mr-1" type="submit" xed:target="subselect" xed:href="../identitypicker.html?{xed:call-java('org.mycore.ubo.matcher.MCRUserMatcherUtils', 'getAttributesAsURLString', .)}">
           <xed:output i18n="search.select" />
         </button>
       </div>
@@ -390,7 +390,7 @@
     <xed:repeat xpath="mods:name[@type='personal']">
       <div class="form-group form-inline ubo-repeat-group">
         <xed:bind xpath="mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']" initially="aut">
-          <label class="mycore-form-label d-flex align-items-center">
+          <label class="mycore-form-label d-flex align-items-center mt-0">
             <div class="mr-1">*</div>
             <select class="form-control custom-select">
               <xed:include uri="xslStyle:items2options:webapp:rollen.xml" />
@@ -407,7 +407,7 @@
     <xed:repeat xpath="mods:name[@type='personal']">
       <div class="form-group form-inline ubo-repeat-group">
         <xed:bind xpath="mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']" initially="aut">
-          <label class="mycore-form-label d-flex align-items-center">
+          <label class="mycore-form-label d-flex align-items-center mt-0">
             <div class="mr-1">*</div>
             <select class="form-control custom-select">
               <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
@@ -431,6 +431,34 @@
             <div class="ml-1">:</div>
           </label>
         </xed:bind>
+        <xed:bind xpath="mods:namePart">
+          <input id="{xed:generate-id()}" type="text" class="mycore-form-input" placeholder="{i18n:ubo.corporate}" />
+        </xed:bind>
+        <xed:controls />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="corporate.editor">
+    <xed:repeat xpath="mods:name[@type='corporate'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
+      <div class="form-group form-inline ubo-repeat-group">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:output i18n="ubo.role.corporate.editor" />:
+        </label>
+        <xed:bind xpath="mods:namePart">
+          <input id="{xed:generate-id()}" type="text" class="mycore-form-input" placeholder="{i18n:ubo.corporate}" />
+        </xed:bind>
+        <xed:controls />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="corporate.interviewer">
+    <xed:repeat xpath="mods:name[@type='corporate'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='ivr']" max="99">
+      <div class="form-group form-inline ubo-repeat-group">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:output i18n="ubo.role.corporate.interviewer" />:
+        </label>
         <xed:bind xpath="mods:namePart">
           <input id="{xed:generate-id()}" type="text" class="mycore-form-input" placeholder="{i18n:ubo.corporate}" />
         </xed:bind>
@@ -541,14 +569,15 @@
   </xed:template>
 
   <xed:template id="comment">
-    <xed:bind xpath="mods:note[not(@type)]">
+    <xed:repeat xpath="mods:note[not(@type)]">
       <div class="form-group form-inline">
         <label for="{xed:generate-id()}" class="mycore-form-label">
           <xed:output i18n="ubo.comment" />:
         </label>
         <input id="{xed:generate-id()}" type="text" class="mycore-form-input" />
+        <xed:controls />
       </div>
-    </xed:bind>
+    </xed:repeat>
   </xed:template>
 
   <xed:template id="pages">
@@ -741,14 +770,16 @@
       <div class="form-group form-inline">
         <label class="mycore-form-label">in:</label>
         <div>
-          <a href="{$ServletsBaseURL}DozBibEntryServlet?id={.}">
-            <xed:output i18n="result.dozbib.entry" /> <xed:output value="number(substring-after(.,'_mods_'))" /> 
-          </a>
-          <br/>
-          <xed:include uri="xslStyle:relatedItem-editor:mcrobject:{.}" />
-          <button type="submit" class="btn btn-sm btn-primary" name="_xed_submit_remove:/mycoreobject/descendant::mods:relatedItem/@xlink:href[.='{.}']|host">
-            <xed:output i18n="ubo.relatedItem.host.unlink" /> 
-          </button>
+          <xed:if test="string-length(.) &gt; 0">
+            <a href="{$ServletsBaseURL}DozBibEntryServlet?id={.}">
+              <xed:output i18n="result.dozbib.entry" /> <xed:output value="number(substring-after(.,'_mods_'))" /> 
+            </a>
+            <br/>
+            <xed:include uri="xslStyle:relatedItem-editor:mcrobject:{.}" />
+            <button type="submit" class="btn btn-sm btn-primary" name="_xed_submit_remove:/mycoreobject/descendant::mods:relatedItem/@xlink:href[.='{.}']|host">
+              <xed:output i18n="ubo.relatedItem.host.unlink" /> 
+            </button>
+          </xed:if>
           <button class="btn btn-sm btn-primary" type="submit" xed:target="subselect" xed:href="../search.xed?id_type=id&amp;genre={../mods:genre[@type='intern']}">
             <xed:output i18n="ubo.relatedItem.host.select" />
           </button>

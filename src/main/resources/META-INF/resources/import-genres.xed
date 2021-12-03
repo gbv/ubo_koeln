@@ -134,6 +134,7 @@
   <xed:template id="genre.interview">
     <xed:include uri="webapp:import-editor.xed" ref="interviewer" />
     <xed:include uri="webapp:import-editor.xed" ref="interviewee" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.interviewer" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
@@ -142,6 +143,7 @@
 
   <xed:template id="genre.collection">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
@@ -178,6 +180,7 @@
 
   <xed:template id="genre.report">
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.person.autedt" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:if test="$host_intern='standalone'">
       <xed:include uri="webapp:import-editor.xed" ref="place" />
@@ -208,6 +211,7 @@
 
   <xed:template id="genre.lexicon">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
@@ -222,6 +226,7 @@
 
   <xed:template id="genre.proceedings">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="conference" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
@@ -245,6 +250,7 @@
 
   <xed:template id="genre.journal">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="shelfmark" />
@@ -254,6 +260,7 @@
 
   <xed:template id="genre.newspaper">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
@@ -270,6 +277,7 @@
   
   <xed:template id="genre.blog">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
@@ -277,6 +285,7 @@
   </xed:template>
 
   <xed:template id="host.journal">
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-editor.xed" ref="host.title" />
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
@@ -286,6 +295,7 @@
   </xed:template>
 
   <xed:template id="host.newspaper">
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-editor.xed" ref="host.title" />
     <xed:include uri="webapp:import-editor.xed" ref="volume" />
     <xed:include uri="webapp:import-editor.xed" ref="issue" />
@@ -303,6 +313,7 @@
   
   <xed:template id="host.blog">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-editor.xed" ref="host.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
@@ -311,6 +322,7 @@
 
   <xed:template id="host.collection">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
@@ -329,8 +341,9 @@
 
   <xed:template id="host.proceedings">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
-	<xed:include uri="webapp:import-editor.xed" ref="conference" />
+    <xed:include uri="webapp:import-editor.xed" ref="conference" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
     <xed:include uri="webapp:import-editor.xed" ref="publisher" />
@@ -348,6 +361,7 @@
 
   <xed:template id="host.festschrift">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-editor.xed" ref="honoree" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
@@ -365,6 +379,7 @@
 
   <xed:template id="host.lexicon">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
@@ -383,6 +398,7 @@
 
   <xed:template id="host.report">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="place" />
     <xed:include uri="webapp:import-editor.xed" ref="publisher" />
