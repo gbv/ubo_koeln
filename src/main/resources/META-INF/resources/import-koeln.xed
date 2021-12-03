@@ -24,13 +24,14 @@
 
   <xed:template id="koeln.origin">
     <xed:repeat xpath="mods:classification[@classID='ORIGIN']" max="10">
-      <div class="form-inline form-group">
+      <div class="form-inline form-group {$xed-validation-marker}">
         <label class="mycore-form-label" for="{xed:generate-id()}">
-          <xed:output value="'*'" />
-          <xed:validate xpath="//mods:classification[@classID='ORIGIN']" required="true" i18n="condition.institution" display="global" />
+          <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
           <xed:output i18n="ubo.department" />:
         </label>
-        <select id="{xed:generate-id()}" class="autocomplete {$xed-validation-marker} mycore-form-input">
+        <select id="{xed:generate-id()}" class="autocomplete mycore-form-input">
           <option value=""><xed:output i18n="search.select.autocomplete" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
         </select>
@@ -40,12 +41,18 @@
         <xed:controls />
       </div>
     </xed:repeat>
+    <!-- origin is required, except for journal and series: -->
+    <xed:validate xpath="//mods:mods/mods:classification[@classID='ORIGIN']" test="string-length(.) &gt; 0 or ../mods:genre='journal' or ../mods:genre='series' or ../mods:genre='blog' or ../mods:genre='newspaper'" i18n="condition.institution" display="global" />
   </xed:template>
 
   <xed:template id="koeln.partOf">
     <xed:bind xpath="mods:classification[@classID='partOf']">
       <div class="form-group form-inline">
-        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partOf" />:</label>
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
+        <xed:output i18n="koeln.editor.label.partOf" />:</label>
         <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partOf" />
@@ -55,13 +62,19 @@
         </a>
       </div>
     </xed:bind>
-    <xed:validate xpath="//mods:classification[@classID='partOf']" required="true" i18n="koeln.condition.partOf" display="global" />
+    <!-- partOf is required, except for journal and series: -->
+    <xed:validate xpath="//mods:mods/mods:classification[@classID='partOf']" test="string-length(.) &gt; 0 or ../mods:genre='journal' or ../mods:genre='series' or ../mods:genre='blog' or ../mods:genre='newspaper'" i18n="koeln.condition.partOf" display="global" />
+    
   </xed:template>
 
   <xed:template id="koeln.category">
     <xed:bind xpath="mods:classification[@classID='category']">
       <div class="form-group form-inline">
-        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.category" />:</label>
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+          <xed:output value="'*'" />
+        </xed:if>
+        <xed:output i18n="koeln.editor.label.category" />:</label>
         <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:category" />
@@ -71,13 +84,18 @@
         </a>
       </div>
     </xed:bind>
-    <xed:validate xpath="//mods:classification[@classID='category']" required="true" i18n="koeln.condition.category" display="global" />
+    <!-- category is required, except for journal and series: -->
+    <xed:validate xpath="//mods:mods/mods:classification[@classID='category']" test="string-length(.) &gt; 0 or ../mods:genre='journal' or ../mods:genre='series' or ../mods:genre='blog' or ../mods:genre='newspaper'" i18n="koeln.condition.category" display="global" />
   </xed:template>
 
   <xed:template id="koeln.partner">
     <xed:bind xpath="mods:classification[@classID='partner']">
       <div class="form-group form-inline">
-        <label for="{xed:generate-id()}" class="mycore-form-label">*<xed:output i18n="koeln.editor.label.partner" />:</label>
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+          <xed:output value="'*'" />
+        </xed:if>
+        <xed:output i18n="koeln.editor.label.partner" />:</label>
         <select id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partner" />
@@ -87,7 +105,8 @@
         </a>
       </div>
     </xed:bind>
-    <xed:validate xpath="//mods:classification[@classID='partner']" required="true" i18n="koeln.condition.partner" display="global" />
+    <!-- partner is required, except for journal and series: -->
+    <xed:validate xpath="//mods:mods/mods:classification[@classID='partner']" test="string-length(.) &gt; 0 or ../mods:genre='journal' or ../mods:genre='series' or ../mods:genre='blog' or ../mods:genre='newspaper'" i18n="koeln.condition.partner" display="global" />
   </xed:template>
 
   <xed:template id="koeln.peerreviewed">
@@ -176,7 +195,10 @@
     <xed:bind xpath="mods:originInfo/mods:dateIssued[@encoding='w3cdtf']">
       <div class="form-inline form-group">
         <label for="year" class="mycore-form-label">
-          *<xed:output i18n="ubo.date.issued" />:
+          <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
+          <xed:output i18n="ubo.date.issued" />:
         </label>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" placeholder="{i18n:ubo.date.issued.placeholder}" />
       </div>

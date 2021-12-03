@@ -26,9 +26,9 @@
     <xed:validate xpath="//mods:location/mods:url" matches="^((?!doi.org/10).)*$" i18n="ubo.link.validation.not.doi" display="global" />
     <xed:validate xpath="//mods:location/mods:shelfLocator" matches="(\d\d\s[A-Za-z]+\s\d+.*)|([A-Z]{3,4}\d+[A-Z_d\-+,()\d]*)" i18n="ubo.shelfmark.validation" display="global" />
     <xed:validate xpath="//mods:abstract/@xlink:href" matches="(f|ht)tp(s?)://[\w\d.]+\S*" i18n="ubo.link.validation" display="global" />
-    <!-- year is required, except for journal and series: -->
-    <xed:validate xpath="//mods:mods" test="descendant::mods:dateIssued[string-length(.) &gt; 0] or mods:genre='journal' or mods:genre='series' or mods:genre='blog' or mods:genre='newspaper'" i18n="ubo.date.issued.validation" display="global" />
-    
+    <!-- year is required, except for journal, series, blog or newspaper: -->
+    <xed:validate xpath="//mods:originInfo/mods:dateIssued[@encoding='w3cdtf']" test="string-length(.) &gt; 0 or ../../mods:genre='journal' or ../../mods:genre='series' or ../../mods:genre='blog' or ../../mods:genre='newspaper'" i18n="ubo.date.issued.validation" display="global" />
+
     <script type="text/javascript">
       $(document).ready(function() {
       
@@ -279,7 +279,10 @@
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
         <label for="{xed:generate-id()}" class="mycore-form-label">
-          *<xed:output i18n="ubo.role.editor" />:
+          <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
+          <xed:output i18n="ubo.role.editor" />:
         </label>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
       </div>
@@ -331,8 +334,8 @@
   </xed:template>
 
   <xed:template id="person">
-    <div class="form-inline col-sm-6 border-bottom border-primary px-0 mb-2">
-      <span id="{xed:generate-id()}" class="{$xed-validation-marker}">
+    <div class="form-inline col-sm-6 border-bottom border-primary px-0 mb-2 ubo-person {$xed-validation-marker}">
+      <span id="{xed:generate-id()}">
         <xed:if test="string-length(mods:namePart[@type='family']) &gt; 0">
           <xed:output value="mods:namePart[@type='family']" /><xed:if test="mods:namePart[@type='given']"><xed:output value="concat(', ',mods:namePart[@type='given'])" /></xed:if>
         </xed:if>
@@ -482,7 +485,10 @@
     <xed:bind xpath="mods:originInfo/mods:dateIssued[@encoding='w3cdtf']">
       <div class="form-inline form-group">
         <label for="year" class="mycore-form-label">
-          *<xed:output i18n="ubo.date.issued.4" />:
+          <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
+          <xed:output i18n="ubo.date.issued.4" />:
         </label>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" placeholder="{i18n:ubo.date.issued.4.placeholder}" />
       </div>
