@@ -289,6 +289,22 @@
     </xed:repeat>
   </xed:template>
 
+
+  <xed:template id="host.editor">
+    <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
+      <div class="form-group form-inline ubo-repeat-group">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:if test="$host_intern != 'journal' and $host_intern !='blog' and $host_intern != 'newspaper'">
+            <xed:output value="'*'" />
+          </xed:if>
+          <xed:output i18n="ubo.role.editor" />:
+        </label>
+        <xed:include uri="webapp:import-editor.xed" ref="person" />  
+      </div>
+    </xed:repeat>
+  </xed:template>
+  
+
   <xed:template id="interviewee">
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='ive']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
