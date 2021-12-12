@@ -86,6 +86,7 @@
                   <xed:include uri="webapp:import-editor.xed" ref="host" />
                   <xed:include uri="webapp:import-editor.xed" ref="oa" />
                   <xed:include uri="webapp:import-editor.xed" ref="person.role" />
+                  <xed:include uri="webapp:import-editor.xed" ref="corporate.role" />
                   <xed:include uri="webapp:import-editor.xed" ref="title.complex" />
                   <xed:include uri="webapp:import-editor.xed" ref="conference" />
                   <xed:include uri="webapp:import-editor.xed" ref="volume" />
