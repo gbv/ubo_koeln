@@ -269,6 +269,7 @@
 
   <xed:template id="genre.series">
     <xed:include uri="webapp:import-editor.xed" ref="editor" />
+    <xed:include uri="webapp:import-editor.xed" ref="corporate.editor" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="issn" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
