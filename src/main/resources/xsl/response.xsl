@@ -20,6 +20,8 @@
 <xsl:include href="csl-export-gui.xsl" />
 
 <xsl:param name="RequestURL" />
+<xsl:param name="MCR.ORCID.OAuth.ClientSecret" select="''" />
+<xsl:param name="MCR.ORCID.OAuth.Scopes" select="''" />
 <xsl:param name="CurrentUser" />
 <xsl:param name="MCR.Users.Guestuser.UserName" />
 
@@ -73,7 +75,7 @@
 <!-- ==================== Export-Buttons ==================== -->
 
 <xsl:variable name="exportParams">
-  <xsl:for-each select="/response/lst[@name='responseHeader']/lst[@name='params']/*[(@name='q') or (@name='fq') or (@name='sort')]">
+  <xsl:for-each select="/response/lst[@name='responseHeader']/lst[@name='params']/*[(@name='q') or (@name='fq') or (@name='sort') or (@name='qq')]">
     <xsl:variable name="name" select="@name" />
     <xsl:for-each select="descendant-or-self::str"> <!-- may be an array: arr/str or ./str -->
       <xsl:value-of select="$name" />
@@ -107,7 +109,9 @@
   <html id="dozbib.search">
     <head>
       <xsl:call-template name="page.title" />
-      <script src="{$WebApplicationBaseURL}js/mycore2orcid.js" />
+      <xsl:if test="string-length($MCR.ORCID.OAuth.ClientSecret) &gt; 0 and contains($MCR.ORCID.OAuth.Scopes,'update')">
+        <script src="{$WebApplicationBaseURL}js/mycore2orcid.js" />
+      </xsl:if>
     </head>
     <body>
       <xsl:call-template name="breadcrumb" />
@@ -270,7 +274,9 @@
           <xsl:call-template name="label-year" />
           <xsl:call-template name="pubtype" />
           <xsl:call-template name="label-oa" />
-          <xsl:call-template name="orcid-status" />
+          <xsl:if test="string-length($MCR.ORCID.OAuth.ClientSecret) &gt; 0 and contains($MCR.ORCID.OAuth.Scopes,'update')">
+            <xsl:call-template name="orcid-status" />
+          </xsl:if>
         </div>
         <div class="content bibentry card-body">
           <xsl:apply-templates select="." mode="cite">
@@ -283,7 +289,9 @@
             <xsl:call-template name="bibentry.add.to.basket" />
           </xsl:if>
           <xsl:call-template name="bibentry.subselect.return" />
-          <xsl:call-template name="orcid-publish" />
+          <xsl:if test="string-length($MCR.ORCID.OAuth.ClientSecret) &gt; 0 and contains($MCR.ORCID.OAuth.Scopes,'update')">
+            <xsl:call-template name="orcid-publish" />
+          </xsl:if>
           <span class="float-right"># <xsl:value-of select="$hitNo"/></span>
         </div>
       </xsl:for-each>
