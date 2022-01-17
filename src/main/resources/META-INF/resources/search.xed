@@ -140,6 +140,69 @@
               </script>
             </xed:bind>
 
+            <xed:bind xpath="condition[@field='lang'][@operator='=']/value">
+             <div class="form-group form-inline">
+                <label for="{xed:generate-id()}" class="mycore-form-label">
+                  <xed:output i18n="ubo.language" />
+                </label>
+                <select id="{xed:generate-id()}" class="autocomplete mycore-form-input custom-select">
+                  <option value=""><xed:output i18n="search.select.autocomplete" /></option>
+                  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rfc4646" />
+                </select>
+              </div>
+            </xed:bind>
+
+            <xed:bind xpath="condition[@field='koeln_peerreviewed'][@operator='=']/value">
+             <div class="form-group form-inline">
+                <label for="{xed:generate-id()}" class="mycore-form-label">
+                  <xed:output i18n="koeln.editor.label.peerreviewed" />
+                </label>
+                <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                  <option value=""><xed:output i18n="search.select" /></option>
+                  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peerreviewed" />
+                </select>
+              </div>
+            </xed:bind>
+
+            <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
+              <xed:bind xpath="condition[@field='koeln_category'][@operator='=']/value">
+               <div class="form-group form-inline">
+                  <label for="{xed:generate-id()}" class="mycore-form-label">
+                    <xed:output i18n="koeln.editor.label.category" />
+                  </label>
+                  <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                    <option value=""><xed:output i18n="search.select" /></option>
+                    <xed:include uri="xslStyle:items2options:classification:editor:-1:children:category" />
+                  </select>
+                </div>
+              </xed:bind>
+
+              <xed:bind xpath="condition[@field='koeln_partOf'][@operator='=']/value">
+               <div class="form-group form-inline">
+                  <label for="{xed:generate-id()}" class="mycore-form-label">
+                    <xed:output i18n="koeln.editor.label.partOf" />
+                  </label>
+                 <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                    <option value=""><xed:output i18n="search.select" /></option>
+                    <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partOf" />
+                  </select>
+                </div>
+              </xed:bind>
+
+              <xed:bind xpath="condition[@field='koeln_partner'][@operator='=']/value">
+               <div class="form-group form-inline">
+                  <label for="{xed:generate-id()}" class="mycore-form-label">
+                    <xed:output i18n="koeln.editor.label.partner" />
+                  </label>
+                  <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                    <option value=""><xed:output i18n="search.select" /></option>
+                    <xed:include uri="xslStyle:items2options:classification:editor:-1:children:partner" />
+                  </select>
+                </div>
+              </xed:bind>
+
+            </xed:if>
+
             <xed:include uri="webapp:import-search.xed" ref="year" />
             
             <xed:choose>
