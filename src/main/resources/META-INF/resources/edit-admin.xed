@@ -10,15 +10,15 @@
       <xed:form xmlns:xed="http://www.mycore.de/xeditor"
                 xmlns:cerif="https://www.openaire.eu/cerif-profile/1.1/"
                 method="post" role="form">
-	
-	<xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" />
-	<xed:source uri="xslStyle:mods2mycoreobject,mods-preprocessor:session:{$key}" />
-	<xed:cancel url="servlets/MCRLockServlet?action=unlock&amp;id={$id}&amp;url=DozBibEntryServlet%3Fid={$id}" />
-	<xed:cancel url="newPublication.xed" />
-        
-	<xed:post-processor xsl="mods-postprocessor.xsl" />    
-	
-	<xed:bind xpath="/mycoreobject">
+
+        <xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" />
+        <xed:source uri="xslStyle:mods2mycoreobject,mods-preprocessor:session:{$key}" />
+        <xed:cancel url="servlets/MCRLockServlet?action=unlock&amp;id={$id}&amp;url=DozBibEntryServlet%3Fid={$id}" />
+        <xed:cancel url="newPublication.xed" />
+
+        <xed:post-processor xsl="mods-postprocessor.xsl" />
+
+        <xed:bind xpath="/mycoreobject">
           <xed:include uri="webapp:import-editor.xed" ref="common.metafields" />
           
           <xed:choose>
@@ -29,9 +29,9 @@
               <p>Sie sind nicht berechtigt, dieses Formular zu verwenden.</p>
             </xed:otherwise>
           </xed:choose>
-	</xed:bind>
+        </xed:bind>
 
-	<xed:template id="editor">
+        <xed:template id="editor">
           <input type="hidden" name="mode" value="save" />
           <xed:include uri="webapp:import-editor.xed" ref="validation" />
           <fieldset>
@@ -74,7 +74,7 @@
             <legend>erschienen in:</legend>
             <xed:bind xpath="mods:relatedItem[@type='host']">
               <xed:choose>
-                <xed:when test="@xlink:href">
+                <xed:when test="string-length(@xlink:href) &gt; 0">
                   <xed:include uri="webapp:import-editor.xed" ref="linked.relatedItem" />
                   <xed:include uri="webapp:import-editor.xed" ref="volume" />
                   <xed:include uri="webapp:import-editor.xed" ref="issue" />
