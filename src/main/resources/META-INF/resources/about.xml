@@ -75,7 +75,7 @@
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <i class="fas fa-plus-circle"></i>
                 <i class="fas fa-minus-circle"></i>
-                Wer kann Publikationen eintragen?
+                Wer kann eigene Publikationen eintragen?
               </button>
             </h2>
           </div>
@@ -92,18 +92,18 @@
                 <li>Ehemalige Professor*innen und Mitarbeiter*innen (mit campusID),</li>
                 <li>Honorarprofessor*innen,</li>
                 <li>Stipendiat*innen (benötigt wird eine formlose Freigabe-E-Mail durch Ihre*n Betreuer*in, das Referat für internationale Angelegenheiten oder das Referat
-                Forschung und Wissenstransfer),</li>
-                <li>Hilfskräfte (benötigt wird eine formlose Freigabe-E-Mail durch Ihre*n Vorgesetzte*n) und</li>
+                Forschung und Wissenstransfer) und</li>
                 <li>Gastforscher*innen</li>
               </ul>
               <p>
-                die Digitale Hochschulbibliografie nutzen, sofern sie gemäß den
+                die Digitale Hochschulbibliografie zur Eintragung ihrer Publikationen nutzen, sofern sie gemäß den
                 <a href="https://www.th-koeln.de/mam/downloads/deutsch/forschung/leitlinien_zur_angabe_der_affiliation_bei_publikationen.pdf">Leitlinien</a> die TH Köln als
                 ihre Affiliation definiert haben. Stellen Sie bitte dafür eine Anfrage an Service Desk der Campus-IT (support@campus-it.th-koeln.de).
               </p>
               <p>
                 Studierende können keine Publikationen verzeichnen lassen. Ausnahme sind Publikationen, die sie gemeinsam mit einer Person aus den o.g. Personengruppen
                 veröffentlicht haben.
+                <li>Hilfskräfte können auf Antrag zur Eintragung von Publikationen der oben beschriebenen Nutzer*innengruppen berechtigt werden</li>
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
               <p>
-                Berechtigte Personen (s.o. Wer kann Publikationen eintragen?) können sich oben rechts in der Bibliografie mit dem Klick auf „Anmelden“ mit ihrer Campus ID
+                Berechtigte Personen (s.o. Wer kann eigene Publikationen eintragen?) und zur Eintragung von Publikationen berechtigte Hilfskräfte können sich oben rechts in der Bibliografie mit dem Klick auf „Anmelden“ mit ihrer Campus ID
                 in die Hochschulbibliografie einloggen. Die Funktion „Publikation melden“ wird dann eingeblendet. Mit der Angabe eines Identifier z.B. der DOI oder mit der
                 Angabe von Autor*in und Titel der Publikation gelangen Sie zur Eingabemaske für Publikationen.
               </p>
@@ -316,7 +316,7 @@
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <i class="fas fa-plus-circle"></i>
                 <i class="fas fa-minus-circle"></i>
-                Who can enter publications?
+                Who can enter own publications?
               </button>
             </h2>
           </div>
@@ -333,7 +333,7 @@
                 <li>former professors and employees (with campusID)</li>
                 <li>honorary professors</li>
                 <li>scholarship holders (an informal approval e-mail from your supervisor, the Department of International Affairs or the Department of Research and Knowledge Transfer is required)</li>
-                <li>student assistants (an informal approval e-mail from your supervisor is required) and</li>
+              and</li>
                 <li>visiting researchers</li>
               </ul>
               <p>
@@ -342,7 +342,8 @@
                 Please submit a request to the Campus IT Service-Desk  (support@campus-it.th-koeln.de).
               </p>
               <p>
-                Students cannot register publications unless they have been published jointly with a person from a group mentioned above.
+                Students cannot register their own publications unless they have been published jointly with a person from a group mentioned above.</li>
+                <li> Upon request, auxiliary staff may also be authorized to register publications of eligible TH dependents.</li>
               </p>
             </div>
           </div>
@@ -385,7 +386,7 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
               <p>
-                Authorized persons (see above: Who can enter publictions?) can log into the University Bibliography with their campusID by
+                Authorized persons (see above: Who can enter publictions?) and auxiliary staff authorized to register publications can log into the University Bibliography with their campusID by
                 clicking "Login" at the top right of the bibliography website. The function "registering a publication" will then be
                 displayed. By entering an identifier, e.g. the DOI, or by entering the author and title of the publication, you can
                 access the entry screen for publications.
