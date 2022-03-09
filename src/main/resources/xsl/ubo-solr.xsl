@@ -5,7 +5,8 @@
   xmlns:mods="http://www.loc.gov/mods/v3"
   xmlns:mcrxml="xalan://org.mycore.common.xml.MCRXMLFunctions"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  exclude-result-prefixes="mods xlink">
+  xmlns:str="http://exslt.org/strings"
+  exclude-result-prefixes="mods xlink str">
 
   <xsl:import href="xslImport:solr-document:ubo-solr.xsl" />
 
@@ -15,6 +16,10 @@
     <xsl:apply-templates select="service/servflags/servflag[@type='status']" mode="solrField" />
     <xsl:apply-templates select="service/servflags/servflag[@type='importID']" mode="solrField" />
     <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods" mode="solrField" />
+
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods">
+      <xsl:apply-templates select="mods:*[@authority or @authorityURI]|mods:typeOfResource|mods:accessCondition"  mode="category" />
+    </xsl:for-each>
   </xsl:template>
 
   <xsl:template match="mods:mods" mode="solrField">
@@ -34,7 +39,7 @@
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:part" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:originInfo" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:relatedItem[@type='series']/mods:titleInfo" mode="solrField" />
-    <xsl:apply-templates select="descendant::mods:name[@type='conference'][not(ancestor::mods:relatedItem[@type='references'])]" mode="solrField" />
+    <xsl:apply-templates select="descendant::mods:name[@type='conference'][not(ancestor::mods:relatedItem[@type='references'])][1]" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:dateIssued[1]" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:originInfo/mods:dateIssued[1]" mode="solrField.host" />
     <xsl:apply-templates select="descendant::mods:identifier[@type]" mode="solrField" />
@@ -363,9 +368,13 @@
   </xsl:template>
 
   <xsl:template match="mods:subject" mode="solrField">
+    <xsl:for-each select="mods:topic">
+      <xsl:for-each select="str:tokenize(text(),',;')">
     <field name="topic">
-      <xsl:value-of select="mods:topic" />
+          <xsl:value-of select="." />
     </field>
+      </xsl:for-each>
+    </xsl:for-each>
   </xsl:template>
 
   <xsl:template match="mods:note" mode="solrField">
@@ -460,6 +469,24 @@
         </xsl:for-each>
       </field>
     </xsl:for-each>
+    <xsl:for-each select="mods:detail[@type='article_number']">
+      <field name="article_number">
+        <xsl:value-of select="mods:number" />
+      </field>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="mods:*[@authority or @authorityURI]|mods:typeOfResource|mods:accessCondition" mode="category">
+    <xsl:variable name="uri" xmlns:mcrmods="xalan://org.mycore.mods.classification.MCRMODSClassificationSupport" select="mcrmods:getClassCategParentLink(.)" />
+    <xsl:if test="string-length($uri) &gt; 0">
+      <xsl:variable name="topField" select="not(ancestor::mods:relatedItem)" />
+      <xsl:variable name="classdoc" select="document($uri)" />
+      <xsl:variable name="classid" select="$classdoc/mycoreclass/@ID" />
+      <xsl:apply-templates select="$classdoc//category" mode="category">
+        <xsl:with-param name="classid" select="$classid" />
+        <xsl:with-param name="withTopField" select="$topField" />
+      </xsl:apply-templates>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:originInfo" mode="solrField">
