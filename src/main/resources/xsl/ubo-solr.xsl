@@ -22,6 +22,12 @@
     </xsl:for-each>
   </xsl:template>
 
+  <xsl:template match="structure/parents/parent" mode="solrField">
+    <field name="parent">
+      <xsl:value-of select="@xlink:href" />
+    </field>
+  </xsl:template>
+
   <xsl:template match="mods:mods" mode="solrField">
     <xsl:apply-templates select="mods:titleInfo" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:name[@type='personal']/mods:role/mods:roleTerm[@type='code']" mode="solrField" />
