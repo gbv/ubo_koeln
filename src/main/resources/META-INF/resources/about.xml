@@ -79,7 +79,7 @@
               </button>
             </h2>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               <p>
                 Alle Beschäftigten der TH Köln können ihre Publikationen über die Digitale Hochschulbibliografie der TH Köln melden.
@@ -102,8 +102,7 @@
               </p>
               <p>
                 Studierende können keine Publikationen verzeichnen lassen. Ausnahme sind Publikationen, die sie gemeinsam mit einer Person aus den o.g. Personengruppen
-                veröffentlicht haben.
-                <li>Hilfskräfte können auf Antrag zur Eintragung von Publikationen der oben beschriebenen Nutzer*innengruppen berechtigt werden</li>
+                veröffentlicht haben. Hilfskräfte können auf Antrag zur Eintragung von Publikationen der oben beschriebenen Nutzer*innengruppen berechtigt werden
               </p>
             </div>
           </div>
