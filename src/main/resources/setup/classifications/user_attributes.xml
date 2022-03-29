@@ -7,6 +7,7 @@
     </category>
     <category ID="id_dhsbid">
       <label xml:lang="de" text="DHSB-ID" />
+      <label xml:lang="x-display" text="true" />
     </category>
     <category ID="id_gnd">
       <label xml:lang="de" text="GND" />
