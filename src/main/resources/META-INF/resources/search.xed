@@ -176,6 +176,18 @@
               </div>
             </xed:bind>
 
+            <xed:bind xpath="condition[@field='koeln_accessrights'][@operator='=']/value">
+             <div class="form-group form-inline">
+                <label for="{xed:generate-id()}" class="mycore-form-label">
+                  <xed:output i18n="koeln.editor.label.accessrights" />
+                </label>
+               <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                  <option value=""><xed:output i18n="search.select" /></option>
+                  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:accessrights" />
+                </select>
+              </div>
+            </xed:bind>
+
             <xed:if test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
               <xed:bind xpath="condition[@field='koeln_category'][@operator='=']/value">
                <div class="form-group form-inline">
