@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of ***  M y C o R e  ***
+  ~  See http://www.mycore.de/ for details.
+  ~
+  ~  MyCoRe is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  MyCoRe is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<webpage lastModified="$Date: 2017-02-10 07:55:23 +0100 (Fr, 10 Feb 2017) $" id="dozbib.stats">
+    <title xml:lang="de">Statistiken über alle verzeichneten Publikationen</title>
+    <title xml:lang="en">Statistics for all publications listed here</title>
+
+
+    <article class="card mb-3" xml:lang="de">
+        <div class="card-body bg-alternative">
+            <h3>Hinweis:</h3>
+            <p>
+                Diese Statistiken werden <strong>live</strong> über den gesamten Datenbestand gebildet.
+                Alternativ können Sie auch beliebige Suchergebnisse aus der Trefferliste heraus statistisch darstellen.
+            </p>
+        </div>
+    </article>
+
+    <article class="card mb-3" xml:lang="en">
+        <div class="card-body bg-alternative">
+            <h3>Notice:</h3>
+            <p>
+                These statistics are built <strong>live</strong> for all publications listed here.
+                Alternatively, you can also display statistics for any search results, right from the result list.
+            </p>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-body">
+            <div id="statistics">
+                <h1>Statistik</h1>
+                <table class="table" v-if="idCount.length>0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Dokumente</th>
+                            <th scope="col">OpenAccess</th>
+                            <th scope="col">Peer-Reviewed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in idCount" :key="item.id">
+                            <th scope="row">
+                                {{item.id}}
+                            </th>
+                            <td>
+                                {{item.value}}
+                            </td>
+                            <td>
+                                {{ idCountOA[item.id] }}
+                            </td>
+                            <td>
+                                {{ idCountPeer[item.id] }}
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+        <script src="vue/vue.min.js"/>
+        <script><![CDATA[
+const proxyUrl = "/servlets/solr/";
+const requestHandlerUrl = proxyUrl + "select2";
+const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true"
+const childQueryBase = "status:confirmed AND koeln_partOf:true";
+const query = "+role:(aut.top OR cre.top OR tch.top OR edt.top OR ivr.top OR ive.top OR inv.top)" +
+"+{!child of=\"objectType:mods\" filters=$childfq}objectType:mods";
+const rowsQuery = "&rows=0"
+
+let app = new Vue({
+    el: '#statistics',
+    data: {
+        idCount: [],
+        idCountObj: {},
+        idCountOA: {},
+        idCountPeer: {},
+        yearSelect: "2021"
+    },
+    mounted() {
+        this.loadIDCount(false, false);
+        this.loadIDCount(false, true);
+        this.loadIDCount(true, false);
+    },
+    methods: {
+        buildURL(oa, koeln_peerreviewed) {
+            const urlParts = [
+                facetQueries,
+                "childfq=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
+                    (oa === true ? " AND oa_exact:oa" : "") +
+                    (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")),
+                "q=" + encodeURIComponent(query),
+                rowsQuery,
+                "wt=json"
+            ];
+            return requestHandlerUrl + "?" + urlParts.join("&");
+        },
+        loadIDCount(oa, koeln_peerreviewed) {
+            let xmlhttp = new XMLHttpRequest();
+            let that = this;
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    var data = JSON.parse(this.responseText);
+                    that.convertData(data, oa, koeln_peerreviewed);
+                }
+            };
+
+            xmlhttp.open("GET", this.buildURL(oa, koeln_peerreviewed), true);
+            xmlhttp.send();
+        },
+        convertData(rawData, oa, koeln_peerreviewed) {
+            const idCountArray = rawData.facet_counts.facet_fields.name_id_dhsbid;
+            for (let i = 0; i < idCountArray.length; i += 2) {
+                let key = idCountArray[i];
+                let value = idCountArray[i + 1];
+                if (!oa && !koeln_peerreviewed) {
+                    this.idCount.push({
+                        id: key, value: value
+                    });
+                } else if (oa) {
+                    Vue.set(this.idCountOA, key, value);
+
+                } else if (koeln_peerreviewed) {
+                    Vue.set(this.idCountPeer, key, value);
+
+                }
+            }
+        }
+    }
+});
+        ]]></script>
+
+    </article>
+
+</webpage>
