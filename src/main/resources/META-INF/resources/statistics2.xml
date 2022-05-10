@@ -65,10 +65,10 @@
                                 {{item.value}}
                             </td>
                             <td>
-                                {{ idCountOA[item.id] }}
+                                {{ idCountOA[item.id] || "0" }}
                             </td>
                             <td>
-                                {{ idCountPeer[item.id] }}
+                                {{ idCountPeer[item.id] || "0" }}
                             </td>
                         </tr>
 
@@ -82,7 +82,7 @@
         <script><![CDATA[
 const proxyUrl = "/servlets/solr/";
 const requestHandlerUrl = proxyUrl + "select2";
-const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true"
+const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true&facet.mincount=1"
 const childQueryBase = "status:confirmed AND koeln_partOf:true";
 const query = "+role:(aut.top OR cre.top OR tch.top OR edt.top OR ivr.top OR ive.top OR inv.top)" +
 "+{!child of=\"objectType:mods\" filters=$childfq}objectType:mods";
