@@ -163,17 +163,20 @@
 			  <text macro="online-url"/>
 		   </group>
           </else-if>
-          <else-if type="article" match="any">
+		  <else-if type="article" match="any">
             <group delimiter=". ">
               <text macro="editor-container-title"/>
               <text macro="edition"/>
               <choose>
                 <if match="any" variable="issue">
+				<group delimiter=", ">
                   <group delimiter=" ">
                     <text variable="volume" prefix="Jg. "/>
                     <text variable="issue" prefix="Nr. "/>
                   </group>
-                  <text macro="page-range" prefix=", "/>
+                  <text macro="page-range"/>
+				  <text variable="number" prefix="Artikel "/>
+				 </group>
                 </if>
                 <else>
                  <group>
@@ -187,15 +190,20 @@
                 </else>
               </choose>
               <text macro="online-url"/>
-	        </group>  
+            </group>
           </else-if>
           <else-if type="article-journal article-magazine article-newspaper" match="any">
-            <group delimiter=" ">
+            <group delimiter=". ">
               <group delimiter=": ">
-                <text term="in" text-case="capitalize-first"/>
-                <text macro="container-title-volume"/>
+			  <text term="in" text-case="capitalize-first"/>
+			    <group delimiter=" ">
+                  <text macro="container-title-volume"/>
+				   <group delimiter=", ">
+				     <text variable="page" prefix="S. "/>
+				     <text variable="number" prefix="Artikel "/>
+				   </group>
+				</group>
               </group>
-              <text macro="page-range"/>
               <text macro="online-url"/>
             </group>
           </else-if>
