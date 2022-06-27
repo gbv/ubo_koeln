@@ -23,20 +23,64 @@
   </locale>
   <macro name="creator-year-long">
     <choose>
-      <if match="none" variable="author editor producer creator inventor interviewer">
-        <text value="o. A." suffix=" "/>
+      <if type="interview" match="any">
+        <choose>
+          <if match="none" variable="editor producer inventor interviewer">
+            <text value="o. A." suffix=" "/>
+          </if>
+        </choose>
       </if>
     </choose>
-    <group delimiter=" ">
-      <names variable="author producer creator inventor interviewer">
-        <name delimiter=" / " name-as-sort-order="all"/>
-        <label form="short" prefix=" (" suffix=")"/>
-        <substitute>
-          <names variable="editor"/>
-        </substitute>
-      </names>
-      <date date-parts="year" form="numeric" variable="issued" prefix="(" suffix=")"/>
-    </group>
+    <choose>
+      <if type="interview" match="none">
+        <choose>
+          <if match="none" variable="editor author producer creator inventor interviewer">
+            <text value="o. A."/>
+          </if>
+        </choose>
+      </if>
+    </choose>
+	<choose>
+      <if type="interview" match="any">
+        <choose>
+          <if match="none" variable="editor producer creator inventor interviewer">
+            <text value="o. A." suffix=" "/>
+          </if>
+        </choose>
+      </if>
+    </choose>
+    <choose>
+      <if type="interview" match="none">
+        <choose>
+          <group delimiter=" ">
+             <names variable="author producer creator inventor interviewer">
+               <name delimiter=" / " name-as-sort-order="all"/>
+               <label form="short" prefix=" (" suffix=")"/>
+            <substitute>
+               <names variable="editor"/>
+            </substitute>
+             </names>
+            <date date-parts="year" form="numeric" variable="issued" prefix="(" suffix=")"/>
+         </group>
+        </choose>
+      </if>
+    </choose>
+	    <choose>
+      <if type="interview" match="any">
+        <choose>
+          <group delimiter=" ">
+             <names variable="producer creator inventor interviewer">
+               <name delimiter=" / " name-as-sort-order="all"/>
+               <label form="short" prefix=" (" suffix=")"/>
+            <substitute>
+               <names variable="editor"/>
+            </substitute>
+             </names>
+            <date date-parts="year" form="numeric" variable="issued" prefix="(" suffix=")"/>
+         </group>
+        </choose>
+      </if>
+    </choose>
   </macro>
   <macro name="editor-container-title">
     <group delimiter=": ">
