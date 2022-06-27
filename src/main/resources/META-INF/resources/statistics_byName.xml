@@ -18,17 +18,19 @@
   ~  along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<webpage lastModified="$Date: 2017-02-10 07:55:23 +0100 (Fr, 10 Feb 2017) $" id="dozbib.stats">
-    <title xml:lang="de">Statistiken über alle verzeichneten Publikationen</title>
-    <title xml:lang="en">Statistics for all publications listed here</title>
+<webpage lastModified="$Date: 2022-06-27 07:55:23 +0100 (Mo, 27 Jun 2022) $" id="dozbib.statsbyname">
+    <title xml:lang="de">Statistiken über alle verzeichneten Publikationen aus 2021</title>
+    <title xml:lang="en">Statistics for all publications listed here from 2021</title>
 
 
     <article class="card mb-3" xml:lang="de">
         <div class="card-body bg-alternative">
             <h3>Hinweis:</h3>
             <p>
-                Diese Statistiken werden <strong>live</strong> über den gesamten Datenbestand gebildet.
-                Alternativ können Sie auch beliebige Suchergebnisse aus der Trefferliste heraus statistisch darstellen.
+                Es handelt sich um eine speziell aufbereitete Ansicht der Publikationen aus dem Jahr 2021. Diese umfasst Name, DHSBID und Zahl der
+                Publikationen, die diese Person für 2021 gemeldet hat und wie viele davon dann peer-reviewed und Open Access sind. Dabei war diese
+                Person an der Publikation in einer der folgenden Rollen beteiligt: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
+                Erfinder*in oder Dozent*in.
             </p>
         </div>
     </article>
@@ -37,8 +39,10 @@
         <div class="card-body bg-alternative">
             <h3>Notice:</h3>
             <p>
-                These statistics are built <strong>live</strong> for all publications listed here.
-                Alternatively, you can also display statistics for any search results, right from the result list.
+                Es handelt sich um eine speziell aufbereitete Ansicht der Publikationen aus dem Jahr 2021. Diese umfasst Name, DHSBID und Zahl der
+                Publikationen, die diese Person für 2021 gemeldet hat und wie viele davon dann peer-reviewed und Open Access sind. Dabei war diese
+                Person an der Publikation in einer der folgenden Rollen beteiligt: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
+                Erfinder*in oder Dozent*in.
             </p>
         </div>
     </article>
@@ -51,6 +55,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Dokumente</th>
                             <th scope="col">OpenAccess</th>
                             <th scope="col">Peer-Reviewed</th>
@@ -59,10 +64,13 @@
                     <tbody>
                         <tr v-for="item in idCount" :key="item.id">
                             <th scope="row">
-                                {{item.id}}
+                                {{ item.id }}
                             </th>
                             <td>
-                                {{item.value}}
+                                {{ idName[item.id] }}
+                            </td>
+                            <td>
+                                {{ item.value }}
                             </td>
                             <td>
                                 {{ idCountOA[item.id] || "0" }}
@@ -92,6 +100,7 @@ let app = new Vue({
     el: '#statistics',
     data: {
         idCount: [],
+        idName: {},
         idCountObj: {},
         idCountOA: {},
         idCountPeer: {},
@@ -115,6 +124,18 @@ let app = new Vue({
             ];
             return requestHandlerUrl + "?" + urlParts.join("&");
         },
+        setNameByID(dhsbid) {
+            var xhr = new XMLHttpRequest();
+            var that = this;
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let koeln_name = JSON.parse(xhr.responseText).response.docs[0].name;
+                    Vue.set(that.idName, dhsbid, koeln_name);
+                }
+            };
+            xhr.open("GET", "/servlets/solr/select2?q=name_id_dhsbid:" + dhsbid + "&rows=1&fl=name&wt=json", true);
+            xhr.send();
+        },
         loadIDCount(oa, koeln_peerreviewed) {
             let xmlhttp = new XMLHttpRequest();
             let that = this;
@@ -137,12 +158,11 @@ let app = new Vue({
                     this.idCount.push({
                         id: key, value: value
                     });
+                    this.setNameByID(key);
                 } else if (oa) {
                     Vue.set(this.idCountOA, key, value);
-
                 } else if (koeln_peerreviewed) {
                     Vue.set(this.idCountPeer, key, value);
-
                 }
             }
         }
