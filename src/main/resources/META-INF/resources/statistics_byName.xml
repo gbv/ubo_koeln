@@ -88,7 +88,7 @@
         </div>
         <script src="vue/vue.min.js"/>
         <script><![CDATA[
-const proxyUrl = "/servlets/solr/";
+const proxyUrl = "servlets/solr/";
 const requestHandlerUrl = proxyUrl + "select2";
 const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true&facet.mincount=1"
 const childQueryBase = "status:confirmed AND koeln_partOf:true";
@@ -133,7 +133,7 @@ let app = new Vue({
                     Vue.set(that.idName, dhsbid, koeln_name);
                 }
             };
-            xhr.open("GET", "/servlets/solr/select2?q=name_id_dhsbid:" + dhsbid + "&rows=1&fl=name&wt=json", true);
+            xhr.open("GET", "servlets/solr/select2?q=name_id_dhsbid:" + dhsbid + "&rows=1&fl=name&wt=json", true);
             xhr.send();
         },
         loadIDCount(oa, koeln_peerreviewed) {
