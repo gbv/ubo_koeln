@@ -40,6 +40,7 @@
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:genre[@type='intern']" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'ORIGIN')]" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'fachreferate')]" mode="solrField" />
+    <xsl:apply-templates select="mods:classification[contains(@authorityURI,'partOf')]" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:titleInfo[not(@type)]" mode="solrField.host" />
     <xsl:apply-templates select="mods:relatedItem[@type='host'][mods:genre='journal']/mods:titleInfo" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:part" mode="solrField" />
@@ -63,7 +64,6 @@
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'peerreviewed')]" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'partner')]" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'category')]" mode="solrField" />
-    <xsl:apply-templates select="mods:classification[contains(@authorityURI,'partOf')]" mode="solrField" />
 
   </xsl:template>
 
@@ -241,6 +241,9 @@
         <xsl:value-of select="@value" />
       </field>
     </xsl:for-each>
+    <field name="origin_exact">
+      <xsl:value-of select="$category" />
+    </field>
   </xsl:template>
 
   <xsl:template name="oa">
