@@ -12,6 +12,8 @@ import org.mycore.user2.MCRUserManager;
 
 import java.util.Optional;
 import java.util.SortedSet;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class KoelnUserMatcher implements MCRUserMatcher {
 
@@ -52,6 +54,12 @@ public class KoelnUserMatcher implements MCRUserMatcher {
             user.getAttributes().add(new MCRUserAttribute(LEAD_ID_ATTRIBUTE, id));
             MCRUserManager.createUser(user);
         }
+
+        // only add not attributes which are not present
+        user.getAttributes()
+                .addAll(mcrUserMatcherDTO.getMCRUser().getAttributes().stream()
+                        .filter(Predicate.not(user.getAttributes()::contains))
+                        .collect(Collectors.toUnmodifiableList()));
 
         mcrUserMatcherDTO.setMCRUser(user);
         mcrUserMatcherDTO.setMatchedOrEnriched(true);
