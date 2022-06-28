@@ -36,7 +36,9 @@
 
   <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
   <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=genre" />
-  <!-- xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=subject" / --> <!-- TODO: should be institutes, not subject -->
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=oa" /> <!-- TODO: should be access rights, not oa -->
+  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=origin" />
+  <!-- <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=oa" />  TODO: should be access rights, not oa -->
+  <xinclude uri="xslStyle:statistics-oa:solr:q=koeln_partOf:true+AND+status:confirmed+AND+year:[2018+TO+2022]&amp;rows=0&amp;json.facet={year:{type:terms,field:year,sort:{index:asc},facet:{oa:{type:terms,field:oa,sort:{index:asc}}}}}" />
+  
 
  </webpage>

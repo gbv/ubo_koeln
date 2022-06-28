@@ -32,11 +32,11 @@
   </xsl:template>
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='origin']">
-    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('facets.facet.origin'))"/>
+    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('ubo.department'))"/>
 
     <section class="card mb-3">
       <div class="card-body">
-        <div id="chartOrigin" style="width:100%; height:350px"/>
+        <div id="chartOrigin" style="width:100%; height:600px"/>
         <script type="text/javascript">
               $(document).ready(function() {
                 new Highcharts.Chart({
