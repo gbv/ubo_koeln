@@ -19,17 +19,16 @@
   -->
 
 <webpage lastModified="$Date: 2022-06-27 07:55:23 +0100 (Mo, 27 Jun 2022) $" id="dozbib.statsbyname">
-    <title xml:lang="de">Statistiken über alle verzeichneten Publikationen aus 2021</title>
-    <title xml:lang="en">Statistics for all publications listed here from 2021</title>
+    <title xml:lang="de">Publikationen von TH Wissenschaftler*innen aus dem Jahr 2021</title>
+    <title xml:lang="en">Publikationen von TH Wissenschaftler*innen aus dem Jahr 2021</title>
 
 
     <article class="card mb-3" xml:lang="de">
         <div class="card-body bg-alternative">
             <h3>Hinweis:</h3>
             <p>
-                Es handelt sich um eine speziell aufbereitete Ansicht der Publikationen aus dem Jahr 2021. Diese umfasst Name, DHSBID und Zahl der
-                Publikationen, die diese Person für 2021 gemeldet hat und wie viele davon dann peer-reviewed und Open Access sind. Dabei war diese
-                Person an der Publikation in einer der folgenden Rollen beteiligt: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
+                Diese Übersicht enthält die Publikationen, bei denen eine an der TH Köln beschäftigte Person in einer
+                der folgenden Rollen beteiligt war: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
                 Erfinder*in oder Dozent*in.
             </p>
         </div>
@@ -39,9 +38,8 @@
         <div class="card-body bg-alternative">
             <h3>Notice:</h3>
             <p>
-                Es handelt sich um eine speziell aufbereitete Ansicht der Publikationen aus dem Jahr 2021. Diese umfasst Name, DHSBID und Zahl der
-                Publikationen, die diese Person für 2021 gemeldet hat und wie viele davon dann peer-reviewed und Open Access sind. Dabei war diese
-                Person an der Publikation in einer der folgenden Rollen beteiligt: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
+                Diese Übersicht enthält die Publikationen, bei denen eine an der TH Köln beschäftigte Person in einer
+                der folgenden Rollen beteiligt war: Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person,
                 Erfinder*in oder Dozent*in.
             </p>
         </div>
@@ -50,7 +48,7 @@
     <article class="card">
         <div class="card-body">
             <div id="statistics">
-                <h1>Statistik</h1>
+                <h1>DHSB-Statistik</h1>
                 <table class="table" v-if="idCount.length>0">
                     <thead>
                         <tr>
