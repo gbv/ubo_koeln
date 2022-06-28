@@ -5,11 +5,16 @@
   xmlns:xalan="http://xml.apache.org/xalan"
   xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
   xmlns:encoder="xalan://java.net.URLEncoder"
-  exclude-result-prefixes="xsl xalan i18n encoder">
+  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+
+  exclude-result-prefixes="xsl xalan i18n encoder mcrxsl">
 
   <xsl:param name="CurrentLang" />
   <xsl:param name="ServletsBaseURL" />
   <xsl:param name="UBO.LSF.Link" />
+
+  <xsl:param name="UBO.Statistics.Color.Bar" />
+  <xsl:param name="UBO.Statistics.Style.Labels" />
 
   <xsl:variable name="count" select="concat(i18n:translate('stats.count'),' ',i18n:translate('ubo.publications'))" />
 
@@ -17,12 +22,93 @@
     <xsl:for-each select="lst[@name='facet_counts']">
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='year'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='subject'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='origin'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='oa'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_dhsbid'][int]" />
       <xsl:apply-templates select="lst[@name='facet_pivot']/arr[@name='name_id_type,name_id_type']" />
     </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="lst[@name='facet_fields']/lst[@name='origin']">
+    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('facets.facet.origin'))"/>
+
+    <section class="card mb-3">
+      <div class="card-body">
+        <div id="chartOrigin" style="width:100%; height:350px"/>
+        <script type="text/javascript">
+              $(document).ready(function() {
+                new Highcharts.Chart({
+                  chart: {
+                    renderTo: 'chartOrigin',
+                    type: 'bar',
+                    backgroundColor: 'transparent',
+                    borderWidth: 0,
+                    shadow: false,
+                    events: {
+                      click: function(e) {
+                        $('#chartDialog').dialog({
+                          position: 'center',
+                          width: $(window).width() - 80,
+                          height: $(window).height() - 80,
+                          draggable: false,
+                          resizable: false,
+                          modal: false
+                        });
+                        var dialogOptions = this.options;
+                        dialogOptions.chart.renderTo = 'chartDialog';
+                        dialogOptions.chart.events = null;
+                        dialogOptions.chart.zoomType = 'x';
+                        new Highcharts.Chart(dialogOptions);
+                      }
+                    }
+                  },
+                  title: { text: '<xsl:value-of select="$title" />' },
+                  legend: { enabled: false },
+                  xAxis: { categories: [
+                    <xsl:for-each select="int">
+                      <xsl:sort select="text()" data-type="number" order="descending" />
+                      <xsl:variable name="cid" select="@name"/>
+                      '<xsl:value-of select="mcrxsl:getDisplayName('ORIGIN', $cid)" />'
+                      <xsl:if test="position() != last()">, </xsl:if>
+                    </xsl:for-each>
+                    ],
+                    labels: {
+                      align: 'right',
+                      style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
+                    }
+                  },
+                  yAxis: {
+                     title: { text: '<xsl:value-of select="$count" />' },
+                     labels: { formatter: function() { return this.value; } },
+                     endOnTick: false,
+                     max: <xsl:value-of select="floor(number(int[1]))" /> <!-- +5% -->
+                  },
+                  tooltip: { formatter: function() { return '<b>' + this.x +'</b>: '+ this.y; } },
+                  plotOptions: { series: { pointWidth: 15 } },
+                  series: [{
+                    name: '<xsl:value-of select="$title" />',
+                    data: [
+                      <xsl:for-each select="int">
+                        <xsl:sort select="text()" data-type="number" order="descending" />
+                        <xsl:value-of select="text()"/>
+                        <xsl:if test="position() != last()">, </xsl:if>
+                      </xsl:for-each>
+                    ],
+                    color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />',
+                    dataLabels: {
+                      enabled: true,
+                      align: 'right',
+                      formatter: function() { return this.y; },
+                      style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
+                }
+              }]
+            });
+          });
+        </script>
+      </div>
+    </section>
   </xsl:template>
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='year']">
@@ -38,7 +124,7 @@
             chart: {
               renderTo: 'chartYear',
               defaultSeriesType: 'column',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'transparent',
               borderWidth: 0,
               shadow: false,
               events: {
@@ -87,7 +173,7 @@
                       <xsl:if test="position() != last()">, </xsl:if>
                     </xsl:for-each>
                   ],
-                  color: '#d283be'
+                  color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />'
               }]
             });
           });
@@ -108,7 +194,7 @@
               chart: {
                 renderTo: 'chartSubject',
                 type: 'bar',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'transparent',
                 borderWidth: 0,
                 shadow: false,
                 events: {
@@ -134,13 +220,13 @@
               xAxis: { categories: [
                 <xsl:for-each select="int">
                   <xsl:sort select="text()" data-type="number" order="descending" />
-                  '<xsl:value-of select="document(concat('classification:editor:0:parents:fachreferate:',encoder:encode(current()/@name,'UTF-8')))/items/item/label[lang($CurrentLang)]" />'
+                  '<xsl:value-of select="mcrxsl:getDisplayName('fachreferate', @name)" />'
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
                 ],
                 labels: {
                   align: 'right',
-                  style: { font: 'normal 13px Verdana, sans-serif' }
+                  style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
                 }
               },
               yAxis: {
@@ -160,12 +246,12 @@
                     <xsl:if test="position() != last()">, </xsl:if>
                   </xsl:for-each>
                 ],
-                color: '#d283be',
+                color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />',
                 dataLabels: {
                   enabled: true,
                   align: 'right',
                   formatter: function() { return this.y; },
-                style: { font: 'normal 15px Verdana, sans-serif' }
+                  style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
             }
           }]
         });
@@ -185,12 +271,21 @@
         <div id="chartGenre" style="width:100%; height:350px" />
         <script type="text/javascript">
          $(document).ready(function() {
-         Highcharts.getOptions().plotOptions.pie.colors = ['#b43092','#ea5a00','#c81e0f','#212125'];
+          Highcharts.getOptions().plotOptions.pie.colors = [
+          <xsl:for-each select="int">
+            <xsl:sort select="text()" data-type="number" order="descending" />
+            <xsl:sort data-type="number" order="descending" />
+            <xsl:text>'</xsl:text>
+            <xsl:value-of select="$genres//category[@ID=current()/@name]/label[lang('x-color')]/@text" />
+            <xsl:text>'</xsl:text>
+            <xsl:if test="position() != last()">, </xsl:if>
+          </xsl:for-each>
+          ];
            new Highcharts.Chart({
              chart: {
                 renderTo: 'chartGenre',
                 type: 'pie',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'transparent',
                 borderWidth: 0,
                 shadow: false,
                 plotBackgroundColor: null,
@@ -265,7 +360,7 @@
       <script type="text/javascript">
        $(document).ready(function() {
          Highcharts.getOptions().plotOptions.pie.colors = [
-         <xsl:if test="$numOther &gt; 0">'#d283be',</xsl:if>
+           <xsl:if test="$numOther &gt; 0">'<xsl:value-of select="$oa/../label[lang('x-color')]/@text" />',</xsl:if>
            <xsl:for-each select="int[not(@name='oa') or ($numOAdirect &gt; 0)]">
              <xsl:sort data-type="number" order="descending" />
              <xsl:text>'</xsl:text>
@@ -278,12 +373,13 @@
            chart: {
               renderTo: 'chartOA',
               type: 'pie',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'transparent',
               borderWidth: 0,
               shadow: false,
               plotBackgroundColor: null,
               plotBorderWidth: null,
               plotShadow: false,
+              defaultSeriesType: 'pie',
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
@@ -366,7 +462,7 @@
             chart: {
               renderTo: 'chartPerson',
               type: 'bar',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'transparent',
               borderWidth: 0,
               shadow: false,
               events: {
@@ -398,7 +494,7 @@
               ],
               labels: {
                 align: 'right',
-                style: { font: 'normal 13px Verdana, sans-serif' }
+                style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
               }
             },
             yAxis: {
@@ -418,12 +514,11 @@
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
               ],
-              color: '#d283be',
               dataLabels: {
                 enabled: true,
                 align: 'right',
                 formatter: function() { return this.y; },
-                style: { font: 'normal 15px Verdana, sans-serif' }
+                style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
               }
             }]
           });
@@ -456,17 +551,14 @@
 
     <section class="card">
       <div class="card-body">
-      <div id="chartLSF" style="width:100%; height:{50 + count(int) * 30}px" />
+      <div id="chartID" style="width:100%; height:{50 + count(int) * 30}px" />
 
       <script type="text/javascript">
         $(document).ready(function() {
           new Highcharts.Chart({
             chart: {
-              renderTo: 'chartLSF',
+              renderTo: 'chartID',
               type: 'bar',
-              backgroundColor: '#FFFFFF',
-              borderWidth: 0,
-              shadow: false,
               events: {
                 click: function(e) {
                   $('#chartDialog').dialog({
@@ -498,7 +590,7 @@
               ],
               labels: {
                 align: 'right',
-                style: { font: 'normal 13px Verdana, sans-serif' }
+                style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
               }
             },
             yAxis: {
@@ -518,12 +610,12 @@
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
               ],
-              color: '#d283be',
+              color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />',
               dataLabels: {
                 enabled: true,
                 align: 'right',
                 formatter: function() { return this.y; },
-                style: { font: 'normal 15px Verdana, sans-serif' }
+                style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
               }
             }]
           });
