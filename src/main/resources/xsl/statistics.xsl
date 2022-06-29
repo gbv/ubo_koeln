@@ -24,7 +24,7 @@
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='subject'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='origin'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
-      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='oa'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='accessrights'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_dhsbid'][int]" />
       <xsl:apply-templates select="lst[@name='facet_pivot']/arr[@name='name_id_type,name_id_type']" />
@@ -345,33 +345,33 @@
     </section>
   </xsl:template>
 
-  <xsl:variable name="oa" select="document('classification:metadata:-1:children:oa')/mycoreclass/categories" />
+  <xsl:variable name="accessrights" select="document('classification:metadata:-1:children:accessrights')/mycoreclass/categories" />
 
-  <xsl:template match="lst[@name='facet_fields']/lst[@name='oa']">
-    <xsl:variable name="title">Publikationen / Publikationsweg</xsl:variable>
+  <xsl:template match="lst[@name='facet_fields']/lst[@name='koeln_accessrights']">
+    <xsl:variable name="title">Publikationen / Zugangsrechte</xsl:variable>
 
     <section class="card mb-3">
       <div class="card-body">
-      <div id="chartOA" style="width:100%; height:350px" />
+      <div id="chartAccessRights" style="width:100%; height:350px" />
 
-      <xsl:variable name="numOAdirect" select="int[@name='oa'] - sum(int[contains('green gold hybrid embargo bronze',@name)])" />
-      <xsl:variable name="numOther" select="/response/result/@numFound - int[@name='oa']" />
+      <xsl:variable name="numAccessRightsDirect" select="int[@name='koeln_accessrights'] - sum(int[contains('oa ea ra moa',@name)])" />
+      <xsl:variable name="numOther" select="/response/result/@numFound - int[@name='koeln_accessrights']" />
 
       <script type="text/javascript">
        $(document).ready(function() {
          Highcharts.getOptions().plotOptions.pie.colors = [
-           <xsl:if test="$numOther &gt; 0">'<xsl:value-of select="$oa/../label[lang('x-color')]/@text" />',</xsl:if>
-           <xsl:for-each select="int[not(@name='oa') or ($numOAdirect &gt; 0)]">
+           <xsl:if test="$numOther &gt; 0">'<xsl:value-of select="$accessrights/../label[lang('x-color')]/@text" />',</xsl:if>
+           <xsl:for-each select="int[not(@name='koeln_accessrights') or ($numAccessRightsDirect &gt; 0)]">
              <xsl:sort data-type="number" order="descending" />
              <xsl:text>'</xsl:text>
-             <xsl:value-of select="$oa//category[@ID=current()/@name]/label[lang('x-color')]/@text" />
+             <xsl:value-of select="$accessrights//category[@ID=current()/@name]/label[lang('x-color')]/@text" />
              <xsl:text>'</xsl:text>
              <xsl:if test="position() != last()">, </xsl:if>
            </xsl:for-each>
          ];
          new Highcharts.Chart({
            chart: {
-              renderTo: 'chartOA',
+              renderTo: 'chartAccessRights',
               type: 'pie',
               backgroundColor: 'transparent',
               borderWidth: 0,
@@ -419,17 +419,17 @@
                 name: '<xsl:value-of select="$title" />',
                 data: [
                   <xsl:if test="$numOther &gt; 0">
-                    ['nicht OA / unbekannt' , <xsl:value-of select="$numOther"/>],
+                    ['unbekannt' , <xsl:value-of select="$numOther"/>],
                   </xsl:if>
 
-                 <xsl:for-each select="int[not(@name='oa') or ($numOAdirect &gt; 0)]">
+                 <xsl:for-each select="int[not(@name='koeln_accessrights') or ($numAccessRightsDirect &gt; 0)]">
                    <xsl:sort data-type="number" order="descending" />
                    <xsl:text>['</xsl:text>
-                   <xsl:value-of select="$oa//category[@ID=current()/@name]/label[lang($CurrentLang)]/@text" />
+                   <xsl:value-of select="$accessrights//category[@ID=current()/@name]/label[lang($CurrentLang)]/@text" />
                    <xsl:text>', </xsl:text>
                    <xsl:choose>
                      <xsl:when test="@name='oa'">
-                       <xsl:value-of select="$numOAdirect" />
+                       <xsl:value-of select="$numAccessRightsDirect" />
                      </xsl:when>
                      <xsl:otherwise>
                        <xsl:value-of select="text()" />
@@ -530,6 +530,8 @@
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='nid_dhsbid']">
 
+    <xsl:if test="xsl:isCurrentUserInRole('admin')">
+
     <!-- The facet is a list of top THK IDs matching the restricted query, e.g. status=confirmed, year > 2012 -->
     <!-- To find the corresponding names, build a pivot facet with THK ID and name variants, use most frequent name  -->
     <xsl:variable name="uri">
@@ -623,9 +625,11 @@
       </script>
       </div>
     </section>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="lst/arr[@name='name_id_type,name_id_type']">
+    <xsl:if test="xsl:isCurrentUserInRole('admin')">
     <xsl:variable name="base" select="." />
 
     <table class="table table-bordered">
@@ -652,6 +656,7 @@
         </tr>
       </xsl:for-each>
     </table>
+    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

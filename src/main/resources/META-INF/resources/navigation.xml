@@ -36,10 +36,6 @@
         <label xml:lang="de">Literaturliste importieren</label>
         <label xml:lang="en">Import publication list</label>
       </item>
-      <item ref="statistics_admin.xml" id="dozbib.statsadmin" role="admin">
-        <label xml:lang="de">Administrative Statistiken</label>
-        <label xml:lang="en">Administrative statistics</label>
-      </item>
       <item ref="statistics_byName.xml" id="dozbib.statsbyname" role="admin">
         <label xml:lang="de">DHSB-Statistik 2021</label>
         <label xml:lang="en">DHSB Statistic 2021</label>
