@@ -24,7 +24,7 @@
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='subject'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='origin'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
-      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='accessrights'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='koeln_accessrights'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_dhsbid'][int]" />
       <xsl:apply-templates select="lst[@name='facet_pivot']/arr[@name='name_id_type,name_id_type']" />
@@ -271,16 +271,7 @@
         <div id="chartGenre" style="width:100%; height:350px" />
         <script type="text/javascript">
          $(document).ready(function() {
-          Highcharts.getOptions().plotOptions.pie.colors = [
-          <xsl:for-each select="int">
-            <xsl:sort select="text()" data-type="number" order="descending" />
-            <xsl:sort data-type="number" order="descending" />
-            <xsl:text>'</xsl:text>
-            <xsl:value-of select="$genres//category[@ID=current()/@name]/label[lang('x-color')]/@text" />
-            <xsl:text>'</xsl:text>
-            <xsl:if test="position() != last()">, </xsl:if>
-          </xsl:for-each>
-          ];
+          Highcharts.getOptions().plotOptions.pie.colors = ['#972d79', '#5b0547', '#d283be', '#a6a6a8', '#4d4d51'];
            new Highcharts.Chart({
              chart: {
                 renderTo: 'chartGenre',
@@ -530,7 +521,7 @@
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='nid_dhsbid']">
 
-    <xsl:if test="xsl:isCurrentUserInRole('admin')">
+    <xsl:if test="mcrxsl:isCurrentUserInRole('admin')">
 
     <!-- The facet is a list of top THK IDs matching the restricted query, e.g. status=confirmed, year > 2012 -->
     <!-- To find the corresponding names, build a pivot facet with THK ID and name variants, use most frequent name  -->
@@ -629,7 +620,7 @@
   </xsl:template>
 
   <xsl:template match="lst/arr[@name='name_id_type,name_id_type']">
-    <xsl:if test="xsl:isCurrentUserInRole('admin')">
+    <xsl:if test="mcrxsl:isCurrentUserInRole('admin')">
     <xsl:variable name="base" select="." />
 
     <table class="table table-bordered">
