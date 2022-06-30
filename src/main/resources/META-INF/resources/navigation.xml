@@ -37,8 +37,8 @@
         <label xml:lang="en">Import publication list</label>
       </item>
       <item ref="statistics_byName.xml" id="dozbib.statsbyname" role="admin">
-        <label xml:lang="de">DHSB-Statistik 2021</label>
-        <label xml:lang="en">DHSB Statistic 2021</label>
+        <label xml:lang="de">DHSB-Statistik</label>
+        <label xml:lang="en">DHSB Statistic</label>
       </item>
       <item id="dozbib.search-expert" ref="search-expert.xed" role="admin">
         <label xml:lang="de">Expertensuche</label>
