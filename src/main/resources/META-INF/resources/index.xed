@@ -12,13 +12,13 @@
       <div class="card mcr-grid-card">
         <div class="card-body">
           <div class="row">
-            <div class="col-12 col-md-3 d-none d-md-flex">
+            <div class="col-12 col-lg-3 d-none d-lg-flex">
               <img
                 src="images/logo-dhsb.png"
                 class="mcr-card-figure"
                 alt="DHSB Logo" />
             </div>
-            <article class="col-12 col-md-9" xml:lang="de">
+            <article class="col-12 col-lg-9" xml:lang="de">
               <h5>
                 Über die Digitale Hochschulbibliografie der TH Köln
               </h5>
@@ -64,7 +64,7 @@
               </xed:form>
             </article>
             
-            <article class="col-12 col-md-9" xml:lang="en">
+            <article class="col-12 col-lg-9" xml:lang="en">
               <h5>
                 About the Digital University Bibliography of TH Köln
               </h5>
@@ -114,7 +114,7 @@
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-lg-8">
       <div class="card-deck mcr-card-deck">
 
         <article class="card" xml:lang="de">
@@ -178,7 +178,7 @@
       </div>
       <xinclude uri="xslStyle:response-newest:solr:q=koeln_partOf:true+AND+status:confirmed+AND+year:2022&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-lg-4">
       <xinclude uri="xslStyle:response-sidebar-mini:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0" />
       <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
       <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*:*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />

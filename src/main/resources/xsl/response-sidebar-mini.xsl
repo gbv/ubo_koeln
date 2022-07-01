@@ -14,12 +14,12 @@
   <xsl:template match="/response">
   
     <xsl:variable name="solr_query" select="'q=status:confirmed'" />
-    <xsl:variable name="numTotal" select="document(concat('solr:rows=0&amp;',$solr_query))/response/result/@numFound" />
+    <xsl:variable name="numTotal" select="document(concat('solr:',$solr_query,'&amp;rows=0'))/response/result/@numFound" />
 
     <article class="card mb-2">
       <div class="card-body">
         <hgroup>
-          <h3>
+          <h3 style="line-height: 1.5rem;">
             <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal', $numTotal)" />
             <br />
             <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf', result[@name='response']/@numFound)" />
