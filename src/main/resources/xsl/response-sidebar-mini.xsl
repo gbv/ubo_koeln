@@ -18,28 +18,42 @@
 
     <article class="card mb-2">
       <div class="card-body">
-        <hgroup>
-          <h3 style="line-height: 1.5rem;">
-            <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal', $numTotal)" />
-            <br />
-            <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf', result[@name='response']/@numFound)" />
-          </h3>
-        </hgroup>
+        <h3>
+          <xsl:value-of select="i18n:translate('ubo.publicationsTotal.title')" />
+        </h3>
         <p>
+          <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal')" />
+          <a href="{$ServletsBaseURL}solr/select?q=status:confirmed">
+            <xsl:value-of select="$numTotal"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="i18n:translate('ubo.publications')" />
+          </a>
+        </p>
+        <h4></h4>
+        <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf')" />
+        <a href="{$ServletsBaseURL}solr/select?q=koeln_partOf:true+AND+status:confirmed">
+          <xsl:value-of select="result[@name='response']/@numFound"/>
+          <xsl:text> </xsl:text>
+          <xsl:value-of select="i18n:translate('ubo.publications')" />
+        </a>
+        <br />
+        <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf.perYear')" />
+        <ul>
           <xsl:for-each select="lst[@name='facet_counts']/lst[@name='facet_fields']/lst[@name='year']/int">
             <xsl:sort select="@name" data-type="number" order="descending" />
             <xsl:if test="position() &lt; 4">
-              <xsl:value-of select="@name"/>
-              <xsl:text> : </xsl:text>
-              <a href="{$ServletsBaseURL}solr/select?q=koeln_partOf:true+AND+status:confirmed+AND+year:{@name}">
-                <xsl:value-of select="text()"/>
-                <xsl:text> </xsl:text>
-                <xsl:value-of select="i18n:translate('ubo.publications')" />
-              </a>
-              <br/>
+              <li>
+                <xsl:value-of select="@name"/>
+                <xsl:text>: </xsl:text>
+                <a href="{$ServletsBaseURL}solr/select?q=koeln_partOf:true+AND+status:confirmed+AND+year:{@name}">
+                  <xsl:value-of select="text()"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="i18n:translate('ubo.publications')" />
+                </a>
+              </li>
             </xsl:if>
           </xsl:for-each>
-        </p>
+        </ul>
       </div>
     </article>
   </xsl:template>
