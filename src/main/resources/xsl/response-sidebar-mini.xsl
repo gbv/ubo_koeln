@@ -29,8 +29,10 @@
             <xsl:value-of select="i18n:translate('ubo.publications')" />
           </a>
         </p>
-        <h4></h4>
-        <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf')" />
+        <h4>
+          <xsl:value-of select="i18n:translate('ubo.numPublicationsPartOf')" />
+        </h4>
+        <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal')" />
         <a href="{$ServletsBaseURL}solr/select?q=koeln_partOf:true+AND+status:confirmed">
           <xsl:value-of select="result[@name='response']/@numFound"/>
           <xsl:text> </xsl:text>
