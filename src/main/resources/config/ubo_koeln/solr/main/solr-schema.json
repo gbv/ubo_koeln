@@ -1,5 +1,16 @@
 [
     {
+      "add-field-type": {
+        "name": "ubo_classid",
+        "class": "solr.TextField",
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.KeywordTokenizerFactory"
+          }
+        }
+      }
+    },
+    {
         "add-field": {
             "name": "ubo_documentID",
             "type": "ubo_id",
@@ -88,6 +99,24 @@
             "source": "conference",
             "dest": "all"
         }
+    },
+    {
+      "replace-field": {
+        "name": "origin",
+        "type": "ubo_classid",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      }
+    },
+    {
+      "replace-field": {
+        "name": "origin_exact",
+        "type": "ubo_classid",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      }
     }
 ]
 
