@@ -81,7 +81,7 @@
                 },
                 labels: {
                   style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
-                }
+                },
                 tooltip: {
                     headerFormat: '&lt;b&gt;{point.x}&lt;/b&gt;&lt;br/&gt;',
                     pointFormat: '{series.name}: {point.y} ({point.percentage:.1f} %)&lt;br/&gt;<xsl:value-of select="$ofTotal"/> {point.stackTotal}&lt;br/&gt;'

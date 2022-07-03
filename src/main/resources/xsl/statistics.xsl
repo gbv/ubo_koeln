@@ -339,20 +339,20 @@
   <xsl:variable name="accessrights" select="document('classification:metadata:-1:children:accessrights')/mycoreclass/categories" />
 
   <xsl:template match="lst[@name='facet_fields']/lst[@name='koeln_accessrights']">
-    <xsl:variable name="title">Publikationen / Zugangsrechte</xsl:variable>
+    <xsl:variable name="title">Publikationen / Zugangsrechte nach KDSF</xsl:variable>
 
     <section class="card mb-3">
       <div class="card-body">
       <div id="chartAccessRights" style="width:100%; height:350px" />
 
-      <xsl:variable name="numAccessRightsDirect" select="int[@name='koeln_accessrights'] - sum(int[contains('oa ea ra moa',@name)])" />
-      <xsl:variable name="numOther" select="/response/result/@numFound - int[@name='koeln_accessrights']" />
+      <xsl:variable name="numAccessRightsDirect" select="sum(int[contains('oa ea ra moa',@name)])" />
+      <xsl:variable name="numOther" select="/response/result/@numFound - $numAccessRightsDirect" />
 
       <script type="text/javascript">
        $(document).ready(function() {
          Highcharts.getOptions().plotOptions.pie.colors = [
            <xsl:if test="$numOther &gt; 0">'<xsl:value-of select="$accessrights/../label[lang('x-color')]/@text" />',</xsl:if>
-           <xsl:for-each select="int[not(@name='koeln_accessrights') or ($numAccessRightsDirect &gt; 0)]">
+           <xsl:for-each select="int">
              <xsl:sort data-type="number" order="descending" />
              <xsl:text>'</xsl:text>
              <xsl:value-of select="$accessrights//category[@ID=current()/@name]/label[lang('x-color')]/@text" />
@@ -413,19 +413,12 @@
                     ['unbekannt' , <xsl:value-of select="$numOther"/>],
                   </xsl:if>
 
-                 <xsl:for-each select="int[not(@name='koeln_accessrights') or ($numAccessRightsDirect &gt; 0)]">
+                 <xsl:for-each select="int">
                    <xsl:sort data-type="number" order="descending" />
                    <xsl:text>['</xsl:text>
                    <xsl:value-of select="$accessrights//category[@ID=current()/@name]/label[lang($CurrentLang)]/@text" />
                    <xsl:text>', </xsl:text>
-                   <xsl:choose>
-                     <xsl:when test="@name='oa'">
-                       <xsl:value-of select="$numAccessRightsDirect" />
-                     </xsl:when>
-                     <xsl:otherwise>
-                       <xsl:value-of select="text()" />
-                     </xsl:otherwise>
-                   </xsl:choose>
+                   <xsl:value-of select="text()" />
                    <xsl:text>]</xsl:text>
                    <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
