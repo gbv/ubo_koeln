@@ -36,7 +36,7 @@
 
     <section class="card mb-3">
       <div class="card-body">
-        <div id="chartOrigin" style="width:100%; height:600px"/>
+        <div id="chartOrigin" style="width:100%; height:{50 + count(int) * 30}px" />
         <script type="text/javascript">
               $(document).ready(function() {
                 new Highcharts.Chart({
