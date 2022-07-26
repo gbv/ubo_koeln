@@ -223,4 +223,33 @@
     </xed:repeat>
   </xed:template>
 
+  <xed:template id="koeln.patent.identifier">
+    <xed:bind xpath="mods:identifier[@type='patent']">
+      <div class="form-group form-inline">
+        <label for="{xed:generate-id()}" class="mycore-form-label">
+          <xed:output i18n="koeln.patent.identifier" />:
+        </label>
+        <input id="{xed:generate-id()}" type="text" class="{$xed-validation-marker} mycore-form-input" />
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.patent.identifier}">
+          <i class="fas fa-info"></i>
+        </a>
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="koeln.patent.registration">
+    <xed:bind xpath="mods:originInfo[@eventType='registration']/mods:dateIssued[@encoding='w3cdtf']">
+      <div class="form-inline form-group">
+        <label for="year" class="mycore-form-label">
+          <xed:output i18n="koeln.patent.registration" />:
+        </label>
+        <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" placeholder="{i18n:koeln.patent.registration.placeholder}" />
+        <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:koeln.editor.help.patent.registration}">
+          <i class="fas fa-info"></i>
+        </a>
+      </div>
+      <xed:validate matches="\d{4}(\-\d{2}(\-\d{2})?)?" type="datetime" format="yyyy;yyyy-MM;yyyy-MM-dd" i18n="koeln.patent.registration.validation.form" display="global" />
+    </xed:bind>
+  </xed:template>
+
 </xed:templates>

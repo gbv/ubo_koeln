@@ -101,7 +101,9 @@
     <xed:include uri="webapp:import-editor.xed" ref="inventor" />
     <xed:include uri="webapp:import-editor.xed" ref="title" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.dateIssued" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.patent.registration" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
+    <xed:include uri="webapp:import-koeln.xed"  ref="koeln.patent.identifier" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
 
