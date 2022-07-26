@@ -104,6 +104,7 @@
                       <option value="id_isbn"       >ISBN</option>
                       <option value="id_pubmed"     >PubMed-ID</option>
                       <option value="id_scopus"     >Scopus-ID</option>
+                      <option value="id_arxiv"      >arXiv.org-ID</option>
                       <option value="ubo_documentID">Dokument-ID</option>
                     </select>
                   </xed:bind>
