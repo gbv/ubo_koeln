@@ -1,0 +1,47 @@
+[
+    {
+        "add-field": {
+            "name": "ubo_documentID",
+            "type": "ubo_id",
+            "multiValued": false,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "delete-copy-field": {
+            "source": "conference",
+            "dest": "all"
+        }
+    },
+    {
+        "delete-field": {
+            "name": "conference"
+        }
+    },
+    {
+        "add-field": {
+            "name": "conference",
+            "type": "ubo_text",
+            "multiValued": false,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-copy-field": {
+            "source": "conference",
+            "dest": "all"
+        }
+    },
+    {
+        "replace-field": {
+            "name": "abstract",
+            "type": "ubo_text",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true 
+        }
+    }
+]
+
