@@ -632,7 +632,14 @@
               <th>/</th>
               <xsl:for-each select="$base/lst">
                 <th>
-                  <xsl:value-of select="translate(str[@name='value'],'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />
+                  <xsl:choose>
+                  <xsl:when test="not(starts-with(i18n:translate(concat('user.profile.id.', str[@name='value'])),'???'))">
+                    <xsl:value-of select="i18n:translate(concat('user.profile.id.', str[@name='value']))" />
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="translate(str[@name='value'],'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />
+                  </xsl:otherwise>
+                </xsl:choose>
                 </th>
               </xsl:for-each>
             </tr>
@@ -640,7 +647,14 @@
               <xsl:variable name="a" select="str[@name='value']" />
               <tr class="text-right">
                 <th class="identifier">
-                  <xsl:value-of select="translate(str[@name='value'],'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />
+                  <xsl:choose>
+                  <xsl:when test="not(starts-with(i18n:translate(concat('user.profile.id.', str[@name='value'])),'???'))">
+                    <xsl:value-of select="i18n:translate(concat('user.profile.id.', str[@name='value']))" />
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="translate(str[@name='value'],'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />
+                  </xsl:otherwise>
+                </xsl:choose>
                 </th>
                 <xsl:for-each select="$base/lst">
                   <xsl:variable name="b" select="str[@name='value']" />
