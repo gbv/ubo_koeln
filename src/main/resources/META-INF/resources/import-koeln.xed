@@ -173,8 +173,8 @@
     <xed:bind xpath="mods:titleInfo">
       <xed:bind xpath="mods:title">
         <div class="form-inline form-group">
-          <label for="{xed:generate-id()}" class="mycore-form-label">
-            *<xed:output i18n="ubo.title" />:
+          <label for="{xed:generate-id()}" class="mycore-form-label ubo-mandatory">
+            <xed:output i18n="ubo.title" />:
           </label>
           <textarea id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" />
         </div>
@@ -210,8 +210,7 @@
     <xed:repeat xpath="mods:name[@type='personal']">
       <div class="form-group form-inline">
         <xed:bind xpath="mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']" initially="aut">
-          <label class="mycore-form-label d-flex align-items-center">
-            <span class="mr-1">*</span>
+          <label class="mycore-form-label d-flex align-items-center ubo-mandatory">
             <select class="form-control">
               <option value="aut"><xed:output i18n="ubo.role.author" /></option>
               <option value="edt"><xed:output i18n="ubo.role.editor" /></option>
