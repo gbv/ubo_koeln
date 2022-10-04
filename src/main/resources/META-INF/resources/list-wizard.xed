@@ -7,10 +7,16 @@
   <article xml:lang="de" class="card mb-1">
     <div class="card-body">
       <p>
-        Um persönliche Publikationslisten direkt aus der Hochschulbibliografie zu erstellen und in verschiedenen Formaten auszugeben, nutzen
-        Sie das folgende Formular. Voraussetzung ist, dass die Publikationen mit Ihrer DHSB-ID verknüpft sind. Falls Publikationen fehlen,
-        <a href="newPublication.xed">melden Sie diese hier.</a> Falls Einträge korrigiert werden müssen, <a href="contact.xml">sprechen Sie
-        uns an.</a>
+        Hier können Sie persönliche Publikationslisten für alle Publikationen erstellen, die in der DHSB eingetragen sind und mit Ihrer DHSB-ID
+        verknüpft sind. Im unteren Bereich wählen Sie das Ausgabeformat und den Zitationsstil für Ihre Publikationsliste.
+      </p>
+      <p>
+        Die erstellte Liste enthält alle Publikationen, bei denen die ausgewählte Person in einer der folgenden Rollen beteiligt war:<br />
+        Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person, oder Erfinder*in.
+      </p>
+      <p>
+        Falls Einträge fehlen, <a href="newPublication.xed">tragen Sie die Publikationen in die Bibliografie ein</a>. Falls Einträge korrigiert
+        werden müssen, <a href="contact.xml">sprechen Sie uns an</a>.
       </p>
     </div>
   </article>
@@ -18,9 +24,16 @@
   <article xml:lang="en" class="card mb-1">
     <div class="card-body">
       <p>
-        In order to create personal publication lists directly from the University Bibliography and to output them in various formats,
-        please use the following form. This requires that your publications are linked with your DHSB-ID. If publications are missing,
-        <a href="newPublication.xed">you can enter them here.</a> If entries need to be corrected, please <a href="contact.xml">contact us.</a>
+        Here you can create personal publication lists for all publications that are registered in the DHSB and linked to your DHSB-ID. In the
+        lower area you select the output format and the citation style for your publication list.
+      </p>
+      <p>
+        The created list contains all publications where the selected person was involved in one of the following roles:<br />
+        Author, Editor, Interviewer, Interviewee or Inventor.
+      </p>
+      <p>
+        If entries are missing, <a href="newPublication.xed">enter the publications in the bibliography</a>. If entries need to be corrected,
+        <a href="contact.xml">please contact us</a>.
       </p>
     </div>
   </article>
