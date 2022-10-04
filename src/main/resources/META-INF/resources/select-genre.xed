@@ -147,6 +147,13 @@
               });
 
             });
+            
+            $( document ).ajaxComplete(function() {
+              $("select#genre option[value='series']").remove();
+              $("select#genre option[value='journal']").remove();
+              $("select#genre option[value='blog']").remove();
+              $("select#genre option[value='newspaper']").remove();
+            });
           </script>
 
         </xed:bind>
