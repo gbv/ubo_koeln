@@ -65,7 +65,7 @@
                 <table class="table" v-if="idCount.length>0">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col">DHSB-ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Dokumente</th>
                             <th scope="col">OpenAccess</th>
