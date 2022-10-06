@@ -18,7 +18,8 @@
   ~  along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<webpage lastModified="$Date: 2022-06-27 07:55:23 +0100 (Mo, 27 Jun 2022) $" id="dozbib.statsbyname">
+<webpage xmlns:v-on="http://www.w3.org/1999/xhtml" lastModified="$Date: 2022-06-27 07:55:23 +0100 (Mo, 27 Jun 2022) $"
+         id="dozbib.statsbyname">
     <title xml:lang="de">Publikationen von TH Wissenschaftler*innen</title>
     <title xml:lang="en">Publikationen von TH Wissenschaftler*innen</title>
 
@@ -49,6 +50,18 @@
         <div class="card-body">
             <div id="statistics">
                 <h1>DHSB-Statistik</h1>
+                <form id="yearSelect" class="">
+                    <div class="form-group row">
+                        <div class="col-2">
+                            <label class="mt-2" for="yearSelectSelect">Jahr</label>
+                        </div>
+                        <div class="col-10">
+                            <select id="yearSelectSelect" v-model="yearSelect" v-on:change="reload()" class="form-control">
+                                <option v-for="year in years">{{ year }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
                 <table class="table" v-if="idCount.length>0">
                     <thead>
                         <tr>
@@ -59,7 +72,7 @@
                             <th scope="col">Peer-Reviewed</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-if="!loading">
                         <tr v-for="item in idCount" :key="item.id">
                             <th scope="row">
                                 {{ item.id }}
@@ -68,16 +81,25 @@
                                 {{ idName[item.id] }}
                             </td>
                             <td>
-                                {{ item.value }}
+                                <a :href="buildUserURL(item.id, false, false)">{{ item.value }}</a>
                             </td>
                             <td>
-                                {{ idCountOA[item.id] || "0" }}
+                                <a :href="buildUserURL(item.id, true, false)">{{ idCountOA[item.id] || "0" }}</a>
                             </td>
                             <td>
-                                {{ idCountPeer[item.id] || "0" }}
+                                <a :href="buildUserURL(item.id, false, true)">{{ idCountPeer[item.id] || "0" }}</a>
                             </td>
                         </tr>
 
+                    </tbody>
+                    <tbody v-else="">
+                        <tr>
+                            <td colspan="5" class="text-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
 
                 </table>
@@ -86,87 +108,168 @@
         </div>
         <script src="vue/vue.min.js"/>
         <script><![CDATA[
-const proxyUrl = "servlets/solr/";
-const requestHandlerUrl = proxyUrl + "select2";
-const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true&facet.mincount=1"
-const childQueryBase = "status:confirmed AND koeln_partOf:true";
-const query = "+role:(aut.top OR cre.top OR tch.top OR edt.top OR ivr.top OR ive.top OR inv.top)" +
-"+{!child of=\"objectType:mods\" filters=$childfq}objectType:mods";
-const rowsQuery = "&rows=0"
+            const proxyUrl = "servlets/solr/";
+            const requestHandlerUrl = proxyUrl + "select2";
+            const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true&facet.mincount=1"
+            const childQueryBase = "status:confirmed AND koeln_partOf:true";
+            const roles = "+role:(aut.top OR cre.top OR tch.top OR edt.top OR ivr.top OR ive.top OR inv.top)";
+            const query = roles +
+                    "+{!child of=\"objectType:mods\" filters=$childfq}objectType:mods";
+            const emptyRowsQuery = "&rows=0"
 
-let app = new Vue({
-    el: '#statistics',
-    data: {
-        idCount: [],
-        idName: {},
-        idCountObj: {},
-        idCountOA: {},
-        idCountPeer: {},
-        yearSelect: "2021"
-    },
-    mounted() {
-        this.loadIDCount(false, false);
-        this.loadIDCount(false, true);
-        this.loadIDCount(true, false);
-    },
-    methods: {
-        buildURL(oa, koeln_peerreviewed) {
-            const urlParts = [
-                facetQueries,
-                "childfq=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
-                    (oa === true ? " AND oa_exact:oa" : "") +
-                    (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")),
-                "q=" + encodeURIComponent(query),
-                rowsQuery,
-                "wt=json"
-            ];
-            return requestHandlerUrl + "?" + urlParts.join("&");
-        },
-        setNameByID(dhsbid) {
-            var xhr = new XMLHttpRequest();
-            var that = this;
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    let koeln_name = JSON.parse(xhr.responseText).response.docs[0].name;
-                    Vue.set(that.idName, dhsbid, koeln_name);
-                }
-            };
-            xhr.open("GET", "servlets/solr/select2?q=name_id_dhsbid:" + dhsbid + "&rows=1&fl=name&wt=json", true);
-            xhr.send();
-        },
-        loadIDCount(oa, koeln_peerreviewed) {
-            let xmlhttp = new XMLHttpRequest();
-            let that = this;
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
-                    var data = JSON.parse(this.responseText);
-                    that.convertData(data, oa, koeln_peerreviewed);
-                }
-            };
+            let app = new Vue({
+                el: '#statistics',
+                data: {
+                    idCount: [],
+                    idName: {},
+                    idCountObj: {},
+                    idCountOA: {},
+                    idCountPeer: {},
+                    yearSelect: "2021",
+                    years: ["2021"],
+                    loading: true
+                },
+                mounted() {
+                    this.loadYears();
+                    this.reload();
+                },
+                methods: {
+                    loadYears() {
+                        var xhr = new XMLHttpRequest();
+                        var that = this;
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                let years_mixed = JSON.parse(xhr.responseText).facet_counts.facet_fields.year;
+                                for (let i = 0; i < years_mixed.length; i += 2) {
+                                    if (that.years.indexOf(years_mixed[i]) === -1) {
+                                        that.years.push(years_mixed[i]);
+                                    }
+                                }
+                                that.years = that.years.sort().reverse();
+                            }
+                        };
+                        xhr.open("GET", "servlets/solr/select2?q=status:confirmed AND koeln_partOf:true&rows=0&facet.field=year&facet.limit=9999&facet=true&facet.mincount=1&wt=json", true);
+                        xhr.send();
+                    },
+                    async reload() {
+                        this.loading = true;
+                        this.idCount = [];
+                        this.idName = {};
+                        this.idCountObj = {};
+                        this.idCountOA = {};
+                        this.idCountPeer = {};
 
-            xmlhttp.open("GET", this.buildURL(oa, koeln_peerreviewed), true);
-            xmlhttp.send();
-        },
-        convertData(rawData, oa, koeln_peerreviewed) {
-            const idCountArray = rawData.facet_counts.facet_fields.name_id_dhsbid;
-            for (let i = 0; i < idCountArray.length; i += 2) {
-                let key = idCountArray[i];
-                let value = idCountArray[i + 1];
-                if (!oa && !koeln_peerreviewed) {
-                    this.idCount.push({
-                        id: key, value: value
-                    });
-                    this.setNameByID(key);
-                } else if (oa) {
-                    Vue.set(this.idCountOA, key, value);
-                } else if (koeln_peerreviewed) {
-                    Vue.set(this.idCountPeer, key, value);
+                        await Promise.all([this.loadIDCount(false, false),
+                            this.loadIDCount(false, true),
+                            this.loadIDCount(true, false)]);
+                        this.loading = false;
+
+                    },
+                    buildUserURL(user, oa, koeln_peerreviewed) {
+                        const urlParts = [
+                            "q=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
+                                    (oa === true ? " AND oa_exact:oa" : "") +
+                                    (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")
+                                    + " +{!parent which=objectType:mods filter=$childfilter}+name_id_dhsbid:" + user),
+                            "childfilter=" + encodeURIComponent(roles)
+                        ]
+                        return requestHandlerUrl + "?" + urlParts.join("&");
+                    },
+                    buildURL(oa, koeln_peerreviewed) {
+                        const urlParts = [
+                            facetQueries,
+                            "childfq=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
+                                    (oa === true ? " AND oa_exact:oa" : "") +
+                                    (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")),
+                            "q=" + encodeURIComponent(query),
+                            emptyRowsQuery,
+                            "wt=json"
+                        ];
+                        return requestHandlerUrl + "?" + urlParts.join("&");
+                    },
+                    async getNameByID(dhsbid) {
+                        var that = this;
+                        return new Promise(function (resolve, reject) {
+                            var xhr = new XMLHttpRequest();
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4) {
+                                    if (xhr.status === 200) {
+                                        let koeln_name = JSON.parse(xhr.responseText).response.docs[0].name;
+                                        resolve(koeln_name);
+                                    } else {
+                                        reject(xhr.status)
+                                    }
+                                }
+                            };
+                            xhr.open("GET", "servlets/solr/select2?q=name_id_dhsbid:" + dhsbid + "&rows=1&fl=name&wt=json", true);
+                            xhr.send();
+                        });
+
+                    },
+                    async loadIDCount(oa, koeln_peerreviewed) {
+                        const that = this;
+                        return new Promise(async function (resolve, reject) {
+                            const data = await that.loadData(oa, koeln_peerreviewed);
+                            await that.convertData(data, oa, koeln_peerreviewed);
+                            resolve(true);
+                        });
+                    },
+                    async loadData(oa, koeln_peerreviewed) {
+                        let that = this;
+                        return new Promise(function (resolve, reject) {
+                            let xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onreadystatechange = function () {
+                                if (this.readyState === 4 && this.status === 200) {
+                                    if (this.status === 200) {
+                                        resolve(JSON.parse(this.responseText))
+                                    } else {
+                                        reject(this.status);
+                                    }
+                                }
+                            };
+                            xmlhttp.open("GET", that.buildURL(oa, koeln_peerreviewed), true);
+                            xmlhttp.send();
+                        });
+                    }
+                    ,
+                    async convertData(rawData, oa, koeln_peerreviewed) {
+                        const that = this;
+                        return new Promise(async function (resolve, reject) {
+                            const idCountArray = rawData.facet_counts.facet_fields.name_id_dhsbid;
+                            const promList = [];
+                            for (let i = 0; i < idCountArray.length; i += 2) {
+                                let key = idCountArray[i];
+                                let value = idCountArray[i + 1];
+                                if (!oa && !koeln_peerreviewed) {
+                                    that.idCount.push({
+                                        id: key, value: value
+                                    });
+                                    const promise = that.getNameByID(key);
+                                    promList.push(promise);
+                                    promise.then(function (value1) {
+                                        Vue.set(that.idName, key, value1);
+                                    });
+                                } else if (oa) {
+                                    Vue.set(that.idCountOA, key, value);
+                                } else if (koeln_peerreviewed) {
+                                    Vue.set(that.idCountPeer, key, value);
+                                }
+                            }
+                            if (!oa && !koeln_peerreviewed) {
+                                await Promise.all(promList);
+                                console.log("SORT!")
+                                that.idCount = that.idCount.sort(function (a, b) {
+                                    let aname = that.idName[a.id];
+                                    let bname = that.idName[b.id];
+                                    return aname.localeCompare(bname);
+                                });
+                            }
+                            resolve(true);
+                        });
+                    }
                 }
-            }
-        }
-    }
-});
-        ]]></script>
+            });
+            ]]></script>
 
     </article>
 
