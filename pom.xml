@@ -10,14 +10,13 @@
   </parent>
   <groupId>de.vzg.ubo</groupId>
   <artifactId>ubo_koeln</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>prod-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>UBO TH Köln</name>
   <description>Bibliographie module for TH Köln</description>
   <url>...</url>
   <inceptionYear>2020</inceptionYear>
-
   <build>
     <plugins>
       <plugin>
@@ -34,6 +33,26 @@
           </archive>
         </configuration>
       </plugin>
+      <plugin>
+        <!-- prevent this plugin from running because it doesnt work with github -->
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <doclint>all,-missing</doclint>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <repositories>
@@ -47,7 +66,29 @@
       <id>ossrh</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/MyCoRe-Org/ubo</url>
+    </repository>
   </repositories>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/gbv/ubo_koeln</url>
+    </repository>
+    <snapshotRepository>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/gbv/ubo_koeln</url>
+    </snapshotRepository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -95,7 +136,7 @@
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>prod-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
