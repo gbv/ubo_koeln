@@ -15,8 +15,8 @@
         Autor*in, Herausgeber*in, Interviewer*in, Interviewte Person, oder Erfinder*in.
       </p>
       <p>
-        Falls Einträge fehlen, <a href="newPublication.xed">tragen Sie die Publikationen in die Bibliografie ein</a>. Falls Einträge korrigiert
-        werden müssen, <a href="contact.xml">sprechen Sie uns an</a>.
+        Falls Einträge fehlen, <a href="newPublication.xed">tragen Sie die Publikationen in die Bibliografie ein.</a> Falls Einträge korrigiert
+        werden müssen, <a href="contact.xml">sprechen Sie uns an.</a>
       </p>
     </div>
   </article>
@@ -25,15 +25,15 @@
     <div class="card-body">
       <p>
         Here you can create personal publication lists for all publications that are registered in the DHSB and linked to your DHSB-ID. In the
-        lower area you select the output format and the citation style for your publication list.
+        lower area you can select the output format and the citation style for your publication list.
       </p>
       <p>
         The created list contains all publications where the selected person was involved in one of the following roles:<br />
         Author, Editor, Interviewer, Interviewee or Inventor.
       </p>
       <p>
-        If entries are missing, <a href="newPublication.xed">enter the publications in the bibliography</a>. If entries need to be corrected,
-        <a href="contact.xml">please contact us</a>.
+        If entries are missing, <a href="newPublication.xed">enter the publications in the bibliography.</a> If entries need to be corrected,
+        <a href="contact.xml">please contact us.</a>
       </p>
     </div>
   </article>
