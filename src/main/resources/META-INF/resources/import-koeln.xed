@@ -237,7 +237,7 @@
   </xed:template>
 
   <xed:template id="koeln.patent.registration">
-    <xed:bind xpath="mods:originInfo[@eventType='registration']/mods:dateIssued[@encoding='w3cdtf']">
+    <xed:bind xpath="mods:originInfo[@eventType='application']/mods:dateIssued[@encoding='w3cdtf']">
       <div class="form-inline form-group">
         <label for="year" class="mycore-form-label">
           <xed:output i18n="koeln.patent.registration" />:
