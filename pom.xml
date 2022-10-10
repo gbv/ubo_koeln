@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.mycore</groupId>
-    <artifactId>mycore-parent</artifactId>
-    <version>47</version>
+    <groupId>de.gbv.reposis</groupId>
+    <artifactId>reposis_parent</artifactId>
+    <version>2021.06-SNAPSHOT</version>
     <relativePath />
   </parent>
-  <groupId>de.vzg.ubo</groupId>
+  <groupId>de.gbv.ubo</groupId>
   <artifactId>ubo_koeln</artifactId>
   <version>prod-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -63,32 +63,42 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>ossrhs01</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
     <repository>
       <releases>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/MyCoRe-Org/ubo</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
   </repositories>
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/gbv/ubo_koeln</url>
-    </repository>
-    <snapshotRepository>
-      <id>github</id>
-      <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/gbv/ubo_koeln</url>
-    </snapshotRepository>
-  </distributionManagement>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>ossrhs01</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
   <dependencies>
     <dependency>
       <groupId>com.google.code.gson</groupId>
