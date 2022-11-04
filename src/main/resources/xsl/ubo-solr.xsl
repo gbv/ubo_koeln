@@ -297,6 +297,9 @@
     <field name="koeln_partOf">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
+    <field name="partOf">
+      <xsl:value-of select="substring-after(@valueURI,'#')" />
+    </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'fachreferate')]" mode="solrField">
@@ -353,6 +356,11 @@
     <field name="pub_id_{@type}">
       <xsl:value-of select="text()" />
     </field>
+    <xsl:if test="@type='uri' and contains(text(), 'uri.gbv.de/document') and contains(text(), ':ppn:')">
+      <field name="id_ppn">
+        <xsl:value-of select="substring-after(text(), ':ppn:')" />
+      </field>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:relatedItem[(@type='host') or (@type='series')]/mods:identifier[@type]" mode="solrField">
@@ -395,6 +403,11 @@
       <xsl:variable name="before" select="substring-before($jjjj,'JJJJ')" />
       <field name="year_diss">
         <xsl:value-of select="substring(substring-after(.,$before),1,4)" />
+      </field>
+    </xsl:if>
+    <xsl:if test="@type = 'intern'">
+      <field name="note.intern">
+        <xsl:value-of select="text()" />
       </field>
     </xsl:if>
   </xsl:template>
