@@ -8,7 +8,9 @@
     <div class="card-body">
       <p>
         Hier können Sie persönliche Publikationslisten für alle Publikationen erstellen, die in der DHSB eingetragen sind und mit Ihrer DHSB-ID
-        verknüpft sind. Im unteren Bereich wählen Sie das Ausgabeformat und den Zitationsstil für Ihre Publikationsliste.
+        verknüpft sind. Mit dem Erscheinungsjahr können Sie bestimmen, ob die Publikationsliste nur Publikationen bestimmter Jahre enthalten soll.
+        Wenn Sie keine Einschränkung vornehmen, werden automatisch die Publikationen aller Jahre ausgegeben. Im unteren Bereich wählen Sie das
+        Ausgabeformat und den Zitationsstil für Ihre Publikationsliste.
       </p>
       <p>
         Die erstellte Liste enthält alle Publikationen, bei denen die ausgewählte Person in einer der folgenden Rollen beteiligt war:<br />
@@ -24,8 +26,10 @@
   <article xml:lang="en" class="card mb-1">
     <div class="card-body">
       <p>
-        Here you can create personal publication lists for all publications that are registered in the DHSB and linked to your DHSB-ID. In the
-        lower area you can select the output format and the citation style for your publication list.
+        Here you can create personal publication lists for all publications that are registered in the DHSB and linked to your DHSB-ID. Using
+        year of publication you can determine whether the publication list should only contain publications of certain years. If you do not
+        make any restriction, the publications of all years will be displayed automatically. In the lower area you can select the output format
+        and the citation style for your publication list.
       </p>
       <p>
         The created list contains all publications where the selected person was involved in one of the following roles:<br />
