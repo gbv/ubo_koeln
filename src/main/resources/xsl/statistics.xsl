@@ -551,6 +551,9 @@
                     chart: {
                       renderTo: 'chartID',
                       type: 'bar',
+                      backgroundColor: 'transparent',
+                      borderWidth: 0,
+                      shadow: false,
                       events: {
                         click: function(e) {
                           $('#chartDialog').dialog({
