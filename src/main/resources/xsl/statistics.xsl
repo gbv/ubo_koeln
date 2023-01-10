@@ -160,8 +160,7 @@
              },
              plotOptions: {
                 column: {
-                  pointPadding: 0.2,
-                  borderWidth: 0
+                  pointWidth: 15
                 }
              },
              series: [{
@@ -220,7 +219,8 @@
               xAxis: { categories: [
                 <xsl:for-each select="int">
                   <xsl:sort select="text()" data-type="number" order="descending" />
-                  '<xsl:value-of select="mcrxsl:getDisplayName('fachreferate', @name)" />'
+                  <xsl:variable name="url">classification:metadata:0:children:fachreferate:<xsl:value-of select="encoder:encode(current()/@name,'UTF-8')" /></xsl:variable>
+                  '<xsl:value-of select="document($url)/mycoreclass/categories/category[1]/label[@xml:lang=$CurrentLang]/@text" />'
                   <xsl:if test="position() != last()">, </xsl:if>
                 </xsl:for-each>
                 ],
@@ -498,6 +498,7 @@
                       <xsl:if test="position() != last()">, </xsl:if>
                     </xsl:for-each>
                   ],
+                  color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />',
                   dataLabels: {
                     enabled: true,
                     align: 'right',
