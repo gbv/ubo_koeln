@@ -242,7 +242,7 @@
       </field>
       <xsl:if test="position()=1">
         <field name="origin_toplevel">
-          <xsl:value-of select="$category" />
+          <xsl:value-of select="@value" />
         </field>
       </xsl:if>
     </xsl:for-each>
