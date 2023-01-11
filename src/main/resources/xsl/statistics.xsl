@@ -22,7 +22,7 @@
     <xsl:for-each select="lst[@name='facet_counts']">
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='year'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='subject'][int]" />
-      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='origin'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='origin_toplevel'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='koeln_accessrights'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
@@ -31,7 +31,7 @@
     </xsl:for-each>
   </xsl:template>
 
-  <xsl:template match="lst[@name='facet_fields']/lst[@name='origin']">
+  <xsl:template match="lst[@name='facet_fields']/lst[@name='origin_toplevel']">
     <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('ubo.department'))"/>
 
     <section class="card mb-3">

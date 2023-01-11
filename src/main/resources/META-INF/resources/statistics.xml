@@ -35,7 +35,7 @@
   </article>
 
   <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=origin" />
+  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=origin_toplevel" />
   <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=genre" />
   <!-- xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=subject" / -->
   <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0&amp;facet.field=koeln_accessrights" />
