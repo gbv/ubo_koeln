@@ -39,11 +39,11 @@
     
     <xsl:for-each select="lst[@name='facet_counts']/lst[@name='facet_fields']">
       <xsl:apply-templates select="lst[@name='year']" />
-      <xsl:apply-templates select="lst[@name='origin']" />
+      <xsl:apply-templates select="lst[@name='origin_toplevel']" />
       <xsl:apply-templates select="lst[@name='genre']" />
       <xsl:apply-templates select="lst[@name='koeln_accessrights']" />
       <xsl:apply-templates select="lst[@name='facet_person']" />
-      <xsl:apply-templates select="lst[@name='nid_dhsbid']" />
+      <xsl:apply-templates select="lst[@name='oa']" />
     </xsl:for-each>
   </xsl:template>
 
