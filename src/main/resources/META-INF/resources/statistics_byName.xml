@@ -168,7 +168,7 @@
                     buildUserURL(user, oa, koeln_peerreviewed) {
                         const urlParts = [
                             "q=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
-                                    (oa === true ? " AND oa_exact:oa" : "") +
+                                    (oa === true ? " AND oa:oa" : "") +
                                     (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")
                                     + " +{!parent which=objectType:mods filter=$childfilter}+name_id_dhsbid:" + user),
                             "childfilter=" + encodeURIComponent(roles)
@@ -179,7 +179,7 @@
                         const urlParts = [
                             facetQueries,
                             "childfq=" + encodeURIComponent(childQueryBase + " AND year:" + this.yearSelect +
-                                    (oa === true ? " AND oa_exact:oa" : "") +
+                                    (oa === true ? " AND oa:oa" : "") +
                                     (koeln_peerreviewed === true ? " AND koeln_peerreviewed:true" : "")),
                             "q=" + encodeURIComponent(query),
                             emptyRowsQuery,
