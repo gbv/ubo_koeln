@@ -110,17 +110,20 @@ $form-color: #251e52;
 
 
 /* badges  ********************************************************************/
-.badge{
+.badge {
   border-radius: 0;
   border: 1px solid #ccc;
 }
 
-.badge:not(.oa-badge){
+.badge:not(.oa-badge) {
   background-color: transparent;
   color: #999;
 }
 
-.nameIdentifier {
+/* nameIdentifier  ***********************************************************/
+/* this specification is needed because of extend rules in ubo-common.scss   */
+/* .nameIdentifier @extend .badge, .badge-primary;                           */
+.nameIdentifier:not(.oa-badge) {
   background-color: #b43092;
   font-size: 70%;
   font-weight: bold;
