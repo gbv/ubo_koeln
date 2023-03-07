@@ -118,9 +118,11 @@
   <xed:template id="origin">
     <xed:repeat xpath="mods:classification[@classID='ORIGIN']" max="10">
       <div class="form-inline form-group ubo-repeat-group">
-        <label class="mycore-form-label" for="{xed:generate-id()}">
+        <xed:if test="$genre_intern = 'dissertation'">
+          <xed:bind xpath="'ubo-mandatory'" name="origin_label_class" />
+        </xed:if>
+        <label class="mycore-form-label {$origin_label_class}" for="{xed:generate-id()}">
           <xed:if test="$genre_intern = 'dissertation'">
-            <xed:output value="'*'" />
             <xed:validate xpath="//mods:classification[@classID='ORIGIN']" required="true" i18n="condition.institution" display="global" />
           </xed:if>
           <xed:output value="concat(i18n:translate('ubo.department'), ': ')" />
@@ -247,7 +249,6 @@
           <input class="{$xed-validation-marker} mycore-form-input" type="text" placeholder="{i18n:ubo.title.subTitle}" />
           <xed:controls />
         </div>
-        
       </xed:repeat>
     </xed:repeat>
   </xed:template>
@@ -289,10 +290,10 @@
   <xed:template id="editor">
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
-        <label for="{xed:generate-id()}" class="mycore-form-label">
-          <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
-            <xed:output value="'*'" />
-          </xed:if>
+        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+          <xed:bind xpath="'ubo-mandatory'" name="editor_label_class" />
+        </xed:if>
+        <label for="{xed:generate-id()}" class="mycore-form-label {$editor_label_class}">
           <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
         </label>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
@@ -300,14 +301,13 @@
     </xed:repeat>
   </xed:template>
 
-
   <xed:template id="host.editor">
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
-        <label for="{xed:generate-id()}" class="mycore-form-label">
-          <xed:if test="$host_intern != 'journal' and $host_intern !='blog' and $host_intern != 'newspaper'">
-            <xed:output value="'*'" />
-          </xed:if>
+        <xed:if test="$host_intern != 'journal' and $host_intern !='blog' and $host_intern != 'newspaper'">
+          <xed:bind xpath="'ubo-mandatory'" name="hosteditor_label_class" />
+        </xed:if>
+        <label for="{xed:generate-id()}" class="mycore-form-label {$hosteditor_label_class}">
           <xed:output i18n="ubo.role.editor" />:
         </label>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
