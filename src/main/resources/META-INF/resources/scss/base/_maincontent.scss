@@ -110,18 +110,15 @@ $form-color: #251e52;
 
 
 /* badges  ********************************************************************/
-.badge {
+.badge{
   border-radius: 0;
   border: 1px solid #ccc;
+}
+
+.badge:not('.oa-badge'){
   background-color: transparent;
   color: #999;
 }
-.badge-inverse {
-  color: #ea5a00;
-  background-color: transparent !important;
-}
-
-
 
 .nameIdentifier {
   background-color: #b43092;
