@@ -8,7 +8,7 @@
         <div class="mycore-form-label">
           <xed:bind xpath="@field">
             <select class="form-control w-100 custom-select">
-              <option value="person">Person</option>
+              <option value="ae_person">Person</option>
               <option value="person_aut"><xed:output i18n="search.dozbib.author" /></option>
               <option value="person_edt"><xed:output i18n="search.dozbib.publisher" /></option>
             </select>

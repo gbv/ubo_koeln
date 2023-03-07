@@ -35,6 +35,11 @@
     <xsl:apply-templates select="descendant::mods:name[mods:nameIdentifier[@type='lsf']]" mode="solrField.lsf" />
     <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='lsf']" mode="solrField.ae" />
     <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='orcid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='dhsbid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='researcherid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='scopus']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='gnd']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]" mode="solrField.ae_person" />
     <xsl:apply-templates select="descendant::mods:name[@type='personal']" mode="child" />
     <xsl:apply-templates select="mods:genre[@type='intern']" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:genre[@type='intern']" mode="solrField" />
@@ -210,6 +215,15 @@
     </xsl:for-each>
   </xsl:template>
 
+  <xsl:template match="mods:name[@type='personal']" mode="solrField.ae_person">
+    <field name="ae_person">
+      <xsl:value-of select="mods:namePart[@type='family']" />
+      <xsl:for-each select="mods:namePart[@type='given'][1]">
+        <xsl:value-of select="concat(', ',text())" />
+      </xsl:for-each>
+    </field>
+  </xsl:template>
+
   <xsl:template match="mods:nameIdentifier[@type='orcid']" mode="solrField.ae">
     <field name="ae_orcid">
       <xsl:value-of select="text()" />
@@ -218,6 +232,30 @@
 
   <xsl:template match="mods:nameIdentifier[@type='lsf']" mode="solrField.ae">
     <field name="ae_lsf">
+      <xsl:value-of select="text()" />
+    </field>
+  </xsl:template>
+  
+  <xsl:template match="mods:nameIdentifier[@type='dhsbid']" mode="solrField.ae">
+    <field name="ae_dhsbid">
+      <xsl:value-of select="text()" />
+    </field>
+  </xsl:template>
+  
+  <xsl:template match="mods:nameIdentifier[@type='lsf']" mode="solrField.ae">
+    <field name="ae_researcherid">
+      <xsl:value-of select="text()" />
+    </field>
+  </xsl:template>
+  
+  <xsl:template match="mods:nameIdentifier[@type='scopus']" mode="solrField.ae">
+    <field name="ae_scopus">
+      <xsl:value-of select="text()" />
+    </field>
+  </xsl:template>
+  
+  <xsl:template match="mods:nameIdentifier[@type='gnd']" mode="solrField.ae">
+    <field name="ae_gnd">
       <xsl:value-of select="text()" />
     </field>
   </xsl:template>

@@ -78,11 +78,11 @@
                 <div class="mycore-form-label">
                   <xed:bind xpath="@field">
                     <select class="form-control w-100 custom-select">
-                      <option value="nid_dhsbid"       ><xed:output i18n="editor.identity.picker.lead_id" /></option>
-                      <option value="nid_orcid"        >ORCID</option>
-                      <option value="nid_researcherid" >ResearcherID</option>
-                      <option value="nid_scopus"       >Scopus ID</option>
-                      <option value="nid_gnd"          >GND</option>
+                      <option value="ae_dhsbid"       ><xed:output i18n="editor.identity.picker.lead_id" /></option>
+                      <option value="ae_orcid"        >ORCID</option>
+                      <option value="ae_researcherid" >ResearcherID</option>
+                      <option value="ae_scopus"       >Scopus ID</option>
+                      <option value="ae_gnd"          >GND</option>
                     </select>
                   </xed:bind>
                 </div>

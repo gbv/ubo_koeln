@@ -75,6 +75,15 @@
         }
     },
     {
+        "add-field": {
+            "name": "ae_person",
+            "type": "ubo_name",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
         "delete-copy-field": {
             "source": "conference",
             "dest": "all"
@@ -102,6 +111,51 @@
             "indexed": true,
             "stored": false
       }
+    },
+    {
+        "add-field": {
+            "name": "ae_orcid",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": false
+        }
+    },
+    {
+        "add-field": {
+            "name": "ae_dhsbid",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": false
+        }
+    },
+    {
+        "add-field": {
+            "name": "ae_researcherid",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": false
+        }
+    },
+    {
+        "add-field": {
+            "name": "ae_scopus",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": false
+        }
+    },
+    {
+        "add-field": {
+            "name": "ae_gnd",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": false
+        }
     },
     {
         "add-copy-field": {
