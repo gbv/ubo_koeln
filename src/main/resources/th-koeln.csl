@@ -3,11 +3,12 @@
   <info>
     <title>Technische Hochschule Köln</title>
     <title-short>TH Köln (Deutsch)</title-short>
+	<id>http://www.zotero.org/styles/technische-universitat-dresden-linguistik</id>
     <link href="http://www.zotero.org/styles/technische-universitat-dresden-linguistik" rel="template"/>
     <link href="http://www.zotero.org/styles/deutsche-sprache" rel="template"/>
     <author>
       <name>Team Bibliografie TH Köln</name>
-      <email>publikationsservice@th-koeln.de</email>
+      <email>bibliografie@th-koeln.de</email>
     </author>
     <category citation-format="author-date"/>
     <summary>Zitierstil der TH Köln, auf Basis des Zitierstils der Technischen Universität Dresden (http://www.zotero.org/styles/technische-universitat-dresden-linguistik)</summary>
@@ -180,17 +181,29 @@
         </group>
         <choose>
           <if type="book" match="any">
-		   <group delimiter=". ">
+		    <group delimiter=". ">
               <text macro="edition"/>
-			  <group>
-			   <text macro="publication-place-publisher"/>
-                <group delimiter=", " prefix=" (" suffix=")">
-                 <text variable="collection-title"/>
-                 <text variable="volume"/>
-                </group>
-			  </group>
-			  <text macro="online-url"/>
-		   </group>   
+			  <choose>
+			    <if match="any" variable="collection-title">
+			     <group>
+			      <text macro="publication-place-publisher"/>
+                  <group delimiter=", " prefix=" (" suffix=")">
+                   <text variable="collection-title"/>
+                   <text variable="volume"/>
+                  </group>
+				 </group>
+				</if>
+				<else-if match="none" variable="collection-title">
+				 <group delimiter=": ">
+                  <text term="in" text-case="capitalize-first"/>
+                  <group delimiter=": " suffix=".">
+                   <text variable="container-title"/>
+                  </group>
+                 </group>  
+			    </else-if>
+		     </choose>
+			 <text macro="online-url"/>
+		    </group>
           </if>
           <else-if type="chapter" match="any">
            <group delimiter=". ">
@@ -202,12 +215,14 @@
                  <text variable="collection-title"/>
                  <text variable="volume"/>
                 </group>
-               <text macro="page-range" prefix=", "/>
+                <group delimiter=", " prefix=", ">
+				 <text variable="page" prefix="S. "/>
+				 <text variable="number" prefix="Artikel "/>
+			    </group>
 			  </group>
-			  <text macro="online-url"/>
 		   </group>
           </else-if>
-		  <else-if type="article" match="any">
+          <else-if type="article" match="any">
             <group delimiter=". ">
               <text macro="editor-container-title"/>
               <text macro="edition"/>
@@ -218,11 +233,13 @@
                     <text variable="volume" prefix="Jg. "/>
                     <text variable="issue" prefix="Nr. "/>
                   </group>
-                  <text macro="page-range"/>
-				  <text variable="number" prefix="Artikel "/>
+                    <group delimiter=", " prefix=", ">
+				    <text variable="page" prefix="S. "/>
+				    <text variable="number" prefix="Artikel "/>
+			      </group>
 				 </group>
                 </if>
-                <else>
+                <else-if>
                  <group>
 			      <text macro="publication-place-publisher"/>
                   <group delimiter=", " prefix=" (" suffix=")">
@@ -231,8 +248,18 @@
                   </group>
 				  <text macro="page-range" prefix=", "/>
 			     </group>
-                </else>
-              </choose>
+                </else-if>
+			    <else match="any" variable="event">
+                 <group delimiter=": ">
+                 <text term="in" text-case="capitalize-first"/>
+                  <group delimiter=": " suffix=".">
+                  <names variable="event">
+                  <label form="short" prefix=" (" suffix=")"/>
+                  </names>
+                  </group>
+                 </group>
+		        </else>
+             </choose>
               <text macro="online-url"/>
             </group>
           </else-if>
@@ -314,29 +341,21 @@
           </else-if>
           <else-if type="interview" match="any">
             <group delimiter=". ">
-              <text macro="edition"/>
-              <text macro="publication-place-publisher"/>
-              <text macro="collection-title-number"/>
-              <group delimiter=", " prefix="(" suffix=")">
+             <group delimiter=": ">
+			   <text term="in" text-case="capitalize-first"/>
+               <group delimiter=" ">
                 <text variable="container-title"/>
-                <text variable="volume"/>
-              </group>
+				<text variable="volume" prefix="Jg. "/>
+                <text variable="issue" prefix="Nr. "/>
+				<group prefix=", ">
+				  <text variable="page" prefix="S. "/>
+				  <text variable="number" prefix="Artikel "/>
+				</group>
+			   </group>
+			 </group>
               <text macro="online-url"/>
             </group>
           </else-if>
-          <else>
-            <group delimiter=". ">
-              <choose>
-                <if match="any" variable="container-title">
-                  <text macro="editor-container-title"/>
-                </if>
-              </choose>
-              <text macro="publication-place-publisher"/>
-              <text macro="page-range"/>
-              <text macro="collection-title-number"/>
-              <text macro="online-url"/>
-            </group>
-          </else>
         </choose>
       </group>
     </layout>
