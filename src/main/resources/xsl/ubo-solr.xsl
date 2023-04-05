@@ -33,13 +33,13 @@
     <xsl:apply-templates select="descendant::mods:name[@type='personal']/mods:role/mods:roleTerm[@type='code']" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:name/mods:nameIdentifier" mode="solrField" />
     <xsl:apply-templates select="descendant::mods:name[mods:nameIdentifier[@type='lsf']]" mode="solrField.lsf" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='lsf']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='orcid']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='dhsbid']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='researcherid']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='scopus']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]/mods:nameIdentifier[@type='gnd']" mode="solrField.ae" />
-    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt',text())]]" mode="solrField.ae_person" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='lsf']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='orcid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='dhsbid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='researcherid']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='scopus']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]/mods:nameIdentifier[@type='gnd']" mode="solrField.ae" />
+    <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]" mode="solrField.ae_person" />
     <xsl:apply-templates select="descendant::mods:name[@type='personal']" mode="child" />
     <xsl:apply-templates select="mods:genre[@type='intern']" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:genre[@type='intern']" mode="solrField" />
