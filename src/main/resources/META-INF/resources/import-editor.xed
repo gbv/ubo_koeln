@@ -118,15 +118,19 @@
   <xed:template id="origin">
     <xed:repeat xpath="mods:classification[@classID='ORIGIN']" max="10">
       <div class="form-inline form-group ubo-repeat-group">
-        <xed:if test="$genre_intern = 'dissertation'">
-          <xed:bind xpath="'ubo-mandatory'" name="origin_label_class" />
-        </xed:if>
-        <label class="mycore-form-label {$origin_label_class}" for="{xed:generate-id()}">
-          <xed:if test="$genre_intern = 'dissertation'">
+      <xed:choose>
+        <xed:when test="$genre_intern = 'dissertation'">
+          <label class="mycore-form-label ubo-mandatory" for="{xed:generate-id()}">
             <xed:validate xpath="//mods:classification[@classID='ORIGIN']" required="true" i18n="condition.institution" display="global" />
-          </xed:if>
-          <xed:output value="concat(i18n:translate('ubo.department'), ': ')" />
-        </label>
+            <xed:output value="concat(i18n:translate('ubo.department'), ': ')" />
+          </label>
+        </xed:when>
+        <xed:otherwise>
+          <label class="mycore-form-label" for="{xed:generate-id()}">
+            <xed:output value="concat(i18n:translate('ubo.department'), ': ')" />
+          </label>
+        </xed:otherwise>
+      </xed:choose>
         <select id="{xed:generate-id()}" class="autocomplete {$xed-validation-marker} mycore-form-input">
           <option value=""><xed:output i18n="search.select.autocomplete" /></option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
@@ -290,12 +294,18 @@
   <xed:template id="editor">
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
-        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
-          <xed:bind xpath="'ubo-mandatory'" name="editor_label_class" />
-        </xed:if>
-        <label for="{xed:generate-id()}" class="mycore-form-label {$editor_label_class}">
-          <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
-        </label>
+        <xed:choose>
+          <xed:when test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <label for="{xed:generate-id()}" class="mycore-form-label ubo-mandatory">
+              <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
+            </label>
+          </xed:when>
+          <xed:otherwise>
+            <label for="{xed:generate-id()}" class="mycore-form-label">
+              <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
+            </label>
+          </xed:otherwise>
+        </xed:choose>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
       </div>
     </xed:repeat>
@@ -304,12 +314,18 @@
   <xed:template id="host.editor">
     <xed:repeat xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='edt']" max="99">
       <div class="form-group form-inline ubo-repeat-group">
-        <xed:if test="$host_intern != 'journal' and $host_intern !='blog' and $host_intern != 'newspaper'">
-          <xed:bind xpath="'ubo-mandatory'" name="hosteditor_label_class" />
-        </xed:if>
-        <label for="{xed:generate-id()}" class="mycore-form-label {$hosteditor_label_class}">
-          <xed:output i18n="ubo.role.editor" />:
-        </label>
+        <xed:choose>
+          <xed:when test="$host_intern != 'journal' and $host_intern !='blog' and $host_intern != 'newspaper'">
+            <label for="{xed:generate-id()}" class="mycore-form-label ubo-mandatory">
+              <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
+            </label>
+          </xed:when>
+          <xed:otherwise>
+            <label for="{xed:generate-id()}" class="mycore-form-label">
+              <xed:output value="concat(i18n:translate('ubo.role.editor'), ': ')" />
+            </label>
+          </xed:otherwise>
+        </xed:choose>
         <xed:include uri="webapp:import-editor.xed" ref="person" />  
       </div>
     </xed:repeat>
@@ -520,12 +536,18 @@
   <xed:template id="year">
     <xed:bind xpath="mods:originInfo/mods:dateIssued[@encoding='w3cdtf']">
       <div class="form-inline form-group">
-        <xed:if test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
-          <xed:bind xpath="'ubo-mandatory'" name="year_label_class" />
-        </xed:if>
-        <label for="year" class="mycore-form-label {$year_label_class}">
-          <xed:output value="concat(i18n:translate('ubo.date.issued.4'), ': ')" />
-        </label>
+        <xed:choose>
+          <xed:when test="$genre_intern != 'journal' and $genre_intern != 'series' and $genre_intern !='blog' and $genre_intern != 'newspaper'">
+            <label for="year" class="mycore-form-label ubo-mandatory">
+              <xed:output value="concat(i18n:translate('ubo.date.issued.4'), ': ')" />
+            </label>
+          </xed:when>
+          <xed:otherwise>
+            <label for="year" class="mycore-form-label">
+              <xed:output value="concat(i18n:translate('ubo.date.issued.4'), ': ')" />
+            </label>
+          </xed:otherwise>
+        </xed:choose>
         <input id="{xed:generate-id()}" class="{$xed-validation-marker} mycore-form-input" type="text" placeholder="{i18n:ubo.date.issued.4.placeholder}" />
       </div>
       <xed:validate matches="[\d]{4}" i18n="ubo.date.issued.4.validation" display="global" />
