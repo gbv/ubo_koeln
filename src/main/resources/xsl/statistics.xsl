@@ -523,9 +523,9 @@
     <!-- The facet is a list of top THK IDs matching the restricted query, e.g. status=confirmed, year > 2012 -->
     <!-- To find the corresponding names, build a pivot facet with THK ID and name variants, use most frequent name  -->
     <xsl:variable name="uri">
-       <xsl:text>solr:q=objectKind:name+AND+(</xsl:text>
+       <xsl:text>solr:q=objectKind%3Aname+AND+(</xsl:text>
        <xsl:for-each select="int">
-         <xsl:text>name_id_dhsbid:</xsl:text>
+         <xsl:text>name_id_dhsbid%3A</xsl:text>
          <xsl:value-of select="@name" />
          <xsl:if test="position() != last()">+OR+</xsl:if>
        </xsl:for-each>

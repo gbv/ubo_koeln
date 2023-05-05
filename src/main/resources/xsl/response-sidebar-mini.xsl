@@ -13,7 +13,7 @@
 
   <xsl:template match="/response">
   
-    <xsl:variable name="solr_query" select="'q=status:confirmed'" />
+    <xsl:variable name="solr_query" select="'q=status%3Aconfirmed'" />
     <xsl:variable name="numTotal" select="document(concat('solr:',$solr_query,'&amp;rows=0'))/response/result/@numFound" />
 
     <article class="card mb-2">

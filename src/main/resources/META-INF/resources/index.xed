@@ -176,13 +176,13 @@
         </article>
 
       </div>
-      <xinclude uri="xslStyle:response-newest:solr:q=koeln_partOf:true+AND+status:confirmed+AND+year:2023&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
+      <xinclude uri="xslStyle:response-newest:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed+AND+year%3A2023&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
     </div>
     <div class="col-12 col-lg-4">
-      <xinclude uri="xslStyle:response-sidebar-mini:solr:q=koeln_partOf:true+AND+status:confirmed&amp;rows=0" />
-      <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf:true+AND+status:confirmed+year:%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
-      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*:*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />
-      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=status:imported+AND+importID:*&amp;rows=0&amp;facet=true&amp;facet.sort=index&amp;facet.limit=-1&amp;facet.field=importID" />
+      <xinclude uri="xslStyle:response-sidebar-mini:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0" />
+      <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
+      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*%3A*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />
+      <xinclude uri="xslStyle:response-sidebar-admin:solr:q=status%3Aimported+AND+importID%3A*&amp;rows=0&amp;facet=true&amp;facet.sort=index&amp;facet.limit=-1&amp;facet.field=importID" />
     </div>
   </div>
 
