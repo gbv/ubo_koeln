@@ -52,21 +52,19 @@
     </choose>
     <choose>
       <if type="interview" match="none">
-        <choose>
-          <group delimiter=" ">
-             <names variable="author producer creator inventor interviewer">
-               <name delimiter=" / " name-as-sort-order="all"/>
-               <label form="short" prefix=" (" suffix=")"/>
-            <substitute>
-               <names variable="editor"/>
-            </substitute>
-             </names>
-            <date date-parts="year" form="numeric" variable="issued" prefix="(" suffix=")"/>
-         </group>
-        </choose>
+        <group delimiter=" ">
+           <names variable="author producer creator inventor interviewer">
+             <name delimiter=" / " name-as-sort-order="all"/>
+             <label form="short" prefix=" (" suffix=")"/>
+          <substitute>
+             <names variable="editor"/>
+          </substitute>
+           </names>
+          <date date-parts="year" form="numeric" variable="issued" prefix="(" suffix=")"/>
+       </group>
       </if>
     </choose>
-        <choose>
+    <choose>
       <if type="interview" match="any">
           <group delimiter=" ">
              <names variable="producer creator inventor interviewer">
