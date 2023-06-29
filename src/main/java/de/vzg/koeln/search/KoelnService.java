@@ -33,7 +33,7 @@ public class KoelnService implements IdentityService {
         PersonListResult search = searcher.search(query);
         List<PersonResult> persons = search.getPersons();
         List<PersonSearchResult.PersonResult> personResults = persons.stream().map(person -> {
-            PersonSearchResult.PersonResult personResult = new PersonSearchResult.PersonResult();
+            PersonSearchResult.PersonResult personResult = new PersonSearchResult.PersonResult(this);
             personResult.pid = person.getId();
 
             personResult.displayName = Stream.of(person.getPse_givenname(), person.getPse_surname())
