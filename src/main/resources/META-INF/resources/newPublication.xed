@@ -40,6 +40,8 @@
                         <option value="zdb">ZDB ID</option>
                         <option value="ppn">GBV/SWB PPN</option>
                         <option value="issn">ISSN</option>
+                        <option value="epb">ePublications ID (EPB)</option>
+                        <option value="cos">Cologne Open Science ID (COS)</option>
                       </xed:if>
                     </select>
                   </xed:bind>
