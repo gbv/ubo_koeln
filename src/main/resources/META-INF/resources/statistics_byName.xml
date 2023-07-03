@@ -111,7 +111,7 @@
             const proxyUrl = "servlets/solr/";
             const requestHandlerUrl = proxyUrl + "select2";
             const facetQueries = "facet.field=name_id_dhsbid&facet.limit=9999&facet=true&facet.mincount=1"
-            const childQueryBase = "status:confirmed AND koeln_partOf:true";
+            const childQueryBase = "status:confirmed AND partOf:true";
             const roles = "+role:(aut.top OR cre.top OR tch.top OR edt.top OR ivr.top OR ive.top OR inv.top)";
             const query = roles +
                     "+{!child of=\"objectType:mods\" filters=$childfq}objectType:mods";
@@ -148,7 +148,7 @@
                                 that.years = that.years.sort().reverse();
                             }
                         };
-                        xhr.open("GET", "servlets/solr/select2?q=status:confirmed AND koeln_partOf:true&rows=0&facet.field=year&facet.limit=9999&facet=true&facet.mincount=1&wt=json", true);
+                        xhr.open("GET", "servlets/solr/select2?q=status:confirmed AND partOf:true&rows=0&facet.field=year&facet.limit=9999&facet=true&facet.mincount=1&wt=json", true);
                         xhr.send();
                     },
                     async reload() {

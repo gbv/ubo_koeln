@@ -34,15 +34,15 @@
     </div>
   </article>
 
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=origin_toplevel" />
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=genre" />
-  <!-- xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=subject" / -->
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=koeln_accessrights" />
-  <xinclude uri="xslStyle:statistics-oa:solr:q=koeln_partOf%3Atrue+AND+status:confirmed+AND+year%3A[2018+TO+*]&amp;rows=0&amp;json.facet={year:{type:terms,field:year,sort:{index:asc},facet:{oa:{type:terms,field:oa,sort:{index:asc}}}}}" />
+  <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
+  <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=origin_toplevel" />
+  <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=genre" />
+  <!-- xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=subject" / -->
+  <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=koeln_accessrights" />
+  <xinclude uri="xslStyle:statistics-oa:solr:q=partOf%3Atrue+AND+status:confirmed+AND+year%3A[2018+TO+*]&amp;rows=0&amp;json.facet={year:{type:terms,field:year,sort:{index:asc},facet:{oa:{type:terms,field:oa,sort:{index:asc}}}}}" />
 
 
-  <xinclude uri="xslStyle:statistics:solr:q=koeln_partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2012+TO+*%5D&amp;rows=0&amp;facet.field=nid_dhsbid&amp;facet.limit=25" />
+  <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2012+TO+*%5D&amp;rows=0&amp;facet.field=nid_dhsbid&amp;facet.limit=25" />
   <xinclude uri="xslStyle:statistics:solr:q=objectKind%3Aname&amp;rows=0&amp;facet.pivot=name_id_type,name_id_type" />
 
  </webpage>
