@@ -179,7 +179,7 @@
 
 	<xsl:template match="/">
 		<xsl:choose>
-			<xsl:when test="//marc:collection">
+			<xsl:when test="//marc:collection and count(//marc:collection/marc:record) &gt; 1">
 				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
 					<xsl:for-each select="//marc:collection/marc:record">
 						<mods version="3.7">
