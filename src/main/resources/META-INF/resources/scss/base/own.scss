@@ -19,11 +19,39 @@
 .card-body .mycore-list-item {
   padding-left: 0;
 }
-.card-body .mycore-facet-count {
+.mycore-facet-count {
   width: 40px;
   display: inline-block;
   text-align: right;
 }
+
+.counter-length {
+  &-1 {
+    .mycore-facet-count { width: 20px; }
+    .mycore-facet-value { width: 195px; }
+  }
+  &-2 {
+    .mycore-facet-count { width: 30px; }
+    .mycore-facet-value { width: 185px; }
+  }
+  &-3 {
+    .mycore-facet-count { width: 40px; }
+    .mycore-facet-value { width: 175px; }
+  }
+  &-4 {
+    .mycore-facet-count { width: 50px; }
+    .mycore-facet-value { width: 165px; }
+  }
+  &-5 {
+    .mycore-facet-count { width: 60px; }
+    .mycore-facet-value { width: 155px; }
+  }
+  &-6 {
+    .mycore-facet-count { width: 70px; }
+    .mycore-facet-value { width: 145px; }
+  }
+}
+
 
 /* buttons ********************************************************************/
 .btn {
