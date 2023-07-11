@@ -343,7 +343,7 @@
       </xsl:when>
       <xsl:otherwise>
         <field name="partOf">
-          <xsl:value-of select="'unknown'" />
+          <xsl:value-of select="'false'" />
         </field>
       </xsl:otherwise>
     </xsl:choose>
