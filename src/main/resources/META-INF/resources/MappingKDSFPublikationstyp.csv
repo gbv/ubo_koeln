@@ -1,32 +1,32 @@
 ﻿Quelle;Priorität;Enthält Publikationstyp aus Quelle;Enthält Dokumenttyp aus Quelle;Ziel-Publikationstyp;Ziel-Dokumenttyp;Peer reviewed
 default;1;abstract;proceedings;Meeting Abstract;;aus Quelle
 default;2;abstract;journal;Meeting Abstract;;aus Quelle
-default;3;article;newspaper;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
-default;4;article;journal;Journalartikel;Wissenschaftlicher Artikel;aus Quelle
-default;5;article;blog;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
+default;3;article;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;4;article;journal;Journalartikel;Artikel;aus Quelle
+default;5;article;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
 default;6;blog;;Integrierende Ressource;;aus Quelle
 default;7;book;series;Monographie;;aus Quelle
 default;8;book;;Monographie;;aus Quelle
 default;9;chapter;proceedings;Konferenzpaper;;aus Quelle
-default;10;chapter;lexicon;Sammelbandbeitrag;Wissenschaftlicher Artikel;aus Quelle
-default;11;chapter;festschrift;Sammelbandbeitrag;Wissenschaftlicher Artikel;aus Quelle
-default;12;chapter;collection;Sammelbandbeitrag;Wissenschaftlicher Artikel;aus Quelle
+default;10;chapter;lexicon;Sammelbandbeitrag;Artikel;aus Quelle
+default;11;chapter;festschrift;Sammelbandbeitrag;Artikel;aus Quelle
+default;12;chapter;collection;Sammelbandbeitrag;Artikel;aus Quelle
 default;13;collection;series;Sammelband;;aus Quelle
 default;14;collection;;Sammelband;;aus Quelle
 default;15;conference_essay;proceedings;Konferenzpaper;;aus Quelle
 default;16;conference_essay;;Konferenzpaper;;aus Quelle
-default;17;contribution;report;Arbeitspapier/Forschungsbericht;Wissenschaftlicher Artikel;aus Quelle
+default;17;contribution;report;Arbeitspapier/Forschungsbericht;Artikel;aus Quelle
 default;18;dissertation;;Monographie;;aus Quelle
 default;19;festschrift;series;Sammelband;;aus Quelle
 default;20;festschrift;;Sammelband;;aus Quelle
 default;21;habilitation;;Monographie;;aus Quelle
-default;22;interview;report;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
-default;23;interview;newspaper;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
-default;24;interview;journal;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
-default;25;interview;blog;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
-default;26;interview;;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
+default;22;interview;report;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;23;interview;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;24;interview;journal;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;25;interview;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;26;interview;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
 default;27;journal;;nicht importieren;;aus Quelle
-default;28;lecture;;Beiträge in nicht-wissenschaftlichen Medien;;aus Quelle
+default;28;lecture;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
 default;29;lexicon;series;Sammelband;;aus Quelle
 default;30;lexicon;;Sammelband;;aus Quelle
 default;31;newspaper;;nicht importieren;;aus Quelle
