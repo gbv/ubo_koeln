@@ -16,7 +16,7 @@
         "facet.mincount": "1",
         "facet.field": [
           "status",
-          "koeln_partOf",
+          "partOf",
           "importID",
           "year",
           "facet_person",
