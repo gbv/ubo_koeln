@@ -40,7 +40,7 @@
         <label xml:lang="de">DHSB-Statistik</label>
         <label xml:lang="en">DHSB Statistic</label>
       </item>
-      <item id="dozbib.search-expert" ref="search-expert.xed" role="admin">
+      <item id="dozbib.search-expert" ref="search/search-expert.xed" role="admin">
         <label xml:lang="de">Expertensuche</label>
         <label xml:lang="en">Expert search</label>
       </item>
