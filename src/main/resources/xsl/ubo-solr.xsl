@@ -6,7 +6,7 @@
   xmlns:mcrxml="xalan://org.mycore.common.xml.MCRXMLFunctions"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:str="http://exslt.org/strings"
-  exclude-result-prefixes="mods xlink str">
+  exclude-result-prefixes="mods xlink str mcrxml">
 
   <xsl:import href="xslImport:solr-document:ubo-solr.xsl" />
 
