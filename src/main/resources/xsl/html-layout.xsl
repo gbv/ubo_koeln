@@ -446,9 +446,6 @@
     </div>
   </xsl:template>
 
-  <!-- If current user has ORCID and we are his trusted party, display ORCID icon to indicate that -->
-  <xsl:param name="MCR.ORCID.LinkURL" />
-
   <xsl:template name="layout.pageTitle">
     <div class="card my-3">
       <div class="card-body py-2">
