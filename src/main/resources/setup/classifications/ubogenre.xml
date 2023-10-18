@@ -117,7 +117,7 @@
             <label xml:lang="x-hosts" text="blog standalone" />
         </category>
         <category ID="interview">
-            <label xml:lang="x-hosts" text="journal blog standalone" />
+            <label xml:lang="x-hosts" text="journal newspaper blog report standalone" />
             <label xml:lang="en" text="Interview" />
             <label xml:lang="de" text="Interview" />
         </category>
