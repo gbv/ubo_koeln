@@ -21,8 +21,8 @@
         <li>Kapitel in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Serie</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+-host_genre%3Abook&amp;wt=xml">Buch</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+-host_genre%3Areport&amp;wt=xml">Report</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+host_genre%3Abook&amp;wt=xml">Buch</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+host_genre%3Areport&amp;wt=xml">Report</a></li>
           </ul>
         </li>
       </ul>
