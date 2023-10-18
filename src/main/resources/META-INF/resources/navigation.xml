@@ -44,6 +44,10 @@
         <label xml:lang="de">Expertensuche</label>
         <label xml:lang="en">Expert search</label>
       </item>
+      <item id="dozbib.his.error" ref="his-error.xed" role="admin">
+        <label xml:lang="de">Fehlerbereich für KDSF-Mapping</label>
+        <label xml:lang="en">Error section for KDSF mapping</label>
+      </item>
     </item>
   </item>
 

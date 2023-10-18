@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webpage lastModified="2023-07-27" id="dozbib.his.error">
+ <title xml:lang="de">Fehlerbereich für KDSF-Mapping</title>
+ <title xml:lang="en">Error section for KDSF mapping</title>
+
+  <article class="card mb-3" xml:lang="de">
+    <div class="card-body">
+      <p>
+        Beim automatischen Übertragen der Daten nach HISinOneRES werden die folgenden beiden in der DHSB hinterlegten KDSF-Mappings genutzt:
+      </p>
+      <ul>
+        <li><a href="MappingKDSFPublikationstyp.csv">MappingKDSFPublikationstyp.csv</a></li>
+        <li><a href="MappingKDSFQualifikationsschrift.csv">MappingKDSFQualifikationsschrift.csv</a></li>
+      </ul>
+      <p>
+        Folgende Datensätze werden aufgrund von fehlenden Einträgen in den Mappings nicht übernommen:
+      </p>
+      <ul>
+        <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+-host_genre%3A*&amp;wt=xml">Kapitel ohne Relation</a></li>
+        <li>Kapitel in
+          <ul>
+            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Serie</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+-host_genre%3Abook&amp;wt=xml">Buch</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=genre%3Achapter+AND+-host_genre%3Areport&amp;wt=xml">Report</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+</webpage>
