@@ -56,7 +56,7 @@
       </xsl:choose>
     </xsl:variable>
 
-    <button name="{$name}" class="btn btn-primary {$symbol}" title="{$symbol}" tabindex="999">
+    <button type="submit" name="{$name}" class="btn btn-primary {$symbol}" title="{$symbol}" tabindex="999">
       <i class="fas {$fa-class}"></i>
     </button>
   </xsl:template>
