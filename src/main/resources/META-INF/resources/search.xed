@@ -274,8 +274,20 @@
                 </a>
               </div>
             </xed:bind>
-            
-            <xed:bind xpath="condition8[@operator='=']">
+
+            <xed:bind xpath="condition8[@field='host_genre'][@operator='=']/@value">
+              <div class="form-group form-inline">
+                <label for="{xed:generate-id()}" class="mycore-form-label">
+                  <xed:output i18n="ubo.select.host" />
+                </label>
+                <select id="{xed:generate-id()}" class="mycore-form-input custom-select">
+                  <option value=""><xed:output i18n="search.select" /></option>
+                  <xed:include uri="xslStyle:host-filter,items2options:classification:editor:-1:children:ubogenre" />
+                </select>
+              </div>
+            </xed:bind>
+
+            <xed:bind xpath="condition9[@operator='=']">
               <div class="form-group form-inline">
                 <xed:bind xpath="@value">
                   <label for="{xed:generate-id()}" class="mycore-form-label">
