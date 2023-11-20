@@ -287,7 +287,7 @@
               </div>
             </xed:bind>
 
-            <xed:bind xpath="condition9[@operator='=']">
+            <xed:bind xpath="condition10[@operator='=']">
               <div class="form-group form-inline">
                 <xed:bind xpath="@value">
                   <label for="{xed:generate-id()}" class="mycore-form-label">
