@@ -254,7 +254,7 @@
     </field>
   </xsl:template>
   
-  <xsl:template match="mods:nameIdentifier[@type='lsf']" mode="solrField.ae">
+  <xsl:template match="mods:nameIdentifier[@type='researcherid']" mode="solrField.ae">
     <field name="ae_researcherid">
       <xsl:value-of select="text()" />
     </field>
@@ -323,9 +323,9 @@
             <xsl:value-of select="."/>
           </field>
         </xsl:for-each>
-      </xsl:if -->
+      </xsl:if>
 
-    </xsl:if>
+    </xsl:if -->
   </xsl:template>
 
   <xsl:template name="oa">
