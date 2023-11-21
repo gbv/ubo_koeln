@@ -7,7 +7,7 @@
       <label xml:lang="de" text="DHSB-ID" />
       <label xml:lang="en" text="DHSB-ID" />
       <label xml:lang="x-display" text="true" />
-      <label xml:lang="x-uri" text="/servlets/solr/select?q=nid_dhsbid:" />
+      <label xml:lang="x-uri" text="/servlets/solr/select?q=status:confirmed+AND+nid_dhsbid:" />
     </category>
     <category ID="scopus">
       <label xml:lang="de" text="SCOPUS" />

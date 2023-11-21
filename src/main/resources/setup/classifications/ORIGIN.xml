@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="ORIGIN">
-  <label xml:lang="en" text="Faculty / Department" />
   <label xml:lang="de" text="Fakultät / Institut" />
+  <label xml:lang="en" text="Faculty / Department" />
   <categories>
     <category ID="fak_01">
       <label xml:lang="de" text="Fakultät für Angewandte Sozialwissenschaften" />
       <label xml:lang="en" text="Faculty of Applied Social Sciences" />
       <category ID="IMOS">
-        <label xml:lang="en" text="Institute for Applied Management and Organization in Social Work" />
         <label xml:lang="de" text="Institut für Angewandtes Management und Organisation in der Sozialen Arbeit" />
+        <label xml:lang="en" text="Institute for Applied Management and Organization in Social Work" />
+      </category>
+      <category ID="ISSM">
+        <label xml:lang="de" text="Institut für Sozialpolitik und Sozialmanagement" />
+        <label xml:lang="en" text="Institut für Sozialpolitik und Sozialmanagement" />
       </category>
       <category ID="IRIS">
         <label xml:lang="de" text="Institut für die Wissenschaft der Sozialen Arbeit" />
         <label xml:lang="en" text="Institute for Research in Social Work" />
       </category>
       <category ID="INTERKULT">
-        <label xml:lang="en" text="Institute for Intercultural Education and Development" />
         <label xml:lang="de" text=" Institut für interkulturelle Bildung und Entwicklung" />
+        <label xml:lang="en" text="Institute for Intercultural Education and Development" />
       </category>
       <category ID="KJFE">
         <label xml:lang="de" text="Institut für Kindheit, Jugend, Familie und Erwachsene" />
@@ -27,8 +31,8 @@
         <label xml:lang="en" text="Institute of Media Research and Media Education" />
       </category>
       <category ID="ISR">
-        <label xml:lang="en" text="Institute for Social Law" />
         <label xml:lang="de" text="Institut für Soziales Recht" />
+        <label xml:lang="en" text="Institute for Social Law" />
       </category>
       <category ID="IFG">
         <label xml:lang="de" text="Institut für Geschlechterstudien" />
@@ -43,24 +47,24 @@
         <label xml:lang="en" text="Cologne Institute of Conservation Sciences" />
       </category>
       <category ID="KISD">
-        <label xml:lang="en" text="Köln International School of Design" />
         <label xml:lang="de" text="Köln International School of Design" />
+        <label xml:lang="en" text="Köln International School of Design" />
       </category>
       <category ID="CGL">
-        <label xml:lang="en" text="Cologne Game Lab" />
         <label xml:lang="de" text="Cologne Game Lab" />
+        <label xml:lang="en" text="Cologne Game Lab" />
       </category>
     </category>
     <category ID="fak_03">
-      <label xml:lang="en" text="Faculty of Information Science and Communication Studies" />
       <label xml:lang="de" text="Fakultät für Informations- und Kommunikationswissenschaften" />
+      <label xml:lang="en" text="Faculty of Information Science and Communication Studies" />
       <category ID="IWS">
-        <label xml:lang="en" text="Institute of Information Science" />
         <label xml:lang="de" text="Institut für Informationswissenschaft" />
+        <label xml:lang="en" text="Institute of Information Science" />
       </category>
       <category ID="ITMK">
-        <label xml:lang="en" text="Institute of Translation and Multilingual Communication" />
         <label xml:lang="de" text="Institut für Translation und Mehrsprachige Kommunikation" />
+        <label xml:lang="en" text="Institute of Translation and Multilingual Communication" />
       </category>
       <category ID="IIM">
         <label xml:lang="de" text="Institut für Informationsmanagement - Forschungsinstitut" />
@@ -80,15 +84,15 @@
       </category>
     </category>
     <category ID="fak_05">
-      <label xml:lang="en" text="Faculty of Architecture" />
       <label xml:lang="de" text="Fakultät für Architektur" />
+      <label xml:lang="en" text="Faculty of Architecture" />
       <category ID="IEKG">
         <label xml:lang="de" text="Institut für Entwerfen-Konstruieren-Gebäudelehre" />
         <label xml:lang="en" text="Institute of Architectural Design and Technology" />
       </category>
       <category ID="IG">
-        <label xml:lang="en" text="Cologne Institute of Architectural Design" />
         <label xml:lang="de" text="Institut für Gestaltung" />
+        <label xml:lang="en" text="Cologne Institute of Architectural Design" />
       </category>
       <category ID="IOPB">
         <label xml:lang="de" text="Institut für Ökonomie und Organisation des Planens und Bauens" />
@@ -99,12 +103,12 @@
         <label xml:lang="en" text="Institute of Building History and Sustainable Heritage" />
       </category>
       <category ID="ISB">
-        <label xml:lang="en" text="Institute for Urban Development" />
         <label xml:lang="de" text="Institut für Städtebau Wohnungsbau" />
+        <label xml:lang="en" text="Institute for Urban Development" />
       </category>
       <category ID="EEA3">
-        <label xml:lang="en" text="Institute of Energy Efficient Architecture" />
         <label xml:lang="de" text="Institut für Energieeffiziente Architektur3" />
+        <label xml:lang="en" text="Institute of Energy Efficient Architecture" />
       </category>
     </category>
     <category ID="fak_06">
@@ -119,24 +123,24 @@
         <label xml:lang="en" text="Institute for Structural Engineering" />
       </category>
       <category ID="IBGVW">
-        <label xml:lang="en" text="Building materials, Geotechnical and Infrastructural Engineering Institute" />
         <label xml:lang="de" text="Institut für Baustoffe, Geotechnik, Verkehr und Wasser" />
+        <label xml:lang="en" text="Building materials, Geotechnical and Infrastructural Engineering Institute" />
       </category>
     </category>
     <category ID="fak_07">
-      <label xml:lang="en" text="Faculty of Information, Media and Electrical Engineering" />
       <label xml:lang="de" text="Fakultät für Informations-, Medien- und Elektrotechnik" />
+      <label xml:lang="en" text="Faculty of Information, Media and Electrical Engineering" />
       <category ID="IET">
         <label xml:lang="de" text="Institut für Elektrische Energietechnik" />
         <label xml:lang="en" text="Institute of Electrical Power Engineering" />
       </category>
       <category ID="IA">
-        <label xml:lang="en" text="Institute of Automation Engineering" />
         <label xml:lang="de" text="Institut für Automatisierungstechnik" />
+        <label xml:lang="en" text="Institute of Automation Engineering" />
       </category>
       <category ID="INT">
-        <label xml:lang="en" text="Institute of Communication Systems" />
         <label xml:lang="de" text="Institut für Nachrichtentechnik" />
+        <label xml:lang="en" text="Institute of Communication Systems" />
       </category>
       <category ID="IMP">
         <label xml:lang="de" text="Institut für Medien- und Phototechnik" />
@@ -148,14 +152,19 @@
       </category>
       <category ID="ZWE">
         <label xml:lang="de" text="Zentralwerkstatt Elektrotechnik" />
+        <label xml:lang="en" text="Zentralwerkstatt Elektrotechnik" />
+      </category>
+      <category ID="ICCT">
+        <label xml:lang="de" text="Institute of Computer and Communication Technology" />
+        <label xml:lang="en" text="Institute of Computer and Communication Technology" />
       </category>
     </category>
     <category ID="fak_08">
-      <label xml:lang="en" text="Faculty of Automotive Systems and Production Engineering" />
       <label xml:lang="de" text="Fakultät für Fahrzeugsysteme und Produktion" />
+      <label xml:lang="en" text="Faculty of Automotive Systems and Production Engineering" />
       <category ID="IFK">
-        <label xml:lang="en" text="Institute of Automotive Engineering" />
         <label xml:lang="de" text="Institut für Fahrzeugtechnik" />
+        <label xml:lang="en" text="Institute of Automotive Engineering" />
       </category>
       <category ID="IFP">
         <label xml:lang="de" text="Institut für Produktion" />
@@ -170,28 +179,28 @@
         <label xml:lang="en" text="Institute of Chemical Process Engineering and Plant Design" />
       </category>
       <category ID="IBL">
-        <label xml:lang="en" text="Cologne Institute of Construction Machinery and Agricultural Engineering" />
         <label xml:lang="de" text="Institut für Bau- und Landmaschinentechnik Köln" />
+        <label xml:lang="en" text="Cologne Institute of Construction Machinery and Agricultural Engineering" />
       </category>
       <category ID="IPK">
         <label xml:lang="de" text="Institut für Produktentwicklung und Konstruktionstechnik" />
         <label xml:lang="en" text="Institute of Product Development and Engineering Design" />
       </category>
       <category ID="TGA">
-        <label xml:lang="en" text="Institute of Building Services Engineering" />
         <label xml:lang="de" text="Institut für Technische Gebäudeausrüstung" />
+        <label xml:lang="en" text="Institute of Building Services Engineering" />
       </category>
       <category ID="IWA">
         <label xml:lang="de" text="Institut für Werkstoffanwendung" />
         <label xml:lang="en" text="Institute of Applied Materials" />
       </category>
       <category ID="IRG">
-        <label xml:lang="en" text="Institute of Rescue Engineering and Civil Protection" />
         <label xml:lang="de" text="Institut für Rettungsingenieurwesen und Gefahrenabwehr" />
+        <label xml:lang="en" text="Institute of Rescue Engineering and Civil Protection" />
       </category>
       <category ID="CIRE">
-        <label xml:lang="en" text="Cologne Institute for Renewable Energy" />
         <label xml:lang="de" text="Cologne Institute for Renewable Energy" />
+        <label xml:lang="en" text="Cologne Institute for Renewable Energy" />
       </category>
       <category ID="ZWM">
         <label xml:lang="de" text="Zentralwerkstatt Maschinenbau" />
@@ -205,39 +214,39 @@
         <label xml:lang="en" text="Institute of Computer Science" />
       </category>
       <category ID="CIDE">
-        <label xml:lang="en" text="Cologne Institute for Digital Ecosystems" />
         <label xml:lang="de" text="Cologne Institute for Digital Ecosystems" />
+        <label xml:lang="en" text="Cologne Institute for Digital Ecosystems" />
       </category>
       <category ID="IEL">
-        <label xml:lang="en" text="Institute of Electronics" />
         <label xml:lang="de" text="Institute of Electronics" />
+        <label xml:lang="en" text="Institute of Electronics" />
       </category>
       <category ID="AIT">
-        <label xml:lang="en" text="Institut für Automation &amp; Industrial IT" />
         <label xml:lang="de" text="Institut für Automation &amp; Industrial IT" />
+        <label xml:lang="en" text="Institut für Automation &amp; Industrial IT" />
       </category>
       <category ID="IAM">
         <label xml:lang="de" text="Institut für Allgemeinen Maschinenbau" />
       </category>
       <category ID="metabolon">
-        <label xml:lang="en" text=":metabolon Institute" />
         <label xml:lang="de" text=":metabolon Institute" />
+        <label xml:lang="en" text=":metabolon Institute" />
       </category>
       <category ID="IOT">
-        <label xml:lang="en" text="Institute for Optical Technologies" />
         <label xml:lang="de" text="Institute for Optical Technologies" />
+        <label xml:lang="en" text="Institute for Optical Technologies" />
       </category>
       <category ID="IBAL">
-        <label xml:lang="en" text="Institute for Business Administration and Leadership" />
         <label xml:lang="de" text="Institute for Business Administration and Leadership" />
+        <label xml:lang="en" text="Institute for Business Administration and Leadership" />
       </category>
       <category ID="AMI">
-        <label xml:lang="en" text="Advanced Media Institute" />
         <label xml:lang="de" text="Advanced Media Institute" />
+        <label xml:lang="en" text="Advanced Media Institute" />
       </category>
       <category ID="IDF">
-        <label xml:lang="en" text="Institut für Distance Learning &amp; Further Education" />
         <label xml:lang="de" text="Institut für Distance Learning &amp; Further Education" />
+        <label xml:lang="en" text="Institut für Distance Learning &amp; Further Education" />
       </category>
       <category ID="IDEA">
         <label xml:lang="de" text="Institut für Data Science, Engineering, and Analytics" />
@@ -245,15 +254,15 @@
       </category>
     </category>
     <category ID="fak_11">
-      <label xml:lang="en" text="Faculty of Applied Natural Sciences" />
       <label xml:lang="de" text="Fakultät für Angewandte Naturwissenschaften" />
+      <label xml:lang="en" text="Faculty of Applied Natural Sciences" />
     </category>
     <category ID="fak_12">
       <label xml:lang="de" text="Fakultät für Raumentwicklung und Infrastruktursysteme" />
       <label xml:lang="en" text="Faculty of Spatial Development and Infrastructure Systems" />
       <category ID="ITT">
-        <label xml:lang="en" text="Institute for Technology and Resources Management in the Tropics and Subtropics" />
         <label xml:lang="de" text="Institute for Technology and Resources Management in the Tropics and Subtropics" />
+        <label xml:lang="en" text="Institute for Technology and Resources Management in the Tropics and Subtropics" />
       </category>
     </category>
     <category ID="ZE">
@@ -280,117 +289,6 @@
         <label xml:lang="de" text="Zentrum für Lehrentwicklung" />
       </category>
     </category>
-    <category ID="finst">
-      <label xml:lang="de" text="Forschungsinstitut" />
-      <category ID="InnovAGe">
-        <label xml:lang="de" text="Innovative Arzneistoffe für die alternde Gesellschaft" />
-      </category>
-      <category ID="STEPS">
-        <label xml:lang="de" text="Sustainable Technologies and Computational Services for Environmental and Production Processes" />
-      </category>
-    </category>
-    <category ID="fst">
-      <label xml:lang="de" text="Forschungsstelle" />
-      <category ID="fst_ES">
-        <label xml:lang="de" text="Forschungsstelle Echtzeitstadt" />
-      </category>
-      <category ID="fst_MMI">
-        <label xml:lang="de" text="Forschungsstelle Management – Markt – Institutionen" />
-      </category>
-      <category ID="fst_TF">
-        <label xml:lang="de" text="Forschungsstelle Translation und Fachkommunikation" />
-      </category>
-      <category ID="fst_FVM">
-        <label xml:lang="de" text="Forschungsstelle Versicherungsmarkt" />
-      </category>
-      <category ID="fst_FVR">
-        <label xml:lang="de" text="Forschungsstelle Versicherungsrecht" />
-      </category>
-      <category ID="fst_FWV">
-        <label xml:lang="de" text="Forschungsstelle Wirtschaftsmediation und Verhandlung" />
-      </category>
-      <category ID="fst_FMR">
-        <label xml:lang="de" text="Kölner Forschungsstelle für Medienrecht" />
-      </category>
-    </category>
-    <category ID="fschw">
-      <label xml:lang="de" text="Forschungsschwerpunkt" />
-      <category ID="fschw_ABBBKKG">
-        <label xml:lang="de" text="Analyse, Bewertung und Behandlung von Belastungen in Kanalisationen, Kläranlagen und Gewässern" />
-      </category>
-      <category ID="fschw_MMC">
-        <label xml:lang="de" text="Art Materials in Mediaeval Cologne" />
-      </category>
-      <category ID="fschw_AS">
-        <label xml:lang="de" text="Autonomieräume im Sozialstaat" />
-      </category>
-      <category ID="fschw_BGW">
-        <label xml:lang="de" text="Bevölkerungsschutz im gesellschaftlichen Wandel" />
-      </category>
-      <category ID="fschw_BKF">
-        <label xml:lang="de" text="Bildungsräume in Kindheit und Familie" />
-      </category>
-      <category ID="fschw_BTME">
-        <label xml:lang="de" text="Business Transaction in Mobile Environments" />
-      </category>
-      <category ID="fschw_CIP">
-        <label xml:lang="de" text="Computational Intelligence plus" />
-      </category>
-      <category ID="fschw_CA">
-        <label xml:lang="de" text="Corporate Architecture" />
-      </category>
-      <category ID="fschw_CS">
-        <label xml:lang="de" text="Computational Services in Automation" />
-      </category>
-      <category ID="fschw_DSPA">
-        <label xml:lang="de" text="Innovative Digital Signal Processing and Applications" />
-      </category>
-      <category ID="fschw_DTSD">
-        <label xml:lang="de" text="Digitale Technologien und Soziale Dienste" />
-      </category>
-      <category ID="fschw_GB">
-        <label xml:lang="de" text="Green Building" />
-      </category>
-      <category ID="fschw_ISF">
-        <label xml:lang="de" text="Intelligente Schadensvorhersage an Faserverbundkunststoff-Bauteilen in industriellen Anwendungen" />
-      </category>
-      <category ID="fschw_IWM">
-        <label xml:lang="de" text="Integriertes Wasserressourcenmanagement" />
-      </category>
-      <category ID="fschw_MW">
-        <label xml:lang="de" text="Medienwelten" />
-      </category>
-      <category ID="fschw_MIK">
-        <label xml:lang="de" text="Migration und Interkulturelle Kompetenz" />
-      </category>
-      <category ID="fschw_SHNI">
-        <label xml:lang="de" text="Next Generation Services in Heterogeneous Network Infrastructures" />
-      </category>
-      <category ID="fschw_WEE">
-        <label xml:lang="de" text="Nexus Wasser - Energie - Ernährungssicherheit" />
-      </category>
-      <category ID="fschw_NB">
-        <label xml:lang="de" text="Nonformale Bildung" />
-      </category>
-      <category ID="fschw_RV">
-        <label xml:lang="de" text="Rückversicherung" />
-      </category>
-      <category ID="fschw_SQ">
-        <label xml:lang="de" text="Software Quality" />
-      </category>
-      <category ID="fschw_SRM">
-        <label xml:lang="de" text="Sozial Raum Management" />
-      </category>
-      <category ID="fschw_VT">
-        <label xml:lang="de" text="Virtual Technology" />
-      </category>
-      <category ID="fschw_VMA">
-        <label xml:lang="de" text="Verteilte und Mobile Applikationen" />
-      </category>
-      <category ID="fschw_WF">
-        <label xml:lang="de" text="Wirkstoffforschung" />
-      </category>
-    </category>
     <category ID="kp">
       <label xml:lang="de" text="Kompetenzplatform" />
       <category ID="kp_SVE">
@@ -398,12 +296,6 @@
       </category>
       <category ID="kp_MBO">
         <label xml:lang="de" text="Migration, Interkulturelle Bildung und Organisationsentwicklung" />
-      </category>
-    </category>
-    <category ID="ai">
-      <label xml:lang="de" text="An-Institut" />
-      <category ID="ai_IPO">
-        <label xml:lang="de" text="Institut für Produktionstechnik und -organisation" />
       </category>
     </category>
   </categories>
