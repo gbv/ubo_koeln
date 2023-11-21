@@ -9,10 +9,12 @@
   exclude-result-prefixes="mods xlink str mcrxml">
 
   <xsl:import href="xslImport:solr-document:ubo-solr.xsl" />
+  <xsl:include href="coreFunctions.xsl"/>
 
   <xsl:template match="mycoreobject">
     <xsl:apply-templates select="." mode="baseFields" />
     <xsl:call-template   name="documentID" />
+    <xsl:apply-templates select="structure/parents/parent[@xlink:href]" mode="solrField" />
     <xsl:apply-templates select="service/servflags/servflag[@type='status']" mode="solrField" />
     <xsl:apply-templates select="service/servflags/servflag[@type='importID']" mode="solrField" />
     <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods" mode="solrField" />
@@ -42,9 +44,12 @@
     <xsl:apply-templates select="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][contains('aut cre tch pht prg edt ivr ive inv',text())]]" mode="solrField.ae_person" />
     <xsl:apply-templates select="descendant::mods:name[@type='personal']" mode="child" />
     <xsl:apply-templates select="mods:genre[@type='intern']" mode="solrField" />
+    <xsl:apply-templates select="mods:accessCondition[@classID='licenses']" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:genre[@type='intern']" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'ORIGIN')]" mode="solrField" />
     <xsl:apply-templates select="mods:classification[contains(@authorityURI,'fachreferate')]" mode="solrField" />
+    <xsl:apply-templates select="mods:classification[contains(@authorityURI,'project')]" mode="solrField" />
+    <xsl:apply-templates select="mods:classification[contains(@authorityURI,'fundingType')]" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:titleInfo[not(@type)]" mode="solrField.host" />
     <xsl:apply-templates select="mods:relatedItem[@type='host'][mods:genre='journal']/mods:titleInfo" mode="solrField" />
     <xsl:apply-templates select="mods:relatedItem[@type='host']/mods:part" mode="solrField" />
@@ -190,6 +195,13 @@
     <field name="nid_{@type}">
       <xsl:value-of select="text()" />
     </field>
+
+    <field name="{@type}_nid_text">
+      <xsl:value-of select="../mods:namePart[@type='family']" />
+      <xsl:for-each select="../mods:namePart[@type='given'][1]">
+        <xsl:value-of select="concat(', ',text())" />
+      </xsl:for-each>
+    </field>
   </xsl:template>
 
   <xsl:template match="mods:name[mods:nameIdentifier[@type='lsf']]" mode="solrField.lsf">
@@ -266,6 +278,12 @@
     </field>
   </xsl:template>
 
+  <xsl:template match="mods:accessCondition[@classID='licenses']" mode="solrField">
+    <field name="license">
+      <xsl:value-of select="text()" />
+    </field>
+  </xsl:template>
+
   <xsl:template match="mods:relatedItem[@type='host']/mods:genre[@type='intern']" mode="solrField">
     <field name="host_genre">
       <xsl:value-of select="text()" />
@@ -287,6 +305,27 @@
     <field name="origin_exact">
       <xsl:value-of select="$category" />
     </field>
+
+    <!-- Derive destatis from origin if fachreferate is not set ->
+    <xsl:if test="not (../mods:classification[contains(@authorityURI,'fachreferate')])">
+      <xsl:variable name="origin" select="document('classification:metadata:-1:children:ORIGIN')/mycoreclass/categories" />
+      <xsl:variable name="destatis-attr" select="$origin//category[@ID = $category]/label[@xml:lang = 'x-destatis']/@text"/>
+
+      <xsl:if test="string-length($destatis-attr &gt; 0)">
+        <xsl:variable name="destatis-categories">
+          <xsl:call-template name="Tokenizer">
+            <xsl:with-param name="string" select="$destatis-attr"/>
+          </xsl:call-template>
+        </xsl:variable>
+
+        <xsl:for-each select="xalan:nodeset($destatis-categories)/token">
+          <field name="subject">
+            <xsl:value-of select="."/>
+          </field>
+        </xsl:for-each>
+      </xsl:if -->
+
+    </xsl:if>
   </xsl:template>
 
   <xsl:template name="oa">
@@ -310,6 +349,24 @@
         <xsl:value-of select="@value" />
       </field>
     </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="mods:classification[contains(@authorityURI,'fachreferate')]" mode="solrField">
+    <field name="subject">
+      <xsl:value-of select="substring-after(@valueURI,'#')" />
+    </field>
+  </xsl:template>
+
+  <xsl:template match="mods:classification[contains(@authorityURI,'project')]" mode="solrField">
+    <field name="project">
+      <xsl:value-of select="substring-after(@valueURI,'#')" />
+    </field>
+  </xsl:template>
+
+  <xsl:template match="mods:classification[contains(@authorityURI,'fundingType')]" mode="solrField">
+    <field name="fundingType">
+      <xsl:value-of select="substring-after(@valueURI,'#')" />
+    </field>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'accessrights')]" mode="solrField">
@@ -351,12 +408,6 @@
 
   <xsl:template match="mods:classification[contains(@authorityURI,'partOf')]" mode="solrField">
     <field name="partOf">
-      <xsl:value-of select="substring-after(@valueURI,'#')" />
-    </field>
-  </xsl:template>
-
-  <xsl:template match="mods:classification[contains(@authorityURI,'fachreferate')]" mode="solrField">
-    <field name="subject">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
   </xsl:template>
@@ -448,6 +499,12 @@
   </xsl:template>
 
   <xsl:template match="mods:note" mode="solrField">
+    <xsl:if test="@type = 'intern'">
+      <field name="note.intern">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:if>
+
     <field name="note">
       <xsl:value-of select="text()" />
     </field>
@@ -456,11 +513,6 @@
       <xsl:variable name="before" select="substring-before($jjjj,'JJJJ')" />
       <field name="year_diss">
         <xsl:value-of select="substring(substring-after(.,$before),1,4)" />
-      </field>
-    </xsl:if>
-    <xsl:if test="@type = 'intern'">
-      <field name="note.intern">
-        <xsl:value-of select="text()" />
       </field>
     </xsl:if>
   </xsl:template>
