@@ -379,6 +379,11 @@
     <field name="koeln_peerreviewed">
       <xsl:value-of select="substring-after(@valueURI,'#')" />
     </field>
+    <xsl:if test="substring-after(@valueURI,'#') = 'true'">
+      <field name="peerreviewed">
+        <xsl:value-of select="substring-after(@valueURI,'#')" />
+      </field>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:classification[contains(@authorityURI,'partner')]" mode="solrField">

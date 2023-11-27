@@ -39,6 +39,15 @@
     },
     {
         "add-field": {
+            "name": "peerreviewed",
+            "type": "ubo_id",
+            "multiValued": true,
+            "indexed": true,
+            "stored": true
+        }
+    },
+    {
+        "add-field": {
             "name": "koeln_partner",
             "type": "ubo_id",
             "multiValued": true,
