@@ -24,13 +24,6 @@
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
           </ul>
         </li>
-        <li>Buch (Monographie) in
-          <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Abook+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Abook+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
-          </ul>
-        </li>
-        <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+-host_genre%3A*&amp;wt=xml">Kapitel ohne Relation</a></li>
         <li>Buchaufsatz / Kapitel in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
@@ -49,11 +42,6 @@
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
           </ul>
         </li>
-        <li>Beitrag (Bericht) in
-          <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Acontribution+AND+host_genre%3Aarticle&amp;wt=xml">Aufsatz / Artikel</a></li>
-          </ul>
-        </li>
         <li>Lehrmaterial in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Alecture+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
@@ -68,11 +56,6 @@
         <li>Vorwort / Nachwort in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Apreface+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
-          </ul>
-        </li>
-        <li>Tagungsband in
-          <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aproceedings+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
         </li>
         <li>Bericht in
