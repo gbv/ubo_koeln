@@ -20,26 +20,26 @@
         <li>Aufsatz / Artikel in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li -->
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li -->
           </ul>
         </li>
         <li>Buchaufsatz / Kapitel in
           <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li -->
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Abook&amp;wt=xml">Buch (Monographie)</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Areport&amp;wt=xml">Bericht</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Areport&amp;wt=xml">Bericht</a></li -->
           </ul>
         </li>
-        <li>Buch (Sammelwerk) in
+        <!-- li>Buch (Sammelwerk) in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Acollection+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
-        </li>
+        </li -->
         <li>Aufsatz (Konferenz) in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li -->
           </ul>
         </li>
         <li>Lehrmaterial in
@@ -58,11 +58,11 @@
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Apreface+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
           </ul>
         </li>
-        <li>Bericht in
+        <!-- li>Bericht in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Areport+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
-        </li>
+        </li -->
         <li>Rezension in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Areview+AND+host_genre%3Anewspaper&amp;wt=xml">Zeitung</a></li>
