@@ -26,6 +26,7 @@
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='genre'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='koeln_accessrights'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='facet_person'][int]" />
+      <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='connection_nid_text'][int]" />
       <xsl:apply-templates select="lst[@name='facet_fields']/lst[@name='nid_dhsbid'][int]" />
       <xsl:apply-templates select="lst[@name='facet_pivot']/arr[@name='name_id_type,name_id_type']" />
     </xsl:for-each>
@@ -447,6 +448,87 @@
               new Highcharts.Chart({
                 chart: {
                   renderTo: 'chartPerson',
+                  type: 'bar',
+                  backgroundColor: 'transparent',
+                  borderWidth: 0,
+                  shadow: false,
+                  events: {
+                    click: function(e) {
+                      $('#chartDialog').dialog({
+                        position: 'center',
+                        width: $(window).width() - 80,
+                        height: $(window).height() - 80,
+                        draggable: false,
+                        resizable: false,
+                        modal: false
+                      });
+                      var dialogOptions = this.options;
+                      dialogOptions.chart.renderTo = 'chartDialog';
+                      dialogOptions.chart.events = null;
+                      dialogOptions.chart.zoomType = 'x';
+                      new Highcharts.Chart(dialogOptions);
+                    }
+                  }
+                },
+                title: { text: '<xsl:value-of select="$title" />' },
+                legend: { enabled: false },
+                xAxis: { categories: [
+                  <xsl:for-each select="int">
+                    <xsl:sort select="text()" data-type="number" order="descending" />
+                    "<xsl:value-of select="@name"/>"
+                    <xsl:if test="position() != last()">, </xsl:if>
+                  </xsl:for-each>
+                  ],
+                  labels: {
+                    align: 'right',
+                    style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
+                  }
+                },
+                yAxis: {
+                   title: { text: '<xsl:value-of select="$count" />' },
+                   labels: { formatter: function() { return this.value; } },
+                   endOnTick: false,
+                   max: <xsl:value-of select="floor(number(int[1]) * 1.05)" /> <!-- +5% -->
+                },
+                tooltip: { formatter: function() { return '<b>' + this.x +'</b>: '+ this.y; } },
+                plotOptions: { series: { pointWidth: 15, minPointLength: 3 } },
+                series: [{
+                  name: '<xsl:value-of select="$title" />',
+                  data: [
+                    <xsl:for-each select="int">
+                      <xsl:sort select="text()" data-type="number" order="descending" />
+                      <xsl:value-of select="text()"/>
+                      <xsl:if test="position() != last()">, </xsl:if>
+                    </xsl:for-each>
+                  ],
+                  color: '<xsl:value-of select="$UBO.Statistics.Color.Bar" />',
+                  dataLabels: {
+                    enabled: true,
+                    align: 'right',
+                    formatter: function() { return this.y; },
+                    style: <xsl:value-of select="$UBO.Statistics.Style.Labels" />
+                  }
+                }]
+              });
+            });
+        </script>
+      </div>
+    </section>
+
+  </xsl:template>
+
+  <xsl:template match="lst[@name='facet_fields']/lst[@name='connection_nid_text']">
+    <xsl:variable name="title" select="concat(i18n:translate('ubo.publications'),' / ',i18n:translate('facets.facet.connection_nid_text'))" />
+
+    <section class="card">
+      <div class="card-body">
+        <div id="chartPersonHsb" style="width:100%; height:{50 + count(int) * 30}px" />
+    
+          <script type="text/javascript">
+            $(document).ready(function() {
+              new Highcharts.Chart({
+                chart: {
+                  renderTo: 'chartPersonHsb',
                   type: 'bar',
                   backgroundColor: 'transparent',
                   borderWidth: 0,
