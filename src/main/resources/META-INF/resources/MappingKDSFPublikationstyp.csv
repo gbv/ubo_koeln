@@ -14,34 +14,39 @@ default;12;chapter;collection;Sammelbandbeitrag;Artikel;aus Quelle
 default;13;collection;series;Sammelband;;aus Quelle
 default;14;collection;;Sammelband;;aus Quelle
 default;15;conference_essay;proceedings;Konferenzpaper;;aus Quelle
-default;16;conference_essay;;Konferenzpaper;;aus Quelle
-default;17;contribution;report;Arbeitspapier/Forschungsbericht;Artikel;aus Quelle
-default;18;dissertation;;Monographie;;aus Quelle
-default;19;festschrift;series;Sammelband;;aus Quelle
-default;20;festschrift;;Sammelband;;aus Quelle
-default;21;habilitation;;Monographie;;aus Quelle
-default;22;interview;report;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;23;interview;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;24;interview;journal;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;25;interview;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;26;interview;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;27;journal;;nicht importieren;;aus Quelle
-default;28;lecture;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
-default;29;lexicon;series;Sammelband;;aus Quelle
-default;30;lexicon;;Sammelband;;aus Quelle
-default;31;newspaper;;nicht importieren;;aus Quelle
-default;32;patent;;nicht importieren;;aus Quelle
-default;33;poster;blog;Konferenzposter;;aus Quelle
-default;34;poster;;Konferenzposter;;aus Quelle
-default;35;preface;proceedings;Konferenzpaper;Editorial;aus Quelle
-default;36;preface;lexicon;Sammelbandbeitrag;Editorial;aus Quelle
-default;37;preface;journal;Journalartikel;Editorial;aus Quelle
-default;38;preface;festschrift;Sammelbandbeitrag;Editorial;aus Quelle
-default;39;preface;collection;Sammelbandbeitrag;Editorial;aus Quelle
-default;40;preface;book;Sammelbandbeitrag;Editorial;aus Quelle
-default;41;proceedings;series;Konferenzband;;aus Quelle
-default;42;proceedings;;Konferenzband;;aus Quelle
-default;43;report;series;Arbeitspapier/Forschungsbericht;;aus Quelle
-default;44;report;;Arbeitspapier/Forschungsbericht;;aus Quelle
-default;45;review;journal;Journalartikel;Rezension;aus Quelle
-default;46;series;;nicht importieren;;aus Quelle
+default;16;conference_essay;journal;Konferenzpaper;;aus Quelle
+default;17;conference_essay;;Konferenzpaper;;aus Quelle
+default;18;contribution;report;Arbeitspapier/Forschungsbericht;Artikel;aus Quelle
+default;19;dissertation;;Monographie;;aus Quelle
+default;20;festschrift;series;Sammelband;;aus Quelle
+default;21;festschrift;;Sammelband;;aus Quelle
+default;22;habilitation;;Monographie;;aus Quelle
+default;23;interview;report;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;24;interview;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;25;interview;journal;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;26;interview;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;27;interview;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;28;journal;;nicht importieren;;aus Quelle
+default;29;lecture;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;30;lecture;;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;31;lexicon;series;Sammelband;;aus Quelle
+default;32;lexicon;;Sammelband;;aus Quelle
+default;33;newspaper;;nicht importieren;;aus Quelle
+default;34;patent;;nicht importieren;;aus Quelle
+default;35;poster;blog;Konferenzposter;;aus Quelle
+default;36;poster;proceedings;Konferenzposter;;aus Quelle
+default;37;poster;;Konferenzposter;;aus Quelle
+default;38;preface;proceedings;Konferenzpaper;Editorial;aus Quelle
+default;39;preface;lexicon;Sammelbandbeitrag;Editorial;aus Quelle
+default;40;preface;journal;Journalartikel;Editorial;aus Quelle
+default;41;preface;festschrift;Sammelbandbeitrag;Editorial;aus Quelle
+default;42;preface;collection;Sammelbandbeitrag;Editorial;aus Quelle
+default;43;preface;book;Sammelbandbeitrag;Editorial;aus Quelle
+default;44;preface;blog;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
+default;45;proceedings;series;Konferenzband;;aus Quelle
+default;46;proceedings;;Konferenzband;;aus Quelle
+default;47;report;series;Arbeitspapier/Forschungsbericht;;aus Quelle
+default;48;report;;Arbeitspapier/Forschungsbericht;;aus Quelle
+default;49;review;journal;Journalartikel;Rezension;aus Quelle
+default;50;review;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;Rezension;aus Quelle
+default;51;series;;nicht importieren;;aus Quelle
