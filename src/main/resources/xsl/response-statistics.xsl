@@ -42,7 +42,6 @@
       <xsl:apply-templates select="lst[@name='origin_toplevel']" />
       <xsl:apply-templates select="lst[@name='genre']" />
       <xsl:apply-templates select="lst[@name='koeln_accessrights']" />
-      <xsl:apply-templates select="lst[@name='connection_nid_text']" />
       <xsl:apply-templates select="lst[@name='facet_person']" />
       <xsl:apply-templates select="lst[@name='oa']" />
     </xsl:for-each>
