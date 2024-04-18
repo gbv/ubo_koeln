@@ -2,16 +2,16 @@
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="peerreviewed">
 
   <label xml:lang="en" text="Peer Reviewed" description="todo" />
-  <label xml:lang="de" text="Peer Reviewed" description="todo" />
+  <label xml:lang="de" text="Peer Reviewed" description="Gibt an, ob die Publikation mittels eines Verfahrens zur Qualitätssicherung einer wissenschaftlichen Arbeit oder eines Projektes durch unabhängige Gutachter aus dem gleichen Fachgebiet (Peers) geprüft wurde." />
 
   <categories>
     <category ID="true">
-      <label xml:lang="de" text="Ja" />
-      <label xml:lang="en" text="Yes" />
+      <label xml:lang="de" text="Peer Reviewed" />
+      <label xml:lang="en" text="Peer Reviewed" />
     </category>
     <category ID="false">
-      <label xml:lang="de" text="Nein" />
-      <label xml:lang="en" text="No" />
+      <label xml:lang="de" text="Nicht Peer Reviewed" />
+      <label xml:lang="en" text="Not Peer Reviewed" />
     </category>
   </categories>
 
