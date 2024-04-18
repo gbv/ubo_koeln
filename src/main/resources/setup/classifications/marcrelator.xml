@@ -51,6 +51,10 @@
         <label xml:lang="de" text="Herausgeber*in" description="Eine Person oder Institution,die vorbereitend bei der Veröffentlichung einer nicht primär eigenen Arbeit mitwirkt, z.B. duch Texterklärungen, Hinzufügen von Einleitungen und anderen kritischen Inhalten, oder die technische Leitung des ..." />
         <label xml:lang="x-miless" text="editor" />
       </category>
+      <category ID="isb">
+        <label xml:lang="de" text="Herausgebende Einrichtung" description="Ein Akteur, der ein Werk z. B. ein offizielles Organ der Körperschaft herausgibt." />
+        <label xml:lang="en" text="Issuing body" description="A person, family or organization issuing a work, such as an official organ of the body." />
+      </category>
     </category>
     <category ID="ctb">
       <label xml:lang="x-miless" text="contributor" />
