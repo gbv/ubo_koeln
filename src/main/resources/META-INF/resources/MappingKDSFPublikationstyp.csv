@@ -16,7 +16,7 @@ default;14;collection;;Sammelband;;aus Quelle
 default;15;conference_essay;proceedings;Konferenzpaper;;aus Quelle
 default;16;conference_essay;journal;Konferenzpaper;;aus Quelle
 default;17;conference_essay;;Konferenzpaper;;aus Quelle
-default;18;contribution;report;Arbeitspapier/Forschungsbericht;Artikel;aus Quelle
+default;18;contribution;report;Arbeitspapier/Forschungsbericht;;aus Quelle
 default;19;dissertation;;Monographie;;aus Quelle
 default;20;festschrift;series;Sammelband;;aus Quelle
 default;21;festschrift;;Sammelband;;aus Quelle
@@ -36,7 +36,7 @@ default;34;patent;;nicht importieren;;aus Quelle
 default;35;poster;blog;Konferenzposter;;aus Quelle
 default;36;poster;proceedings;Konferenzposter;;aus Quelle
 default;37;poster;;Konferenzposter;;aus Quelle
-default;38;preface;proceedings;Konferenzpaper;Editorial;aus Quelle
+default;38;preface;proceedings;Konferenzpaper;;aus Quelle
 default;39;preface;lexicon;Sammelbandbeitrag;Editorial;aus Quelle
 default;40;preface;journal;Journalartikel;Editorial;aus Quelle
 default;41;preface;festschrift;Sammelbandbeitrag;Editorial;aus Quelle
@@ -48,5 +48,5 @@ default;46;proceedings;;Konferenzband;;aus Quelle
 default;47;report;series;Arbeitspapier/Forschungsbericht;;aus Quelle
 default;48;report;;Arbeitspapier/Forschungsbericht;;aus Quelle
 default;49;review;journal;Journalartikel;Rezension;aus Quelle
-default;50;review;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;Rezension;aus Quelle
+default;50;review;newspaper;Beiträge/Interviews in nicht-wissenschaftlichen Medien;;aus Quelle
 default;51;series;;nicht importieren;;aus Quelle
