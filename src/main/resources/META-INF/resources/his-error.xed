@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<webpage lastModified="2023-07-27" id="dozbib.his.error">
+<webpage lastModified="2024-04-19" id="dozbib.his.error">
  <title xml:lang="de">Fehlerbereich für KDSF-Mapping</title>
  <title xml:lang="en">Error section for KDSF mapping</title>
 
@@ -14,60 +14,64 @@
         <li><a href="MappingKDSFQualifikationsschrift.csv">MappingKDSFQualifikationsschrift.csv</a></li>
       </ul>
       <p>
+        Importiert wird anhand der folgenden Query:
+        <a href="https://bibliografie.th-koeln.de/servlets/solr/select?core=main&q=status%3A%22confirmed%22+AND+NOT+genre%3A(%22journal%22+OR+%22patent%22+OR+%22newspaper%22+OR+%22series%22)+AND+objectType%3Amods&fl=*"
+        Status ist "freigegeben" und ohne die Publikationstypen "Zeitschrift", "Patent", "Zeitung" und "Serie"></a>
+      </p>
+      <p>
         Folgende Datensätze werden aufgrund von fehlenden Einträgen in den Mappings nicht übernommen:
       </p>
       <ul>
-        <li>Aufsatz / Artikel in
+        <li>keine fehlerhaften Mappings gefunden</li>
+        <!-- >li>Aufsatz / Artikel in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
-            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li -->
-            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li -->
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
           </ul>
-        </li>
-        <li>Buchaufsatz / Kapitel in
+        </li -->
+        <!-- li>Buchaufsatz / Kapitel in
           <ul>
-            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li -->
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Abook&amp;wt=xml">Buch (Monographie)</a></li>
-            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Areport&amp;wt=xml">Bericht</a></li -->
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Areport&amp;wt=xml">Bericht</a></li>
           </ul>
-        </li>
+        </li-->
         <!-- li>Buch (Sammelwerk) in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Acollection+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
         </li -->
-        <li>Aufsatz (Konferenz) in
+        <!-- li>Aufsatz (Konferenz) in
           <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
-            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li -->
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
           </ul>
-        </li>
-        <li>Lehrmaterial in
+        </li -->
+        <!-- li>Lehrmaterial in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Alecture+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
           </ul>
-        </li>
-        <li>Poster in
+        </li -->
+        <!-- li>Poster in
           <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aposter+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aposter+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
-        </li>
-        <li>Vorwort / Nachwort in
+        </li -->
+        <!-- >li>Vorwort / Nachwort in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Apreface+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
           </ul>
-        </li>
+        </li -->
         <!-- li>Bericht in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Areport+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
         </li -->
-        <li>Rezension in
+        <!-- li>Rezension in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Areview+AND+host_genre%3Anewspaper&amp;wt=xml">Zeitung</a></li>
           </ul>
-        </li>
+        </li -->
       </ul>
     </div>
   </article>
