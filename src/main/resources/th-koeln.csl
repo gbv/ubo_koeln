@@ -235,7 +235,7 @@
                   </group>
                  </group>
                 </if>
-                <else-if>
+                <else>
                  <group>
                   <text macro="publication-place-publisher"/>
                   <group delimiter=", " prefix=" (" suffix=")">
@@ -244,17 +244,16 @@
                   </group>
                   <text macro="page-range" prefix=", "/>
                  </group>
-                </else-if>
-                <else match="any" variable="event">
+                </else>
+                <if match="any" variable="event">
                  <group delimiter=": ">
                  <text term="in" text-case="capitalize-first"/>
                   <group delimiter=": " suffix=".">
-                  <names variable="event">
-                  <label form="short" prefix=" (" suffix=")"/>
+                    <text variable="event" />
                   </names>
                   </group>
                  </group>
-                </else>
+                </if>
              </choose>
               <text macro="online-url"/>
             </group>
