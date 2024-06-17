@@ -3,9 +3,10 @@
   <info>
     <title>Technische Hochschule Köln</title>
     <title-short>TH Köln (Deutsch)</title-short>
-    <id>http://www.zotero.org/styles/technische-universitat-dresden-linguistik</id>
-    <link href="http://www.zotero.org/styles/technische-universitat-dresden-linguistik" rel="template"/>
+    <id>https://bibliografie.th-koeln.de/th-koeln.csl</id>
+    <link href="https://bibliografie.th-koeln.de/th-koeln.csl" rel="self"/>
     <link href="http://www.zotero.org/styles/deutsche-sprache" rel="template"/>
+    <link href="https://www.th-koeln.de/mam/downloads/deutsch/hochschule/fakultaeten/information_und_kommunikation/leitfaden_zum_anfertigen_wissenschaftlicher_arbeiten.pdf" rel="documentation"/>
     <author>
       <name>Team Bibliografie TH Köln</name>
       <email>bibliografie@th-koeln.de</email>
@@ -26,7 +27,7 @@
     <choose>
       <if type="interview" match="any">
         <choose>
-          <if match="none" variable="editor producer inventor interviewer">
+          <if match="none" variable="editor producer inventor interviewer"><!-- TODO: error: value of attribute "variable" is invalid; token "inventor" invalid -->
             <text value="o. A." suffix=" "/>
           </if>
         </choose>
@@ -35,7 +36,7 @@
     <choose>
       <if type="interview" match="none">
         <choose>
-          <if match="none" variable="editor author producer creator inventor interviewer">
+          <if match="none" variable="editor author producer creator inventor interviewer"><!-- TODO: error: value of attribute "variable" is invalid; token "creator" invalid; -->
             <text value="o. A."/>
           </if>
         </choose>
@@ -44,7 +45,7 @@
     <choose>
       <if type="interview" match="any">
         <choose>
-          <if match="none" variable="editor producer creator inventor interviewer">
+          <if match="none" variable="editor producer creator inventor interviewer"><!-- TODO: error: value of attribute "variable" is invalid; token "creator" invalid; -->
             <text value="o. A." suffix=" "/>
           </if>
         </choose>
@@ -53,7 +54,7 @@
     <choose>
       <if type="interview" match="none">
         <group delimiter=" ">
-           <names variable="author producer creator inventor interviewer">
+           <names variable="author producer creator inventor interviewer"><!-- TODO: error: value of attribute "variable" is invalid; token "creator" invalid; -->
              <name delimiter=" / " name-as-sort-order="all"/>
              <label form="short" prefix=" (" suffix=")"/>
           <substitute>
@@ -67,7 +68,7 @@
     <choose>
       <if type="interview" match="any">
           <group delimiter=" ">
-             <names variable="producer creator inventor interviewer">
+             <names variable="producer creator inventor interviewer"><!-- TODO: error: value of attribute "variable" is invalid; token "creator" invalid; -->
                <name delimiter=" / " name-as-sort-order="all"/>
                <label form="short" prefix=" (" suffix=")"/>
             <substitute>
@@ -245,15 +246,17 @@
                   <text macro="page-range" prefix=", "/>
                  </group>
                 </else>
-                <else match="any" variable="event">
-                 <group delimiter=": ">
-                 <text term="in" text-case="capitalize-first"/>
+             </choose>
+             <choose>
+               <if match="any" variable="event">
+                <group delimiter=": ">
+                  <text term="in" text-case="capitalize-first"/>
                   <group delimiter=": " suffix=".">
                     <text variable="event" />
                   </group>
-                 </group>
-                </else>
-             </choose>
+                </group>
+              </if>
+            </choose>
               <text macro="online-url"/>
             </group>
           </else-if>

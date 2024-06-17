@@ -114,7 +114,7 @@
             <xed:if test="not($host_intern='standalone')">
               <fieldset>
                 <legend>
-                  <xed:output value="concat('erschienen in ',$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text,':')" />
+		  <xed:output value="concat(i18n:translate('ubo.select.host'),$genres//category[@ID=$host_intern]/label[lang($CurrentLang)]/@text,':')" />
                 </legend>
                 <xed:bind xpath="mods:relatedItem[@type='host']">
                   <xed:choose>
