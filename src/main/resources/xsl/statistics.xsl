@@ -717,9 +717,9 @@
   
           <table class="table table-bordered">
             <tr class="text-center">
-              <th>/</th>
+              <th scope="col">/</th>
               <xsl:for-each select="$base/lst">
-                <th>
+                <th scope="col">
                   <xsl:choose>
                   <xsl:when test="not(starts-with(i18n:translate(concat('user.profile.id.', str[@name='value'])),'???'))">
                     <xsl:value-of select="i18n:translate(concat('user.profile.id.', str[@name='value']))" />
@@ -734,7 +734,7 @@
             <xsl:for-each select="$base/lst">
               <xsl:variable name="a" select="str[@name='value']" />
               <tr class="text-right">
-                <th class="identifier">
+                <th class="identifier" scope="col">
                   <xsl:choose>
                   <xsl:when test="not(starts-with(i18n:translate(concat('user.profile.id.', str[@name='value'])),'???'))">
                     <xsl:value-of select="i18n:translate(concat('user.profile.id.', str[@name='value']))" />
