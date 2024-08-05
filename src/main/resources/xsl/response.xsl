@@ -50,6 +50,7 @@
     <xsl:otherwise>10</xsl:otherwise> <!-- guess, no way to find out -->
   </xsl:choose>
 </xsl:variable>
+<xsl:variable name="requestHandler" select="substring-before(substring-after($RequestURL, '/servlets/solr/'), '?')"/>
 
 <!-- ==================== Anzeige Seitentitel ==================== -->
 
