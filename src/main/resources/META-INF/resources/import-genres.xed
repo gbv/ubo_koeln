@@ -69,12 +69,28 @@
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
   </xed:template>
-  
+
+  <xed:template id="genre.poster_abstract">
+    <xed:include uri="webapp:import-genres.xed" ref="genre.abstract" />
+  </xed:template>
+
   <xed:template id="genre.chapter">
     <xed:include uri="webapp:import-editor.xed" ref="author" />
     <xed:include uri="webapp:import-koeln.xed"  ref="koeln.title" />
     <xed:include uri="webapp:import-editor.xed" ref="doi.urn.duepublico" />
     <xed:include uri="webapp:import-editor.xed" ref="url" />
+  </xed:template>
+
+  <xed:template id="genre.erratum">
+    <xed:include uri="webapp:import-genres.xed" ref="genre.article" />
+  </xed:template>
+
+  <xed:template id="genre.comment">
+    <xed:include uri="webapp:import-genres.xed" ref="genre.article" />
+  </xed:template>
+
+  <xed:template id="genre.preprint">
+    <xed:include uri="webapp:import-genres.xed" ref="genre.article" />
   </xed:template>
 
   <xed:template id="genre.preface">
