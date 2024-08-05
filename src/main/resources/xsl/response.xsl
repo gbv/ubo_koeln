@@ -189,7 +189,9 @@
     <div class="col-2">
       <xsl:if test="basket:hasSpace()">
         <span class="pageLink">
-          <a class="btn btn-sm btn-secondary" href="{$ServletsBaseURL}Results2Basket?solr={encoder:encode($exportParams,'UTF-8')}"><xsl:value-of select="i18n:translate('button.basketAdd')" /></a>
+          <a class="btn btn-sm btn-secondary" href="{$ServletsBaseURL}Results2Basket?rh={$requestHandler}&amp;solr={encoder:encode($exportParams,'UTF-8')}">
+            <xsl:value-of select="i18n:translate('button.basketAdd')" />
+          </a>
         </span>
       </xsl:if>
     </div>
