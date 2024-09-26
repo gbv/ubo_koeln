@@ -18,9 +18,15 @@
         <label xml:lang="de" text="Institut für die Wissenschaft der Sozialen Arbeit" />
         <label xml:lang="en" text="Institute for Research in Social Work" />
       </category>
+      <category ID="MIDI">
+        <label xml:lang="de" text="Institut für Migration und Diversität" />
+        <label xml:lang="en" text="Institut für Migration und Diversität" />
+        <label xml:lang="x-from" text="2023-01-01" />
+      </category>
       <category ID="INTERKULT">
-        <label xml:lang="de" text=" Institut für interkulturelle Bildung und Entwicklung" />
+        <label xml:lang="de" text="Institut für interkulturelle Bildung und Entwicklung" />
         <label xml:lang="en" text="Institute for Intercultural Education and Development" />
+        <label xml:lang="x-until" text="2022-12-31" />
       </category>
       <category ID="KJFE">
         <label xml:lang="de" text="Institut für Kindheit, Jugend, Familie und Erwachsene" />
