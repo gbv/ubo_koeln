@@ -10,15 +10,16 @@
 
   <xsl:output method="xml" encoding="UTF-8" />
 
-  <xsl:param name="CurrentLang" />
-  <xsl:param name="UBO.Login.Path" />
+  <xsl:param name="CurrentLang"/>
+  <xsl:param name="UBO.Login.Path"/>
   <xsl:param name="UBO.TestInstance" />
 
-  <xsl:variable name="jquery.version" select="'3.5.1'" />
-  <xsl:variable name="jquery-ui.version" select="'1.13.2'" />
-  <xsl:variable name="chosen.version" select="'1.8.7'" />
-  <xsl:variable name="bootstrap.version" select="'4.4.1'" />
-  <xsl:variable name="font-awesome.version" select="'5.13.0'" />
+  <xsl:param name="UBO.Frontend.jquery.version"/>
+  <xsl:param name="UBO.Frontend.jquery-ui.version"/>
+  <xsl:param name="UBO.Frontend.chosen.version"/>
+  <xsl:param name="UBO.Frontend.bootstrap.version"/>
+  <xsl:param name="UBO.Frontend.font-awesome.version"/>
+  <xsl:param name="User-Agent"/>
 
   <!-- ==================== IMPORTS ==================== -->
   <!-- additional stylesheets -->
