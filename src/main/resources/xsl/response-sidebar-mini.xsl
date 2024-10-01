@@ -11,6 +11,8 @@
   <xsl:include href="coreFunctions.xsl" />
 
   <xsl:param name="ServletsBaseURL" />
+  
+  <xsl:decimal-format name="WesternEurope" decimal-separator="," grouping-separator="."/>
 
   <xsl:template match="/response">
   
@@ -26,7 +28,7 @@
           <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal')" />
           <a href="{$ServletsBaseURL}solr/select?q=status:confirmed">
             <xsl:text> </xsl:text>
-            <xsl:value-of select="$numTotal"/>
+            <xsl:value-of select="format-number($numTotal, '##.###', 'WesternEurope')"/>
             <xsl:text> </xsl:text>
             <xsl:value-of select="i18n:translate('ubo.publications')" />
           </a>
@@ -37,7 +39,7 @@
         <xsl:value-of select="i18n:translate('ubo.numPublicationsTotal')" />
         <a href="{$ServletsBaseURL}solr/select?q=partOf:true+AND+status:confirmed">
           <xsl:text> </xsl:text>
-          <xsl:value-of select="result[@name='response']/@numFound"/>
+          <xsl:value-of select="format-number(result[@name='response']/@numFound, '##.###', 'WesternEurope')"/>
           <xsl:text> </xsl:text>
           <xsl:value-of select="i18n:translate('ubo.publications')" />
         </a>
@@ -51,7 +53,7 @@
                 <xsl:value-of select="@name"/>
                 <xsl:text>: </xsl:text>
                 <a href="{$ServletsBaseURL}solr/select?q=partOf:true+AND+status:confirmed+AND+year:{@name}">
-                  <xsl:value-of select="text()"/>
+                  <xsl:value-of select="format-number(text(), '##.###', 'WesternEurope')"/>
                   <xsl:text> </xsl:text>
                   <xsl:value-of select="i18n:translate('ubo.publications')" />
                 </a>
