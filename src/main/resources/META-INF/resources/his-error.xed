@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<webpage lastModified="2024-04-19" id="dozbib.his.error">
+<webpage lastModified="2024-09-26" id="dozbib.his.error">
  <title xml:lang="de">Fehlerbereich für KDSF-Mapping</title>
  <title xml:lang="en">Error section for KDSF mapping</title>
 
@@ -15,7 +15,7 @@
       </ul>
       <p>
         Importiert wird anhand der folgenden Query:
-        <a href="https://bibliografie.th-koeln.de/servlets/solr/select?core=main&q=status%3A%22confirmed%22+AND+NOT+genre%3A(%22journal%22+OR+%22patent%22+OR+%22newspaper%22+OR+%22series%22)+AND+objectType%3Amods&fl=*"
+        <a href="https://bibliografie.th-koeln.de/servlets/solr/select?core=main&amp;q=status%3A%22confirmed%22+AND+NOT+genre%3A(%22journal%22+OR+%22patent%22+OR+%22newspaper%22+OR+%22series%22)+AND+objectType%3Amods&amp;fl=*">
         Status ist "freigegeben" und ohne die Publikationstypen "Zeitschrift", "Patent", "Zeitung" und "Serie"></a>
       </p>
       <p>

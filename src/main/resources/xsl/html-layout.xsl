@@ -10,15 +10,16 @@
 
   <xsl:output method="xml" encoding="UTF-8" />
 
-  <xsl:param name="CurrentLang" />
-  <xsl:param name="UBO.Login.Path" />
+  <xsl:param name="CurrentLang"/>
+  <xsl:param name="UBO.Login.Path"/>
   <xsl:param name="UBO.TestInstance" />
 
-  <xsl:variable name="jquery.version" select="'3.5.1'" />
-  <xsl:variable name="jquery-ui.version" select="'1.13.2'" />
-  <xsl:variable name="chosen.version" select="'1.8.7'" />
-  <xsl:variable name="bootstrap.version" select="'4.4.1'" />
-  <xsl:variable name="font-awesome.version" select="'5.13.0'" />
+  <xsl:param name="UBO.Frontend.jquery.version"/>
+  <xsl:param name="UBO.Frontend.jquery-ui.version"/>
+  <xsl:param name="UBO.Frontend.chosen.version"/>
+  <xsl:param name="UBO.Frontend.bootstrap.version"/>
+  <xsl:param name="UBO.Frontend.font-awesome.version"/>
+  <xsl:param name="User-Agent"/>
 
   <!-- ==================== IMPORTS ==================== -->
   <!-- additional stylesheets -->
@@ -48,13 +49,13 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
       <link href="{$WebApplicationBaseURL}rsc/sass/scss/bootstrap-ubo.min.css" rel="stylesheet" />
-      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/jquery/{$jquery.version}/jquery.min.js"></script>
-      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/bootstrap/{$bootstrap.version}/js/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/chosen-js/{$chosen.version}/chosen.jquery.min.js"></script>
-      <link href="{$WebApplicationBaseURL}webjars/chosen-js/{$chosen.version}/chosen.min.css" rel="stylesheet" />
-      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/jquery-ui/{$jquery-ui.version}/jquery-ui.js"></script>
-      <link rel="stylesheet" href="{$WebApplicationBaseURL}webjars/jquery-ui/{$jquery-ui.version}/jquery-ui.css" type="text/css"/>
-      <link rel="stylesheet" href="{$WebApplicationBaseURL}webjars/font-awesome/{$font-awesome.version}/css/all.css" type="text/css"/>
+      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/jquery/{$UBO.Frontend.jquery.version}/jquery.min.js"></script>
+      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/bootstrap/{$UBO.Frontend.bootstrap.version}/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/chosen-js/{$UBO.Frontend.chosen.version}/chosen.jquery.min.js"></script>
+      <link href="{$WebApplicationBaseURL}webjars/chosen-js/{$UBO.Frontend.chosen.version}/chosen.min.css" rel="stylesheet" />
+      <script type="text/javascript" src="{$WebApplicationBaseURL}webjars/jquery-ui/{$UBO.Frontend.jquery-ui.version}/jquery-ui.js"></script>
+      <link rel="stylesheet" href="{$WebApplicationBaseURL}webjars/jquery-ui/{$UBO.Frontend.jquery-ui.version}/jquery-ui.css" type="text/css"/>
+      <link rel="stylesheet" href="{$WebApplicationBaseURL}webjars/font-awesome/{$UBO.Frontend.font-awesome.version}/css/all.css" type="text/css"/>
       <link rel="stylesheet" href="https://webfonts.gbv.de/css?family=Droid+Sans|Droid+Sans+Mono:300,400" type="text/css" />
       <link rel="stylesheet" href="https://webfonts.gbv.de/css?family=Roboto:300,400" type="text/css" />
       <link rel="stylesheet" href="https://webfonts.gbv.de/css?family=Roboto+Condensed:300,400" type="text/css" />
@@ -63,8 +64,8 @@
 
       <script type="text/javascript">var webApplicationBaseURL = '<xsl:value-of select="$WebApplicationBaseURL" />';</script>
       <script type="text/javascript">var currentLang = '<xsl:value-of select="$CurrentLang" />';</script>
-      <script type="text/javascript" src="{$WebApplicationBaseURL}js/session-polling.js"></script>
-      <script type="text/javascript" src="{$WebApplicationBaseURL}js/person-popover.js"></script>
+      <script type="text/javascript" src="{$WebApplicationBaseURL}js/session-polling.js" />
+      <script type="text/javascript" src="{$WebApplicationBaseURL}js/person-popover.js" />
       <xsl:copy-of select="node()" />
     </head>
   </xsl:template>
