@@ -7,16 +7,16 @@
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 exclude-result-prefixes="fn mods xsl">
 
-  <xsl:import href="resource:xsl/orcid2/v3/mcr2work_generic.xsl"/>
+  <xsl:import href="resource:xslt/orcid2/v3/mcr2work_generic.xsl"/>
 
   <xsl:param name="MCR.ORCID2.Genre.Mapping.Default.Genre" select="'journal-article'"/>
 
   <xsl:template name="workType">
     <xsl:choose>
-      <xsl:when test="mods:classification[@generator = 'ubogenre2orcidWorkType-mycore'][@valueURI][@authorityURI]">
+      <xsl:when test="mods:classification[@generator = 'xpathmapping2orcidWorkType-mycore'][@valueURI][@authorityURI]">
         <work:type>
           <xsl:value-of
-            select="fn:substring-after(mods:classification[@generator = 'ubogenre2orcidWorkType-mycore']/@valueURI, '#')"/>
+            select="fn:substring-after(mods:classification[@generator = 'xpathmapping2orcidWorkType-mycore']/@valueURI, '#')"/>
         </work:type>
       </xsl:when>
       <xsl:otherwise>
