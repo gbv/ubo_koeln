@@ -16,7 +16,7 @@
       <label xml:lang="de" text="Buch"/>
       <label xml:lang="en" text="Book"
              description="Books written by a single author or collaboratively based on research or scholarly findings generally derived from peer reviewed funding."/>
-      <label xml:lang="x-mapping-xpath" text="{pattern:genre(book)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})" />
+      <label xml:lang="x-mapping-xpath" text="({pattern:genre(book)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(collection)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(proceedings)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(lexicon)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(festschrift)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)}))" />
     </category>
     <category ID="book-chapter">
       <label xml:lang="de" text="Buchkapitel"/>
@@ -49,7 +49,6 @@
       <label xml:lang="de" text="Herausgegebenes Buch"/>
       <label xml:lang="en" text="Edited book"
              description="Books edited by a single author or collaboratively for the dissemination of research or scholarly findings that generally result from peer reviewed funding."/>
-      <label xml:lang="x-mapping-xpath" text="({pattern:genre(collection)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(proceedings)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(lexicon)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)})) or ({pattern:genre(festschrift)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(series)}))" />
     </category>
     <category ID="encyclopaedia-entry">
       <label xml:lang="de" text="Enzyklopädieeintrag"/>
@@ -76,6 +75,7 @@
     <category ID="manual">
       <label xml:lang="de" text="Handbuch"/>
       <label xml:lang="en" text="Manual" description="Course and assignment materials produced for teaching purposes."/>
+      <label xml:lang="x-mapping-xpath" text="{pattern:genre(lecture)} and (not(mods:relatedItem[@type='host']) or {pattern:host-genre(blog)})" />
     </category>
     <category ID="newsletter-article">
       <label xml:lang="de" text="Newsletter Artikel"/>
