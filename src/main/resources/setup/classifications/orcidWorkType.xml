@@ -50,7 +50,7 @@
       <label xml:lang="en" text="Edited book"
              description="Books edited by a single author or collaboratively for the dissemination of research or scholarly findings that generally result from peer reviewed funding."/>
     </category>
-    <category ID="encyclopaedia-entry">
+    <category ID="encyclopedia-entry">
       <label xml:lang="de" text="Enzyklopädieeintrag"/>
       <label xml:lang="en" text="Encyclopaedia entry"
              description="Authored entries in a reference work or a compendium focusing on a particular domain or on all branches of knowledge."/>
