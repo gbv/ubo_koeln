@@ -90,12 +90,6 @@ div.ubo-person.is-invalid {
   border: 1px #dc3545 solid !important;
 }
 
-.bootstrap-select {
-  .dropdown-menu {
-    width: 100%;
-  }
-}
-
 // TODO: what is the intension of this? clean up!
 @media only screen and (min-width : 1200px) {
   .container { width: 1170px; }
