@@ -22,7 +22,15 @@
       <![CDATA[
       $(document).ready(function() {
       
-        $('select[class*="autocomplete"]').chosen({search_contains: true}); 
+        $('select[class*="autocomplete"]').selectpicker({
+          liveSearch:true,
+          liveSearchNormalize:true,
+          virtualScroll:true,
+          showSubtext:true,
+          size:10,
+          width:'auto',
+          dropupAuto: false
+        });
       
         $(document).popover({
           selector: "[data-toggle=popover]",
@@ -120,11 +128,11 @@
         <label for="{xed:generate-id()}" class="mycore-form-label ubo-mandatory">
           <xed:output value="concat(i18n:translate('ubo.subject'), ': ')" />
         </label>
-        <select id="{xed:generate-id()}" class="autocomplete mycore-form-input">
+        <select id="{xed:generate-id()}" class="autocomplete mycore-form-input" data-container="form-group" data-display="static">
           <option value="">
             <xed:output i18n="search.select.autocomplete" />
           </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:fachreferate" />
+          <xed:include uri="xslStyle:mycoreclass-options:classification:metadata:-1:children:fachreferate" />
         </select>
         <xed:controls />
       </div>
@@ -147,9 +155,9 @@
           </label>
         </xed:otherwise>
       </xed:choose>
-        <select id="{xed:generate-id()}" class="autocomplete {$xed-validation-marker} mycore-form-input">
+        <select id="{xed:generate-id()}" class="autocomplete {$xed-validation-marker} mycore-form-input" data-container="form-group" data-display="static">
           <option value=""><xed:output i18n="search.select.autocomplete" /></option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:ORIGIN" />
+          <xed:include uri="xslStyle:mycoreclass-options:classification:metadata:-1:children:ORIGIN" />
         </select>
         <a tabindex="0" class="btn btn-secondary info-button" role="button" data-toggle="popover" data-placement="right" data-content="{i18n:ubo.help.department}">
           <i class="fas fa-info"></i>
