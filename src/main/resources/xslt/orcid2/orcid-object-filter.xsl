@@ -4,13 +4,13 @@
   xmlns:mods="http://www.loc.gov/mods/v3"
   exclude-result-prefixes="xsl">
 
-  <xsl:include href="copynodes.xsl" />
+  <xsl:mode on-no-match="shallow-copy"/>
 
-  <xsl:template match="/">
+  <xsl:template match="mycoreobject">
     <xsl:choose>
-      <xsl:when test="//servflag[@type='status'] = 'confirmed'">
+      <xsl:when test="//servflag[@type='status'] != 'confirmed'">
         <mycoreobject>
-          <xsl:apply-templates select="@*" />
+          <xsl:apply-templates select="./@*" />
           <xsl:apply-templates select="structure" />
           <!-- create empty mods container -->
           <metadata>
@@ -22,10 +22,11 @@
           </metadata>
           <xsl:apply-templates select="service" />
         </mycoreobject>
-        <xsl:apply-templates />
       </xsl:when>
       <xsl:otherwise>
-        <xsl:apply-templates />
+        <mycoreobject>
+          <xsl:apply-templates />
+        </mycoreobject>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
