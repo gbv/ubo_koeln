@@ -15,6 +15,22 @@
 
 <xsl:template match="*|@*" /> <!-- ignore all other unsupported elements and attributes -->
 
+<xsl:template match="mycoreobject">
+  <xsl:copy>
+    <xsl:copy-of select="@*"/>
+    <xsl:copy-of select="structure"/>
+    <xsl:apply-templates select="metadata" />
+    <xsl:copy-of select="service"/>
+  </xsl:copy>
+</xsl:template>
+
+<xsl:template match="mycoreobject/metadata|def.modsContainer|modsContainer">
+  <xsl:copy>
+    <xsl:copy-of select="@*"/>
+    <xsl:apply-templates />
+  </xsl:copy>
+</xsl:template>
+
 <xsl:template match="mods:mods">
   <xsl:copy>
     <xsl:apply-templates select="mods:genre|mods:titleInfo|mods:typeOfResource|mods:name|mods:classification|mods:originInfo|mods:dateIssued|mods:physicalDescription|mods:identifier|mods:relatedItem|mods:note|mods:extension|mods:location|mods:subject|mods:abstract|mods:language" />
@@ -25,7 +41,7 @@
   <xsl:call-template name="copy-and-apply" />
 </xsl:template>
 
-<xsl:template match="mods:genre[@type='intern'][1]|mods:genre/@type">
+<xsl:template match="mods:genre[@type='intern'][1]|mods:genre/@type|mods:genre/@authorityURI|mods:genre/@valueURI">
   <xsl:call-template name="copy-and-apply" />
 </xsl:template>
 
