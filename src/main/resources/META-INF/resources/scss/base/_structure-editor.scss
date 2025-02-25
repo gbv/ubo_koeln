@@ -12,20 +12,21 @@
       border: 1px solid $gray-300;
       border-radius: .25rem;
       padding: 0.5rem;
+      margin-top: 0.5rem;
       &--info {
         color: $body-color;
         background-color: $white;
-        border: solid 5px #17a2b8;
+        border-left: solid 1rem #17a2b8;
       }
       &--warning {
         color: $body-color;
         background-color: $white;
-        border: solid 5px #ffc107;
+        border-left: solid 1rem #ffc107;
       }
       &--success {
         color: $body-color;
         background-color: $white;
-        border: solid 5px #28a745;
+        border-left: solid 1rem #28a745;
       }
       .ubo-details {
         border-top: 1px solid $gray-300;
