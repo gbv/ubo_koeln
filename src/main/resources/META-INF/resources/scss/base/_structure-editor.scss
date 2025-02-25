@@ -15,14 +15,17 @@
       &--info {
         color: $body-color;
         background-color: $white;
+        border: solid 5px #17a2b8;
       }
       &--warning {
         color: $body-color;
         background-color: $white;
+        border: solid 5px #ffc107;
       }
       &--success {
         color: $body-color;
         background-color: $white;
+        border: solid 5px #28a745;
       }
       .ubo-details {
         border-top: 1px solid $gray-300;
