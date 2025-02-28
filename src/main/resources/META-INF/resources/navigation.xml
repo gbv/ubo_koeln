@@ -32,6 +32,10 @@
     <item ref="import-list.xed" role="admin">
       <label xml:lang="de">Administratives</label>
       <label xml:lang="en">administrative</label>
+      <item ref="dedup/" role="admin">
+        <label xml:lang="de">Dubletten</label>
+        <label xml:lang="en">Duplicates</label>
+      </item>
       <item id="dozbib.import.list" ref="import-list.xed" role="admin">
         <label xml:lang="de">Literaturliste importieren</label>
         <label xml:lang="en">Import publication list</label>
