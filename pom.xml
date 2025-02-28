@@ -140,6 +140,11 @@
       <groupId>org.mycore.ubo</groupId>
       <artifactId>ubo-common</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
