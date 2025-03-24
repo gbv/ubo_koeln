@@ -68,7 +68,7 @@
       <label xml:lang="de">ACL-Editor</label>
       <label xml:lang="en">ACL Editor</label>
     </item>
-    <item id="dozbib.duplicates" ref="duplicates.xml" role="admin">
+    <item  id="dozbib.duplicates" ref="dedup/" role="admin">
       <label xml:lang="de">Dubletten-Bericht</label>
       <label xml:lang="en">Duplicates report</label>
     </item>

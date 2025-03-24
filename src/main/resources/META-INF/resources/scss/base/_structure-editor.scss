@@ -34,8 +34,9 @@
         background-color: $gray-100;
       }
       .modal-content {
-        background: $secondary;
-        color: $white;
+        color: $body-color;
+        background: $white;
+        border-left: solid 1rem $secondary;
       }
     }
   }
