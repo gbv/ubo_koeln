@@ -180,8 +180,6 @@
           <if type="book" match="any">
             <group delimiter=". ">
               <text macro="edition"/>
-              <choose>
-                <if match="any" variable="collection-title">
                  <group>
                   <text macro="publication-place-publisher"/>
                   <group delimiter=", " prefix=" (" suffix=")">
@@ -189,16 +187,6 @@
                    <text variable="volume"/>
                   </group>
                  </group>
-                </if>
-                <else-if match="none" variable="collection-title">
-                 <group delimiter=": ">
-                  <text term="in" text-case="capitalize-first"/>
-                  <group delimiter=": " suffix=".">
-                   <text variable="container-title"/>
-                  </group>
-                 </group>  
-                </else-if>
-             </choose>
              <text macro="online-url"/>
             </group>
           </if>
@@ -217,6 +205,7 @@
                  <text variable="number" prefix="Artikel "/>
                 </group>
               </group>
+            <text macro="online-url"/>
            </group>
           </else-if>
           <else-if type="article" match="any">
@@ -247,19 +236,43 @@
                  </group>
                 </else>
              </choose>
-             <choose>
-               <if match="any" variable="event">
-                <group delimiter=": ">
-                  <text term="in" text-case="capitalize-first"/>
-                  <group delimiter=": " suffix=".">
-                    <text variable="event" />
-                  </group>
-                </group>
-              </if>
-            </choose>
-              <text macro="online-url"/>
+      <text macro="online-url"/>
             </group>
           </else-if>
+     <else-if type="paper-conference" match="any">
+      <group delimiter=". ">
+              <text macro="editor-container-title"/>
+              <text macro="edition"/>
+              <choose>
+                <if match="any" variable="issue">
+                <group delimiter=", ">
+                  <group delimiter=" ">
+                    <text variable="volume" prefix="Jg. "/>
+                    <text variable="issue" prefix="Nr. "/>
+                  </group>
+                    <group delimiter=", " prefix=", ">
+                    <text variable="page" prefix="S. "/>
+                    <text variable="number" prefix="Artikel "/>
+                  </group>
+                 </group>
+                </if>
+          <else>
+                 <group>
+                  <text macro="publication-place-publisher"/>
+                  <group delimiter=", " prefix=" (" suffix=")">
+                   <text variable="collection-title"/>
+                   <text variable="volume"/>
+                  </group>
+                  <group delimiter=", " prefix=", ">
+                 <text variable="page" prefix="S. "/>
+                 <text variable="number" prefix="Artikel "/>
+                </group>
+                 </group>
+                </else>
+             </choose>
+            <text macro="online-url"/>
+       </group>
+     </else-if> 
           <else-if type="article-journal article-magazine article-newspaper" match="any">
             <group delimiter=". ">
               <group delimiter=": ">
@@ -291,14 +304,15 @@
           <else-if type="thesis" match="any">
             <group delimiter=". ">
               <text macro="edition"/>
-              <text macro="publication-place-publisher"/>
-              <text macro="collection-title-number"/>
-              <group delimiter=", " prefix="(" suffix=")">
-                <text variable="container-title"/>
-                <text variable="volume"/>
-              </group>
+        <group>
+                  <text macro="publication-place-publisher"/>
+                  <group delimiter=", " prefix=" (" suffix=")">
+                   <text variable="collection-title"/>
+                   <text variable="volume"/>
+                 </group>
+         </group>
               <text macro="online-url"/>
-            </group>
+       </group>
           </else-if>
           <else-if type="review" match="any">
             <group delimiter=" ">
@@ -313,15 +327,18 @@
           <else-if type="speech" match="any">
             <group delimiter=". ">
               <text macro="editor-container-title"/>
-              <text macro="collection-title-number"/>
               <text macro="edition"/>
-              <text macro="publication-place-publisher"/>
-              <group delimiter=" ">
-                <text variable="volume" prefix="Jg. "/>
-                <text variable="issue" prefix="Nr. "/>
-              </group>
+         <group>
+               <text macro="publication-place-publisher"/>
+                <group delimiter=", " prefix=" (" suffix=")">
+                 <text variable="collection-title"/>
+                 <text variable="volume"/>
+                </group>
+          <group delimiter=", " prefix=", ">
               <text macro="page-range"/>
               <text macro="online-url"/>
+       </group>
+            </group>
             </group>
           </else-if>
           <else-if type="patent" match="any">
