@@ -106,7 +106,7 @@
 
             </div>
         </div>
-        <script src="vue/vue.min.js"/>
+        <script src="js/vue.min.js"/>
         <script><![CDATA[
             const proxyUrl = "servlets/solr/";
             const requestHandlerUrl = proxyUrl + "select2";
