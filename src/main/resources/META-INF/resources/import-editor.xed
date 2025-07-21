@@ -833,8 +833,8 @@
           <xed:output value="concat(i18n:translate('ubo.language'), ': ')" />
         </label>
         <xed:bind xpath="mods:languageTerm[@type='code'][@authority='rfc5646']">
-          <div class="language-search d-inline" data-preferred-languages="de,en,fr">
-            <input id="{xed:generate-id(..)}" type="hidden" class="language-search-input"/>
+          <div class="language-search" data-preferred-languages="de,en,fr">
+            <input id="{xed:generate-id()}" type="hidden" class="language-search-input"/>
             <!-- content is added by javascript -->
           </div>
         </xed:bind>
@@ -850,8 +850,8 @@
           <label for="{xed:generate-id()}" class="mycore-form-label">
             <xed:output value="concat(i18n:translate('ubo.abstract.in'), ': ')" />
           </label>
-          <div class="language-search d-inline" data-preferred-languages="de,en,fr">
-            <input id="{xed:generate-id(..)}" type="hidden" class="language-search-input"/>
+          <div class="language-search" data-preferred-languages="de,en,fr">
+            <input id="{xed:generate-id()}" type="hidden" class="language-search-input"/>
             <!-- content is added by javascript -->
           </div>
         </xed:bind>
