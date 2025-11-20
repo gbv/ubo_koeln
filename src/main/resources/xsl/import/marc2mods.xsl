@@ -5997,7 +5997,7 @@
 		<!-- 1.121 -->
 		<xsl:if test="@tag='490' or (@tag='880' and not(../marc:datafield[@tag='490'][@ind1='0' or @ind1=' '][substring(marc:subfield[@code='6'],5,2) = $s6]))">
 		<relatedItem type="series">
-			<genre authorityURI="https://bibliografie.th-koeln.de/classifications/ubogenre" valueURI="https://bibliografie.th-koeln.de/classifications/ubogenre#series" type="intern" />
+			<genre>series</genre>
 			<xsl:for-each
 				select=". | ../marc:datafield[@tag='880'][starts-with(marc:subfield[@code='6'],'490')][substring(marc:subfield[@code='6'],5,2) = $s6]">
 				<titleInfo>

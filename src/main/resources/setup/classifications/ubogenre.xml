@@ -131,5 +131,10 @@
       <label xml:lang="en" text="Teaching material" />
       <label xml:lang="x-hosts" text="standalone blog" />
     </category>
+    <category ID="unknown">
+      <label xml:lang="de" text="unbekannt vom Import" />
+      <label xml:lang="en" text="unkown from import" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
   </categories>
 </mycoreclass>
