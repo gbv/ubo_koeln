@@ -338,7 +338,7 @@
 				<xsl:attribute name="manuscript">yes</xsl:attribute>
 			</xsl:if>
 			<xsl:choose>
-				xsl:when test="$leader6='a' or $leader6='t'">txt</xsl:when>
+				<xsl:when test="$leader6='a' or $leader6='t'">txt</xsl:when>
 				<xsl:when test="$leader6='e' or $leader6='f'">cartographic</xsl:when>
 				<xsl:when test="$leader6='c' or $leader6='d'">aud</xsl:when>
 				<xsl:when test="$leader6='i'">aud</xsl:when>
@@ -347,7 +347,7 @@
 				<xsl:when test="$leader6='g'">img</xsl:when>
 				<xsl:when test="$leader6='r'">three dimensional object</xsl:when>
 				<xsl:when test="$leader6='m'">mul</xsl:when>
-				xsl:when test="$leader6='p'">mixed material</xsl:when>
+				<xsl:when test="$leader6='p'">mixed material</xsl:when>
 				<xsl:otherwise>txt</xsl:otherwise>
 				<!-- xsl:when test="$leader6='a' or $leader6='t'">text</xsl:when>
 				<xsl:when test="$leader6='e' or $leader6='f'">cartographic</xsl:when>
