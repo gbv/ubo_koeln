@@ -338,7 +338,18 @@
 				<xsl:attribute name="manuscript">yes</xsl:attribute>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="$leader6='a' or $leader6='t'">text</xsl:when>
+				xsl:when test="$leader6='a' or $leader6='t'">txt</xsl:when>
+				<xsl:when test="$leader6='e' or $leader6='f'">cartographic</xsl:when>
+				<xsl:when test="$leader6='c' or $leader6='d'">aud</xsl:when>
+				<xsl:when test="$leader6='i'">aud</xsl:when>
+				<xsl:when test="$leader6='j'">aud</xsl:when>
+				<xsl:when test="$leader6='k'">img</xsl:when>
+				<xsl:when test="$leader6='g'">img</xsl:when>
+				<xsl:when test="$leader6='r'">three dimensional object</xsl:when>
+				<xsl:when test="$leader6='m'">mul</xsl:when>
+				xsl:when test="$leader6='p'">mixed material</xsl:when>
+				<xsl:otherwise>txt</xsl:otherwise>
+				<!-- xsl:when test="$leader6='a' or $leader6='t'">text</xsl:when>
 				<xsl:when test="$leader6='e' or $leader6='f'">cartographic</xsl:when>
 				<xsl:when test="$leader6='c' or $leader6='d'">notated music</xsl:when>
 				<xsl:when test="$leader6='i'">sound recording-nonmusical</xsl:when>
@@ -347,7 +358,7 @@
 				<xsl:when test="$leader6='g'">moving image</xsl:when>
 				<xsl:when test="$leader6='r'">three dimensional object</xsl:when>
 				<xsl:when test="$leader6='m'">software, multimedia</xsl:when>
-				<xsl:when test="$leader6='p'">mixed material</xsl:when>
+				<xsl:when test="$leader6='p'">mixed material</xsl:when -->
 			</xsl:choose>
 		</typeOfResource>
 		<xsl:if test="substring($controlField008,26,1)='d'">
@@ -3341,12 +3352,24 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="nameABCDQ">
-		<namePart>
-			<!-- 1.126 -->
+		<xsl:choose>
+			<xsl:when test="contains(marc:subfield[@code='a'], ',')">
+				<namePart type="family">
+					<xsl:value-of select="substring-before(marc:subfield[@code='a'], ',')" />
+				</namePart>
+				<namePart type="given">
+					<xsl:value-of select="substring-after(marc:subfield[@code='a'], ',')" />
+				</namePart>
+			</xsl:when>
+			<xsl:otherwise>
+				<namePart>
+					<!-- 1.126 -->
 					<xsl:call-template name="subfieldSelect">
 						<xsl:with-param name="codes">aq</xsl:with-param>
 					</xsl:call-template>
-		</namePart>
+				</namePart>
+			</xsl:otherwise>
+		</xsl:choose>
 		<xsl:call-template name="termsOfAddress"/>
 		<xsl:call-template name="nameDate"/>
 	</xsl:template>
@@ -6750,41 +6773,41 @@
 			</xsl:if>
 			<xsl:if test="($controlField008-6='e' or $controlField008-6='p' or $controlField008-6='r' or $controlField008-6='s' or $controlField008-6='t') and not($leader6='d' or $leader6='f' or $leader6='p' or $leader6='t')">
 				<xsl:if test="$controlField008-7-10 and ($controlField008-7-10 != $dataField260c)">
-					<dateIssued encoding="marc">
+					<dateIssued encoding="w3cdtf">
 						<xsl:value-of select="$controlField008-7-10"/></dateIssued>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="$controlField008-6='c' or $controlField008-6='d' or $controlField008-6='i' or $controlField008-6='k' or $controlField008-6='m' or $controlField008-6='u'">
 				<xsl:if test="$controlField008-7-10">
-					<dateIssued encoding="marc" point="start">
+					<dateIssued encoding="w3cdtf" point="start">
 						<xsl:value-of select="$controlField008-7-10"/>
 					</dateIssued>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="$controlField008-6='c' or $controlField008-6='d' or $controlField008-6='i' or $controlField008-6='k' or $controlField008-6='m' or $controlField008-6='u'">
 				<xsl:if test="$controlField008-11-14">
-					<dateIssued encoding="marc" point="end">
+					<dateIssued encoding="w3cdtf" point="end">
 						<xsl:value-of select="$controlField008-11-14"/>
 					</dateIssued>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="$controlField008-6='q'">
 				<xsl:if test="$controlField008-7-10">
-					<dateIssued encoding="marc" point="start" qualifier="questionable">
+					<dateIssued encoding="w3cdtf" point="start" qualifier="questionable">
 						<xsl:value-of select="$controlField008-7-10"/>
 					</dateIssued>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="$controlField008-6='q'">
 				<xsl:if test="$controlField008-11-14">
-					<dateIssued encoding="marc" point="end" qualifier="questionable">
+					<dateIssued encoding="w3cdtf" point="end" qualifier="questionable">
 						<xsl:value-of select="$controlField008-11-14"/>
 					</dateIssued>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="$controlField008-6='t'">
 				<xsl:if test="$controlField008-11-14">
-					<copyrightDate encoding="marc">
+					<copyrightDate encoding="w3cdtf">
 						<xsl:value-of select="$controlField008-11-14"/>
 					</copyrightDate>
 				</xsl:if>
@@ -7047,22 +7070,22 @@
 			</dateModified>
 		</xsl:for-each>
 		<xsl:for-each select="marc:subfield[@code='c']">
-			<dateIssued encoding="marc" point="start">
+			<dateIssued encoding="w3cdtf" point="start">
 				<xsl:value-of select="."/>
 			</dateIssued>
 		</xsl:for-each>
 		<xsl:for-each select="marc:subfield[@code='e']">
-			<dateIssued encoding="marc" point="end">
+			<dateIssued encoding="w3cdtf" point="end">
 				<xsl:value-of select="."/>
 			</dateIssued>
 		</xsl:for-each>
 		<xsl:for-each select="marc:subfield[@code='k']">
-			<dateCreated encoding="marc" point="start">
+			<dateCreated encoding="w3cdtf" point="start">
 				<xsl:value-of select="."/>
 			</dateCreated>
 		</xsl:for-each>
 		<xsl:for-each select="marc:subfield[@code='l']">
-			<dateCreated encoding="marc" point="end">
+			<dateCreated encoding="w3cdtf" point="end">
 				<xsl:value-of select="."/>
 			</dateCreated>
 		</xsl:for-each>
