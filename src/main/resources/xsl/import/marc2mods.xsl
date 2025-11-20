@@ -647,7 +647,7 @@
 	
 <!-- 111$n, 711$n 1.103 -->	
 		
-		<xsl:if test="$typeOf008='BK'">
+		<!-- xsl:if test="$typeOf008='BK'">
 			<xsl:variable name="controlField008-28" select="substring($controlField008,29,1)"/>
 			<xsl:choose>
 				<xsl:when test="contains($controlField008-28,'a')">
@@ -851,7 +851,7 @@
 					<genre authority="marcgt">government publication</genre>
 				</xsl:when>
 			</xsl:choose>
-		</xsl:if>
+		</xsl:if -->
 		
 
 		<!-- genre -->
