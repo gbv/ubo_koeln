@@ -1851,7 +1851,7 @@
 		</xsl:for-each>
 
 		<!-- 1.120 - @490$ind1 -->
-		<xsl:for-each select="marc:datafield[@tag=490][@ind1='0' or @ind1=' '] | marc:datafield[@tag='880'][@ind1='0' or @ind1=' '][starts-with(marc:subfield[@code='6'],'490')]">
+		<xsl:for-each select="marc:datafield[@tag=490][@ind1='0' or @ind1=' ' or @ind1='1'] | marc:datafield[@tag='880'][@ind1='0' or @ind1=' '][starts-with(marc:subfield[@code='6'],'490')]">
 			<xsl:call-template name="createRelatedItemFrom490"/>
 		</xsl:for-each>
 
@@ -5972,8 +5972,9 @@
 	<xsl:template name="createRelatedItemFrom490">
 		<xsl:variable name="s6" select="substring(normalize-space(marc:subfield[@code='6']), 5, 2)"/>
 		<!-- 1.121 -->
-		<xsl:if test="@tag=490 or (@tag='880' and not(../marc:datafield[@tag='490'][@ind1='0' or @ind1=' '][substring(marc:subfield[@code='6'],5,2) = $s6]))">
+		<xsl:if test="@tag='490' or (@tag='880' and not(../marc:datafield[@tag='490'][@ind1='0' or @ind1=' '][substring(marc:subfield[@code='6'],5,2) = $s6]))">
 		<relatedItem type="series">
+			<genre authorityURI="https://bibliografie.th-koeln.de/classifications/ubogenre" valueURI="https://bibliografie.th-koeln.de/classifications/ubogenre#series" type="intern" />
 			<xsl:for-each
 				select=". | ../marc:datafield[@tag='880'][starts-with(marc:subfield[@code='6'],'490')][substring(marc:subfield[@code='6'],5,2) = $s6]">
 				<titleInfo>
@@ -5987,19 +5988,23 @@
 							</xsl:with-param>
 						</xsl:call-template>
 					</title>
+				</titleInfo>
 					<!-- 1.120 - @490$v -->
 					<xsl:if test="marc:subfield[@code='v']">
-						<partNumber>
-							<xsl:call-template name="chopPunctuation">
-								<xsl:with-param name="chopString">
-									<xsl:call-template name="subfieldSelect">
-										<xsl:with-param name="codes">v</xsl:with-param>
+						<part>
+							<detail type="volume">
+								<number>
+									<xsl:call-template name="chopPunctuation">
+										<xsl:with-param name="chopString">
+											<xsl:call-template name="subfieldSelect">
+												<xsl:with-param name="codes">v</xsl:with-param>
+											</xsl:call-template>
+										</xsl:with-param>
 									</xsl:call-template>
-								</xsl:with-param>
-							</xsl:call-template>
-						</partNumber>
+								</number>
+							</detail>
+						</part>
 					</xsl:if>
-				</titleInfo>
 			</xsl:for-each>
 		</relatedItem>
 		</xsl:if>
@@ -6097,12 +6102,15 @@
 	<!-- accessCondition 506 540 1.87 20130829-->
 
 	<xsl:template name="createAccessConditionFrom506">
-		<accessCondition type="restriction on access">
+		<xsl:if test="marc:subfield[@code='f']='open access'" >
+			<classification xmlns:xlink="http://www.w3.org/1999/xlink" valueURI="https://bibliografie.th-koeln.de/classifications/accessrights#oa" authorityURI="https://bibliografie.th-koeln.de/classifications/accessrights" />
+		</xsl:if>
+		<!-- accessCondition type="restriction on access">
 			<xsl:call-template name="xxx880"/>
 			<xsl:call-template name="subfieldSelect">
 				<xsl:with-param name="codes">abcd35</xsl:with-param>
 			</xsl:call-template>
-		</accessCondition>
+		</accessCondition -->
 	</xsl:template>
 
 	<xsl:template name="createAccessConditionFrom540">
@@ -6135,7 +6143,7 @@
 				</xsl:choose>
 			</xsl:when>
 			<xsl:when
-				test="self::marc:datafield[@tag='880'][starts-with(marc:subfield[@code='6'],'240')]">
+				test="self::marc:datafield[@tag='700'] or self::marc:datafield[@tag='880'][starts-with(marc:subfield[@code='6'],'240')]">
 				<xsl:choose>
 					<xsl:when
 						test="../marc:datafield[@tag='880'][starts-with(marc:subfield[@code='6'],'100')] or 

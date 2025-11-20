@@ -63,7 +63,7 @@
   <xsl:call-template name="copy-and-apply" />
 </xsl:template>
 
-<xsl:template match="mods:role[1]|mods:roleTerm[@type='code'][@authority='marcrelator'][1]|mods:roleTerm/@type|mods:roleTerm/@authority">
+<xsl:template match="mods:role[not(ancestor::mods:name[@type='conference'])][1]|mods:roleTerm[@type='code'][@authority='marcrelator'][1]|mods:roleTerm/@type|mods:roleTerm/@authority">
   <xsl:call-template name="copy-and-apply" />
 </xsl:template>
 
