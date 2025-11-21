@@ -82,7 +82,7 @@
       <xsl:when test="$genre='conference abstract'">abstract</xsl:when>
       <xsl:when test="$genre='conference review'">proceedings</xsl:when>
       <xsl:when test="$genre='conference proceedings'">proceedings</xsl:when>
-      <xsl:when test="$genre='conferenceObject'">conference_essay</xsl:when>
+      <xsl:when test="$genre='conferenceobject'">conference_essay</xsl:when>
       <xsl:when test="$genre='conference object'">conference_essay</xsl:when>
       <xsl:when test="$genre='editorial'">preface</xsl:when>
       <xsl:when test="$genre='dissertation'">dissertation</xsl:when>
@@ -184,5 +184,15 @@
   </xsl:template>
 
   <xsl:template match="mods:relatedItem[@type='series']/mods:genre">series</xsl:template>
+
+  <!-- TODO: seperate?! -->
+  <xsl:template match="mods:language[mods:languageTerm/@authority!='rfc5646']">
+    <mods:language>
+      <mods:languageTerm type="code" authority="rfc5646">
+        <xsl:variable name="given" select="translate(mods:languageTerm,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')" />
+        <xsl:value-of select="document('classification:metadata:-1:children:rfc5646')/mycoreclass/categories/category[@ID=$given or label[translate(@text,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')=$given]][1]/@ID" />
+      </mods:languageTerm>
+    </mods:language>
+  </xsl:template>
 
 </xsl:stylesheet>
