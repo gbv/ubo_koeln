@@ -16,7 +16,7 @@
       <p>
         Importiert wird anhand der folgenden Query:
         <a href="https://bibliografie.th-koeln.de/servlets/solr/select?core=main&amp;q=status%3A%22confirmed%22+AND+NOT+genre%3A(%22journal%22+OR+%22patent%22+OR+%22newspaper%22+OR+%22series%22)+AND+objectType%3Amods&amp;fl=*">
-        Status ist "freigegeben" und ohne die Publikationstypen "Zeitschrift", "Patent", "Zeitung" und "Serie"></a>
+        Status ist "freigegeben" und ohne die Publikationstypen "Zeitschrift", "Patent", "Zeitung" und "Serie"</a>
       </p>
       <p>
         Folgende Datensätze werden aufgrund von fehlenden Einträgen in den Mappings nicht übernommen:
@@ -29,7 +29,7 @@
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li>
             <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li -->
           </ul>
-        </li -->
+        </li>
         <!-- li>Buchaufsatz / Kapitel in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Achapter+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
