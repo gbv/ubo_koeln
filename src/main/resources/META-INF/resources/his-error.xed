@@ -22,12 +22,12 @@
         Folgende Datensätze werden aufgrund von fehlenden Einträgen in den Mappings nicht übernommen:
       </p>
       <ul>
-        <li>keine fehlerhaften Mappings gefunden</li>
-        <!-- >li>Aufsatz / Artikel in
+        <!-- li>keine fehlerhaften Mappings gefunden</li -->
+        <li>Aufsatz / Artikel in
           <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li -->
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Aproceedings&amp;wt=xml">Tagungsband</a></li>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
+            <!-- li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aarticle+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li -->
           </ul>
         </li -->
         <!-- li>Buchaufsatz / Kapitel in
@@ -42,11 +42,11 @@
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Acollection+AND+host_genre%3Ajournal&amp;wt=xml">Zeitschrift</a></li>
           </ul>
         </li -->
-        <!-- li>Aufsatz (Konferenz) in
+        <li>Aufsatz (Konferenz) in
           <ul>
-            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Aseries&amp;wt=xml">Reihe / Serie</a></li>
+            <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Aconference_essay+AND+host_genre%3Acollection&amp;wt=xml">Buch (Sammelwerk)</a></li>
           </ul>
-        </li -->
+        </li>
         <!-- li>Lehrmaterial in
           <ul>
             <li><a href="servlets/solr/select?core=main&amp;q=status%3Aconfirmed+AND+genre%3Alecture+AND+host_genre%3Ablog&amp;wt=xml">Blog</a></li>
