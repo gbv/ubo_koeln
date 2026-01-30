@@ -176,7 +176,7 @@
         </article>
 
       </div>
-      <xinclude uri="xslStyle:response-newest:solr:q=partOf%3Atrue+AND+status%3Aconfirmed+AND+year%3A2023&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
+      <xinclude uri="xslStyle:response-newest:solr:q=partOf%3Atrue+AND+status%3Aconfirmed+AND+year%3ANOW&amp;rows=4&amp;sort=created+desc,year+desc&amp;facet=false&amp;fl=id,year" />
     </div>
     <div class="col-12 col-lg-4">
       <xinclude uri="xslStyle:response-sidebar-mini:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0" />
