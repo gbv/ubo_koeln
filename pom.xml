@@ -56,7 +56,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.5.0</version>
         <executions>
           <execution>
             <id>unpack-vue-webjar</id>
@@ -150,7 +149,7 @@
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo</artifactId>
-        <version>prod-SNAPSHOT</version>
+        <version>dev-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
