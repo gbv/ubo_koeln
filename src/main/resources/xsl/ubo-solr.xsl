@@ -18,7 +18,6 @@
     <xsl:apply-templates select="." mode="baseFields" />
     <xsl:call-template   name="documentID" />
     <xsl:apply-templates select="structure/parents/parent[@xlink:href]" mode="solrField" />
-    <xsl:apply-templates select="service/servflags/servflag[@type='status']" mode="solrField" />
     <xsl:apply-templates select="service/servflags/servflag[@type='importID']" mode="solrField" />
     <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods" mode="solrField" />
 
@@ -101,12 +100,6 @@
       <xsl:variable name="id_with_zeros" select="substring-after(@ID,'_mods_')" />
       <!-- output id without leading zeros -->
       <xsl:value-of select="number($id_with_zeros) * 1" />
-    </field>
-  </xsl:template>
-
-  <xsl:template match="servflag[@type='status']" mode="solrField">
-    <field name="status">
-      <xsl:value-of select="text()" />
     </field>
   </xsl:template>
 
@@ -586,6 +579,12 @@
     <field name="name_id_{@type}">
       <xsl:value-of select="text()" />
     </field>
+
+    <xsl:if test="@type = 'connection'">
+      <field name="groupable_name_id_{@type}">
+        <xsl:value-of select="text()"/>
+      </field>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="mods:part" mode="solrField">
