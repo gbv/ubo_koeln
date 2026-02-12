@@ -10,7 +10,7 @@
   </parent>
   <groupId>de.gbv.ubo</groupId>
   <artifactId>ubo_koeln</artifactId>
-  <version>prod-SNAPSHOT</version>
+  <version>dev-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>UBO TH Köln</name>
