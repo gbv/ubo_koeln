@@ -7,6 +7,9 @@
  <script type="text/javascript" src="/js/editor.validation.failed.tooltip.js"></script>
 
  <xed:form xmlns:xed="http://www.mycore.de/xeditor" xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions" method="post" role="form">
+
+   <xed:preload uri="webapp:import-search.xed" />
+
    <article class="card mb-1">
      <div class="card-body">
 
@@ -14,7 +17,7 @@
       <xed:cancel url="index.xed" />
 
       <fieldset>
-        <xed:include uri="webapp:import-search.xed" ref="validation" />
+        <xed:include ref="validation" />
 
         <div class="mb-2">
           <xed:multi-lang>
@@ -232,7 +235,7 @@
 
             </xed:if>
 
-            <xed:include uri="webapp:import-search.xed" ref="year" />
+            <xed:include ref="year" />
 
             <xed:choose>
               <xed:when test="xed:call-java('org.mycore.ubo.AccessControl','currentUserIsAdmin')">
@@ -326,8 +329,8 @@
             </xed:bind>
           </xed:bind>
 
-          <xed:include uri="webapp:import-search.xed" ref="sortby" />
-          <xed:include uri="webapp:import-search.xed" ref="numPerPage" />
+          <xed:include ref="sortby" />
+          <xed:include ref="numPerPage" />
 
           <div class="form-group form-inline">
             <label for="{xed:generate-id()}" class="mycore-form-label">
