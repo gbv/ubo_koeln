@@ -4,8 +4,7 @@
   <title xml:lang="de">Willkommen bei der Digitalen Hochschulbibliografie der TH Köln</title>
   <title xml:lang="en">Welcome to the Digital University Bibliography of TH Köln</title>
 
-  <script src="webjars/highcharts/5.0.1/highcharts.src.js" type="text/javascript"></script>
-  <script src="webjars/highcharts/5.0.1/themes/grid.js" type="text/javascript"></script>
+  <script src="assets/echarts/dist/echarts.js"/>
 
   <div class="row">
     <div class="col-12">
@@ -180,7 +179,7 @@
     </div>
     <div class="col-12 col-lg-4">
       <xinclude uri="xslStyle:response-sidebar-mini:solr:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0" />
-      <xinclude uri="xslStyle:statistics:solr:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year" />
+      <xinclude uri="xslStyle:charts/bar-chart?facet=year&amp;horizontal=false:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year"/>
       <xinclude uri="xslStyle:response-sidebar-admin:solr:q=*%3A*&amp;rows=0&amp;facet=true&amp;facet.field=status&amp;facet.mincount=0&amp;facet.range=created&amp;facet.range=modified&amp;facet.range.start=NOW/DAY-30DAY&amp;facet.range.end=NOW&amp;facet.range.gap=%2B1DAY" />
       <xinclude uri="xslStyle:response-sidebar-admin:solr:q=status%3Aimported+AND+importID%3A*&amp;rows=0&amp;facet=true&amp;facet.sort=index&amp;facet.limit=-1&amp;facet.field=importID" />
     </div>
