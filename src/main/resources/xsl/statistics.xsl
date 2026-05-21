@@ -24,6 +24,10 @@
   <xsl:template match="lst[@name='facet_fields']/lst[@name='nid_dhsbid']">
     <xsl:if test="mcrxsl:isCurrentUserInRole('admin')">
 
+      <!-- name_id_dhsbid is multiValued; pivot faceting drops the nested name level when
+           the parent pivot field is multiValued. Fetch the matching name documents in a
+           single OR'd request and read the stored (original case) name per Koeln id. rows
+           equals the summed facet counts, i.e. exactly the number of matching documents. -->
       <xsl:variable name="uri">
         <xsl:text>solr:q=objectKind%3Aname+AND+(</xsl:text>
         <xsl:for-each select="int">
@@ -31,11 +35,11 @@
           <xsl:value-of select="@name"/>
           <xsl:if test="position() != last()">+OR+</xsl:if>
         </xsl:for-each>
-        <xsl:text>)&amp;rows=0&amp;facet.pivot=name_id_dhsbid,name&amp;facet.limit=</xsl:text>
-        <xsl:value-of select="count(int)"/>
+        <xsl:text>)&amp;rows=</xsl:text>
+        <xsl:value-of select="sum(int)"/>
+        <xsl:text>&amp;fl=name,name_id_dhsbid</xsl:text>
       </xsl:variable>
-      <xsl:variable name="response" select="document($uri)/response"/>
-      <xsl:variable name="koeln2name" select="$response/lst[@name='facet_counts']/lst[@name='facet_pivot']/arr[@name='name_id_dhsbid,name']"/>
+      <xsl:variable name="nameDocs" select="document($uri)/response/result/doc"/>
 
       <xsl:variable name="title" select="i18n:translate('thk.statistics.bydhsbid.title')"/>
 
@@ -44,7 +48,8 @@
         <xsl:for-each select="int">
           <xsl:sort select="text()" data-type="number" order="descending"/>
           <xsl:variable name="koeln_id" select="@name"/>
-          <xsl:variable name="name" select="$koeln2name/lst[str[@name='value']=$koeln_id]/arr/lst[1]/str[@name='value']"/>
+          <xsl:variable name="name"
+            select="($nameDocs[arr[@name='name_id_dhsbid']/str=$koeln_id])[1]/str[@name='name']"/>
           <xsl:value-of select="concat($quot, $name, $quot)"/>
           <xsl:if test="position() != last()">,</xsl:if>
         </xsl:for-each>
@@ -73,6 +78,7 @@
               let chart = echarts.init(chartDom, null, { renderer: 'svg' });
               chart.setOption({
                 tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+                grid: { left: 225, right: 30, top: 10, bottom: 30 },
                 yAxis: {
                   type: 'category',
                   data: <xsl:value-of select="$labels"/>,
