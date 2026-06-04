@@ -29,7 +29,7 @@
     </div>
   </article>
 
-  <xinclude uri="xslStyle:charts/bar-chart?facet=year&amp;horizontal=false:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year&amp;f.year.facet.sort=index"/>
+  <xinclude uri="xslStyle:charts/bar-chart?facet=year&amp;horizontal=false&amp;dataLabels-show=false:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed+year%3A%5B2013+TO+*%5D&amp;rows=0&amp;facet.field=year&amp;f.year.facet.sort=index"/>
   <xinclude uri="xslStyle:charts/bar-chart?facet=origin_toplevel&amp;classification=ORIGIN:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=origin_toplevel"/>
   <xinclude uri="xslStyle:charts/pie-chart?facet=genre&amp;classification=ubogenre:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=genre"/>
   <xinclude uri="xslStyle:charts/pie-chart?facet=koeln_accessrights&amp;classification=accessrights:solr:requestHandler:select:q=partOf%3Atrue+AND+status%3Aconfirmed&amp;rows=0&amp;facet.field=koeln_accessrights"/>
