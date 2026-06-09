@@ -39,11 +39,13 @@
       "defaults": {
         "echoParams": "explicit",
         "defType": "edismax",
+        "q.alt": "*:*",
         "qs": "5",
         "mm": "100%",
-        "q.op": "AND",
         "df": "all",
-        "wt": "xml"
+        "wt": "xml",
+        "f.year.facet.limit": -1,
+        "sort":"year desc"
       },
       "appends": {
         "facet.field": [
@@ -53,8 +55,11 @@
           "genre",
           "koeln_accessrights",
           "facet_person",
-          "oa"
-        ]
+          "oa_exact",
+          "connection_nid_text",
+          "nid_connection"
+        ],
+        "fq": "+objectType:mods"
       },
       "invariants": {
         "fl": "",
