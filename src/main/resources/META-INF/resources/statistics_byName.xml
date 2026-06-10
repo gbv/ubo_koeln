@@ -125,8 +125,8 @@
                     idCountObj: {},
                     idCountOA: {},
                     idCountPeer: {},
-                    yearSelect: "2024",
-                    years: ["2024"],
+                    yearSelect: "2025",
+                    years: ["2025"],
                     loading: true
                 },
                 mounted() {
