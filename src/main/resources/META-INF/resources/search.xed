@@ -270,6 +270,12 @@
                         <strong><xed:output i18n="search.dozbib.status.confirmed" /></strong>
                       </label>
                     </div>
+                    <div class="form-check mr-2">
+                      <input type="checkbox" value="deleted" class="form-check-input"/>
+                      <label class="form-check-label">
+                        <strong><xed:output i18n="search.dozbib.status.deleted" /></strong>
+                      </label>
+                    </div>
                   </div>
                 </xed:bind>
                 <xed:bind xpath="condition[@field='objectType'][@operator='='][@value='mods']" />
