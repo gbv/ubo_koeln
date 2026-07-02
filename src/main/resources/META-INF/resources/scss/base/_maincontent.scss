@@ -112,12 +112,17 @@ $form-color: #251e52;
 /* badges  ********************************************************************/
 .badge {
   border-radius: 0;
-  border: 1px solid #ccc;
+  border: 1px solid black;
 }
 
 .badge:not(.oa-badge) {
-  background-color: transparent;
-  color: #999;
+  background-color: white;
+  color: black !important;
+  &:hover {
+    background-color: #b43092;
+    border-color: #b43092;
+    color: white !important;
+  }
 }
 
 /* nameIdentifier  ***********************************************************/
