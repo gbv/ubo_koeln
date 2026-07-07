@@ -122,6 +122,14 @@ $form-color: #251e52;
     background-color: #b43092;
     border-color: #b43092;
     color: white !important;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
