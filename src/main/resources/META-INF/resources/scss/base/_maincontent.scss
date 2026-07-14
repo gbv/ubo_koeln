@@ -111,17 +111,25 @@ $form-color: #251e52;
 
 /* badges  ********************************************************************/
 .badge {
-  border-radius: 0;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
-.badge:not(.oa-badge) {
-  background-color: white;
-  color: black !important;
+.badge-alternative {
+    background-color: white;
+    border-radius: 0px;
+    &:hover {
+      background-color: white;
+    }
+}
+
+.badge:not(.oa-badge):not(.badge-alternative) {
+  background-color: #b43092;
+  color: white !important;
+  border-color: transparent;
   &:hover {
     background-color: #b43092;
-    border-color: #b43092;
     color: white !important;
+    border-color: transparent;
   }
 }
 
