@@ -70,10 +70,14 @@
 .results .btn {
   font-size: 75%;
   padding: 0.25em 0.5em;
-  background-color: #aaa;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 .results .btn:hover {
+  color: white;
   background-color:  #b43092;
+  border-color: #b43092;
 }
 .btn-outline {
   color: #b43092;
@@ -94,12 +98,14 @@
 }
 #inhalt > .btn-group > .btn {
   flex: none;
-  color: white;
-  border: 1px solid #ccc;
-  background-color: #aaa;
+  color: #495353;
+  border: 1px solid #495353;
+  background-color: white;
 }
 #inhalt > .btn-group > .btn:hover {
+  color: white;
   background-color:  #b43092;
+  border-color: #b43092;
 }
 .resultsNavigation .text-right .pageLink {
   position: absolute;
