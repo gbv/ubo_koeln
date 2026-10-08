@@ -148,24 +148,24 @@
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo</artifactId>
-        <version>${project.version}</version>
+        <version>2024.06.1-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo-cli</artifactId>
-        <version>${project.version}</version>
+        <version>2024.06.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo-common</artifactId>
-        <version>${project.version}</version>
+        <version>2024.06.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.mycore.ubo</groupId>
         <artifactId>ubo-webapp</artifactId>
-        <version>${project.version}</version>
+        <version>2024.06.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
