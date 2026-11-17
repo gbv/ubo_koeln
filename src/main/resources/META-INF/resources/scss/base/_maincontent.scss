@@ -114,6 +114,7 @@ $form-color: #251e52;
   border: 1px solid transparent;
 }
 
+// badge exception
 .badge-alternative {
     background-color: white;
     border-radius: 0px;
@@ -122,7 +123,22 @@ $form-color: #251e52;
     }
 }
 
-.badge:not(.oa-badge):not(.badge-alternative):not(.ubo-badge-id) {
+// rules for links in specific badges
+// when they should behave like all other badges
+.ubo-badge-id {
+  a {
+    color: white;
+    background-color: transparent;
+    &:hover {
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+}
+
+// rules for all badges with exceptions
+.badge:not(.oa-badge):not(.badge-alternative) {
   background-color: #b43092;
   color: white !important;
   border-color: transparent;
