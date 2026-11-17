@@ -122,7 +122,7 @@ $form-color: #251e52;
     }
 }
 
-.badge:not(.oa-badge):not(.badge-alternative) {
+.badge:not(.oa-badge):not(.badge-alternative):not(.ubo-badge-id) {
   background-color: #b43092;
   color: white !important;
   border-color: transparent;
