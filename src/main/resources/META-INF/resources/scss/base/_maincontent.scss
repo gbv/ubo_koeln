@@ -125,7 +125,8 @@ $form-color: #251e52;
 
 // rules for links in specific badges
 // when they should behave like all other badges
-.ubo-badge-id {
+.ubo-badge-id,
+.ubo-badge-children {
   a {
     color: white;
     background-color: transparent;
